@@ -1,0 +1,45 @@
+#header{
+	min-height: 0em;
+}
+
+#header img{
+	display: none; 
+}
+
+#header h1{
+	font-size: 2.5em;
+}
+
+#header h2{
+	font-size: 1.2em;	
+}
+
+/*    MENU    */
+
+#menu{
+	float: none;
+	text-align: center;
+	width: 100%;
+	border-bottom: 1px solid #DDD;
+}
+
+#menu ul{
+	width: 50%;
+	margin: auto;
+}
+
+/*    CONTENUTO    */
+
+.contenutoGenerale{
+	margin-left: 0em;
+	padding: 0.5em;
+	width: 95%;	
+}
+
+#contentHomePage{
+	width:65%;
+}
+
+#charactersStory{
+	width: 97%;
+}

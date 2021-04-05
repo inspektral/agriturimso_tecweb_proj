@@ -1,0 +1,29 @@
+thead, tfoot{
+	display: none;
+}
+
+td[data-title]:before{
+	content: attr(data-title) ":\00A0";
+}
+
+tr, td, th{
+	display: block;
+}
+
+th{
+	background-color: #BD091B;
+	color: white;
+}
+
+table, tbody, tr, td, th{
+	border: none;
+}
+
+th, td{
+	border: 1px solid #000;
+	border-top: none;
+}
+
+tr:first-child{
+	border-top: 1px solid black;
+}
