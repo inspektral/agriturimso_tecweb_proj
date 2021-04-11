@@ -145,13 +145,27 @@ SEZIONE CONTENUTO
 	text-align: center;	
 }
 
+.titleImageTerritorio{
+	text-align: center;
+}
+
 #contentHomePage{
 	width: 50%;
 	border-right: 1px solid #ddd;
 	text-align: center;
 }
 
+#contentTerritorio{
+	width: 50%;
+	border-right: 1px solid #ddd;
+}
+
 #imgIndex{
+	width: 70%;
+	padding: 1.0em;
+}
+
+.imgTerritorio{
 	width: 70%;
 	padding: 1.0em;
 }
