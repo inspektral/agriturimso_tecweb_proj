@@ -183,6 +183,11 @@ SEZIONE CONTENUTO
 	margin-top: 1em;
 }
 
+.imgCommenti{
+	width: 70%;
+	padding: 1.0em;
+}
+
 #charactersStory dd{
 	border: 1px solid #000;
 	border-top: none;
@@ -226,6 +231,28 @@ table td, table th{
 	padding: 0.5em;
 } 
 
+#sezionecommenti{
+	margin-top: 7%;
+	padding-right: 0.5em
+}
+
+#casellacommento{
+	margin-top: 10%;
+	
+	border: 0.1px;
+	border-color:#cc4b58;
+	border-style: ridge;
+	background-color: #f2f2f2
+	
+	
+}
+
+#lasciacommento{
+	margin-top: 10%;
+	border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 25px;
+}
 /*
 
 ==============
@@ -251,3 +278,32 @@ SEZIONE FOOTER
 #imgValidCode{
 	float: left;
 }
+
+
+
+/*
+
+==============
+SEZIONE FORM
+==============
+
+*/
+
+
+
+ textarea, fieldset {
+	width: auto;
+  padding: 12px;
+  border: 0.1px solid #cc4b58;
+  margin-top: 1em;
+  resize: vertical;
+	
+  }
+  
+  .bottone1 {
+	
+    background-color: #cc4b58;
+    width: 10em;
+    height: 2em;
+  }
+  
