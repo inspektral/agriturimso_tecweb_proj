@@ -40,7 +40,6 @@ SEZIONE HEADER
  	text-align: center;
  	min-height: 9em;
  	padding-top: 0em
-
 }
 
 #header h1{
@@ -136,13 +135,14 @@ SEZIONE CONTENUTO
 
 .contenutoGenerale{
 	margin-left: 20%;
-	width: 70%;
-	padding: 1.5em 1.0em 3.0em 2em;
+	width: 50%;
+	padding: 1.5em 1.0em 3.0em 1.0em;
 	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
 }
 
 .contenutoGenerale h1{
-	text-align: center;	
+	text-align: center;
 }
 
 .titleImageTerritorio{
@@ -168,6 +168,48 @@ SEZIONE CONTENUTO
 .imgTerritorio{
 	width: 70%;
 	padding: 1.0em;
+}
+
+.bedroom h2 {
+	text-align: center;
+}
+
+.bedroom h3 {
+	padding: 0.5em 0em;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+}
+
+.bedroom img {
+	width: 96%;
+	margin: auto;
+	padding-top: 0.5em;
+}
+
+.bedroom>ul {
+	width: 50%;
+	margin: 0em auto;
+	margin-top: 0.5em;
+	list-style-image: url("../images/checkmark-icon.png");
+}
+
+.services {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.services dl { 
+	padding-top: 0.5em;
+	max-width: 50%;
+}
+
+.services div {
+	padding-top: 0.5em;
+}
+
+.services ul {
+	margin-left: 1.2em;
 }
 
 #charactersStory{
@@ -224,7 +266,7 @@ table thead, table tfoot{
 
 table td, table th{
 	padding: 0.5em;
-} 
+}
 
 /*
 
@@ -241,7 +283,7 @@ SEZIONE FOOTER
 	padding: 0.5em;
 	padding-top: 1.3em;
 	font-style: italic;
-	border-top: 1px solid #ddd; 
+	border-top: 1px solid #ddd;
 }
 
 #imgValidCSS{
