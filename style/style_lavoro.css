@@ -4,7 +4,7 @@
 }
 
 html {
-	background-image:url('../images/sfondo.jpg');
+	background-image: url('../images/sfondo.jpg');
 	background-color: #000;
 	width: 100%;
 }
@@ -12,13 +12,13 @@ html {
 body {
 	max-width: 1080px;
 	background-color: #FFF;
-	margin:auto; /*calcola in automatico i marigni di destra e sinistra*/
+	margin: auto; /*calcola in automatico i marigni di destra e sinistra*/
 	font-family: "Segoe UI", Arial, sans-serif;
 	border: 1px solid #DDD;
 }
 
 a:visited {
-	color: rgb(146,58,67);
+	color: rgb(146, 58, 67);
 }
 
 .aiutiNascosti {
@@ -33,14 +33,14 @@ SEZIONE HEADER
 ==============
 */
 #header {
- 	padding: 1em;
- 	text-align: center;
- 	min-height: 9em;
- 	padding-top: 0em
+	padding: 1em;
+	text-align: center;
+	min-height: 9em;
+	padding-top: 0em
 }
 
 #header h1 {
-	color: rgb(146,58,67);
+	color: rgb(146, 58, 67);
 	font-size: 3.5em;
 	padding-top: 0.5em;
 }
@@ -64,12 +64,28 @@ SEZIONE BREADCUM
 ==============
 */
 #breadcumb {
-	background-color: rgb(146,58,67);
+	background-color: rgb(146, 58, 67);
 	color: white;
 	padding: 1em;
 	font-weight: bold;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
+	min-height: 2em;
+}
+
+#breadcumbText {
+	float: left;
+	width: auto;
+	margin: auto;
+	padding-top: 0.5%;
+}
+
+.reg {
+	float: right;
+	color: #fff;
+	background-color: rgb(146, 58, 67);
+	margin: auto 1% auto 1%;;
+	padding-top: 0.5%;
 }
 
 /*
@@ -103,6 +119,22 @@ SEZIONE RIGHTSIDEBAR
 	width: 20%;
 	font-size: 0.7em;
 	padding: 0.5em;
+}
+
+#adminSection {
+	margin-top: 10%;
+	text-align: center;
+}
+
+#buttonNews {
+	background-color: #923a43; /* Green */
+	border: none;
+	color: white;
+	padding: 2% 4%;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
 }
 
 /*
@@ -311,7 +343,7 @@ table td, table th {
 #casellacommento {
 	margin-top: 10%;
 	border: 0.1px;
-	border-color:#cc4b58;
+	border-color: #cc4b58;
 	border-style: ridge;
 	background-color: #f2f2f2
 }
@@ -319,8 +351,8 @@ table td, table th {
 #lasciacommento {
 	margin-top: 10%;
 	border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 25px;
+	background-color: #f2f2f2;
+	padding: 25px;
 }
 
 /*
@@ -351,17 +383,18 @@ SEZIONE FORM
 ==============
 */
 textarea, fieldset {
+	width: auto;
+	padding: 12px;
+	border: 0.1px solid #cc4b58;
+	margin-top: 1em;
+	resize: vertical;
+}
+
+.bottone1 {
 width: auto;
 padding: 12px;
 border: 0.1px solid #cc4b58;
 margin-top: 1em;
 resize: vertical;
 
-}
-
-.bottone1 {
-
-	background-color: #cc4b58;
-	width: 10em;
-	height: 2em;
 }

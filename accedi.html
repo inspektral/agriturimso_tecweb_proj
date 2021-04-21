@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>Login</title>
+
+	<meta name="title" content="Login" />
+
+	<meta name="language" content="italian it" />
+
+	<link rel="stylesheet" type="text/css" href="style/style_lavoro.css" media="screen"/>
+
+	<link rel="stylesheet" type="text/css" href="style/small_lavoro.css" media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)"/>
+
+	<link rel="stylesheet" type="text/css" href="style/printLavoro.css" media="print" />
+
+	<link rel="stylesheet" type="text/css" href="style/styleAccReg.css" media="screen"/>
+
+</head>
+<body>    
+	<div id="header">
+		<ul class="aiutiNascosti" >
+			<li><a href="#menu">Vai al menu</a></li>
+			<li><a href="#contentHomePage">Vai al contenuto</a></li>
+			<li><a href="#ultimeNews">Vai alle ultime news</a></li>
+		</ul>
+		<img id="logo" src="images/bbtlogo.png" alt="Logo dell'agriturismo a forma di casa stilizzata con una a come tetto e una m come muros" />	
+		<h1>Agritursimo Morgan</h1>
+		<h2>Ai piedi del Montello e dei colli Asolani</h2>
+	</div>
+
+	<div id="breadcumb">
+		<p id="breadcumbText">Ti trovi: Accedi</p>
+		<a href="registrati.html" class="reg">Registrati</a>
+	</div>
+
+	<div id="menu">
+		<ul>
+			<li xml:lang="en"><a href="index.html">Home</a></li>
+			<li><a href="camere.html">Camere</a></li>
+			<li><a href="territorio.html">Territorio</a></li>
+			<li><a href="diconodinoi.html">Dicono di noi</a></li>
+		</ul>	
+	</div>
+	<div id="contentHomePage" class="contenutoGenerale">
+        <form method="post" id="accedi" action="accedi.php">
+            <fieldset>
+                <legend xml:lang="en">Login</legend>
+                <label for="username" xml:lang="en">User Name: </label>
+                <br/>
+                <input type="text" id="username" name="username"/>
+                <br/>
+                <label for="password" xml:lang="en">Password: </label>
+                <br/>
+                <input type="password" id="password" name="password"/>
+                <br/>
+                <input type="submit" value="Accedi" id="submit"/>
+            </fieldset>
+        </form>
+    </div>
+
+	<div id="footer">
+		<img src="images/valid-xhtml10.png" alt="logo validazione w3c xhtml" id="imgValidCode"/>
+		<img src="images/vcss-blue.gif" alt="validlogo validazione w3c css" id="imgValidCSS" />
+		<p>Il sito è stato creato per un esercizio nell'ambito del corso di <a href="https://elearning.unipd.it/math/login/index.php">Tecnologie Web</a> e non rappresenta quindi il sito ufficiale dell'agritursimo. I testi sono stati gentilmente presi in prestito da <a href="http://www.agriturismomorgan.it/">Agriturismo Morgan</a>.</p>
+		<p>Tech Group - All rights reserved</p>
+	</div>
+</body>
+</html>

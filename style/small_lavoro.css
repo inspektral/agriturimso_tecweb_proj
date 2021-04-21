@@ -21,11 +21,25 @@
 	text-align: center;
 	width: 100%;
 	border-bottom: 1px solid #DDD;
+	background-color: #c75f6a;
+	color: #fff;
 }
 
 #menu ul {
 	width: 50%;
 	margin: auto;
+}
+
+/* BREADCUMB */
+
+#breadcumb{
+	border-bottom: none;
+}
+
+/*  RIGHT SIDEBAR */
+
+#rightSideBar {
+    width: 25%;
 }
 
 /*    CONTENUTO    */
