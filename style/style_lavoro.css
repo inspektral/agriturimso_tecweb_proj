@@ -1,27 +1,27 @@
-*{
+* {
 	padding: 0em;
 	margin: 0em;
 }
 
-html{
-	background-image:url('../images/sfondo.jpg');
+html {
+	background-image: url('../images/sfondo.jpg');
 	background-color: #000;
 	width: 100%;
 }
 
-body{
+body {
 	max-width: 1080px;
 	background-color: #FFF;
-	margin:auto; /*calcola in automatico i marigni di destra e sinistra*/
+	margin: auto; /*calcola in automatico i marigni di destra e sinistra*/
 	font-family: "Segoe UI", Arial, sans-serif;
 	border: 1px solid #DDD;
 }
 
-a:visited{
-	color: rgb(146,58,67);
+a:visited {
+	color: rgb(146, 58, 67);
 }
 
-.aiutiNascosti{
+.aiutiNascosti {
 	position: absolute;
 	height: 0em;
 	overflow: hidden;
@@ -34,32 +34,29 @@ SEZIONE HEADER
 ==============
 
 */
-
-#header{
- 	padding: 1em;
- 	text-align: center;
- 	min-height: 9em;
- 	padding-top: 0em
-
+#header {
+	padding: 1em;
+	text-align: center;
+	min-height: 9em;
+	padding-top: 0em
 }
 
-#header h1{
-	color: rgb(146,58,67);
+#header h1 {
+	color: rgb(146, 58, 67);
 	font-size: 3.5em;
 	margin: auto;
 	margin-left: 20%;
 	padding-top: 0.5em;
 }
 
-#logo{
+#logo {
 	float: left;
 	width: 15%;
-
 	max-width: 9em;
 	margin: 0.5em;
 }
 
-#header h2{
+#header h2 {
 	font-size: 1.3em;
 	font-style: italic;
 	font-weight: normal;
@@ -75,14 +72,29 @@ SEZIONE BREADCUM
 ==============
 
 */
-
-#breadcumb{
-	background-color: rgb(146,58,67);
+#breadcumb {
+	background-color: rgb(146, 58, 67);
 	color: white;
 	padding: 0.5em 0 0.5em 1.0em;
 	font-weight: bold;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
+	min-height: 2em;
+}
+
+#breadcumbText {
+	float: left;
+	width: auto;
+	margin: auto;
+	padding-top: 0.5%;
+}
+
+.reg {
+	float: right;
+	color: #fff;
+	background-color: rgb(146, 58, 67);
+	margin: auto 1% auto 1%;;
+	padding-top: 0.5%;
 }
 
 /*
@@ -92,21 +104,18 @@ SEZIONE MENU
 ==============
 
 */
-
-
-
-#menu{
+#menu {
 	float: left;
 	width: 20%;
 	padding: 0.8em;
 	font-size: 1.1em;
 }
 
-#menu ul{
+#menu ul {
 	list-style-type: none;
 }
 
-#menu ul li{
+#menu ul li {
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 }
@@ -118,12 +127,27 @@ SEZIONE RIGHTSIDEBAR
 ==============
 
 */
-
-#rightSideBar{
+#rightSideBar {
 	float: right;
 	width: 20%;
 	font-size: 0.7em;
 	padding: 0.5em;
+}
+
+#adminSection {
+	margin-top: 10%;
+	text-align: center;
+}
+
+#buttonNews {
+	background-color: #923a43; /* Green */
+	border: none;
+	color: white;
+	padding: 2% 4%;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
 }
 
 /*
@@ -133,49 +157,48 @@ SEZIONE CONTENUTO
 ==============
 
 */
-
-.contenutoGenerale{
+.contenutoGenerale {
 	margin-left: 20%;
 	width: 70%;
 	padding: 1.5em 1.0em 3.0em 2em;
 	border-left: 1px solid #ddd;
 }
 
-.contenutoGenerale h1{
-	text-align: center;	
-}
-
-.titleImageTerritorio{
+.contenutoGenerale h1 {
 	text-align: center;
 }
 
-#contentHomePage{
+.titleImageTerritorio {
+	text-align: center;
+}
+
+#contentHomePage {
 	width: 50%;
 	border-right: 1px solid #ddd;
 	text-align: center;
 }
 
-#contentTerritorio{
+#contentTerritorio {
 	width: 50%;
 	border-right: 1px solid #ddd;
 }
 
-#imgIndex{
+#imgIndex {
 	width: 70%;
 	padding: 1.0em;
 }
 
-.imgTerritorio{
+.imgTerritorio {
 	width: 70%;
 	padding: 1.0em;
 }
 
-#charactersStory{
+#charactersStory {
 	width: 90%;
 	margin: auto;
 }
 
-#charactersStory dt{
+#charactersStory dt {
 	font-weight: bold;
 	background-color: #BD091B;
 	color: #FFF;
@@ -183,18 +206,18 @@ SEZIONE CONTENUTO
 	margin-top: 1em;
 }
 
-.imgCommenti{
+.imgCommenti {
 	width: 70%;
 	padding: 1.0em;
 }
 
-#charactersStory dd{
+#charactersStory dd {
 	border: 1px solid #000;
 	border-top: none;
 	padding: 0.5em;
 }
 
-#charactersStory dd img{
+#charactersStory dd img {
 	float: left;
 	width: 20%;
 	margin-left: 0.5em;
@@ -202,56 +225,52 @@ SEZIONE CONTENUTO
 	margin-top: 0.5em;
 }
 
-#charactersStory dd p{
+#charactersStory dd p {
 	margin-left: 20%;
 }
 
-#charactersStory dd p.aiutoTornaSu{
+#charactersStory dd p.aiutoTornaSu {
 	text-align: right;
 }
 
-table{
+table {
 	width: 90%;
 	margin: auto;
 	text-align: center;
 	border-collapse: collapse;
-
 }
 
-table, tr, td, th{
+table, tr, td, th {
 	border: 1px solid #000;
 }
 
-table thead, table tfoot{
+table thead, table tfoot {
 	background-color: #BD091B;
 	color: #FFF;
 }
 
-table td, table th{
+table td, table th {
 	padding: 0.5em;
-} 
+}
 
-#sezionecommenti{
+#sezionecommenti {
 	margin-top: 7%;
 	padding-right: 0.5em
 }
 
-#casellacommento{
+#casellacommento {
 	margin-top: 10%;
-	
 	border: 0.1px;
-	border-color:#cc4b58;
+	border-color: #cc4b58;
 	border-style: ridge;
 	background-color: #f2f2f2
-	
-	
 }
 
-#lasciacommento{
+#lasciacommento {
 	margin-top: 10%;
 	border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 25px;
+	background-color: #f2f2f2;
+	padding: 25px;
 }
 /*
 
@@ -260,26 +279,22 @@ SEZIONE FOOTER
 ==============
 
 */
-
-
-#footer{
+#footer {
 	text-align: center;
 	font-size: 0.7em;
 	padding: 0.5em;
 	padding-top: 1.3em;
 	font-style: italic;
-	border-top: 1px solid #ddd; 
+	border-top: 1px solid #ddd;
 }
 
-#imgValidCSS{
+#imgValidCSS {
 	float: right;
 }
 
-#imgValidCode{
+#imgValidCode {
 	float: left;
 }
-
-
 
 /*
 
@@ -288,22 +303,16 @@ SEZIONE FORM
 ==============
 
 */
-
-
-
- textarea, fieldset {
+textarea, fieldset {
 	width: auto;
-  padding: 12px;
-  border: 0.1px solid #cc4b58;
-  margin-top: 1em;
-  resize: vertical;
-	
-  }
-  
-  .bottone1 {
-	
-    background-color: #cc4b58;
-    width: 10em;
-    height: 2em;
-  }
-  
+	padding: 12px;
+	border: 0.1px solid #cc4b58;
+	margin-top: 1em;
+	resize: vertical;
+}
+
+.bottone1 {
+	background-color: #cc4b58;
+	width: 10em;
+	height: 2em;
+}
