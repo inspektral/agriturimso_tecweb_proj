@@ -1,0 +1,31 @@
+input{
+    margin: auto 10% 2% 10%;
+    width: 80%;    
+}
+
+form{
+    text-align: left;
+}
+
+label{
+    font-weight: bold;
+    margin-left: 10%;
+}
+
+fieldset{    
+    margin-left: 5%;
+}
+
+#submit{
+    background-color: rgb(146, 58, 67); /* Green */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 2% 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    width: auto;
+    margin-top: 2%;
+}
