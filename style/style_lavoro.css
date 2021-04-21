@@ -42,8 +42,6 @@ SEZIONE HEADER
 #header h1 {
 	color: rgb(146,58,67);
 	font-size: 3.5em;
-	margin: auto;
-	margin-left: 20%;
 	padding-top: 0.5em;
 }
 
@@ -58,7 +56,6 @@ SEZIONE HEADER
 	font-size: 1.3em;
 	font-style: italic;
 	font-weight: normal;
-	margin-left: 20%;
 }
 
 /*
@@ -69,7 +66,7 @@ SEZIONE BREADCUM
 #breadcumb {
 	background-color: rgb(146,58,67);
 	color: white;
-	padding: 0.5em 0 0.5em 1.0em;
+	padding: 1em;
 	font-weight: bold;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
@@ -135,6 +132,23 @@ SEZIONE CONTENUTO
 	text-align: center;
 }
 
+#contentErrorPage {
+	width: 75%;
+	border-right: none;
+	text-align: center;
+	margin-right: auto;
+}
+
+#contentErrorPage h2 {
+	font-size: 25em;
+	color: rgba(146,58,67, 0.7);
+}
+
+#contentErrorPage h3 {
+	font-size: 2em;
+	opacity: 0.7;
+}
+
 #contentTerritorio {
 	width: 50%;
 	border-right: 1px solid #ddd;
@@ -160,14 +174,22 @@ SEZIONE CONTENUTO
 	border-bottom: 1px solid #ddd;
 }
 
-.bedroom img {
+.bedroom .price::after {
+	content: "*";
+}
+
+.bedroom .free::after {
+	content: "**";
+}
+
+.bedroom>img {
 	width: 96%;
 	margin: auto;
 	padding-top: 0.5em;
 }
 
 .bedroom>ul {
-	width: 50%;
+	width: 60%;
 	margin: 0em auto;
 	margin-top: 0.5em;
 	list-style-image: url("../images/checkmark-icon.png");
@@ -190,6 +212,35 @@ SEZIONE CONTENUTO
 
 .services ul {
 	margin-left: 1.2em;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding-top: 1em;
+}
+
+.galleryElement {
+	width: 45%;
+	height: 40%;
+	padding-bottom: 1em;
+}
+
+#img1 {
+	content: url("../images/3.jpg")
+}
+
+#img2 {
+	content: url("../images/4.jpg")
+}
+
+#img3 {
+	content: url("../images/6.jpg")
+}
+
+#img4 {
+	content: url("../images/7.jpg")
 }
 
 #charactersStory {

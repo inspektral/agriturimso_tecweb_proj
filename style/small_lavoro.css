@@ -1,45 +1,64 @@
-#header{
+#header {
 	min-height: 0em;
 }
 
-#header img{
+#header img {
 	display: none; 
 }
 
-#header h1{
+#header h1 {
 	font-size: 2.5em;
 }
 
-#header h2{
+#header h2 {
 	font-size: 1.2em;	
 }
 
 /*    MENU    */
 
-#menu{
+#menu {
 	float: none;
 	text-align: center;
 	width: 100%;
 	border-bottom: 1px solid #DDD;
 }
 
-#menu ul{
+#menu ul {
 	width: 50%;
 	margin: auto;
 }
 
 /*    CONTENUTO    */
 
-.contenutoGenerale{
+.contenutoGenerale {
 	margin-left: 0em;
 	padding: 0.5em;
 	width: 95%;	
 }
 
-#contentHomePage{
+.bedroom>img {
+	width: 100%;
+}
+
+.services dl { 
+	padding-top: 1em;
+	max-width: 100%;
+}
+
+.services div {
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+	max-width: 100%;
+}
+
+.services ul {
+	margin-left: 1.5em;
+}
+
+#contentHomePage {
 	width:65%;
 }
 
-#charactersStory{
+#charactersStory {
 	width: 97%;
 }
