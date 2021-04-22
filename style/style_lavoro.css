@@ -80,7 +80,7 @@ SEZIONE BREADCUM
 	padding-top: 0.5%;
 }
 
-.reg {
+.reg, .reg:visited {
 	float: right;
 	color: #fff;
 	background-color: rgb(146, 58, 67);
