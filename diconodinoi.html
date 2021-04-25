@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
-	<title>Agriturismo Morgan</title>
+	<title>Dicono di noi - Agriturismo Morgan</title>
 
 	<meta name="title" content="Agriturismo Morgan" />
 	<meta name="description" content="Agriturismo situato nei pressi di Montebelluna (TV), che offre camere e colazione" />
@@ -19,6 +19,7 @@
 
 	<link rel="stylesheet" type="text/css" href="style/printLavoro.css" media="print" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="header">
@@ -33,7 +34,9 @@
 	</div>
 
     <div id="breadcumb">
-		<p>Ti trovi in: Dicono di noi</span></p>
+		<p id="breadcumbText">Ti trovi: <span xml:lang="en">Home</span></p>
+		<a href="registrati.html" class="reg">Registrati</a>
+		<a href="accedi.html" class="reg">Accedi</a>
 	</div>
 
     <div id="menu">
@@ -61,7 +64,7 @@
 
 
     <div id="contentHomePage" class="contenutoGenerale">
-		<h2 class="center">Scopri cosa dicono di noi!</h2>
+		<h2 class="center"> Qui troverai le informazioni principali e le recensioni dei nostri clienti </h2>
         
         <div id="imgCommenti">
             
@@ -69,31 +72,63 @@
 
         </div>
 
+                <p> I nostri recapiti:</p>
+        
+                     <div id="generalInfo">
+                        <p><span><strong>AZIENDA AGRITURISTICA MORGAN </strong></span></p>
+                        <p><span> Erizzo, 79 - 31044 Montebelluna (TV) - Italia </span></p>
+                        <p><span>Tel. +39 0423 60 30 31 </span></p>
+                        <p><span>+39 347 45 25 411 </span></p>
+                     </div>
+
+        <div id="info">
+             </div>
+
         <div id="sezionecommenti" class="comments">
-            <h2>Commenti</h2>
+            <h2>Scopri cosa dicono di noi!</h2>
             <section id="casellacommento"> 
                 <h3> Tito </h3>
                 <cite> Mi sono trovato molto bene in questo agriturismo, lo consiglio!</cite>
+                <div class="bottonicommento">
+                    <button type="button">Rispondi</button>
+                    <button type="button">Segnala</button>
+                    <button type="button"> Cancella</button> </div>
             </section>
             
             <section id="casellacommento"> 
                 <h3> Lorenzo </h3>
                 <cite> Ottima gestione e cordialità verso i clienti</cite>
+                <div class="bottonicommento">
+                    <button type="button">Rispondi</button>
+                    <button type="button">Segnala</button>
+                    <button type="button"> Cancella</button> </div>
             </section>
 
             <section id="casellacommento"> 
                 <h3> Matteo </h3>
                 <cite> Buon cibo e camere bellissime!</cite>
+                <div class="bottonicommento">
+                    <button type="button">Rispondi</button>
+                    <button type="button">Segnala</button>
+                    <button type="button"> Cancella</button> </div>
             </section>
 
             <section id="casellacommento"> 
                 <h3> Francesco </h3>
                 <cite> Camere pulite e ristorante eccelso</cite>
+                <div class="bottonicommento">
+                <button type="button">Rispondi</button>
+                <button type="button">Segnala</button>
+                <button type="button"> Cancella</button> </div>
             </section>
 
             <section id="casellacommento"> 
                 <h3> Massimo </h3>
-                <cite> Situato in una zona da visitare assolutamente    !</cite>
+                <cite> Situato in una zona da visitare assolutamente!</cite>
+                <div class="bottonicommento">
+                    <button type="button">Rispondi</button>
+                    <button type="button">Segnala</button>
+                    <button type="button"> Cancella</button> </div>
             </section>
 
 
@@ -105,31 +140,49 @@
                 <h3>Lascia un commento!</h3>
             <form method="post" action="nuovocommento.php">
 		
-                <fieldset>
-                    <label for="nome">Nome: </label>
-                    <input type="text" id="nome" name="nome" placeholder=" Scrivi qui il tuo nome..."/><br />
-                </fieldset>
+               
 
-                <fieldset>
-                    <label for="cognome">Cognome: </label>
-                    <input type="text" id="cognome" name="cognome" placeholder="Scrivi qui il tuo cognome..." /><br />
-                </fieldset>
+            <fieldset>
 
-                <fieldset>
-                    <label for="email">E-mail: </label>
-                    <input type="text" id="email" name="email" placeholder=" Scrivi qui la tua mail..."/><br />
+                <p class="spazio"><strong> Dacci un voto </strong></p>
+
+                <label class="container">1
+                    <input type="radio" checked="checked" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">2
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">3
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container">4 
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="container">5
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                  </label>
                 </fieldset>
 
                 <fieldset>
                     <label for="commento">Scrivi il commento qui sotto: </label>
-                    <textarea id="commento" name="commento" rows="10" cols="50" placeholder="Scrivi qui il tuo commento"></textarea>
+                    <textarea id="commento" name="commento" rows="10" cols="50" placeholder="Scrivi qui il tuo commento..."></textarea>
                 </fieldset>
             
                 <fieldset>
-                    <button type="submit" name="submit" class="bottone1">Invia</button>
+                    <button type="submit" name="submit" class="bottoneform">Invia</button>
+                    <p class="spazio">oppure</p>
+                    <a href="registrati.html" target="_blank" id="bottoneregistrati">Registrati</a>
                 </fieldset>
             </form>
             </div>
+
+            
         
 
 		
