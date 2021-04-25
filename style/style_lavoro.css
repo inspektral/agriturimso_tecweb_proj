@@ -11,6 +11,7 @@ html {
 
 body {
 	max-width: 1080px;
+	min-height: 400px;
 	background-color: #FFF;
 	margin: auto; /*calcola in automatico i marigni di destra e sinistra*/
 	font-family: "Segoe UI", Arial, sans-serif;
@@ -257,6 +258,17 @@ SEZIONE CONTENUTO
 	width: 45%;
 	height: 40%;
 	padding-bottom: 1em;
+}
+
+.prenota_Button{
+	text-align: center;
+}
+
+.linkButton{
+	text-align: center;
+	border: #923a43;
+	border-style: solid;
+	border-radius: 5px;
 }
 
 #img1 {
