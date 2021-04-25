@@ -39,7 +39,11 @@
 /*  RIGHT SIDEBAR */
 
 #rightSideBar {
-    width: 25%;
+    width: 100%;
+    margin: auto auto 2% auto;
+	float: none;
+    text-align: center;
+	border-top: 1px solid #DDD;
 }
 
 /*    CONTENUTO    */
@@ -48,6 +52,7 @@
 	margin-left: 0em;
 	padding: 0.5em;
 	width: 95%;	
+	float: none;
 }
 
 .bedroom>img {
@@ -70,7 +75,8 @@
 }
 
 #contentHomePage {
-	width:65%;
+	width:90%;
+	border: 0;
 }
 
 #charactersStory {
