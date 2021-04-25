@@ -275,65 +275,11 @@ SEZIONE CONTENUTO
 	content: url("../images/7.jpg")
 }
 
-#charactersStory {
-	width: 90%;
-	margin: auto;
-}
-
-#charactersStory dt {
-	font-weight: bold;
-	background-color: #BD091B;
-	color: #FFF;
-	padding: 0.5em;
-	margin-top: 1em;
-}
-
 .imgCommenti {
 	width: 70%;
 	padding: 1.0em;
 }
 
-#charactersStory dd {
-	border: 1px solid #000;
-	border-top: none;
-	padding: 0.5em;
-}
-
-#charactersStory dd img {
-	float: left;
-	width: 20%;
-	margin-left: 0.5em;
-	margin-right: 0.5em;
-	margin-top: 0.5em;
-}
-
-#charactersStory dd p {
-	margin-left: 20%;
-}
-
-#charactersStory dd p.aiutoTornaSu {
-	text-align: right;
-}
-
-table {
-	width: 90%;
-	margin: auto;
-	text-align: center;
-	border-collapse: collapse;
-}
-
-table, tr, td, th {
-	border: 1px solid #000;
-}
-
-table thead, table tfoot {
-	background-color: #BD091B;
-	color: #FFF;
-}
-
-table td, table th {
-	padding: 0.5em;
-}
 
 #generalInfo{
 	padding-top: 1em;
