@@ -140,6 +140,7 @@ SEZIONE RIGHTSIDEBAR
 */
 #rightSideBar {
 	font-size: 0.7em;
+	padding-left: 3%;
 }
 
 #adminSection {
@@ -156,6 +157,10 @@ SEZIONE RIGHTSIDEBAR
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
+}
+
+#ultimeNews {
+	padding-left: 2%;
 }
 
 /*
@@ -276,11 +281,11 @@ SEZIONE CONTENUTO
 	padding-bottom: 1em;
 }
 
-.prenota_Button{
+.prenota_Button {
 	text-align: center;
 }
 
-.linkButton{
+.linkButton {
 	text-align: center;
 	border: #923a43;
 	border-style: solid;
