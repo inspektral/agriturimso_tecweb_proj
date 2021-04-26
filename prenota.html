@@ -36,41 +36,53 @@
 		<p>Ti trovi: <span>Camera# > Prenota</span></p>
 	</div>
 
-	<div id="menu">
-		<ul>
-			<li><a xml:lang="en" href="index.html">Home</a></li>
-			<li><a href="camere.html">Camere</a></li>
-            <li><a href="territorio.html">Territorio</a></li>
-			<li><a href="diconodinoi.html">Dicono di noi</a></li>
-		</ul>
-	</div>
-
-	<div id="rightSideBar">
-		<div id="ultimeNews">
-			<h2>Ultime News</h2>
+	<div class="row">
+		<div id="menu" class="column left">
 			<ul>
-				<li><strong>10/06/2019</strong> - Festa della Musica e delle carote</li>
-				<li><strong>05/04/2021</strong> - Oggi festa dell' asparago! <br/>Buona Pasquetta a tutti!</li>
-				<li><strong>24/03/2019</strong> - Raccolta degli Asparagi</li>
+				<li><a xml:lang="en" href="index.html">Home</a></li>
+				<li><a href="camere.html">Camere</a></li>
+				<li><a href="territorio.html">Territorio</a></li>
+				<li><a href="diconodinoi.html">Dicono di noi</a></li>
 			</ul>
 		</div>
-		<div id="socialCorner">
-			<!--<h1 xml:lang="en">Social Corner</h1>-->
+
+		<div class="contenutoGenerale column">
+			<h2>Prenotazione Camera#</h2>
+			<form class="prenot_form" action="prenotazione_effettuata.html">
+				<p>					
+					<label for="pre_da">Da: (gg/mm/aaaa)</label>
+				</p>
+				<p>
+					<input id="pre_da" type="text">
+				</p>
+				
+				<p>
+					<label for="pre_a">A: (gg/mm/aaaa)</label>
+				</p>
+				<p>
+					<input id="pre_a" type="text">
+				</p>
+			</br>				
+				<p>
+					<input class="bottoneform" type="submit" value="Prenota">
+				</p>
+			</form>
 		</div>
-	</div>
 	
-    <div>
-        <h2>Prenotazione Camera#</h2>
-        <form class="prenot_form" action="prenotazione_effettuata.html">
-            <label for="pre_da">Da:</label>
-            <input id="pre_da" type="date"><br>
-    
-            <label for="A:">A:</label>
-            <input id="pre_a" type="date"><br>
-    
-            <input type="submit" value="Prenota">
-        </form>
-    </div>
+		<div id="rightSideBar" class="column right">
+			<div id="ultimeNews">
+				<h2>Ultime News</h2>
+				<ul>
+					<li><strong>10/06/2019</strong> - Festa della Musica e delle carote</li>
+					<li><strong>05/04/2021</strong> - Oggi festa dell' asparago! <br/>Buona Pasquetta a tutti!</li>
+					<li><strong>24/03/2019</strong> - Raccolta degli Asparagi</li>
+				</ul>
+			</div>
+			<div id="socialCorner">
+				<!--<h1 xml:lang="en">Social Corner</h1>-->
+			</div>
+		</div>		
+	</div>
 
 	<div id="footer">
 		<img src="images/valid-xhtml10.png" alt="logo validazione w3c xhtml" id="imgValidCode"/>
