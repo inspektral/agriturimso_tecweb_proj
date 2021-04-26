@@ -63,7 +63,7 @@ SEZIONE HEADER
 SEZIONE BREADCUM
 ==============
 */
-#breadcumb {
+#breadcrumb {
 	background-color: rgb(146, 58, 67);
 	color: white;
 	padding: 1em;
@@ -73,7 +73,7 @@ SEZIONE BREADCUM
 	min-height: 2em;
 }
 
-#breadcumbText {
+#breadcrumbText {
 	float: left;
 	width: auto;
 	margin: auto;
