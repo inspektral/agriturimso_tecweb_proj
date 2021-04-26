@@ -33,84 +33,92 @@
 	</div>
 
 	<div id="breadcrumb">
-		<p>Ti trovi: <span>Camere</span></p>
+		<p id="breadcrumbText">
+			Ti trovi: <span xml:lang="en">Home</span>
+		</p>
+		<a href="registrati.html" class="reg">Registrati</a> <a
+			href="accedi.html" class="reg">Accedi</a>
 	</div>
+	
 
-	<div id="menu">
-		<ul>
-			<li><a xml:lang="en" href="index.html">Home</a></li>
-			<li><a id="currentLink">Camere</a></li>
-			<li><a href="territorio.html">Territorio</a></li>
-			<li><a href="diconodinoi.html">Dicono di noi</a></li>
-		</ul>
-	</div>
-
-	<div id="rightSideBar">
-		<div id="ultimeNews">
-			<h2>Ultime News</h2>
+	<div class="row">
+		<div id="menu" class="column left">
 			<ul>
-				<li><strong>10/06/2019</strong> - Festa della Musica e delle carote</li>
-				<li><strong>05/04/2021</strong> - Oggi festa dell' asparago! <br/>Buona Pasquetta a tutti!</li>
-				<li><strong>24/03/2019</strong> - Raccolta degli Asparagi</li>
+				<li><a xml:lang="en" href="index.html">Home</a></li>
+				<li><a id="currentLink">Camere</a></li>
+				<li><a href="territorio.html">Territorio</a></li>
+				<li><a href="diconodinoi.html">Dicono di noi</a></li>
 			</ul>
 		</div>
-		<!-- <div id="socialCorner"> -->
-			<!--<h1 xml:lang="en">Social Corner</h1>-->
-		<!-- </div> -->
-	</div>
-
-	<div id="contentCamere" class="contenutoGenerale">
-		<div class="bedroom">
-			<h2>Camera Matrimoniale</h2>
-			<h3>
-				<span>2 Persone</span>
-				<span><abbr title="euro">€</abbr> <span class="price">62,30</span> a notte</span>
-			</h3>
-			<img src="./images/matrimoniale.jpg" longdesc="./rooms-longdescs/matrimoniale.txt" />
-			<ul>
-				<li>Buona colazione inclusa</li>
-				<li>Cancellazione <strong class="free">GRATUITA</strong></li>
-				<li><strong>NESSUN PAGAMENTO ANTICIPATO</strong><div>Paga in struttura</div></li>
-			</ul>
-			<div class="services">
-				<dl>
-					<dt>Bagno privato</dt>
-					<dt>Wi-Fi gratis!</dt>
-					<dt>Superficie camera 12 <abbr title="metri quadrati">mq.</abbr></dt>
-					<dt>Parcheggio privato disponibile gratuitamente in loco senza prenotazione.</dt>
-					<dd>Gratis!</dd>
-				</dl>
-				<div>
-					<h4>Servizi in camera:</h4>
-					<ul>
-						<li>Balcone</li>
-						<li>Vista giardino</li>
-						<li>TV a schermo piatto</li>
-						<li>Aria condizionata</li>
-						<li>riscaldamento</li>
-						<li><span xml:lang="fr">Parquet</span> o pavimento in legno</li>
-						<li>Armadio o guardaroba</li>
-						<li>Doccia</li>
-						<li>Prodotti da bagno in omaggio</li>
-						<li><abbr xml:lang="en" title="water closet">WC</abbr></li>
-						<li>Bagno privato</li>
-						<li>Vasca</li>
-						<li xml:lang="fr">Bidet</li>
-						<li>Carta igienica</li>
-						<li>Asciuga mani</li>
-					</ul>
+	
+		<div id="contentHomePage" class="contenutoGenerale column">
+			<div class="bedroom">
+				<h2>Camera Matrimoniale</h2>
+				<h3>
+					<span>2 Persone</span>
+					<span><abbr title="euro">€</abbr> <span class="price">62,30</span> a notte</span>
+				</h3>
+				<img src="./images/matrimoniale.jpg" longdesc="./rooms-longdescs/matrimoniale.txt" />
+				<ul>
+					<li>Buona colazione inclusa</li>
+					<li>Cancellazione <strong class="free">GRATUITA</strong></li>
+					<li><strong>NESSUN PAGAMENTO ANTICIPATO</strong><div>Paga in struttura</div></li>
+				</ul>
+				<div class="services">
+					<dl>
+						<dt>Bagno privato</dt>
+						<dt>Wi-Fi gratis!</dt>
+						<dt>Superficie camera 12 <abbr title="metri quadrati">mq.</abbr></dt>
+						<dt>Parcheggio privato disponibile gratuitamente in loco senza prenotazione.</dt>
+						<dd>Gratis!</dd>
+					</dl>
+					<div>
+						<h4>Servizi in camera:</h4>
+						<ul>
+							<li>Balcone</li>
+							<li>Vista giardino</li>
+							<li>TV a schermo piatto</li>
+							<li>Aria condizionata</li>
+							<li>riscaldamento</li>
+							<li><span xml:lang="fr">Parquet</span> o pavimento in legno</li>
+							<li>Armadio o guardaroba</li>
+							<li>Doccia</li>
+							<li>Prodotti da bagno in omaggio</li>
+							<li><abbr xml:lang="en" title="water closet">WC</abbr></li>
+							<li>Bagno privato</li>
+							<li>Vasca</li>
+							<li xml:lang="fr">Bidet</li>
+							<li>Carta igienica</li>
+							<li>Asciuga mani</li>
+						</ul>
+					</div>
+				</div>
+				<p class="prenota_Button">
+					<a class="bottoneform"href="prenota.html">Prenota</a>
+				</p>			
+				<div class="gallery">
+					<div id="img1" class="galleryElement"></div>
+					<div id="img2" class="galleryElement"></div>
+					<div id="img3" class="galleryElement"></div>
+					<div id="img4" class="galleryElement"></div>
 				</div>
 			</div>
-			<p class="prenota_Button">
-				<a class="bottoneform"href="prenota.html">Prenota</a>
-			</p>			
-			<div class="gallery">
-				<div id="img1" class="galleryElement"></div>
-				<div id="img2" class="galleryElement"></div>
-				<div id="img3" class="galleryElement"></div>
-				<div id="img4" class="galleryElement"></div>
-			</div>
 		</div>
+	
+		<div id="rightSideBar" class="column right">
+			<div id="ultimeNews">
+				<h2>Ultime News</h2>
+				<ul>
+					<li><strong>10/06/2019</strong> - Festa della Musica e delle carote</li>
+					<li><strong>05/04/2021</strong> - Oggi festa dell' asparago! <br/>Buona Pasquetta a tutti!</li>
+					<li><strong>24/03/2019</strong> - Raccolta degli Asparagi</li>
+				</ul>
+			</div>
+			<!-- <div id="socialCorner"> -->
+				<!--<h1 xml:lang="en">Social Corner</h1>-->
+			<!-- </div> -->
+		</div>
+	
 	</div>
 
 	<div id="footer">
