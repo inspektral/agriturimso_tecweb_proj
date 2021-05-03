@@ -292,22 +292,6 @@ SEZIONE CONTENUTO
 	border-radius: 5px;
 }
 
-#img1 {
-	content: url("../images/3.jpg")
-}
-
-#img2 {
-	content: url("../images/4.jpg")
-}
-
-#img3 {
-	content: url("../images/6.jpg")
-}
-
-#img4 {
-	content: url("../images/7.jpg")
-}
-
 .imgCommenti {
 	width: 70%;
 	padding: 1.0em;
@@ -356,8 +340,21 @@ textarea, fieldset {
 	resize: vertical;
 }
 
-.bottoneform, .bottoneform:hover, #bottoneregistrati {
+.bottoneform, .bottoneform:visited, #bottoneregistrati {
 	background-color: #923a43; /* Green */
+	border: none;
+	color: white;
+	margin-top: 1.5em;
+	padding: 2% 4%;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	border-radius: 4px;
+}
+
+.bottoneform:hover {
+	background-color: #923a43d5; /* Green */
 	border: none;
 	color: white;
 	padding: 2% 4%;
