@@ -19,7 +19,7 @@ body {
 }
 
 a:visited {
-	color: rgb(146, 58, 67);
+	color: #fff;
 }
 
 .aiutiNascosti {
@@ -67,11 +67,15 @@ SEZIONE BREADRCUM
 #breadcrumb {
 	background-color: rgb(146, 58, 67);
 	color: white;
-	padding: 1em;
+	padding-top: 0;
+	padding-right: 1em;
+	/* padding-bottom: 1em; */
+	padding-left: 1em;
 	font-weight: bold;
 	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
-	min-height: 2em;
+	/* border-bottom: 1px solid #ddd; */
+	min-height: 3em;
+	position: relative;
 }
 
 #breadcrumbText {
@@ -88,6 +92,118 @@ SEZIONE BREADRCUM
 	padding-top: 0.5%;
 }
 
+#user {
+	float: right;
+	min-width: 30%;
+	bottom: 0;
+	position: absolute;
+	right: 0;
+	padding-right: 0.8em;
+}
+
+#user a {
+	color: #fff;
+	text-decoration: none;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	min-height: 2.25em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+#user span {
+	background-color: #fff;
+	color: rgb(146, 58, 67);
+	text-decoration: none;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	min-height: 2.25em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+#user a:hover {
+	background-color: #fff;
+	color: rgb(146, 58, 67);
+	text-decoration: underline;
+}
+
+/*
+==============
+SEZIONE MENU
+==============
+*/
+#menu {
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+	font-size: 1.1em;
+	float: left;
+	padding-right: 0.8em;
+	font-size: 1.1em;
+	float: left;
+	position: absolute;
+	bottom: 0;
+}
+
+#menu ul {
+	list-style-type: none;
+	overflow: hidden;
+	height: auto;
+	margin-bottom: 0;
+}
+
+#menu ul li {
+	padding-top: 0;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+#menu li {
+	float: left;
+	min-height: 2.25em;
+    margin-right: 0.5em;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+}
+
+#menu li:hover a {
+	background-color: #fff;
+	color: rgb(146, 58, 67);
+	text-decoration: underline;
+}
+
+#menu li:hover {
+	background-color: #fff;
+	color: rgb(146, 58, 67);
+}
+
+#menu a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#menu a:hover {
+	color: rgb(146, 58, 67);
+}
+
+#menu #currentLink{
+	background-color: #fff;
+	color: rgb(146, 58, 67);
+}
+
 /*
 ==============
 DIV IN 3 COLONNE
@@ -100,7 +216,7 @@ DIV IN 3 COLONNE
 .column {
 	box-sizing: border-box;
 	float: left;
-	width: 50%;
+	width: 75%;
 	padding: 10px;
 }
 
@@ -112,25 +228,6 @@ DIV IN 3 COLONNE
 
 .left, .right {
 	width: 25%;
-}
-
-/*
-==============
-SEZIONE MENU
-==============
-*/
-#menu {
-	padding: 0.8em;
-	font-size: 1.1em;
-}
-
-#menu ul {
-	list-style-type: none;
-}
-
-#menu ul li {
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
 }
 
 /*
@@ -149,14 +246,30 @@ SEZIONE RIGHTSIDEBAR
 }
 
 #buttonNews {
-	background-color: #923a43; /* Green */
+	background-color: #923a43; /* Rosso tipico */
 	border: none;
 	color: white;
-	padding: 2% 4%;
+	padding: 3% 5%;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
+	font-weight: bold;
+	border-style: solid;
+	border-color: #fff;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+#buttonNews:hover {
+	color: #923a43;
+	background-color: #fff;
+	border-style: solid;
+	border-color: #923a43;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
 }
 
 #ultimeNews {
@@ -204,7 +317,7 @@ SEZIONE CONTENUTO
 }
 
 #contentTerritorio {
-	width: 50%;
+	width: 75%;
 	border-right: 1px solid #ddd;
 }
 

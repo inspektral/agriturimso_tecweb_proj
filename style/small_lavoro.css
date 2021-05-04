@@ -3,7 +3,7 @@
 }
 
 #header img {
-	display: none; 
+	display: none;
 }
 
 #header h1 {
@@ -11,18 +11,25 @@
 }
 
 #header h2 {
-	font-size: 1.2em;	
+	font-size: 1.2em;
+}
+
+/* breadcrumb */
+#breadcrumb {
+	border-bottom: none;
+	position: static;
+	min-height: 2em;
 }
 
 /*    MENU    */
-
 #menu {
 	float: none;
 	text-align: center;
 	width: 100%;
 	border-bottom: 1px solid #DDD;
-	background-color: #c75f6a;
 	color: #fff;
+	padding: 0;
+	position: static;
 }
 
 #menu ul {
@@ -30,28 +37,53 @@
 	margin: auto;
 }
 
-/* breadcrumb */
+#menu li {
+	float: none;
+	min-height: 2em;
+	border-radius: 0;
+	margin-top: 0.5em;
+	margin-right: 0;
+}
 
-#breadcrumb{
-	border-bottom: none;
+#menu ul li{	
+	padding: 0.3em;
+}
+
+#user {
+	float: none;
+	height: 2em;
+	margin-top: 1%;
+	text-align: right;
+	position: static;
+    padding-right: 0;
+    bottom: 0;
+}
+
+#user a, #user span{	
+	border-radius: 0;
+    bottom: 0;
+    padding:0 0.8em 0.3em 0.8em;
+}
+
+.reg {
+	float: none;
+	position: static;
 }
 
 /*  RIGHT SIDEBAR */
-
 #rightSideBar {
-    width: 100%;
-    margin: auto auto 2% auto;
+	width: 100%;
+	margin: auto auto 2% auto;
 	float: none;
-    text-align: center;
+	text-align: center;
 	border-top: 1px solid #DDD;
 }
 
 /*    CONTENUTO    */
-
 .contenutoGenerale {
 	margin-left: 0em;
 	padding: 0.5em;
-	width: 95%;	
+	width: 95%;
 	float: none;
 }
 
@@ -59,7 +91,7 @@
 	width: 100%;
 }
 
-.services dl { 
+.services dl {
 	padding-top: 1em;
 	max-width: 100%;
 }
@@ -75,7 +107,7 @@
 }
 
 #contentHomePage {
-	width:90%;
+	width: 90%;
 	border: 0;
 }
 
