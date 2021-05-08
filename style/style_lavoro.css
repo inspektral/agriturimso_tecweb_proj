@@ -302,8 +302,10 @@ SEZIONE CONTENUTO
 #contentErrorPage {
 	width: 75%;
 	border-right: none;
+	border-left: none;
 	text-align: center;
-	margin-right: auto;
+	margin: 0 auto;
+	padding-bottom: 2em;
 }
 
 #contentErrorPage h2 {
