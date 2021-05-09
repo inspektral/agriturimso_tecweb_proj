@@ -110,9 +110,8 @@
 	</div>
 
 	<div id="footer">
-		<img src="images/valid-xhtml10.png" alt="logo validazione w3c xhtml"
-			id="imgValidCode" /> <img src="images/vcss-blue.gif"
-			alt="validlogo validazione w3c css" id="imgValidCSS" />
+		<img src="images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
+		<img src="images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
 		<p>
 			Il sito è stato creato per un esercizio nell'ambito del corso di <a
 				href="https://elearning.unipd.it/math/login/index.php">Tecnologie
