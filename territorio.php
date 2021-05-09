@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
@@ -40,15 +43,21 @@
 	<div id="breadcrumb">
 		<div id="menu">
 			<ul>
-				<li><a xml:lang="en" href="index.html">Home</a></li>
-				<li><a href="camere.html">Camere</a></li>
+				<li><a xml:lang="en" href="index.php">Home</a></li>
+				<li><a href="camere.php">Camere</a></li>
 				<li id="currentLink">Territorio</li>
-				<li><a href="diconodinoi.html">Dicono di noi</a></li>
+				<li><a href="diconodinoi.php">Dicono di noi</a></li>
 			</ul>
 		</div>
 		<div id="user">
-			<a href="registrati.html" class="reg">Registrati</a> <a
-				href="accedi.html" class="reg">Accedi</a>
+		<?php
+            if (isset($_SESSION["user"])) {
+                echo "<p class='reg'>Benvenuto: " . $_SESSION["user"] . "</p>";
+            } else {
+                echo '<a href="registrati.html" class="reg">Registrati</a> <a
+            				href="accedi.html" class="reg">Accedi</a>';
+            }
+        ?>
 		</div>
 	</div>
 
