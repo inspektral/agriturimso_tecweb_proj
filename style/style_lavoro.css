@@ -61,7 +61,7 @@ SEZIONE HEADER
 
 /*
 ==============
-SEZIONE BREADRCUM
+SEZIONE MENU
 ==============
 */
 #breadcrumb {
@@ -84,11 +84,80 @@ SEZIONE BREADRCUM
 	padding-top: 0.5%;
 }
 
+#menu {
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+	font-size: 1.1em;
+	float: left;
+	padding-right: 0.8em;
+	font-size: 1.1em;
+	float: left;
+	position: absolute;
+	bottom: 0;
+}
+
+#menu ul {
+	list-style-type: none;
+	overflow: hidden;
+	height: auto;
+	margin-bottom: 0;
+}
+
+#menu ul li {
+	padding-top: 0;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+#menu li {
+	float: left;
+	min-height: 2.25em;
+	margin-right: 0.5em;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+}
+
+#menu li:hover a {
+	background-color: #fff;
+	color: rgb(146, 58, 67);
+	text-decoration: underline;
+}
+
+#menu li:hover {
+	background-color: #fff;
+	color: rgb(146, 58, 67);
+}
+
+#menu a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#menu a:hover {
+	color: rgb(146, 58, 67);
+}
+
+#menu #currentLink {
+	background-color: #fff;
+	color: rgb(146, 58, 67);
+}
+
+/*
+==============
+SEZIONE USER
+==============
+*/
+
 .reg, .reg:visited {
 	float: right;
 	color: #fff;
 	background-color: rgb(146, 58, 67);
-	margin: auto 1% auto 1%;;
+	margin: auto 1% auto 1%;
 	padding-top: 0.5%;
 }
 
@@ -101,7 +170,7 @@ SEZIONE BREADRCUM
 	padding-right: 0.8em;
 }
 
-#user>.reg {
+.reg {
 	color: #fff;
 	text-decoration: none;
 	-webkit-border-top-left-radius: 10px;
@@ -136,77 +205,55 @@ SEZIONE BREADRCUM
 	text-decoration: underline;
 }
 
-#user #currentLink{
+#user #currentLink {
 	background-color: #fff;
 	color: rgb(146, 58, 67);
 }
 
-/*
-==============
-SEZIONE MENU
-==============
-*/
-#menu {
-	padding-left: 0.8em;
-	padding-right: 0.8em;
-	font-size: 1.1em;
-	float: left;
-	padding-right: 0.8em;
-	font-size: 1.1em;
-	float: left;
-	position: absolute;
-	bottom: 0;
-}
-
-#menu ul {
-	list-style-type: none;
-	overflow: hidden;
-	height: auto;
-	margin-bottom: 0;
-}
-
-#menu ul li {
+.logout, .logout:visited {
+	color: #fff;
+	background-color: rgb(146, 58, 67);
 	padding-top: 0;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
+	bottom: 0;
+	margin: auto 1% auto 1%;
+	text-decoration: none;
+	min-height: 2.25em;
+	float: right;
+	min-width: auto;
+	right: 0;
+	margin-right: 0.5em;
 }
 
-#menu li {
-	float: left;
-	min-height: 2.25em;
-    margin-right: 0.5em;
+.logout:hover {
 	-webkit-border-top-left-radius: 10px;
 	-webkit-border-top-right-radius: 10px;
 	-moz-border-radius-topleft: 10px;
 	-moz-border-radius-topright: 10px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
-	-webkit-border-top-left-radius: 10px;
-}
-
-#menu li:hover a {
 	background-color: #fff;
 	color: rgb(146, 58, 67);
 	text-decoration: underline;
 }
 
-#menu li:hover {
-	background-color: #fff;
-	color: rgb(146, 58, 67);
-}
 
-#menu a {
+.userName{
 	color: #fff;
 	text-decoration: none;
-}
-
-#menu a:hover {
-	color: rgb(146, 58, 67);
-}
-
-#menu #currentLink{
-	background-color: #fff;
-	color: rgb(146, 58, 67);
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	min-height: 2.25em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	right: 0;
+	float: right;
+	margin-right: auto;
 }
 
 /*
