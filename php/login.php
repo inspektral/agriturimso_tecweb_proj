@@ -4,24 +4,32 @@ use DBAccess;
 
 session_start();
 
-if (isset($_POST["email"]) && isset($_POST["password"])){
+$html = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "accedi.html");
+
+if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
-    
+
     $dbAccess = new DbAccess();
     $success = $dbAccess->openDBConnection();
 
     if (!$success) {
         die("Errore nell'apertura del DB");
     }
-    
+
     $user = $dbAccess->loginUser($email, $password);
     $dbAccess->closeConnection();
-    if($user){        
+    echo $user;
+    $content = "";
+    if ($user) {        
         $_SESSION["user"] = $user;
-        header("Location: http://localhost/index.php");
+        $_SESSION["isAdmin"] = $user["email"] === "admin";
+        header("Location: index.php")
     }else{
-        echo "<br/>utente non esiste";
+        $content = "<strong class=\"error\">Credenziali errate</strong>";
     }
+
+    $html = str_replace("<LoginErrorPlaceholder />", $content);
+    echo $html;
 }
 ?>

@@ -8,13 +8,13 @@ class DBAccess {
     private $connection;
 
     public function openDBConnection() {
-        $connection = mysqli_connect(HOST_DB, USERNAME, PASSWORD, DB_NAME);
+        $this->connection = mysqli_connect(HOST_DB, USERNAME, PASSWORD, DB_NAME);
         
         return mysqli_connection_errno($connection) ? false : true;
     }
 
     public function closeDBConnection() {
-
+        mysqli_close($this->connection);
     }
 
     public function loginUser($username, $password) {

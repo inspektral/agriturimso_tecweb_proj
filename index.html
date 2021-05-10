@@ -50,16 +50,7 @@
 				<li><a href="diconodinoi.php">Dicono di noi</a></li>
 			</ul>
 		</div>
-		<div id="user">
-		<?php
-            if (isset($_SESSION["user"])) {
-                echo "<p class='reg'>Benvenuto: " . $_SESSION["user"] . "</p>";
-            } else {
-                echo '<a href="registrati.html" class="reg">Registrati</a> <a
-            				href="accedi.html" class="reg">Accedi</a>';
-            }
-        ?>
-		</div>
+		<UserPlaceholder />
 	</div>
 
 	<div class="row">
