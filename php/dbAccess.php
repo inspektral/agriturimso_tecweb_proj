@@ -14,7 +14,7 @@ class DBAccess {
     }
 
     public function closeDBConnection() {
-
+        mysqli_close($this->connection);
     }
 
    /*  public function loginUser($username, $password) {
