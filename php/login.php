@@ -1,35 +1,33 @@
 <?php 
 require_once __DIR__ . DIRECTORY_SEPARATOR . "dbAccess.php";
-use DBAccess;
 
 session_start();
 
-$html = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "accedi.html");
+$html = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "pages" . DIRECTORY_SEPARATOR . "accedi.html");
 
-if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"])) {
-    $email = $_POST["email"];
+if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["submit"])) {
+    $username = $_POST["username"];
     $password = $_POST["password"];
 
     $dbAccess = new DbAccess();
-    $success = $dbAccess->openDBConnection();
-
-    if (!$success) {
-        die("Errore nell'apertura del DB");
+    $dbAccess->openDBConnection();
+    if ($error = $dbAccess->getLastError()) {
+        die($error);
     }
 
-    $user = $dbAccess->loginUser($email, $password);
-    $dbAccess->closeConnection();
-    echo $user;
+    $user = $dbAccess->loginUser($username, $password);
+    $dbAccess->closeDBConnection(); 
+
     $content = "";
     if ($user) {        
-        $_SESSION["user"] = $user;
-        $_SESSION["isAdmin"] = $user["email"] === "admin";
-        header("Location: index.php")
-    }else{
+        $_SESSION["user"] = $user["username"];
+        $_SESSION["isAdmin"] = $user["username"] === "admin";
+        header("Location: index.php");
+    } else {
         $content = "<strong class=\"error\">Credenziali errate</strong>";
     }
 
-    $html = str_replace("<LoginErrorPlaceholder />", $content);
+    $html = str_replace("<LoginErrorPlaceholder />", $content, $html);
     echo $html;
 }
 ?>
