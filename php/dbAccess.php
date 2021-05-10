@@ -9,7 +9,7 @@ class DBAccess {
 
     public function openDBConnection() {
         $this->connection = new mysqli(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DB_NAME);
-        
+
         return $this->connection->connect_errno;
     }
 
@@ -35,12 +35,21 @@ class DBAccess {
         $user = array();
         while ($row = $result->fetch_assoc()) {
             $user = array(
-                "username" => $row["email"],
+                "email" => $row["email"],
                 "nome" => $row["nome"],
                 "cognome" => $row["cognome"]
             );
         }
         return $user;
+    }
+
+    public function signupUser($name, $lastname, $email, $password) {
+        $query = "INSERT INTO `Users` VALUES ($email, $password, $name, $lastname)";
+        $this->connection->query($query); 
+        return array(
+            "isSuccessful" => $this->connection->affected_rows == 1,
+            "userEmail" => $email
+        );
     }
 
     public function getCharacters() {

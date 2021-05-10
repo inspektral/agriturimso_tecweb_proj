@@ -33,9 +33,9 @@
             <div id="menu">
                 <ul>
                     <li xml:lang="en"><a href="index.php">Home</a></li>
-                    <li><a href="camere.html">Camere</a></li>
-                    <li><a href="territorio.html">Territorio</a></li>
-                    <li><a href="diconodinoi.html">Dicono di noi</a></li>
+                    <li><a href="camere.php">Camere</a></li>
+                    <li><a href="territorio.php">Territorio</a></li>
+                    <li><a href="diconodinoi.php">Dicono di noi</a></li>
                 </ul>
             </div>
             <UserPlaceholder />
@@ -43,11 +43,11 @@
 
         <div id="contentHomePage" class="contenutoGenerale">
             <LoginErrorPlaceholder />
-            <form method="post" id="accedi" action="../php/login.php">
+            <form method="post" id="accedi" action="login.php">
                 <fieldset>
                     <legend xml:lang="en">Login</legend>
-                    <label for="username" xml:lang="en">Username: </label>
-                    <input type="text" id="username" name="username" />
+                    <label for="email" xml:lang="en">Email: </label>
+                    <input type="text" id="email" name="email" />
                     <label for="password" xml:lang="en">Password: </label>
                     <input type="password" id="password" name="password" />
                 </fieldset>

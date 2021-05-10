@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$html = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "pages" . DIRECTORY_SEPARATOR . "index.html");
+$html = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "pages" . DIRECTORY_SEPARATOR . "diconodinoi.html");
 
 $content = "<div id=\"user\">";
 if (isset($_SESSION['email'])) {        

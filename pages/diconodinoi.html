@@ -17,13 +17,13 @@
 <meta name="author" content="Matteo, Massimo, Tito, Lorenzo" />
 <meta name="language" content="italian it" />
 
-<link rel="stylesheet" type="text/css" href="style/style_lavoro.css"
+<link rel="stylesheet" type="text/css" href="../style/style_lavoro.css"
 	media="screen" />
 
-<link rel="stylesheet" type="text/css" href="style/small_lavoro.css"
+<link rel="stylesheet" type="text/css" href="../style/small_lavoro.css"
 	media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
-<link rel="stylesheet" type="text/css" href="style/printLavoro.css"
+<link rel="stylesheet" type="text/css" href="../style/printLavoro.css"
 	media="print" />
 
 <link rel="stylesheet"
@@ -36,7 +36,7 @@
 			<li><a href="#contentHomePage">Vai al contenuto</a></li>
 			<li><a href="#ultimeNews">Vai alle ultime news</a></li>
 		</ul>
-		<img id="logo" src="images/bbtlogo.png" alt="Logo dell'agriturismo" />
+		<img id="logo" src="../images/bbtlogo.png" alt="Logo dell'agriturismo" />
 		<h1>Agriturismo Morgan</h1>
 		<h2>Ai piedi del Montello e dei colli Asolani</h2>
 	</div>	
@@ -50,16 +50,7 @@
 				<li id="currentLink">Dicono di noi</li>
 			</ul>
 		</div>
-		<div id="user">
-		<?php
-            if (isset($_SESSION["user"])) {
-                echo "<p class='reg'>Benvenuto: " . $_SESSION["user"] . "</p>";
-            } else {
-                echo '<a href="registrati.html" class="reg">Registrati</a> <a
-            				href="accedi.html" class="reg">Accedi</a>';
-            }
-        ?>
-		</div>
+		<UserPlaceholder />
 	</div>
 
 	<div class="row">
@@ -69,7 +60,7 @@
 				recensioni dei nostri clienti</h2>
 
 			<div id="imgCommenti">
-				<img src="images/tavola.jpg" class="imgCommenti"
+				<img src="../images/tavola.jpg" class="imgCommenti"
 					alt="tavola apparecchiata di fronte al camino all'interno dell'agriturismo" />
 			</div>
 
@@ -173,7 +164,7 @@
 					<fieldset>
 						<button type="submit" name="submit" class="bottoneform">Invia</button>
 						<p class="spazio">oppure</p>
-						<a href="registrati.html" target="_blank" id="bottoneregistrati">Registrati</a>
+						<a href="signup.php" id="bottoneregistrati">Registrati</a>
 					</fieldset>
 				</form>
 			</div>
@@ -197,8 +188,8 @@
 	</div>
 
 	<div id="footer">
-		<img src="images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
-		<img src="images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
+		<img src="../images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
+		<img src="../images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
 		<p>
 			Il sito è stato creato per un esercizio nell'ambito del corso di <a
 				href="https://elearning.unipd.it/math/login/index.php">Tecnologie

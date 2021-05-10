@@ -18,13 +18,13 @@
 <meta name="author" content="Matteo, Massimo, Tito, Lorenzo" />
 <meta name="language" content="italian it" />
 
-<link rel="stylesheet" type="text/css" href="style/style_lavoro.css"
+<link rel="stylesheet" type="text/css" href="../style/style_lavoro.css"
 	media="screen" />
 
-<link rel="stylesheet" type="text/css" href="style/small_lavoro.css"
+<link rel="stylesheet" type="text/css" href="../style/small_lavoro.css"
 	media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
-<link rel="stylesheet" type="text/css" href="style/printLavoro.css"
+<link rel="stylesheet" type="text/css" href="../style/printLavoro.css"
 	media="print" />
 
 </head>
@@ -35,7 +35,7 @@
 			<li><a href="#contentCamere">Vai al contenuto</a></li>
 			<li><a href="#ultimeNews">Vai alle ultime news</a></li>
 		</ul>
-		<img id="logo" src="images/bbtlogo.png"
+		<img id="logo" src="../images/bbtlogo.png"
 			alt="Logo dell'agriturismo costituito da una M e una A stilizzate" />
 		<h1>Agriturismo Morgan</h1>
 		<h2>Ai piedi del Montello e dei colli Asolani</h2>
@@ -50,16 +50,7 @@
 				<li><a href="diconodinoi.php">Dicono di noi</a></li>
 			</ul>
 		</div>
-		<div id="user">
-		<?php
-            if (isset($_SESSION["user"])) {
-                echo "<p class='reg'>Benvenuto: " . $_SESSION["user"] . "</p>";
-            } else {
-                echo '<a href="registrati.html" class="reg">Registrati</a> <a
-            				href="accedi.html" class="reg">Accedi</a>';
-            }
-        ?>
-		</div>
+		<UserPlaceholder />
 	</div>
 
 	<div class="row">
@@ -72,7 +63,7 @@
 						<span>2 Persone</span> <span><abbr title="euro">€</abbr> <span
 							class="price">62,30</span> a notte</span>
 					</h3>
-					<img src="./images/matrimoniale.jpg" longdesc="./rooms-longdescs/matrimoniale.txt" />
+					<img src="../images/matrimoniale.jpg" longdesc="../rooms-longdescs/matrimoniale.txt" />
 					<ul>
 						<li>Buona colazione inclusa</li>
 						<li>Cancellazione <strong class="free">GRATUITA</strong></li>z
@@ -115,10 +106,10 @@
 						<a class="bottoneform" href="prenota.html">Prenota</a>
 					</p>
 					<div class="gallery">
-						<img src="./images/3.jpg" alt="" class="galleryElement" /> <img
-							src="./images/4.jpg" alt="" class="galleryElement" /> <img
-							src="./images/6.jpg" alt="" class="galleryElement" /> <img
-							src="./images/7.jpg" alt="" class="galleryElement" />
+						<img src="../images/3.jpg" alt="" class="galleryElement" /> <img
+							src="../images/4.jpg" alt="" class="galleryElement" /> <img
+							src="../images/6.jpg" alt="" class="galleryElement" /> <img
+							src="../images/7.jpg" alt="" class="galleryElement" />
 					</div>
 				</div>
 
@@ -128,8 +119,8 @@
 						<span>3 Persone</span> <span><abbr title="euro">€</abbr> <span
 							class="price">79,50</span> a notte</span>
 					</h3>
-					<img src="./images/1-1.jpg" alt=""
-						longdesc="./rooms-longdescs/tripla.txt" />
+					<img src="../images/1-1.jpg" alt=""
+						longdesc="../rooms-longdescs/tripla.txt" />
 					<ul>
 						<li>Buona colazione inclusa</li>
 						<li>Cancellazione <strong class="free">GRATUITA</strong></li>
@@ -147,9 +138,9 @@
 						<a class="bottoneform" href="prenota.html">Prenota</a>
 					</p>
 					<div class="gallery">
-						<img src="./images/2-1.jpg" alt="" class="galleryElement" /> <img
-							src="./images/3-1.jpg" alt="" class="galleryElement" /> <img
-							src="./images/4-1.jpg" alt="" class="galleryElement" />
+						<img src="../images/2-1.jpg" alt="" class="galleryElement" /> <img
+							src="../images/3-1.jpg" alt="" class="galleryElement" /> <img
+							src="../images/4-1.jpg" alt="" class="galleryElement" />
 					</div>
 				</div>
 
@@ -159,8 +150,8 @@
 						<span>1 Persona</span> <span><abbr title="euro">€</abbr> <span
 							class="price">46</span> a notte</span>
 					</h3>
-					<img src="./images/2-2.jpg" alt=""
-						longdesc="./rooms-longdescs/singola.txt" />
+					<img src="../images/2-2.jpg" alt=""
+						longdesc="../rooms-longdescs/singola.txt" />
 					<ul>
 						<li>Buona colazione inclusa</li>
 						<li>Cancellazione <strong class="free">GRATUITA</strong></li>
@@ -223,8 +214,8 @@
 	</div>
 
 	<div id="footer">
-		<img src="images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
-		<img src="images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
+		<img src="../images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
+		<img src="../images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
 		<p>
 			Il sito è stato creato per un esercizio nell'ambito del corso di <a
 				href="https://elearning.unipd.it/math/login/index.php">Tecnologie
