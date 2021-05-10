@@ -1,13 +1,16 @@
 <?php 
-//require_once 'login.php';
 session_start();
+require_once 'php/userNameMenu.php';
 
 $htmlPage = file_get_contents("index.html");
 
-$strAccedi = '<a href="registrati.html" class="reg">Registrati</a> <a href="accedi.html" class="reg">Accedi</a>';
+$userAcc = new userNameMenu();
 
-if(isset($_SESSION["username"])) $strAccedi = "<a href='logout.php' class='logout'>Logout</a><p class='userName'>Benvenuto: " . $_SESSION["username"] . "</p>";
+$strAccedi = $userAcc->getAccedi();
+
+if(isset($_SESSION["user"])){
+    $strAccedi = $userAcc->loginSucc();
+}
 
 echo str_replace("<bottoniLogin/>", $strAccedi, $htmlPage);
-
 ?>

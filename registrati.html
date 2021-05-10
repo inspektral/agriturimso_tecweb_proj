@@ -4,13 +4,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Login</title>
+<title>Registrati - Agriturismo Morgan</title>
 
 <meta name="title" content="Login" />
 
 <meta name="language" content="italian it" />
 
-<link rel="stylesheet" type="text/css" href="style/style_lavoro.css"
+<link rel="stylesheet" type="text/css" href="style/style.css"
 	media="screen" />
 
 <link rel="stylesheet" type="text/css" href="style/small_lavoro.css"
@@ -32,7 +32,7 @@
 		</ul>
 		<img id="logo" src="images/bbtlogo.png"
 			alt="Logo dell'agriturismo a forma di casa stilizzata con una a come tetto e una m come muros" />
-		<h1>Agriturismo Morgan Morgan</h1>
+		<h1>Agriturismo Morgan</h1>
 		<h2>Ai piedi del Montello e dei colli Asolani</h2>
 	</div>
 
@@ -40,36 +40,43 @@
 		<div id="menu">
 			<ul>
 				<li xml:lang="en"><a href="index.php">Home</a></li>
-				<li><a href="camere.html">Camere</a></li>
-				<li><a href="territorio.html">Territorio</a></li>
-				<li><a href="diconodinoi.html">Dicono di noi</a></li>
+				<li><a href="camere.php">Camere</a></li>
+				<li><a href="territorio.php">Territorio</a></li>
+				<li><a href="diconodinoi.php">Dicono di noi</a></li>
 			</ul>
 		</div>
 		<div id="user">
-			<span id="currentLink" class="reg">Registrati</span> <a
-				href="accedi.html" class="reg">Accedi</a>
+			<ul>
+				<li><a href="accedi.php" class="reg">Accedi</a></li>
+				<li id="currentLink"><span>Registrati</span></li>
+			</ul>
 		</div>
 	</div>
 	
 	<div id="contentHomePage" class="contenutoGenerale">
-		<form method="post" id="registrati" action="registati.php">
+		<form method="post" id="registrati" action="registrati.php">
 			<fieldset>
-				<legend xml:lang="en">Registrazione</legend>
-				<label for="mail" xml:lang="en">E-Mail: </label> <br /> <input
-					type="text" id="mail" name="mail" /> <br /> <label for="username"
-					xml:lang="en">User Name: </label> <br /> <input type="text"
-					id="username" name="username" /> <br /> <label for="password"
-					xml:lang="en">Password: </label> <br /> <input type="password"
-					id="password" name="password" /> <br /> <input type="submit"
-					value="Registrati" id="submit" />
+				<legend>Dati personali</legend>
+				<label for="nome" xml:lang="en">Nome: </label>
+				<input type="text" id="nome" name="nome" required/>
+				<label for="cognome" xml:lang="en">Cognome: </label>
+				<input type="text" id="cognome" name="cognome" required/>
 			</fieldset>
+			<fieldset>
+				<legend>Credenziali</legend>
+				<label for="email" xml:lang="en">Email: </label>
+				<input type="text" id="email" name="email" required/>
+				<label for="password" xml:lang="en">Password: </label>
+				<input type="password" id="password" name="password" required/>
+			</fieldset>
+			<input type="submit" value="Registrati" id="submit" />
 		</form>
+		<mailpwdErr/>
 	</div>
 
 	<div id="footer">
-		<img src="images/valid-xhtml10.png" alt="logo validazione w3c xhtml"
-			id="imgValidCode" /> <img src="images/vcss-blue.gif"
-			alt="validlogo validazione w3c css" id="imgValidCSS" />
+		<img src="images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
+		<img src="images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
 		<p>
 			Il sito è stato creato per un esercizio nell'ambito del corso di <a
 				href="https://elearning.unipd.it/math/login/index.php">Tecnologie

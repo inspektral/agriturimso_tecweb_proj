@@ -96,23 +96,23 @@ SEZIONE MENU
 	bottom: 0;
 }
 
-#menu ul {
+#breadcrumb ul {
 	list-style-type: none;
 	overflow: hidden;
 	height: auto;
 	margin-bottom: 0;
+	text-align: center;
 }
 
-#menu ul li {
+#breadcrumb ul li {
 	padding-top: 0;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
 }
 
-#menu li {
+#breadcrumb li {
 	float: left;
 	min-height: 2.25em;
-	margin-right: 0.5em;
 	-webkit-border-top-left-radius: 10px;
 	-webkit-border-top-right-radius: 10px;
 	-moz-border-radius-topleft: 10px;
@@ -122,15 +122,19 @@ SEZIONE MENU
 	-webkit-border-top-left-radius: 10px;
 }
 
-#menu li:hover a {
+#breadcrumb li:hover a {
 	background-color: #fff;
 	color: rgb(146, 58, 67);
 	text-decoration: underline;
 }
 
-#menu li:hover {
+#breadcrumb li:hover {
 	background-color: #fff;
 	color: rgb(146, 58, 67);
+}
+
+#menu ul li{
+	margin-right: 0.5em;
 }
 
 #menu a {
@@ -161,15 +165,6 @@ SEZIONE USER
 	padding-top: 0.5%;
 }
 
-#user {
-	float: right;
-	min-width: 30%;
-	bottom: 0;
-	position: absolute;
-	right: 0;
-	padding-right: 0.8em;
-}
-
 .reg {
 	color: #fff;
 	text-decoration: none;
@@ -182,6 +177,24 @@ SEZIONE USER
 	min-height: 2.25em;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
+}
+
+#user {
+	float: right;
+	bottom: 0;
+	position: absolute;
+	right: 0;
+	margin-right: 0.8em;
+}
+
+#user ul li{	
+	margin-right: 0.25em;
+	margin-left: 0.25em;
+}
+
+#user ul li .userName:hover{
+	color: #fff;
+	background-color: rgb(146, 58, 67);
 }
 
 #user span {
@@ -210,50 +223,16 @@ SEZIONE USER
 	color: rgb(146, 58, 67);
 }
 
-.logout, .logout:visited {
-	color: #fff;
-	background-color: rgb(146, 58, 67);
-	padding-top: 0;
-	padding-left: 0.5em;
-	padding-right: 0.5em;
-	bottom: 0;
-	margin: auto 1% auto 1%;
-	text-decoration: none;
-	min-height: 2.25em;
-	float: right;
-	min-width: auto;
-	right: 0;
-	margin-right: 0.5em;
-}
-
-.logout:hover {
-	-webkit-border-top-left-radius: 10px;
-	-webkit-border-top-right-radius: 10px;
-	-moz-border-radius-topleft: 10px;
-	-moz-border-radius-topright: 10px;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	background-color: #fff;
-	color: rgb(146, 58, 67);
-	text-decoration: underline;
-}
-
-
 .userName{
 	color: #fff;
-	text-decoration: none;
-	-webkit-border-top-left-radius: 10px;
-	-webkit-border-top-right-radius: 10px;
-	-moz-border-radius-topleft: 10px;
-	-moz-border-radius-topright: 10px;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
 	min-height: 2.25em;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
-	right: 0;
-	float: right;
-	margin-right: auto;
+}
+
+#user .userName:hover{
+	color: #fff;
+	background-color: rgb(146, 58, 67);
 }
 
 /*
@@ -521,7 +500,7 @@ textarea, fieldset {
 }
 
 .bottoneform:hover {
-	background-color: #923a43d5; /* Green */
+	background-color: #923a43;
 	border: none;
 	color: white;
 	padding: 2% 4%;

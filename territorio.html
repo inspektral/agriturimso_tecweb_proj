@@ -1,10 +1,13 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Prenotazione effettuata - Agriturismo Morgan</title>
+<title>Territorio - Agriturismo Morgan</title>
 
 <meta name="title" content="Agriturismo Morgan" />
 <meta name="description"
@@ -42,7 +45,7 @@
 			<ul>
 				<li><a xml:lang="en" href="index.php">Home</a></li>
 				<li><a href="camere.php">Camere</a></li>
-				<li><a href="territorio.php">Territorio</a></li>
+				<li id="currentLink">Territorio</li>
 				<li><a href="diconodinoi.php">Dicono di noi</a></li>
 			</ul>
 		</div>
@@ -53,8 +56,58 @@
 
 	<div class="row">
 
-		<div class="contenutoGenerale column">
-			<h2>PRENOTAZIONE EFFETTUATA</h2>
+		<div id="contentTerritorio" class="contenutoGenerale column">
+			<div class="titleImageTerritorio">
+				<h2>I campi di carciofi</h2>
+				<img src="images/carciofo.jpg" alt="pianta di carciofo"
+					class="imgTerritorio" />
+			</div>
+			<p>Il carciofo è un ortaggio fresco, gustoso e caratteristico del
+				periodo che va dalla fine dell'inverno all'inizio della primavera.
+				Si tratta di un vero e proprio protagonista della cucina povera
+				mediterranea. Si può gustare crudo oppure cucinato come contorno,
+				ripieno o per arricchire primi piatti, torte rustiche e secondi
+				piatti.</p>
+
+			<div class="titleImageTerritorio">
+				<h2>La pista ciclabile</h2>
+				<img src="images/ciclabile.jpg"
+					alt="pista ciclabile immersa nella natura" class="imgTerritorio" />
+			</div>
+			<p>220 chilometri, 110 km in provincia di Belluno, 90 km in
+				quella di Treviso, 20 km in quella di Venezia, tutto in territorio
+				Veneto, questa è la lunghezza della Ciclabile del Piave. Il
+				protagonista è il fiume Sacro alla Patria, il Piave, teatro di
+				scontri in guerra, oggi accompagnatore frizzante di una pista che
+				attraversa un territorio ricco di bellezze storiche, artistiche e
+				paesaggistiche partendo dalle Dolomiti per arrivare al mare.</p>
+
+			<div class="titleImageTerritorio">
+				<h2>I colli asolani</h2>
+				<img src="images/colli.gif" alt="colline boscose con paesini"
+					class="imgTerritorio" />
+			</div>
+			<p>I Colli Asolani sono perfetti però per esercitare anche altri
+				sport, come il ciclismo, il nordic walking e il trail, o anche
+				solamente per delle piccole passeggiate: potrai venire rapito da
+				scorci suggestivi e splendidi scenari, che non faranno altro che
+				riempirti di grandi emozioni, di pace e di bellezza. Nel periodo
+				autunnale, parti alla raccolta di funghi tra i boschi delle Colline
+				del Prosecco oppure segui le colline fortificate di Monfumo alla
+				ricerca dei castelli che le decoravano.</p>
+
+			<div class="titleImageTerritorio">
+				<h2>Il Montello</h2>
+				<img src="images/montello.jpg" alt="rovine dell'abbazia al tramonto"
+					class="imgTerritorio" />
+			</div>
+
+			<p>A ovest dell'agriturismo sorge il montello, un colle lambito
+				dal piave, ricoperto da una fitta selva, una volta vi sorgeva il
+				bosco di roveri utilizzato per le navi della Serenissima. Oggi vi
+				sono numerosi percorsi, se strade dette prese, pronti per
+				passeggiate serenissimissime. Con un po di fortuna e un po' di
+				voglia potrete anche arrivare alle imponenti rovine dell'abbazia.</p>
 		</div>
 
 		<div id="rightSideBar" class="column right">
@@ -72,8 +125,8 @@
 				<!--<h1 xml:lang="en">Social Corner</h1>-->
 			</div>
 		</div>
-	</div>
 
+	</div>
 
 
 	<div id="footer">

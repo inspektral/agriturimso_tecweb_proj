@@ -2,7 +2,7 @@
 session_start();
 require_once 'php/userNameMenu.php';
 
-$htmlPage = file_get_contents("diconodinoi.html");
+$htmlPage = file_get_contents("prenotazione_effettuata.html");
 
 $userAcc = new userNameMenu();
 

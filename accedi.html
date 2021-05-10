@@ -3,13 +3,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <title>Login</title>
+        <title>Login - Agriturismo Morgan</title>
 
         <meta name="title" content="Login" />
 
         <meta name="language" content="italian it" />
 
-        <link rel="stylesheet" type="text/css" href="style/style_lavoro.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="style/style.css" media="screen" />
 
         <link rel="stylesheet" type="text/css" href="style/small_lavoro.css" media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
@@ -32,30 +32,37 @@
         <div id="breadcrumb">
             <div id="menu">
                 <ul>
-                    <li xml:lang="en"><a href="index.php">Home</a></li>
-                    <li><a href="camere.html">Camere</a></li>
-                    <li><a href="territorio.html">Territorio</a></li>
-                    <li><a href="diconodinoi.html">Dicono di noi</a></li>
+                    <li><a href="index.php" xml:lang="en">Home</a></li>
+                    <li><a href="camere.php">Camere</a></li>
+                    <li><a href="territorio.php">Territorio</a></li>
+                    <li><a href="diconodinoi.php">Dicono di noi</a></li>
                 </ul>
             </div>
-            <div id="user"><a href="registrati.html" class="reg">Registrati</a> <span id="currentLink" class="reg">Accedi</span></div>
+            <div id="user">
+				<ul>
+					<li id="currentLink"><span>Accedi</span></li>
+					<li><a href="registrati.php" class="reg">Registrati</a></li>
+				</ul>
+			</div>
         </div>
 
         <div id="contentHomePage" class="contenutoGenerale">
-            <form method="post" id="accedi" action="login.php">
+            <form method="post" id="accedi" action="php/login.php">
                 <fieldset>
                     <legend xml:lang="en">Login</legend>
-                    <label for="username" xml:lang="en">User Name: </label> <br />
-                    <input type="text" id="username" name="username" /> <br />
-                    <label for="password" xml:lang="en">Password: </label> <br />
-                    <input type="password" id="password" name="password" /> <br />
-                    <input type="submit" value="Accedi" id="submit" />
+                    <label for="email" xml:lang="en">Email: </label>
+                    <input type="text" id="email" name="email" required/>
+                    <label for="password" xml:lang="en">Password: </label>
+                    <input type="password" id="password" name="password" required/>
                 </fieldset>
+                <input type="submit" value="Accedi" id="submit" />
             </form>
+            <mailpwdErr/>
         </div>
 
         <div id="footer">
-            <img src="images/valid-xhtml10.png" alt="logo validazione w3c xhtml" id="imgValidCode" /> <img src="images/vcss-blue.gif" alt="validlogo validazione w3c css" id="imgValidCSS" />
+            <img src="images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
+            <img src="images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
             <p>
                 Il sito è stato creato per un esercizio nell'ambito del corso di <a href="https://elearning.unipd.it/math/login/index.php">Tecnologie Web</a> e non rappresenta quindi il sito ufficiale dell'Agriturismo. I testi sono stati
                 gentilmente presi in prestito da <a href="http://www.agriturismomorgan.it/">Agriturismo Morgan</a>.
