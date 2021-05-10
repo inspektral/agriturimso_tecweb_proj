@@ -1,4 +1,5 @@
 <?php
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 require_once __DIR__ . DIRECTORY_SEPARATOR . "dbAccess.php";
 
 session_start();
@@ -36,7 +37,7 @@ if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) 
       $_SESSION["isAdmin"] = $result["userEmail"] === "admin";
       header("Location: index.php");
     } else {
-      $errorContent .= "<li><strong class=\"error\">Credenziali errate</strong></li>";
+      $errorContent .= "<li><strong class=\"error\">Errore durante la registrazione</strong></li>";
     }
   }
 }
