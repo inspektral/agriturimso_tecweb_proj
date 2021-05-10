@@ -10,9 +10,9 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["subm
     $password = $_POST["password"];
 
     $dbAccess = new DbAccess();
-    $dbAccess->openDBConnection();
-    if ($error = $dbAccess->getLastError()) {
-        die($error);
+    $isSuccess = $dbAccess->openDBConnection();
+    if ($isSuccess) {
+        die("Errore durante la connsessione al database");
     }
 
     $user = $dbAccess->loginUser($username, $password);

@@ -1,22 +1,15 @@
 <?php
 class DBAccess {
-    private const HOST_DB = "localhost";
+    private const HOST_DB = "127.0.0.1:3306";
     private const USERNAME = "lbrescan";
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
 
     private $connection;
-    private $error = '';
 
     public function openDBConnection() {
-        if (!($this->connection = new mysqli(self::HOST_DB, self::USERNAME, self::PASSWORD, self::DB_NAME))) {
-            error_log("Debugging errno: " . $connection->connect_errno."Debugging error: " . $connection->connect_error);
-            $this->error = "Momentaneamente i dati non sono disponibili. Riprovare più tardi.";
-        }
-    }
-
-    public function getLastError() {
-        return $this->error;
+        $this->connection = new mysqli(self::HOST_DB, self::USERNAME, self::PASSWORD, self::DB_NAME);
+        return $this->connection->connect_errno ? false : true;
     }
 
     public function closeDBConnection() {
