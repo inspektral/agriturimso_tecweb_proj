@@ -1,6 +1,6 @@
 <?php
 class DBAccess {
-    private const HOST_DB = "127.0.0.1:3306";
+    private const HOST_DB = "127.0.0.1";
     private const USERNAME = "lbrescan";
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
@@ -8,8 +8,9 @@ class DBAccess {
     private $connection;
 
     public function openDBConnection() {
-        $this->connection = new mysqli(self::HOST_DB, self::USERNAME, self::PASSWORD, self::DB_NAME);
-        return $this->connection->connect_errno ? false : true;
+        $this->connection = new mysqli(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DB_NAME);
+        
+        return $this->connection->connect_errno;
     }
 
     public function closeDBConnection() {
@@ -17,7 +18,7 @@ class DBAccess {
     }
 
     public function loginUser($username, $password) {
-        $query = "SELECT `email`, `nome`, `cognome` FROM `Users` WHERE `email` = $username AND `password` = $password";
+        $query = "SELECT `email` FROM `Users` WHERE `email` = $username AND `password` = $password";
         $result = $this->connection->query($query);
         // $stmt = $this->connection->prepare($query);
         // if (!$stmt) {
