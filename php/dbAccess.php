@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 class DBAccess {
     private const HOST_DB = "127.0.0.1";
     private const USERNAME = "lbrescan";
