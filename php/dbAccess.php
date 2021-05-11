@@ -14,7 +14,7 @@ class DBAccess {
     public function openDBConnection() {
         $this->connection = new mysqli(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DB_NAME);
 
-        return $this->connection->connect_errno;
+        return $this->connection->connect_errno ? false : true;
     }
 
     public function closeDBConnection() {
@@ -44,7 +44,26 @@ class DBAccess {
             );
         }
         return $user;
-    }
+    } */
+    
+    
+    // public function checkLogin($mail, $psw)
+    // {
+    //     $qre = 'SELECT * FROM utenti WHERE `email` = "' . $mail . '" AND `password` = "' . $psw . '"';
+    //     $result = mysqli_query($this->connection, $qre);   
+    //     return mysqli_fetch_assoc($result);
+    // }
+    
+    // public function checkMail($mail){
+    //     $qre = 'SELECT * FROM utenti WHERE `email` = "' . $mail. '"';
+    //     $result = mysqli_query($this->connection, $qre);
+    //     return (mysqli_num_rows($result) == 0) ? false : true;
+    // }
+    
+    // public function insertUser($nome, $cogn, $mail, $pwd){
+    //     $qre = 'INSERT INTO `utenti` (`nome`, `cognome`, `password`, `email`) VALUES ' . "('".$nome."', '".$cogn."', '".$mail."', '".$pwd."')";
+    //     mysqli_query($this->connection, $qre);
+    // }
 
     public function signupUser($name, $lastname, $email, $password) {
         $query = "INSERT INTO `Users` VALUES (?, ?, ?, ?)"; 
@@ -63,7 +82,7 @@ class DBAccess {
 
     public function getCharacters() {
         $query = "SELECT * FROM protagonisti ORDER BY ID ASC;";
-        $result = mysli_query($connection, $query);
+        $result = mysli_query($this->connection, $query);
 
         if (mysql_num_rows($result) == 0) {
             return null;
@@ -81,6 +100,10 @@ class DBAccess {
             array_push($characters, $character);
         }
         return $characters;
+    }
+    
+    public function closeConnection(){
+        $this->connection->close();
     }
 }
 ?>

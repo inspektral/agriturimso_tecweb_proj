@@ -52,11 +52,19 @@
 #user {
 	float: none;
 	height: 2em;
-	margin-top: 1%;
+	margin-top: 0.3em;
 	text-align: right;
 	position: static;
     padding-right: 0;
     bottom: 0;
+}
+
+#user ul{
+	float: right;
+}
+
+#user ul li{
+	padding: 0;
 }
 
 #user a, #user span{	
@@ -65,9 +73,12 @@
     padding:0 0.8em 0.3em 0.8em;
 }
 
-.reg {
+#user .reg {
 	float: none;
-	position: static;
+}
+
+.logout{	
+	float: none;
 }
 
 /*  RIGHT SIDEBAR */
@@ -85,6 +96,10 @@
 	padding: 0.5em;
 	width: 95%;
 	float: none;
+}
+
+input{
+	width:80%;
 }
 
 .bedroom>img {

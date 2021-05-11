@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once __DIR__ . DIRECTORY_SEPARATOR . "dbAccess.php";
 
 session_start();
@@ -23,19 +23,19 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"
     $dbAccess = new DBAccess();
     $isSuccess = $dbAccess->openDBConnection();
 
-    if ($isSuccess) {
-        $errorContent .= "<li><strong class=\"error\">Errore durante la connsessione al database</strong></li>";
-    } else {
-        $user = $dbAccess->loginUser($username, $password);
-        $dbAccess->closeDBConnection(); 
+    if (!$isSuccess) {
+        header("url=errors/500.html");
+    }
 
-        if ($user) {        
-            $_SESSION["email"] = $user["email"];
-            $_SESSION["isAdmin"] = $user["email"] === "admin";
-            header("Location: index.php");
-        } else {
-            $errorContent .= "<li><strong class=\"error\">Credenziali errate</strong></li>";
-        }
+    $user = $dbAccess->loginUser($username, $password);
+    $dbAccess->closeDBConnection(); 
+
+    if ($user) {        
+        $_SESSION["email"] = $user["email"];
+        $_SESSION["isAdmin"] = $user["email"] === "admin";
+        header("Location: index.php");
+    } else {
+        $errorContent .= "<li><strong class=\"error\">Credenziali errate</strong></li>";
     }
 }
 $errorContent .= "</ul></div>";

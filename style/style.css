@@ -61,7 +61,7 @@ SEZIONE HEADER
 
 /*
 ==============
-SEZIONE BREADRCUM
+SEZIONE MENU
 ==============
 */
 #breadcrumb {
@@ -84,24 +84,88 @@ SEZIONE BREADRCUM
 	padding-top: 0.5%;
 }
 
+#menu {
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+	font-size: 1.1em;
+	float: left;
+	padding-right: 0.8em;
+	font-size: 1.1em;
+	float: left;
+	position: absolute;
+	bottom: 0;
+}
+
+#breadcrumb ul {
+	list-style-type: none;
+	overflow: hidden;
+	height: auto;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+#breadcrumb ul li {
+	padding-top: 0;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+#breadcrumb li {
+	float: left;
+	min-height: 2.25em;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+}
+
+#breadcrumb li:hover a {
+	background-color: #fff;
+	color: rgb(146, 58, 67);
+	text-decoration: underline;
+}
+
+#breadcrumb li:hover {
+	background-color: #fff;
+	color: rgb(146, 58, 67);
+}
+
+#menu ul li{
+	margin-right: 0.5em;
+}
+
+#menu a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#menu a:hover {
+	color: rgb(146, 58, 67);
+}
+
+#menu #currentLink {
+	background-color: #fff;
+	color: rgb(146, 58, 67);
+}
+
+/*
+==============
+SEZIONE USER
+==============
+*/
+
 .reg, .reg:visited {
 	float: right;
 	color: #fff;
 	background-color: rgb(146, 58, 67);
-	margin: auto 1% auto 1%;;
+	margin: auto 1% auto 1%;
 	padding-top: 0.5%;
 }
 
-#user {
-	float: right;
-	min-width: 30%;
-	bottom: 0;
-	position: absolute;
-	right: 0;
-	padding-right: 0.8em;
-}
-
-#user>.reg {
+.reg {
 	color: #fff;
 	text-decoration: none;
 	-webkit-border-top-left-radius: 10px;
@@ -113,6 +177,24 @@ SEZIONE BREADRCUM
 	min-height: 2.25em;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
+}
+
+#user {
+	float: right;
+	bottom: 0;
+	position: absolute;
+	right: 0;
+	margin-right: 0.8em;
+}
+
+#user ul li{	
+	margin-right: 0.25em;
+	margin-left: 0.25em;
+}
+
+#user ul li .userName:hover{
+	color: #fff;
+	background-color: rgb(146, 58, 67);
 }
 
 #user span {
@@ -136,81 +218,21 @@ SEZIONE BREADRCUM
 	text-decoration: underline;
 }
 
-#user #currentLink{
+#user #currentLink {
 	background-color: #fff;
 	color: rgb(146, 58, 67);
 }
 
-.error {
-	color: red;
-}
-
-/*
-==============
-SEZIONE MENU
-==============
-*/
-#menu {
-	padding-left: 0.8em;
-	padding-right: 0.8em;
-	font-size: 1.1em;
-	float: left;
-	padding-right: 0.8em;
-	font-size: 1.1em;
-	float: left;
-	position: absolute;
-	bottom: 0;
-}
-
-#menu ul {
-	list-style-type: none;
-	overflow: hidden;
-	height: auto;
-	margin-bottom: 0;
-}
-
-#menu ul li {
-	padding-top: 0;
+.userName {
+	color: #fff;
+	min-height: 2.25em;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
 }
 
-#menu li {
-	float: left;
-	min-height: 2.25em;
-    margin-right: 0.5em;
-	-webkit-border-top-left-radius: 10px;
-	-webkit-border-top-right-radius: 10px;
-	-moz-border-radius-topleft: 10px;
-	-moz-border-radius-topright: 10px;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	-webkit-border-top-left-radius: 10px;
-}
-
-#menu li:hover a {
-	background-color: #fff;
-	color: rgb(146, 58, 67);
-	text-decoration: underline;
-}
-
-#menu li:hover {
-	background-color: #fff;
-	color: rgb(146, 58, 67);
-}
-
-#menu a {
+#user .userName:hover{
 	color: #fff;
-	text-decoration: none;
-}
-
-#menu a:hover {
-	color: rgb(146, 58, 67);
-}
-
-#menu #currentLink{
-	background-color: #fff;
-	color: rgb(146, 58, 67);
+	background-color: rgb(146, 58, 67);
 }
 
 /*
@@ -478,7 +500,7 @@ textarea, fieldset {
 }
 
 .bottoneform:hover {
-	background-color: #923a43d5; /* Green */
+	background-color: #923a43;
 	border: none;
 	color: white;
 	padding: 2% 4%;
