@@ -22,7 +22,8 @@ class DBAccess {
     }
 
     public function loginUser($username, $password) {
-        $query = "SELECT `email` FROM `Users` WHERE `email` = $username AND `password` = $password";
+        $query = "SELECT `email` FROM `Users` WHERE `email` = \"$username\" AND `password` = \"$password\"";
+        echo $query;
         $result = $this->connection->query($query);
         // $stmt = $this->connection->prepare($query);
         // if (!$stmt) {
