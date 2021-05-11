@@ -1,33 +1,22 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Dicono di noi - Agriturismo Morgan</title>
+	<title>Login - Agriturismo Morgan</title>
 
-<meta name="title" content="Agriturismo Morgan" />
-<meta name="description"
-	content="Agriturismo situato nei pressi di Montebelluna (TV), che offre camere e colazione" />
-<meta name="keywords"
-	content="Agriturismo, Bed and Breakfast, Camere da letto, Montebelluna" />
+	<meta name="title" content="Login" />
 
-<meta name="author" content="Matteo, Massimo, Tito, Lorenzo" />
-<meta name="language" content="italian it" />
+	<meta name="language" content="italian it" />
 
-<link rel="stylesheet" type="text/css" href="style/style.css"
-	media="screen" />
+	<link rel="stylesheet" type="text/css" href="./style/style.css" media="screen" />
 
-<link rel="stylesheet" type="text/css" href="style/small_lavoro.css"
-	media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
+	<link rel="stylesheet" type="text/css" href="./style/small_lavoro.css"
+		media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
-<link rel="stylesheet" type="text/css" href="style/printLavoro.css"
-	media="print" />
+	<link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
 
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
 </head>
 <body>
 	<div id="header">
@@ -36,7 +25,7 @@
 			<li><a href="#contentHomePage">Vai al contenuto</a></li>
 			<li><a href="#ultimeNews">Vai alle ultime news</a></li>
 		</ul>
-		<img id="logo" src="images/bbtlogo.png" alt="Logo dell'agriturismo" />
+		<img id="logo" src="./images/bbtlogo.png" alt="Logo dell'agriturismo" />
 		<h1>Agriturismo Morgan</h1>
 		<h2>Ai piedi del Montello e dei colli Asolani</h2>
 	</div>	
@@ -50,9 +39,7 @@
 				<li id="currentLink">Dicono di noi</li>
 			</ul>
 		</div>
-		<div id="user">		
-			<bottoniLogin/>	
-		</div>
+		<UserPlaceholder />
 	</div>
 
 	<div class="row">
@@ -62,25 +49,17 @@
 				recensioni dei nostri clienti</h2>
 
 			<div id="imgCommenti">
-				<img src="images/tavola.jpg" class="imgCommenti"
+				<img src="./images/tavola.jpg" class="imgCommenti"
 					alt="tavola apparecchiata di fronte al camino all'interno dell'agriturismo" />
 			</div>
 
 			<p>I nostri recapiti:</p>
 
 			<div id="generalInfo">
-				<p>
-					<span><strong>AZIENDA AGRITURISTICA MORGAN </strong></span>
-				</p>
-				<p>
-					<span> Erizzo, 79 - 31044 Montebelluna (TV) - Italia </span>
-				</p>
-				<p>
-					<span>Tel. +39 0423 60 30 31 </span>
-				</p>
-				<p>
-					<span>+39 347 45 25 411 </span>
-				</p>
+				<h3>AZIENDA AGRITURISTICA MORGAN</h3>
+				<address>Erizzo, 79 - 31044 Montebelluna (TV) - Italia</address>
+				<p><abbr title="telefono">Tel.</abbr> +39 0423 60 30 31</p>
+				<p><abbr title="cellulare">Cel.</abbr> +39 347 45 25 411</p>
 			</div>
 
 			<div id="info"></div>
@@ -166,7 +145,7 @@
 					<fieldset>
 						<button type="submit" name="submit" class="bottoneform">Invia</button>
 						<p class="spazio">oppure</p>
-						<a href="registrati.html" target="_blank" id="bottoneregistrati">Registrati</a>
+						<a href="signup.php" id="bottoneregistrati">Registrati</a>
 					</fieldset>
 				</form>
 			</div>
@@ -190,8 +169,8 @@
 	</div>
 
 	<div id="footer">
-		<img src="images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
-		<img src="images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
+		<img src="./images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
+		<img src="./images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
 		<p>
 			Il sito è stato creato per un esercizio nell'ambito del corso di <a
 				href="https://elearning.unipd.it/math/login/index.php">Tecnologie

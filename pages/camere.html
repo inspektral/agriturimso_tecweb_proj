@@ -1,32 +1,22 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
-
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Camere - Agriturismo Morgan</title>
+	<title>Login - Agriturismo Morgan</title>
 
-<meta name="title" content="Agriturismo Morgan" />
-<meta name="description"
-	content="Agriturismo situato nei pressi di Montebelluna (TV), che offre camere e colazione" />
-<meta name="keywords"
-	content="Agriturismo, Bed and Breakfast, Camere da letto, Montebelluna" />
+	<meta name="title" content="Login" />
 
-<meta name="author" content="Matteo, Massimo, Tito, Lorenzo" />
-<meta name="language" content="italian it" />
+	<meta name="language" content="italian it" />
 
-<link rel="stylesheet" type="text/css" href="style/style.css"
-	media="screen" />
+	<link rel="stylesheet" type="text/css" href="./style/style.css" media="screen" />
 
-<link rel="stylesheet" type="text/css" href="style/small_lavoro.css"
-	media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
+	<link rel="stylesheet" type="text/css" href="./style/small_lavoro.css"
+		media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
-<link rel="stylesheet" type="text/css" href="style/printLavoro.css"
-	media="print" />
+	<link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
 
+	<link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
 </head>
 <body>
 	<div id="header">
@@ -35,7 +25,7 @@
 			<li><a href="#contentCamere">Vai al contenuto</a></li>
 			<li><a href="#ultimeNews">Vai alle ultime news</a></li>
 		</ul>
-		<img id="logo" src="images/bbtlogo.png"
+		<img id="logo" src="./images/bbtlogo.png"
 			alt="Logo dell'agriturismo costituito da una M e una A stilizzate" />
 		<h1>Agriturismo Morgan</h1>
 		<h2>Ai piedi del Montello e dei colli Asolani</h2>
@@ -50,9 +40,7 @@
 				<li><a href="diconodinoi.php">Dicono di noi</a></li>
 			</ul>
 		</div>
-		<div id="user">
-			<bottoniLogin/>
-		</div>
+		<UserPlaceholder />
 	</div>
 
 	<div class="row">
@@ -68,9 +56,11 @@
 					<img src="./images/matrimoniale.jpg" longdesc="./rooms-longdescs/matrimoniale.txt" />
 					<ul>
 						<li>Buona colazione inclusa</li>
-						<li>Cancellazione <strong class="free">GRATUITA</strong></li>z
-						<li><strong>NESSUN PAGAMENTO ANTICIPATO</strong>
-							<div>Paga in struttura</div></li>
+						<li>Cancellazione <strong class="free">GRATUITA</strong></li>
+						<li>
+							<strong>NESSUN PAGAMENTO ANTICIPATO</strong>
+							<div>Paga in struttura</div>
+						</li>
 					</ul>
 					<div class="services">
 						<dl>
@@ -105,7 +95,7 @@
 						</div>
 					</div>
 					<p class="prenota_Button">
-						<a class="bottoneform" href="prenota.html">Prenota</a>
+						<a class="bottoneform" href="./prenota.php">Prenota</a>
 					</p>
 					<div class="gallery">
 						<img src="./images/3.jpg" alt="" class="galleryElement" /> <img
@@ -137,7 +127,7 @@
 						</dl>
 					</div>
 					<p class="prenota_Button">
-						<a class="bottoneform" href="prenota.html">Prenota</a>
+						<a class="bottoneform" href="./prenota.php">Prenota</a>
 					</p>
 					<div class="gallery">
 						<img src="./images/2-1.jpg" alt="" class="galleryElement" /> <img
@@ -192,7 +182,7 @@
 						</div>
 					</div>
 					<p class="prenota_Button">
-						<a class="bottoneform" href="prenota.html">Prenota</a>
+						<a class="bottoneform" href="./prenota.php">Prenota</a>
 					</p>
 				</div>
 			</div>
@@ -216,8 +206,8 @@
 	</div>
 
 	<div id="footer">
-		<img src="images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
-		<img src="images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
+		<img src="./images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
+		<img src="./images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
 		<p>
 			Il sito è stato creato per un esercizio nell'ambito del corso di <a
 				href="https://elearning.unipd.it/math/login/index.php">Tecnologie

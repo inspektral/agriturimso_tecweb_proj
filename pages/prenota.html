@@ -15,13 +15,13 @@
 <meta name="author" content="Matteo, Massimo, Tito, Lorenzo" />
 <meta name="language" content="italian it" />
 
-<link rel="stylesheet" type="text/css" href="style/style.css"
+<link rel="stylesheet" type="text/css" href="./style/style.css"
 	media="screen" />
 
-<link rel="stylesheet" type="text/css" href="style/small_lavoro.css"
+<link rel="stylesheet" type="text/css" href="./style/small_lavoro.css"
 	media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
-<link rel="stylesheet" type="text/css" href="style/printLavoro.css"
+<link rel="stylesheet" type="text/css" href="./style/printLavoro.css"
 	media="print" />
 
 </head>
@@ -47,33 +47,14 @@
 				<li><a href="diconodinoi.php">Dicono di noi</a></li>
 			</ul>
 		</div>
-		<div id="user">
-			<bottoniLogin/>	
-		</div>
+		<UserPlaceholder />
 	</div>
 
 	<div class="row">
 
 		<div class="contenutoGenerale column">
 			<h2>Prenotazione Camera</h2>
-			<form class="prenot_form" action="prenotazione_effettuata.html">
-				<!-- <p>
-					<label for="pre_da">Da: (gg/mm/aaaa)</label>
-				</p>
-				<p>
-					<input id="pre_da" type="text">
-				</p>
-
-				<p>
-					<label for="pre_a">A: (gg/mm/aaaa)</label>
-				</p>
-				<p>
-					<input id="pre_a" type="text">
-				</p>
-				</br>
-				<p>
-					<input class="bottoneform" type="submit" value="Prenota">
-				</p> -->
+			<form class="prenot_form" action="prenota.php">
 				<fieldset>
 					<div>
 						<label for="pre_da">Da: (gg/mm/aaaa)</label>

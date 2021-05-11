@@ -1,33 +1,30 @@
-input{
+input {
     margin: auto 10% 2% 10%;
     width: 30%;   
     margin-right: 60%;   
     padding: 0.5%; 
 }
 
-form{
+form {
     text-align: left;
 }
 
-label{
+label {
     font-weight: bold;
     margin-left: 10%;
 }
 
-fieldset{    
+fieldset {    
     margin-left: 5%;
     margin-right: 5%;
 }
 
-.errorLogin{
-	font-weight: bold;
-	font-size: 2.5em;
+.error {
+	font-size: 1.5em;
 	color:  rgb(255,0,0);
-	text-align: left;
-    margin-left: 5%;
 }
 
-#submit{
+#submit {
     background-color: rgb(146, 58, 67);
     border: none;
     border-radius: 5px;

@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Prenotazione effettuata - Agriturismo Morgan</title>
+<title>Home - Agriturismo Morgan</title>
 
 <meta name="title" content="Agriturismo Morgan" />
 <meta name="description"
@@ -29,10 +29,11 @@
 	<div id="header">
 		<ul class="aiutiNascosti">
 			<li><a href="#menu">Vai al menu</a></li>
-			<li><a href="#contentTerritorio">Vai al contenuto</a></li>
+			<li><a href="#contentHomePage">Vai al contenuto</a></li>
 			<li><a href="#ultimeNews">Vai alle ultime news</a></li>
 		</ul>
-		<img id="logo" src="images/bbtlogo.png" alt="Logo dell'agriturismo" />
+		<img id="logo" src="images/bbtlogo.png"
+			alt="Logo dell'agriturismo a forma di casa stilizzata con una a come tetto e una m come muros" />
 		<h1>Agriturismo Morgan</h1>
 		<h2>Ai piedi del Montello e dei colli Asolani</h2>
 	</div>
@@ -40,21 +41,42 @@
 	<div id="breadcrumb">
 		<div id="menu">
 			<ul>
-				<li><a xml:lang="en" href="index.php">Home</a></li>
+				<li xml:lang="en" id="currentLink">Home</li>
 				<li><a href="camere.php">Camere</a></li>
 				<li><a href="territorio.php">Territorio</a></li>
 				<li><a href="diconodinoi.php">Dicono di noi</a></li>
 			</ul>
 		</div>
-		<div id="user">
-			<bottoniLogin/>	
-		</div>
+		<UserPlaceholder />
 	</div>
 
 	<div class="row">
+		<div id="contentHomePage" class="contenutoGenerale column">
+			<h2 class="center">Benvenuti nella terra del carciofo</h2>
 
-		<div class="contenutoGenerale column">
-			<h2>PRENOTAZIONE EFFETTUATA</h2>
+			<img src="images/21.jpg" id="imgIndex"
+				alt="foto panoramica dell'agriturismo con un campo di terra di fronte e montagne sullo sfondo" />
+			<p>
+				Che sia per vacanza o per lavoro, l’<strong>Agriturismo
+					Morgan</strong> – situato in posizione strategica ai piedi del <strong>Montello</strong>
+				e dei <strong>colli asolani</strong> – è il punto di partenza ideale
+				per visitare centri storici e città d’arte come Montebelluna,
+				Castelfranco Veneto, Asolo, Treviso, Valdobbiadene e Venezia.
+			</p>
+			<p>Potete ripercorrere le tappe della Grande Guerra visitando
+				monumenti commemorativi, le zone di battaglia lungo il fiume Piave e
+				il recentissimo museo del Memoriale Veneto – MEVE – a Biadene di
+				Montebelluna.</p>
+			<p>
+				Avete inoltre un’ampia scelta tra escursioni lungo i sentieri
+				limitrofi e nelle vicine Prealpi dolomitiche, percorsi in mountain
+				bike o in bicicletta da strada. Vicino inoltre alla famosa <strong>Strada
+					del Prosecco e Vini dei Colli Conegliano Valdobbiadene</strong>, formatasi
+				nel 2003 come successore della <strong>Strada del Vino
+					Bianco</strong>, inaugurata nel lontano <strong>1966, prima arteria
+					enologica italiana</strong>. L’azienda è specializzata nella produzione di
+				frutta e verdura a km 0, che potete acquistare direttamente in loco.
+			</p>
 		</div>
 
 		<div id="rightSideBar" class="column right">
@@ -68,13 +90,12 @@
 					<li><strong>24/03/2019</strong> - Raccolta degli Asparagi</li>
 				</ul>
 			</div>
-			<div id="socialCorner">
-				<!--<h1 xml:lang="en">Social Corner</h1>-->
+			<div id="adminSection">
+				<button id="buttonNews">Gestisci</button>
 			</div>
 		</div>
+
 	</div>
-
-
 
 	<div id="footer">
 		<img src="images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />

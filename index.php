@@ -1,16 +1,18 @@
-<?php 
+<?php
+require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."UserMenu.php";
+
 session_start();
-require_once 'php/userNameMenu.php';
 
-$htmlPage = file_get_contents("index.html");
+$html = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."index.html");
 
-$userAcc = new userNameMenu();
-
-$strAccedi = $userAcc->getAccedi();
-
-if(isset($_SESSION["user"])){
-    $strAccedi = $userAcc->loginSucc();
+$menu = new UserMenu();
+$content = "";
+if (isset($_SESSION['email'])) {        
+  $content = $menu->getWelcomeMessage($_SESSION['email']);
+} else {
+  $content = $menu->getAuthenticationButtons();
 }
 
-echo str_replace("<bottoniLogin/>", $strAccedi, $htmlPage);
+$html = str_replace("<UserPlaceholder />", $content, $html);
+echo $html;
 ?>

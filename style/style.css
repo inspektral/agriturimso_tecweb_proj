@@ -108,6 +108,7 @@ SEZIONE MENU
 	padding-top: 0;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
+	bottom: 0;
 }
 
 #breadcrumb li {
@@ -160,6 +161,7 @@ SEZIONE USER
 .reg, .reg:visited {
 	float: right;
 	color: #fff;
+	min-height: 2.25em;
 	background-color: rgb(146, 58, 67);
 	margin: auto 1% auto 1%;
 	padding-top: 0.5%;
@@ -187,12 +189,12 @@ SEZIONE USER
 	margin-right: 0.8em;
 }
 
-#user ul li{	
+#user ul li {	
 	margin-right: 0.25em;
 	margin-left: 0.25em;
 }
 
-#user ul li .userName:hover{
+#user ul li .userName:hover {
 	color: #fff;
 	background-color: rgb(146, 58, 67);
 }
@@ -223,7 +225,7 @@ SEZIONE USER
 	color: rgb(146, 58, 67);
 }
 
-.userName{
+.userName {
 	color: #fff;
 	min-height: 2.25em;
 	padding-left: 0.5em;

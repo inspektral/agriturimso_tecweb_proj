@@ -1,9 +1,9 @@
 <?php
-require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."UserMenu.php";
+require_once __DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."UserMenu.php";
 
 session_start();
 
-$html = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."territorio.html");
+$html = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."500.html");
 
 $menu = new UserMenu();
 $content = "";
