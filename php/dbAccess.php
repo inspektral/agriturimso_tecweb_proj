@@ -28,7 +28,7 @@ class DBAccess {
         if (!$stmt) {
             print_r($this->connection->error_list);
         }
-        $stmt->bind_param("ss", "demo", "demo");
+        $stmt->bind_param("ss",$username,$password);
         $stmt->execute();
         $result = $stmt->get_result();
 
