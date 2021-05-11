@@ -32,7 +32,7 @@ if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) 
     $dbAccess->closeDBConnection(); 
 
     if ($result["isSuccessful"]) {        
-      $_SESSION["username"] = $result["userEmail"];
+      $_SESSION["email"] = $result["userEmail"];
       $_SESSION["isAdmin"] = $result["userEmail"] === "admin";
       header("Location: index.php");
     } else {
