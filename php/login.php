@@ -16,7 +16,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"
         header("url=errors/500.html");
     }
 
-    $user = $dbAccess->checkLogin($email, $password)["Username"];
+    $user = $dbAccess->checkLogin($email, $password)["nome"];
 
     if ($user) {
         $dbAccess->closeConnection();
