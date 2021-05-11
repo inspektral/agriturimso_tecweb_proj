@@ -7,6 +7,6 @@ if (session_unset()) {
     echo $html;
     header("refresh:2;url=index.php");
 }else{
-    header("url=errors/500.html");
+    header("url=errors/500.php");
 }
 ?>

@@ -25,7 +25,7 @@ if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) 
   $isSuccess = $dbAccess->openDBConnection();
 
   if (!$isSuccess) {
-    header("Location: errors/500.html");
+    header("Location: errors/500.php");
   } 
   
   $result = $dbAccess->signupUser($name, $lastname, $email, $password);

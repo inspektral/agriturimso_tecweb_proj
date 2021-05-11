@@ -23,7 +23,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"
     $isSuccess = $dbAccess->openDBConnection();
 
     if (!$isSuccess) {
-      header("url=errors/500.html");
+      header("url=errors/500.php");
     }
 
     $user = $dbAccess->loginUser($username, $password);
