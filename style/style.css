@@ -187,12 +187,12 @@ SEZIONE USER
 	margin-right: 0.8em;
 }
 
-#user ul li{	
+#user ul li {	
 	margin-right: 0.25em;
 	margin-left: 0.25em;
 }
 
-#user ul li .userName:hover{
+#user ul li .userName:hover {
 	color: #fff;
 	background-color: rgb(146, 58, 67);
 }

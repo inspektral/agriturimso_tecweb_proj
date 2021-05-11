@@ -44,7 +44,7 @@ class DBAccess {
             );
         }
         return $user;
-    } */
+    }
     
     
     // public function checkLogin($mail, $psw)

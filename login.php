@@ -1,19 +1,18 @@
 <?php
-require_once __DIR__ . DIRECTORY_SEPARATOR . "dbAccess.php";
+require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."UserMenu.php";
+require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."dbAccess.php";
 
 session_start();
 
-$html = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "pages" . DIRECTORY_SEPARATOR . "accedi.html");
+$html = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."accedi.html");
 
-$userContent = "<div id=\"user\">";
+$menu = new UserMenu();
+$userContent = "";
 if (isset($_SESSION['email'])) {        
-  $email = $_SESSION["email"];
-  $userContent .= "<p class='reg'>Benvenuto: " . $email . "</p>";
+  $userContent = $menu->getWelcomeMessage($_SESSION['email']);
 } else {
-  $userContent .= "<a href=\"../php/signup.php\" class=\"reg\">Registrati</a>";
-  $userContent .= "<span id=\"currentLink\" class=\"reg\">Accedi</span>";
+  $userContent = $menu->getAuthenticationButtons(false, true);
 }
-$userContent .= "</div>";
 
 $errorContent = "<div><ul>";
 if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"])) {
@@ -24,7 +23,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"
     $isSuccess = $dbAccess->openDBConnection();
 
     if (!$isSuccess) {
-        header("url=errors/500.html");
+      header("url=errors/500.html");
     }
 
     $user = $dbAccess->loginUser($username, $password);
