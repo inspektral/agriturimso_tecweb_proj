@@ -22,16 +22,15 @@ class DBAccess {
     }
 
     public function loginUser($username, $password) {
-        $query = "SELECT `email` FROM `Users` WHERE `email` = \"$username\" AND `password` = \"$password\"";
-        echo $query;
-        $result = $this->connection->query($query);
-        // $stmt = $this->connection->prepare($query);
-        // if (!$stmt) {
-        //     print_r($this->connection->error_list);
-        // }
-        // $stmt->bind_param("ss", "demo", "demo");
-        // $stmt->execute();
-        // $result = $stmt->get_result();
+        $query = "SELECT `email` FROM `Users` WHERE `email` = ? AND `password` = ?";
+        // $result = $this->connection->query($query);
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            print_r($this->connection->error_list);
+        }
+        $stmt->bind_param("ss", "demo", "demo");
+        $stmt->execute();
+        $result = $stmt->get_result();
 
         if ($result->num_rows == 0) {
             return null;
