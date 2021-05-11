@@ -22,10 +22,10 @@ if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) 
   $lastname = $_POST["cognome"];
 
   $dbAccess = new DBAccess();
-  $isSuccess = $dbAccess->openDBConnection();
+  $isFailed = $dbAccess->openDBConnection();
 
-  if (!$isSuccess) {
-    header("Location: errors/500.php");
+  if ($isFailed) {
+    header("Location: /errors/500.php");
   } 
   
   $result = $dbAccess->signupUser($name, $lastname, $email, $password);
@@ -34,7 +34,7 @@ if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) 
   if ($result["isSuccessful"]) {        
     $_SESSION["email"] = $result["userEmail"];
     $_SESSION["isAdmin"] = $result["userEmail"] === "admin";
-    header("Location: index.php");
+    header("Location: /");
   } else {
     $errorContent .= "<li><strong class=\"error\">Errore durante la registrazione</strong></li>";
   }

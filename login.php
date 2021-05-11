@@ -20,10 +20,11 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"
     $password = $_POST["password"];
 
     $dbAccess = new DBAccess();
-    $isSuccess = $dbAccess->openDBConnection();
+    $isFailed = $dbAccess->openDBConnection();
 
-    if (!$isSuccess) {
-      header("url=errors/500.php");
+    if ($isFailed) {
+      header("Location: /errors/500.php");
+      exit();
     }
 
     $user = $dbAccess->loginUser($username, $password);
@@ -32,7 +33,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"
     if ($user) {        
         $_SESSION["email"] = $user["email"];
         $_SESSION["isAdmin"] = $user["email"] === "admin";
-        header("Location: index.php");
+        header("Location: /");
     } else {
         $errorContent .= "<li><strong class=\"error\">Credenziali errate</strong></li>";
     }
