@@ -19,7 +19,7 @@ $errorContent = "<div><ul>";
 if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"])) {
   $email = $_POST["email"];
   $password = $_POST["password"];
-  $name = $_nomePOST["nome"];
+  $name = $_POST["nome"];
   $lastname = $_POST["cognome"];
 
   $dbAccess = new DBAccess();

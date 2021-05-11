@@ -21,14 +21,13 @@ class DBAccess {
         $this->connection->close();
     }
 
-    public function loginUser($username, $password) {
+    public function loginUser($email, $password) {
         $query = "SELECT `email` FROM `Users` WHERE `email` = ? AND `password` = ?";
-        // $result = $this->connection->query($query);
         $stmt = $this->connection->prepare($query);
         if (!$stmt) {
-            print_r($this->connection->error_list);
+            return null;
         }
-        $stmt->bind_param("ss",$username,$password);
+        $stmt->bind_param("ss", $email, $password);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -48,8 +47,14 @@ class DBAccess {
     }
 
     public function signupUser($name, $lastname, $email, $password) {
-        $query = "INSERT INTO `Users` VALUES ($email, $password, $name, $lastname)";
-        $this->connection->query($query); 
+        $query = "INSERT INTO `Users` VALUES (?, ?, ?, ?)"; 
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            return null;
+        }
+        $stmt->bind_param("ssss", $email, $password, $name, $lastname);
+        $stmt->execute();
+        $result = $stmt->get_result();
         return array(
             "isSuccessful" => $this->connection->affected_rows == 1,
             "userEmail" => $email
