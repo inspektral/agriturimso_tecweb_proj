@@ -41,19 +41,19 @@ class DBAccess {
     
     public function checkLogin($mail, $psw)
     {
-        $qre = 'SELECT * FROM utenti WHERE `email` = "' . $mail . '" AND `password` = "' . $psw . '"';
+        $qre = 'SELECT * FROM Users WHERE `email` = "' . $mail . '" AND `password` = "' . $psw . '"';
         $result = mysqli_query($this->connection, $qre);   
         return mysqli_fetch_assoc($result);
     }
     
     public function checkMail($mail){
-        $qre = 'SELECT * FROM utenti WHERE `email` = "' . $mail. '"';
+        $qre = 'SELECT * FROM Users WHERE `email` = "' . $mail. '"';
         $result = mysqli_query($this->connection, $qre);
         return (mysqli_num_rows($result) == 0) ? false : true;
     }
     
     public function insertUser($nome, $cogn, $mail, $pwd){
-        $qre = 'INSERT INTO `utenti` (`nome`, `cognome`, `password`, `email`) VALUES ' . "('".$nome."', '".$cogn."', '".$mail."', '".$pwd."')";
+        $qre = 'INSERT INTO `Users` (`nome`, `cognome`, `password`, `email`) VALUES ' . "('".$nome."', '".$cogn."', '".$mail."', '".$pwd."')";
         mysqli_query($this->connection, $qre);
     }
 
