@@ -61,7 +61,7 @@ class DBAccess {
     }
 
     public function getNews() {
-        $query = "SELECT * FROM `News` ORDER BY `date` LIMIT 5;"
+        $query = "SELECT * FROM `News` ORDER BY `date` LIMIT 5;";
         $result = $this->connection->query($query);
 
         if ($result->num_rows === 0) {
@@ -70,10 +70,11 @@ class DBAccess {
 
         $news = array();
         while($row = $result->fetch_assoc()) {
-            array_push(array(
+            $item = array(
                 "date" => $row["date"],
                 "description" => $row["description"]
-            ));
+            );
+            array_push($item);
         }
     }
 

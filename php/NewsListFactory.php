@@ -10,14 +10,14 @@ class NewsListFactory {
       return null;
     }
 
-    $newsContent = ""
+    $newsContent = "";
     $news = $db->getNews();
     if ($news) {
-      $newsContent = "<ul>"
+      $newsContent = "<ul>";
       foreach ($news as $item) {
         $date = $item["date"];
         $description = $item["description"];
-        $newsContent .= "<li><strong>$date</strong> - $description</li>"
+        $newsContent .= "<li><strong>$date</strong> - $description</li>";
       }
       $newsContent .= "</ul>";
     } else {

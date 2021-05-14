@@ -15,7 +15,7 @@ if (isset($_SESSION['email'])) {
 }
 
 $contentAdminNews = "";
-if ($_SESSION["isAdmin"]) {
+if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
   $contentAdminNews = "<div id=\"adminSection\"><button id=\"buttonNews\">Gestisci</button></div>";
 }
 
