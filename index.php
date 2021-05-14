@@ -13,6 +13,12 @@ if (isset($_SESSION['email'])) {
   $content = $menu->getAuthenticationButtons();
 }
 
+$contentAdminNews = "";
+if (isset($_SESSION["isAdmin"])) {
+  $contentAdminNews = "<div id=\"adminSection\"><button id=\"buttonNews\">Gestisci</button></div>";
+}
+
 $html = str_replace("<UserPlaceholder />", $content, $html);
+$html = str_replace("<AdminNewsManagementPlaceholder />", $contentAdminNews, $html);
 echo $html;
 ?>

@@ -19,7 +19,7 @@ body {
 }
 
 a:visited {
-	color: #fff;
+	color: rgb(146, 58, 67);
 }
 
 .aiutiNascosti {
@@ -386,7 +386,7 @@ SEZIONE CONTENUTO
 
 .bedroom>img {
 	width: 96%;
-	margin: auto;
+	margin: 1em;
 	padding-top: 0.5em;
 }
 
@@ -400,7 +400,7 @@ SEZIONE CONTENUTO
 .services {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: stretch;
 }
 
 .services dl {
