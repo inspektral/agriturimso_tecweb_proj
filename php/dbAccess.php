@@ -45,20 +45,6 @@ class DBAccess {
         return $user;
     }
     
-    
-    // public function loginUser($mail, $psw)
-    // {
-    //     $qre = 'SELECT * FROM Users WHERE `email` = "' . $mail . '" AND `password` = "' . $psw . '"';
-    //     $result = mysqli_query($this->connection, $qre);   
-    //     return mysqli_fetch_assoc($result);
-    // }
-    
-    // public function checkMail($mail){
-    //     $qre = 'SELECT * FROM Users WHERE `email` = "' . $mail. '"';
-    //     $result = mysqli_query($this->connection, $qre);
-    //     return (mysqli_num_rows($result) == 0) ? false : true;
-    // }
-    
     public function signupUser($name, $lastname, $email, $password) {
         $query = "INSERT INTO `Users` (`nome`, `cognome`, `password`, `email`) VALUES (?, ?, ?, ?)";
         $stmt = $this->connection->prepare($query);
