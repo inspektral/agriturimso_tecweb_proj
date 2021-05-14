@@ -19,13 +19,13 @@ if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
   $contentAdminNews = "<div id=\"adminSection\"><button id=\"buttonNews\">Gestisci</button></div>";
 }
 
-// $newsContent = (new NewsListFactory())->createNewList();
-// if (!$newsContent) {
-//   header("Location: /errors/500.php");
-// }
+$newsContent = (new NewsListFactory())->createNewList();
+if (!$newsContent) {
+  header("Location: /errors/500.php");
+}
 
 $html = str_replace("<UserPlaceholder />", $content, $html);
 $html = str_replace("<AdminNewsManagementPlaceholder />", $contentAdminNews, $html);
-// $html = str_replace("<NewsListPlaceholder />", $newsContent, $html);
+$html = str_replace("<NewsListPlaceholder />", $newsContent, $html);
 echo $html;
 ?>
