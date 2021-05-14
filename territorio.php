@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."UserMenu.php";
-require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."NewsListPlaceholder.php";
+require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."NewsListFactory.php";
 
 session_start();
 
@@ -15,7 +15,7 @@ if (isset($_SESSION['email'])) {
 }
 
 $contentAdminNews = "";
-if ($_SESSION["isAdmin"]) {
+if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
   $contentAdminNews = "<div id=\"adminSection\"><button id=\"buttonNews\">Gestisci</button></div>";
 }
 
