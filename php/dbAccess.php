@@ -60,6 +60,23 @@ class DBAccess {
         );
     }
 
+    public function getNews() {
+        $query = "SELECT * FROM `News` ORDER BY `date` LIMIT 5;"
+        $result = $this->connection->query($query);
+
+        if ($result->num_rows === 0) {
+            return null;
+        }
+
+        $news = array();
+        while($row = $result->fetch_assoc()) {
+            array_push(array(
+                "date" => $row["date"],
+                "description" => $row["description"]
+            ));
+        }
+    }
+
     public function getCharacters() {
         $query = "SELECT * FROM protagonisti ORDER BY ID ASC;";
         $result = mysli_query($this->connection, $query);
