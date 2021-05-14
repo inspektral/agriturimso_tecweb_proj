@@ -77,7 +77,7 @@ class DBAccess {
             );
             array_push($news, $item);
         }
-        return news;
+        return $news;
     }
 
     public function getCharacters() {
