@@ -70,7 +70,6 @@ class DBAccess {
 
         $news = array();
         while($row = $result->fetch_assoc()) {
-            print_r($row);
             $item = array(
                 "date" => $row["date"],
                 "description" => $row["description"]

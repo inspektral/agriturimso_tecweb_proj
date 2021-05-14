@@ -12,7 +12,7 @@ class NewsListFactory {
 
     $newsContent = "";
     $news = $db->getNews();
-    print_r($news);
+
     $db->closeDBConnection();
     if ($news) {
       $newsContent = "<ul>";
