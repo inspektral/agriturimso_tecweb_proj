@@ -19,7 +19,7 @@ if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
   $contentAdminNews = "<div id=\"adminSection\"><button id=\"buttonNews\">Gestisci</button></div>";
 }
 
-$newsContent = (new NewsListFactory())->createNewList();
+$newsContent = (new NewsListFactory())->createNewsList();
 if (!$newsContent) {
   header("Location: /errors/500.php");
 }

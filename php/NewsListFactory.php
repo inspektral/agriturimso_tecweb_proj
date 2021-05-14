@@ -2,7 +2,7 @@
 require_once __DIR__.DIRECTORY_SEPARATOR."dbAccess.php";
 
 class NewsListFactory {
-  public function createNewList() {
+  public function createNewsList() {
     $db = new DBAccess();
     $isFailed = $db->openDBConnection();
 
@@ -13,6 +13,7 @@ class NewsListFactory {
     $newsContent = "";
     $news = $db->getNews();
     print_r($news);
+    $db->closeDBConnection();
     if ($news) {
       $newsContent = "<ul>";
       foreach ($news as $item) {
