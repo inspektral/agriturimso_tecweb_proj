@@ -12,6 +12,7 @@ class NewsListFactory {
 
     $newsContent = "";
     $news = $db->getNews();
+    print_r($news);
     if ($news) {
       $newsContent = "<ul>";
       foreach ($news as $item) {
