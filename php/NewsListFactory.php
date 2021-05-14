@@ -21,7 +21,7 @@ class NewsListFactory {
       }
       $newsContent .= "</ul>";
     } else {
-      $newsContent = "<h3>Nessuna nuova notizia</h3>";
+      $newsContent = "<h3>Nessuna nuova notizia trovata</h3>";
     }
 
     return $newsContent;

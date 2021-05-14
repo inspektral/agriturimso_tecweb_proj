@@ -74,7 +74,7 @@ class DBAccess {
                 "date" => $row["date"],
                 "description" => $row["description"]
             );
-            array_push($item);
+            array_push($news, $item);
         }
     }
 
