@@ -80,7 +80,7 @@ class DBAccess {
     }
 
     public function addNews($description) {
-        $query = "INSERT INTO `News` (`date`,`description`) VALUES (CURRENT_DATE(), ?);";
+        $query = "INSERT INTO `News` (`date`,`description`) VALUES (CURRENT_TIMESTAMP(), ?);";
         $stmt = $this->connection->prepare($query);
         if (!$stmt) {
             return null;

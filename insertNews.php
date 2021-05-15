@@ -21,7 +21,7 @@ $content = $menu->getWelcomeMessage($_SESSION['email']);;
 $userFeedbackContent = "<div><ul>";
 $descriptionValue = "";
 if (isset($_POST["description"]) && isset($_POST["submit"])) {
-  $description = $_POST["description"];
+  $description = (new InputCleaner())->cleanNews($_POST["description"]);
 
   if (strlen($description) > 10) {
     $dbAccess = new DBAccess();
@@ -31,16 +31,14 @@ if (isset($_POST["description"]) && isset($_POST["submit"])) {
       header("Location: /errors/500.php");
     } 
     
-    $result = $dbAccess->addNews((new InputCleaner())->cleanNews($description));
+    $result = $dbAccess->addNews($description);
     $dbAccess->closeDBConnection(); 
 
     if (!$result) {
       header("Location: /errors/500.php");
     } 
 
-    if ($result["isSuccessful"]) {        
-      $_SESSION["email"] = $result["userEmail"];
-      $_SESSION["isAdmin"] = $result["userEmail"] === "admin";
+    if ($result["isSuccessful"]) {
       $userFeedbackContent .= "<li><strong class=\"success\"><strong class=\"success\">Notizia aggiunta con successo</strong></li>";
     } else {
       $userFeedbackContent .= "<li><strong class=\"error\">Errore durante l'aggiunta della notizia</strong></li>";
