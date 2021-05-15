@@ -50,7 +50,7 @@ if (isset($_POST["description"]) && isset($_POST["submit"])) {
       $userFeedbackContent .= "<li><strong class=\"error\">La descrizione deve essere presente</strong></li>";
     } else {
       $userFeedbackContent .= "<li><strong class=\"error\">La descrizione deve avere lunghezza maggiore di dieci caratteri</strong></li>";
-      $descriptionValue = $description
+      $descriptionValue = $description;
     }
   }
 }
