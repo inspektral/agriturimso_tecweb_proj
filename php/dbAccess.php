@@ -61,7 +61,7 @@ class DBAccess {
     }
 
     public function getNews() {
-        $query = "SELECT * FROM `News` ORDER BY `date` LIMIT 5;";
+        $query = "SELECT * FROM `News` ORDER BY `date` DESC LIMIT 5;";
         $result = $this->connection->query($query);
 
         if ($result->num_rows === 0) {
@@ -77,6 +77,20 @@ class DBAccess {
             array_push($news, $item);
         }
         return $news;
+    }
+
+    public function addNews($description) {
+        $query = "INSERT INTO `News` (`date`,`description`) VALUES (CURRENT_DATE(), ?);";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            return null;
+        }
+        $stmt->bind_param("s", $description);
+        $stmt->execute();
+
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1
+        );
     }
 
     public function getCharacters() {
