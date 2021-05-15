@@ -24,6 +24,11 @@ fieldset {
 	color:  rgb(255,0,0);
 }
 
+.success {
+	font-size: 1.5em;
+	color:  rgb(0, 189, 0);
+}
+
 #submit {
     background-color: rgb(146, 58, 67);
     border: none;

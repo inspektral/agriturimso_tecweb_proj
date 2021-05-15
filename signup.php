@@ -14,7 +14,7 @@ if (isset($_SESSION['email'])) {
   $userContent = $menu->getAuthenticationButtons(true, false);
 }
 
-$errorContent = "<div><ul>";
+$userFeedbackContent = "<div><ul>";
 if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"])) {
   $email = $_POST["email"];
   $password = $_POST["password"];
@@ -34,14 +34,15 @@ if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) 
   if ($result["isSuccessful"]) {        
     $_SESSION["email"] = $result["userEmail"];
     $_SESSION["isAdmin"] = $result["userEmail"] === "admin";
-    header("Location: /");
+    $userFeedbackContent .= "<li><strong class=\"success\">Utente registrato corramente, verrai reindirizzato alla <span xml:lang=\"en\">home</span></strong></li>";
+    header("refresh:2;url= /index.php");
   } else {
-    $errorContent .= "<li><strong class=\"error\">Errore durante la registrazione</strong></li>";
+    $userFeedbackContent .= "<li><strong class=\"error\">Errore durante la registrazione</strong></li>";
   }
 }
-$errorContent .= "</ul></div>";
+$userFeedbackContent .= "</ul></div>";
 
 $html = str_replace("<UserPlaceholder />", $userContent, $html);
-$html = str_replace("<SignupErrorPlaceholder />", $errorContent, $html);
+$html = str_replace("<SignupErrorPlaceholder />", $userFeedbackContent, $html);
 echo $html;
 ?>
