@@ -36,7 +36,7 @@ if (isset($_POST["description"]) && isset($_POST["submit"])) {
     } 
 
     if ($result["isSuccessful"]) {
-      $userFeedbackContent .= "<li><strong class=\"success\"><strong class=\"success\">Notizia aggiunta con successo</strong></li>";
+      $userFeedbackContent .= "<li><strong class=\"success\">Notizia aggiunta con successo</strong></li>";
     } else {
       $userFeedbackContent .= "<li><strong class=\"error\">Errore durante l'aggiunta della notizia</strong></li>";
     }
