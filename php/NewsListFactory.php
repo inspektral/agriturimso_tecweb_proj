@@ -18,7 +18,7 @@ class NewsListFactory {
       $newsContent = "<ul>";
       foreach ($news as $item) {
         $date = $item["date"];
-        $description = htmlentities($item["description"]);
+        $description = html_entity_decode($item["description"]);
         $newsContent .= "<li><strong>$date</strong> - $description</li>";
       }
       $newsContent .= "</ul>";
