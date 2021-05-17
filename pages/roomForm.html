@@ -55,7 +55,7 @@
         <input type="text" id="people" name="people" value="<PeopleValuePlaceholder />" />
         <label for="price">Prezzo*: </label>
         <input type="text" id="price" name="price" value="<PriceValuePlaceholder />" />
-        <label>Immagine principale</label>
+        <label>Immagine principale*: </label>
         <input type="file" name="mainImg" />
       </fieldset>
       <fieldset>
@@ -120,14 +120,22 @@
       </fieldset>
       <fieldset>
         <legend>Immagini</legend>
-        <label>Prima immagine galleria</label>
-        <input type="file" name="firstImg" />
-        <label>Seconda immagine galleria</label>
-        <input type="file" name="secondImg" />
-        <label>Terza immagine galleria</label>
-        <input type="file" name="thirdImg" />
-        <label>Quarta immagine galleria</label>
-        <input type="file" name="fourthImg" />
+        <div>
+          <label>Prima immagine galleria</label>
+          <input type="file" name="firstImg" />
+        </div>
+        <div>
+          <label>Seconda immagine galleria</label>
+          <input type="file" name="secondImg" />
+        </div>
+        <div>
+          <label>Terza immagine galleria</label>
+          <input type="file" name="thirdImg" />
+        </div>
+        <div>
+          <label>Quarta immagine galleria</label>
+          <input type="file" name="fourthImg" />
+        </div>
       </fieldset>
       <fieldset>
         <input type="submit" value="Invia" id="submit" name="submit" />
