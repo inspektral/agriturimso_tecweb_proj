@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."UserMenu.php";
 require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."NewsListFactory.php";
+require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."mostraCommento.php";
 
 session_start();
 
@@ -24,8 +25,15 @@ if (!$newsContent) {
   header("Location: /errors/500.php");
 }
 
+
+$commentContent = (new mostraCommento())->createNewComment();
+if (!$commentContent) {
+  header("Location: /errors/500.php");
+}
+
 $html = str_replace("<UserPlaceholder />", $content, $html);
 $html = str_replace("<AdminNewsManagementPlaceholder />", $contentAdminNews, $html);
+$html = str_replace("<CommentPlaceholder />", $commentContent, $html);
 $html = str_replace("<NewsListPlaceholder />", $newsContent, $html);
 echo $html;
 ?>

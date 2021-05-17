@@ -9,6 +9,7 @@ class DBAccess {
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
 
+
     private $connection;
 
     public function openDBConnection() {
@@ -91,6 +92,44 @@ class DBAccess {
         return array(
             "isSuccessful" => $stmt->affected_rows === 1
         );
+    }
+
+
+    public function setComments($email, $testo, $voto){
+        $query= "INSERT INTO `Recensioni` (`email`, `testo`,`timestamp`,`voto`) VALUES (?, ?, CURRENT_TIMESTAMP(), ?);";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            
+            return null;
+        } 
+        $stmt->bind_param("sss", $email, $testo, $voto);
+        $stmt->execute();
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1
+        );
+    }
+
+
+    public function getComments(){
+        $query = "SELECT * FROM `Recensioni` ORDER BY `timestamp`;";
+        $result = $this->connection->query($query);
+
+        if ($result->num_rows === 0) {
+            return null;
+        }
+        $commenti = array();
+        while($row = $result->fetch_assoc()) {
+            $item = array(
+                "email" => $row["email"],
+                "testo" => $row["testo"],
+                "timestamp" => $row["timestamp"],
+                "voto" => $row["voto"],
+
+            );
+            array_push($commenti, $item);
+        }
+        return $commenti;
+
     }
 
     public function getCharacters() {
