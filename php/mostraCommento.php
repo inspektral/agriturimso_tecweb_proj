@@ -23,14 +23,15 @@ public function createNewComment() {
         $timestamp= $item["timestamp"];
         $voto = $item["voto"];
 
-        $commentContent .="<section id=\"casellacommento\">";
+        // TODO: fix
+        $commentContent .="<div class=\"casellacommento\">";
         $commentContent .= " <h3><strong> $email </strong></h3> " ;
         $commentContent .= "<strong>$timestamp</strong> - $voto/5</p>";
         $commentContent .= "<cite>$testo</cite>";
         $commentContent .="<div class= \"bottonicommento\">";
         $commentContent .= "<button type=\"button\">Cancella</button>";
         $commentContent .= "</div>";
-        $commentContent .= "</section>";
+        $commentContent .= "</div>";
       }
       
     } else {

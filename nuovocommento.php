@@ -13,7 +13,6 @@ $html = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "pages" . DIRECTORY_SE
 $menu = new UserMenu();
 $content = "";
 
-$userFeedbackContent = "<div> </div>";
 if (isset($_SESSION['email'])) {        
   $content = $menu->getWelcomeMessage($_SESSION['email']);
 } else {
@@ -22,43 +21,37 @@ if (isset($_SESSION['email'])) {
 
 $html = str_replace("<UserPlaceholder />", $content, $html);
 
-
-    if(isset($_POST["submit"]) && isset($_SESSION["email"])){
-        
+$userFeedbackContent = "";
+if(isset($_POST["submit"])) {
+    $userFeedbackContent = "<div><ul>";
+    if (isset($_SESSION["email"])) {        
         $email = $_SESSION["email"];
         $testo = $_POST["testo"];
         $voto = $_POST["voto"];
-
-
         
         $dbAccess = new DBAccess();
-		$isFailed = $dbAccess->openDBConnection();
+        $isFailed = $dbAccess->openDBConnection();
 
         if($isFailed) {
-            $userFeedbackContent .= "<p><strong class=\"error\">Errore di collegamento al database. Riprova.</strong></p>";;
+            $userFeedbackContent .= "<li><strong class=\"error\">Errore di collegamento al database. Riprova.</strong></li>";;
         }
 
         $result= $dbAccess->setComments($email, $testo, $voto);
         $dbAccess->closeDBConnection();
 
         if ($result["isSuccessful"]) {
-            $userFeedbackContent .= "<p><strong class=\"success\">Commento aggiunto con successo</strong></p>";
-            
+            $userFeedbackContent .= "<li><strong class=\"success\">Commento aggiunto con successo</strong></li>";
         }else{				
-            $userFeedbackContent .= "<p><strong class=\"error\">Errore durante l'aggiunta del commento</strong></p>";
+            $userFeedbackContent .= "<li><strong class=\"error\">Errore durante l'aggiunta del commento</strong></li>";
         }
-        
-
-         }else{ $userFeedbackContent .= "<p><strong class=\"error\">Devi effettuare l'accesso per commentare</strong></p>";}
-
-
- 
+    } else { 
+        $userFeedbackContent .= "<li><strong class=\"error\">Devi effettuare l'accesso per commentare</strong></li>";
+    }
+    $userFeedbackContent .= "</ul></div>";
+}
 
 $html = str_replace("<UserPlaceholder />", $content, $html);
 $html = str_replace("<InsertCommentErrorPlaceholder />", $userFeedbackContent, $html);
 
 echo $html;
-
-
-
 ?>

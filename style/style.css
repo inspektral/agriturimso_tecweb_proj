@@ -587,7 +587,7 @@ SEZIONE COMMENTI
 	padding-right: 0.5em
 }
 
-#casellacommento {
+.casellacommento {
 	margin-top: 10%;
 	border: 0.1px;
 	border-color: #cc4b58;
