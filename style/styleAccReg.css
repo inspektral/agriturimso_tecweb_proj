@@ -57,7 +57,7 @@ fieldset {
     width: auto;
 }
 
-#submit:hover {
+#submit:active {
     background-color: rgb(231, 93, 106);
     border: none;
     border-radius: 5px;
