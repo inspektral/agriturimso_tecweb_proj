@@ -20,7 +20,7 @@ fieldset {
 }
 
 .checkGroup {
-    display: inline-block;
+    display: inline;
 }
 
 .error {
