@@ -13,7 +13,7 @@ if (!isset($_SESSION["isAdmin"]) && !$_SESSION["isAdmin"]) {
 }
 
 $menu = new UserMenu();
-$content = $menu->getWelcomeMessage($_SESSION['email']);;
+$content = $menu->getWelcomeMessage($_SESSION['email']);
 
 $userFeedbackContent = "<div><ul>";
 $descriptionValue = "";
