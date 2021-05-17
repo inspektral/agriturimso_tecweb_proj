@@ -49,11 +49,11 @@
     <form method="post" action="./insertRoom.php">
       <fieldset>
         <legend>Nuova camera</legend>
-        <label for="name">Nome: </label>
+        <label for="name">Nome*: </label>
         <input type="text" id="name" name="name" value="<NameValuePlaceholder />" />
-        <label for="people">Persone: </label>
+        <label for="people">Persone*: </label>
         <input type="text" id="people" name="people" value="<PeopleValuePlaceholder />" />
-        <label for="price">Prezzo: </label>
+        <label for="price">Prezzo*: </label>
         <input type="text" id="price" name="price" value="<PriceValuePlaceholder />" />
       </fieldset>
       <fieldset>
@@ -61,57 +61,57 @@
         <!-- TODO: Remove div -->
         <div>
           <div>
-            <input type="checkbox" id="tv" name="tv" checked="<TvValuePlaceholder />" />
+            <input type="checkbox" id="tv" name="tv" <TvValuePlaceholder /> />
             <label for="tv"><abbr title="televisione">TV</abbr> a schermo piatto</label>
           </div>
           <div>
-            <input type="checkbox" id="balcone" name="balcone" checked="<BalconeValuePlaceholder />" />
+            <input type="checkbox" id="balcone" name="balcone" <BalconeValuePlaceholder /> />
             <label for="balcone">Balcone</label>
           </div>
           <div>
-            <input type="checkbox" id="gardenView" name="gardenView" checked="<GardenValuePlaceholder />" />
+            <input type="checkbox" id="gardenView" name="gardenView" <GardenValuePlaceholder /> />
             <label for="gardenView">Vista giardino</label>
           </div>
           <div>
-            <input type="checkbox" id="airCondition" name="airCondition" checked="<AirValuePlaceholder />" />
+            <input type="checkbox" id="airCondition" name="airCondition" <AirValuePlaceholder /> />
             <label for="airCondition">Aria condizionata</label>
           </div>
           <div>
-            <input type="checkbox" id="heat" name="heat" checked="<HeatValuePlaceholder />" />
+            <input type="checkbox" id="heat" name="heat" <HeatValuePlaceholder /> />
             <label for="heat">Riscaldamento</label>
           </div>
           <div>
-            <input type="checkbox" id="parquet" name="parquet" checked="<ParquetValuePlaceholder />" />
+            <input type="checkbox" id="parquet" name="parquet" <ParquetValuePlaceholder /> />
             <label for="parquet"><span xml:lang="fr">Parquet</span> o pavimento in legno</label>
           </div>
           <div>
-            <input type="checkbox" id="shower" name="shower" checked="<ShowerValuePlaceholder />" />
+            <input type="checkbox" id="shower" name="shower" <ShowerValuePlaceholder /> />
             <label for="shower">Doccia</label>
           </div>
         </div>
         <div>
           <div>
-            <input type="checkbox" id="shampoo" name="shampoo" checked="<ShampooValuePlaceholder />" />
+            <input type="checkbox" id="shampoo" name="shampoo" <ShampooValuePlaceholder /> />
             <label for="shampoo">Prodotti da bagno omaggio</label>
           </div>
           <div>
-            <input type="checkbox" id="wc" name="wc" checked="<WcValuePlaceholder />" />
+            <input type="checkbox" id="wc" name="wc" <WcValuePlaceholder /> />
             <label for="wc">Bagno privato</label>
           </div>
           <div>
-            <input type="checkbox" id="bath" name="bath" checked="<BathValuePlaceholder />" />
+            <input type="checkbox" id="bath" name="bath" <BathValuePlaceholder /> />
             <label for="bath">Vasca da bagno</label>
           </div>
           <div>
-            <input type="checkbox" id="bidet" name="bidet" checked="<BidetValuePlaceholder />" />
+            <input type="checkbox" id="bidet" name="bidet" <BidetValuePlaceholder /> />
             <label for="bidet" xml:lang="fr">Bidet</label>
           </div>
           <div>
-            <input type="checkbox" id="paper" name="paper" checked="<PaperValuePlaceholder />" />
+            <input type="checkbox" id="paper" name="paper" <PaperValuePlaceholder /> />
             <label for="paper">Carta igienica</label>
           </div>
           <div>
-            <input type="checkbox" id="towels" name="towels" checked="<TowelsValuePlaceholder />" />
+            <input type="checkbox" id="towels" name="towels" <TowelsValuePlaceholder /> />
             <label for="towels">Asciugamani</label>
           </div>
         </div>
