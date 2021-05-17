@@ -27,6 +27,10 @@ fieldset {
     margin-right: 5%;
 }
 
+.feedbackList {
+    list-style: none;
+}
+
 .error {
 	font-size: 1.5em;
 	color:  rgb(255,0,0);

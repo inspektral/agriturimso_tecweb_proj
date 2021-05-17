@@ -23,7 +23,7 @@ $html = str_replace("<UserPlaceholder />", $content, $html);
 
 $userFeedbackContent = "";
 if(isset($_POST["submit"])) {
-    $userFeedbackContent = "<div><ul>";
+    $userFeedbackContent = "<div><ul class=\"feedbackList\">";
     if (isset($_SESSION["email"])) {        
         $email = $_SESSION["email"];
         $testo = $_POST["testo"];
