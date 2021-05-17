@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <title>Aggiungi camera - Agriturismo Morgan</title>
+
+  <meta name="title" content="Aggiungi camera" />
+
+  <meta name="language" content="italian it" />
+
+  <link rel="stylesheet" type="text/css" href="./style/style.css" media="screen" />
+
+  <link rel="stylesheet" type="text/css" href="./style/small_lavoro.css"
+    media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
+
+  <link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
+
+  <link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
+</head>
+
+<body>
+  <div id="header">
+    <ul class="aiutiNascosti">
+      <li><a href="#menu">Vai al menu</a></li>
+      <li><a href="#content">Vai al contenuto</a></li>
+    </ul>
+    <img id="logo" src="./images/bbtlogo.png"
+      alt="Logo dell'agriturismo a forma di casa stilizzata con una a come tetto e una m come muri" />
+    <h1>Agriturismo Morgan</h1>
+    <h2>Ai piedi del Montello e dei colli Asolani</h2>
+  </div>
+
+  <div id="breadcrumb">
+    <div id="menu">
+      <ul>
+        <li xml:lang="en"><a href="index.php">Home</a></li>
+        <li><a href="camere.php">Camere</a></li>
+        <li><a href="territorio.php">Territorio</a></li>
+        <li><a href="diconodinoi.php">Dicono di noi</a></li>
+      </ul>
+    </div>
+    <UserPlaceholder />
+  </div>
+
+  <div id="content" class="contenutoGenerale">
+    <InsertRoomErrorPlaceholder />
+    <form method="post" action="./insertNews.php">
+      <fieldset>
+        <legend>Nuova camera</legend>
+        <label for="name">Nome: </label>
+        <input type="text" id="name" name="name" value="<NameValuePlaceholder />" />
+        <label for="people">Persone: </label>
+        <input type="text" id="people" name="people" value="PeopleValuePlaceholder />" />
+        <label for="price">Prezzo: </label>
+        <input type="text" id="price" name="price" value="<PriceValuePlaceholder />" />
+      </fieldset>
+      <fieldset>
+        <legend>Servizi</legend>
+        <label for="tv"><abbr title="televisione">TV</abbr> a schermo piatto</label>
+        <input type="checkbox" id="tv" name="tv" value="<TvValuePlaceholder />" />
+        <label for="balcone">Balcone</label>
+        <input type="checkbox" id="balcone" name="balcone" value="<BalconeValuePlaceholder />" />
+        <label for="gardenView">Vista giardino</label>
+        <input type="checkbox" id="gardenView" name="gardenView" value="<GardenValuePlaceholder />" />
+        <label for="airCondition">Aria condizionata</label>
+        <input type="checkbox" id="airCondition" name="airCondition" value="<AirValuePlaceholder />" />
+        <label for="heat">Riscaldamento</label>
+        <input type="checkbox" id="heat" name="heat" value="<HeatValuePlaceholder />" />
+        <label for="parquet"><span xml:lang="fr">Parquet</span> o pavimento in legno</label>
+        <input type="checkbox" id="parquet" name="parquet" value="<ParquetValuePlaceholder />" />
+        <label for="shower">Doccia</label>
+        <input type="checkbox" id="shower" name="shower" value="<ShowerValuePlaceholder />" />
+        <label for="shampoo">Prodotti da bagno omaggio</label>
+        <input type="checkbox" id="shampoo" name="shampoo" value="<ShampooValuePlaceholder />" />
+        <label for="wc">Bagno privato</label>
+        <input type="checkbox" id="wc" name="wc" value="<WcValuePlaceholder />" />
+        <label for="bath">Vasca da bagno</label>
+        <input type="checkbox" id="bath" name="bath" value="<BathValuePlaceholder />" />
+        <label for="bidet" xml:lang="fr">Bidet</label>
+        <input type="checkbox" id="bidet" name="bidet" value="<BidetValuePlaceholder />" />
+        <label for="paper">Carta igienica</label>
+        <input type="checkbox" id="paper" name="paper" value="<PaperValuePlaceholder />" />
+        <label for="towels">Asciugamani</label>
+        <input type="checkbox" id="towels" name="towels" value="<TowelsValuePlaceholder />" />
+      </fieldset>
+      <fieldset>
+        <input type="submit" value="Invia" id="submit" name="submit" />
+      </fieldset>
+    </form>
+  </div>
+
+  <div id="footer">
+    <img src="./images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
+    <img src="./images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
+    <p>
+      Il sito è stato creato per un esercizio nell'ambito del corso di <a
+        href="https://elearning.unipd.it/math/login/index.php">Tecnologie Web</a> e non rappresenta quindi il sito
+      ufficiale dell'Agriturismo. I testi sono stati
+      gentilmente presi in prestito da <a href="http://www.agriturismomorgan.it/">Agriturismo Morgan</a>.
+    </p>
+    <p>Tech Group - All rights reserved</p>
+  </div>
+</body>
+
+</html>
