@@ -14,7 +14,7 @@ label {
     margin-left: 10%;
 }
 
-label + input[type="checkbox"] {
+input[type="checkbox"] + label {
     margin-left: 1em;
 }
 
