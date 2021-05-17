@@ -9,7 +9,6 @@ class DBAccess {
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
 
-
     private $connection;
 
     public function openDBConnection() {
