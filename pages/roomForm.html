@@ -55,85 +55,89 @@
         <input type="text" id="people" name="people" value="<PeopleValuePlaceholder />" />
         <label for="price">Prezzo*: </label>
         <input type="text" id="price" name="price" value="<PriceValuePlaceholder />" />
-        <label>Immagine principale*: </label>
-        <input type="file" name="mainImg" />
       </fieldset>
       <fieldset>
         <legend>Servizi</legend>
         <!-- TODO: Remove div -->
         <div>
           <div>
-            <input type="checkbox" id="tv" name="tv" <TvValuePlaceholder /> />
+            <input type="checkbox" id="tv" name="services[]" value="tv" <TvValuePlaceholder /> />
             <label for="tv"><abbr title="televisione">TV</abbr> a schermo piatto</label>
           </div>
           <div>
-            <input type="checkbox" id="balcone" name="balcone" <BalconeValuePlaceholder /> />
+            <input type="checkbox" id="balcone" name="services[]" value="balcone" <BalconeValuePlaceholder /> />
             <label for="balcone">Balcone</label>
           </div>
           <div>
-            <input type="checkbox" id="gardenView" name="gardenView" <GardenValuePlaceholder /> />
+            <input type="checkbox" id="gardenView" name="services[]" value="gardenView" <GardenValuePlaceholder /> />
             <label for="gardenView">Vista giardino</label>
           </div>
           <div>
-            <input type="checkbox" id="airCondition" name="airCondition" <AirValuePlaceholder /> />
+            <input type="checkbox" id="airCondition" name="services[]" value="airCondition" <AirValuePlaceholder /> />
             <label for="airCondition">Aria condizionata</label>
           </div>
           <div>
-            <input type="checkbox" id="heat" name="heat" <HeatValuePlaceholder /> />
+            <input type="checkbox" id="heat" name="services[]" value="heat" <HeatValuePlaceholder /> />
             <label for="heat">Riscaldamento</label>
           </div>
           <div>
-            <input type="checkbox" id="parquet" name="parquet" <ParquetValuePlaceholder /> />
+            <input type="checkbox" id="parquet" name="services[]" value="parquet" <ParquetValuePlaceholder /> />
             <label for="parquet"><span xml:lang="fr">Parquet</span> o pavimento in legno</label>
           </div>
           <div>
-            <input type="checkbox" id="shower" name="shower" <ShowerValuePlaceholder /> />
+            <input type="checkbox" id="shower" name="services[]" value="shower" <ShowerValuePlaceholder /> />
             <label for="shower">Doccia</label>
           </div>
         </div>
         <div>
           <div>
-            <input type="checkbox" id="shampoo" name="shampoo" <ShampooValuePlaceholder /> />
+            <input type="checkbox" id="shampoo" name="services[]" value="shampoo" <ShampooValuePlaceholder /> />
             <label for="shampoo">Prodotti da bagno omaggio</label>
           </div>
           <div>
-            <input type="checkbox" id="wc" name="wc" <WcValuePlaceholder /> />
+            <input type="checkbox" id="wc" name="services[]" value="wc" <WcValuePlaceholder /> />
             <label for="wc">Bagno privato</label>
           </div>
           <div>
-            <input type="checkbox" id="bath" name="bath" <BathValuePlaceholder /> />
+            <input type="checkbox" id="bath" name="services[]" value="bath" <BathValuePlaceholder /> />
             <label for="bath">Vasca da bagno</label>
           </div>
           <div>
-            <input type="checkbox" id="bidet" name="bidet" <BidetValuePlaceholder /> />
+            <input type="checkbox" id="bidet" name="services[]" value="bidet" <BidetValuePlaceholder /> />
             <label for="bidet" xml:lang="fr">Bidet</label>
           </div>
           <div>
-            <input type="checkbox" id="paper" name="paper" <PaperValuePlaceholder /> />
+            <input type="checkbox" id="paper" name="services[]" value="paper" <PaperValuePlaceholder /> />
             <label for="paper">Carta igienica</label>
           </div>
           <div>
-            <input type="checkbox" id="towels" name="towels" <TowelsValuePlaceholder /> />
+            <input type="checkbox" id="towels" name="services[]" value="towels" <TowelsValuePlaceholder /> />
             <label for="towels">Asciugamani</label>
           </div>
         </div>
       </fieldset>
       <fieldset>
-        <legend>Immagini</legend>
+        <legend>Immagine principale</legend>
+        <label>Immagine*: </label>
+        <input type="file" name="mainImg" />
+        <textarea name="imgLongdesc"></textarea>
+      </fieldset>
+      <fieldset>
+        <legend>Immagini galleria</legend>
         <div>
-          <label>Prima immagine galleria</label>
+          <label>Prima immagine</label>
           <input type="file" name="firstImg" />
         </div>
         <div>
-          <label>Seconda immagine galleria</label>
+          <label>Seconda immagine</label>
           <input type="file" name="secondImg" />
         </div>
         <div>
-          <label>Terza immagine galleria</label>
+          <label>Terza immagine</label>
           <input type="file" name="thirdImg" />
         </div>
         <div>
-          <label>Quarta immagine galleria</label>
+          <label>Quarta immagine</label>
           <input type="file" name="fourthImg" />
         </div>
       </fieldset>

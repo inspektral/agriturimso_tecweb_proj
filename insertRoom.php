@@ -34,6 +34,28 @@ $paperValue = "";
 $towelsValue = "";
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul>";
+  if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_POST["services"]) && isset($_POST["mainImg"]) 
+    && isset($_POST["mainLongdesc"]) && isset($_POST["firstImg"]) && isset($_POST["secondImg"]) && isset($_POST["thirdImg"]) && isset($_POST["fourthImg"])
+  ) {
+    $name = $description = (new InputCleaner())->cleanRoomName($_POST["name"]);
+    $people = $_POST["people"];
+    $price = $_POST["price"];
+    $services = array();
+    $mainImg = $_POST["mainImg"];
+    $imgLongdesc = $_POST['imgLongdesc'];
+
+    if (!empty($_POST["services"])) {
+      $services = $_POST["services"];
+    }
+
+    if (strlen($name) > 5 && is_int($people) && $people > 0 && is_float($price) && $price > 0.0 && strlen($imgLongdesc) > 20) {
+
+    } else {
+
+    }
+  } else {
+
+  }
 
   $userFeedbackContent .= "</ul></div>";
 }
