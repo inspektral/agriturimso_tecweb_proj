@@ -588,10 +588,10 @@ SEZIONE COMMENTI
 }
 
 .casellacommento {
-	margin-top: 10%;
+	margin-top: 1em;
 	border: 0.1px;
 	border-color: #cc4b58;
-	border-style: ridge;
+	border-style: solid;
 	background-color: #f2f2f2;
 }
 
