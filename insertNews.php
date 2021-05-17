@@ -18,7 +18,7 @@ $content = $menu->getWelcomeMessage($_SESSION['email']);
 $userFeedbackContent = "";
 $descriptionValue = "";
 if (isset($_POST["submit"])) {
-  $userFeedbackContent = "<div><ul>";
+  $userFeedbackContent = "<div><ul class=\"feedbackList\">";
   if (isset($_POST["description"])) {
     $description = (new InputCleaner())->cleanNews($_POST["description"]);
 
