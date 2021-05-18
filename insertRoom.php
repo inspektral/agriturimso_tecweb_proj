@@ -24,6 +24,7 @@ $userFeedbackContent = "";
 $nameValue = "";
 $peopleValue = "";
 $priceValue = "";
+$imgLongdescValue = "";
 $tvChecked = "";
 $balconeChecked = "";
 $gardenChecked = "";
@@ -38,14 +39,14 @@ $bidetChecked = "";
 $paperChecked = "";
 $towelsChecked = "";
 if (isset($_POST["submit"])) {
-  $userFeedbackContent = "<div><ul>";
+  $userFeedbackContent = "<div><ul class=\"feedbackList\">";
   if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_POST["mainImg"]) && isset($_POST["mainLongdesc"])) {
-    $name = $description = (new InputCleaner())->cleanRoomName($_POST["name"]);
-    $people = $_POST["people"];
-    $price = $_POST["price"];
+    $nameValue = $name = $description = (new InputCleaner())->cleanRoomName($_POST["name"]);
+    $peopleValue = $people = $_POST["people"];
+    $priceValue = $price = $_POST["price"];
     $services = array();
     $mainImg = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
-    $imgLongdesc = $_POST['imgLongdesc'];
+    $imgLongdescValue = $imgLongdesc = $_POST['imgLongdesc'];
     $imgLongdescPath = __DIR__.DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.$name;
     $firstGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]);
     $secondGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]);
@@ -128,6 +129,7 @@ $html = str_replace("<InsertRoomErrorPlaceholder />", $userFeedbackContent, $htm
 $html = str_replace("<NameValuePlaceholder />", $nameValue, $html);
 $html = str_replace("<PeopleValuePlaceholder />", $peopleValue, $html);
 $html = str_replace("<PriceValuePlaceholder />", $priceValue, $html);
+$html = str_replace("<ImgLongdescValuePlaceholder />", $imgLongdescValue, $html);
 $html = str_replace("<TvCheckedPlaceholder />", $tvChecked, $html);
 $html = str_replace("<BalconeCheckedPlaceholder />", $balconeChecked, $html);
 $html = str_replace("<GardenCheckedPlaceholder />", $gardenChecked, $html);
