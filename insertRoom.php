@@ -40,7 +40,7 @@ $paperChecked = "";
 $towelsChecked = "";
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
-  if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_POST["mainImg"]) && isset($_POST["mainLongdesc"])) {
+  if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_FILE["mainImg"]) && isset($_POST["mainLongdesc"])) {
     $nameValue = $name = $description = (new InputCleaner())->cleanRoomName($_POST["name"]);
     $peopleValue = $people = $_POST["people"];
     $priceValue = $price = $_POST["price"];
@@ -129,7 +129,7 @@ $html = str_replace("<InsertRoomErrorPlaceholder />", $userFeedbackContent, $htm
 $html = str_replace("<NameValuePlaceholder />", $nameValue, $html);
 $html = str_replace("<PeopleValuePlaceholder />", $peopleValue, $html);
 $html = str_replace("<PriceValuePlaceholder />", $priceValue, $html);
-$html = str_replace("<ImgLongdescValuePlaceholder />", $imgLongdescValue, $html);
+$html = str_replace("<MainLongdescValuePlaceholder />", $imgLongdescValue, $html);
 $html = str_replace("<TvCheckedPlaceholder />", $tvChecked, $html);
 $html = str_replace("<BalconeCheckedPlaceholder />", $balconeChecked, $html);
 $html = str_replace("<GardenCheckedPlaceholder />", $gardenChecked, $html);
