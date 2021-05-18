@@ -24,6 +24,8 @@
 <link rel="stylesheet" type="text/css" href="style/printLavoro.css"
 	media="print" />
 
+<script type="text/javascript" src="inputCheck.js"></script>
+
 </head>
 <body>
 	<div id="header">
@@ -56,32 +58,15 @@
 
 		<div class="contenutoGenerale column">
 			<h2>Prenotazione Camera</h2>
-			<form class="prenot_form" action="prenotazione_effettuata.html">
-				<!-- <p>
-					<label for="pre_da">Da: (gg/mm/aaaa)</label>
-				</p>
-				<p>
-					<input id="pre_da" type="text">
-				</p>
-
-				<p>
-					<label for="pre_a">A: (gg/mm/aaaa)</label>
-				</p>
-				<p>
-					<input id="pre_a" type="text">
-				</p>
-				</br>
-				<p>
-					<input class="bottoneform" type="submit" value="Prenota">
-				</p> -->
+			<form class="prenot_form" method="post" onsubmit="return validatePrenota()">
 				<fieldset>
 					<div>
-						<label for="pre_da">Da: (gg/mm/aaaa)</label>
-						<input id="pre_da" type="text" />
+						<label for="da">Da: (gg/mm/aaaa)</label>
+						<input id="da" type="text" />
 					</div>
 					<div>
-						<label for="pre_a">A: (gg/mm/aaaa)</label>
-						<input id="pre_a" type="text" />
+						<label for="a">A: (gg/mm/aaaa)</label>
+						<input id="a" type="text" />
 					</div>
 
 					<input class="bottoneform" type="submit" value="Prenota" />
