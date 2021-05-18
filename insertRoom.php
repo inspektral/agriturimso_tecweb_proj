@@ -46,7 +46,7 @@ if (isset($_POST["submit"])) {
     $priceValue = $price = $_POST["price"];
     $services = array();
     $mainImg = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
-    $imgLongdescValue = $imgLongdesc = $_POST['imgLongdesc'];
+    $imgLongdescValue = $imgLongdesc = $_POST['mainLongdesc'];
     $imgLongdescPath = __DIR__.DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.$name;
     $firstGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]);
     $secondGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]);

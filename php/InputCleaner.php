@@ -8,7 +8,7 @@ class InputCleaner {
   }
 
   public function cleanRoomName($name) {
-    return htmlentities(strip_tags(trim($input), self::ALLOWED_ROOM_TAGS));
+    return htmlentities(strip_tags(trim($name), self::ALLOWED_ROOM_TAGS));
   }
 }
 ?>
