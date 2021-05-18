@@ -40,7 +40,7 @@ $paperChecked = "";
 $towelsChecked = "";
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
-  if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_FILE["mainImg"]) && isset($_POST["mainLongdesc"])) {
+  if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_FILES["mainImg"]) && isset($_POST["mainLongdesc"])) {
     $nameValue = $name = $description = (new InputCleaner())->cleanRoomName($_POST["name"]);
     $peopleValue = $people = $_POST["people"];
     $priceValue = $price = $_POST["price"];
@@ -114,7 +114,7 @@ if (isset($_POST["submit"])) {
     if (!isset($_POST["price"])) {
       $userFeedbackContent .= "<li><strong class=\"error\">Il prezzo è un campo obbligatorio</strong></li>";
     } 
-    if (!isset($_POST["mainImg"])) {
+    if (!isset($_FILES["mainImg"])) {
       $userFeedbackContent .= "<li><strong class=\"error\">L'immagine principale è un campo obbligatorio</strong></li>";
     }
     if (!isset($_POST["mainLongdesc"])) {
