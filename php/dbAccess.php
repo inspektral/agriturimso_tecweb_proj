@@ -101,7 +101,7 @@ class DBAccess {
             return null;
         }
         $stmt->bind_param("sidssssssiiiiiiiiiiiii", $name,$people,$price,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services["tv"],$services["balcony"],
-            $services["gardenView"],$services["airCondition"],$services["heat"],$services["parquet"],$services["shower"],$services["shampoo"],$services["wc"],$services["bath"]
+            $services["gardenView"],$services["airCondition"],$services["heat"],$services["parquet"],$services["shower"],$services["shampoo"],$services["wc"],$services["bath"],
             $services["bidet"],$services["paper"],$services["towels"]
         );
         $stmt->execute();
