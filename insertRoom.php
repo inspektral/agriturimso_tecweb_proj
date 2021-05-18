@@ -45,13 +45,13 @@ if (isset($_POST["submit"])) {
     $peopleValue = $people = $_POST["people"];
     $priceValue = $price = $_POST["price"];
     $services = array();
-    $mainImg = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
+    // $mainImg = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
     $imgLongdescValue = $imgLongdesc = $_POST['mainLongdesc'];
     $imgLongdescPath = __DIR__.DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.$name;
-    $firstGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]);
-    $secondGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]);
-    $thirdGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["thirdGallery"]["name"]);
-    $fourthGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["fourthGallery"]["name"]);
+    // $firstGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]);
+    // $secondGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]);
+    // $thirdGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["thirdGallery"]["name"]);
+    // $fourthGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["fourthGallery"]["name"]);
 
     if (!empty($_POST["services"])) {
       $services = $_POST["services"];
@@ -75,18 +75,18 @@ if (isset($_POST["submit"])) {
       }
 
       if ($result["isSuccessful"] && file_put_contents($imgLongdescPath, $imgLongdesc)) {
-        $uploader = new ImageUploader();
-        $mainSuccess = $uploader->upload($_FILES["mainImg"],$mainImg);
-        $firstSuccess = $uploader->upload($_FILES["firstGallery"],$firstGallery);
-        $secondSuccess = $uploader->upload($_FILES["secondgGllery"],$secondGallery);
-        $thirdSuccess = $uploader->upload($_FILES["thirdGallery"],$thirdGallery);
-        $fourthSuccess = $uploader->upload($_FILES["fourthGallery"],$fourthGallery);
+        // $uploader = new ImageUploader();
+        // $mainSuccess = $uploader->upload($_FILES["mainImg"],$mainImg);
+        // $firstSuccess = $uploader->upload($_FILES["firstGallery"],$firstGallery);
+        // $secondSuccess = $uploader->upload($_FILES["secondgGllery"],$secondGallery);
+        // $thirdSuccess = $uploader->upload($_FILES["thirdGallery"],$thirdGallery);
+        // $fourthSuccess = $uploader->upload($_FILES["fourthGallery"],$fourthGallery);
 
-        if ($mainSuccess && $firstSuccess && $secondSuccess && $thirdSuccess && $fourthSuccess) {
+        // if ($mainSuccess && $firstSuccess && $secondSuccess && $thirdSuccess && $fourthSuccess) {
           $userFeedbackContent .= "<li><strong class=\"success\">Camera aggiunta con successo</strong></li>";
-        } else {
-          $userFeedbackContent .= "<li><strong class=\"error\">Errore durante durante il caricamento delle immagini</strong></li>";
-        }
+        // } else {
+        //   $userFeedbackContent .= "<li><strong class=\"error\">Errore durante durante il caricamento delle immagini</strong></li>";
+        // }
       } else {
         $userFeedbackContent .= "<li><strong class=\"error\">Errore durante l'aggiunta della camera</strong></li>";
       }
