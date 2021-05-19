@@ -63,6 +63,7 @@ if (isset($_POST["submit"])) {
       $dbAccess = new DBAccess();
       $isFailed = $dbAccess->openDBConnection();
 
+      print_r($isFailed);
       if ($isFailed) {
         header("Location: /errors/500.php");
       }
@@ -70,12 +71,12 @@ if (isset($_POST["submit"])) {
       $result = $dbAccess->addRoom($name,$people,$price,$mainImg,$imgLongdesc,$firstGallery,$secondGallery,$thirdGallery,$fourthGallery,$servicesBool);
       $dbAccess->closeDBConnection(); 
 
-      var_dump($result);
+      print_r($result);
       if (!$result) {
         header("Location: /errors/500.php");
       }
 
-      if ($result["isSuccessful"] && file_put_contents($imgLongdescPath, $imgLongdesc)) {
+      if ($result["isSuccessful"] /*&& file_put_contents($imgLongdescPath, $imgLongdesc)*/) {
         // $uploader = new ImageUploader();
         // $mainSuccess = $uploader->upload($_FILES["mainImg"],$mainImg);
         // $firstSuccess = $uploader->upload($_FILES["firstGallery"],$firstGallery);
