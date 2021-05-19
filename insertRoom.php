@@ -75,6 +75,7 @@ if (isset($_POST["submit"])) {
 
       if (!$result) {
         // header("Location: ./errors/500.php");
+        print_r("Errore");
       }
 
       if ($result["isSuccessful"] && file_put_contents($imgLongdescPath, $imgLongdesc)) {
