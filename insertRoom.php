@@ -85,6 +85,11 @@ if (isset($_POST["submit"])) {
           $userFeedbackContent .= "<li><strong class=\"success\">Camera aggiunta con successo</strong></li>";
         } else {
           $userFeedbackContent .= "<li><strong class=\"error\">Errore durante durante il caricamento delle immagini</strong></li>";
+          $nameValue = $_POST["name"];
+          $peopleValue = $_POST["people"];
+          $priceValue = $_POST["price"];
+          $imgLongdescValue = $_POST['mainLongdesc'];
+          $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
         }
       } else {
         $userFeedbackContent .= "<li><strong class=\"error\">Errore durante l'aggiunta della camera</strong></li>";
