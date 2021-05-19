@@ -44,13 +44,13 @@ if (isset($_POST["submit"])) {
     $people = intval($_POST["people"]);
     $price = doubleval($_POST["price"]);
     $services = array();
-    $mainImg = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
+    $mainImg = ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
     $imgLongdesc = $_POST['mainLongdesc'];
-    $imgLongdescPath = __DIR__.DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.strtolower($name).".txt";
-    $firstGallery = isset($_FILES["firstGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]) : null;
-    $secondGallery = isset($_FILES["secondGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]) : null;
-    $thirdGallery = isset($_FILES["thirdGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["thirdGallery"]["name"]) : null;
-    $fourthGallery = isset($_FILES["fourthGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["fourthGallery"]["name"]) : null;
+    $imgLongdescPath = ".".DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.strtolower($name).".txt";
+    $firstGallery = isset($_FILES["firstGallery"]) ? ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]) : null;
+    $secondGallery = isset($_FILES["secondGallery"]) ? ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]) : null;
+    $thirdGallery = isset($_FILES["thirdGallery"]) ? ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["thirdGallery"]["name"]) : null;
+    $fourthGallery = isset($_FILES["fourthGallery"]) ? ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["fourthGallery"]["name"]) : null;
 
     if (!empty($_POST["services"])) {
       $services = $_POST["services"];
