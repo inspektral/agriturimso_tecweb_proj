@@ -26,11 +26,13 @@ class ServicesConverter {
 
   public function convertToHtmlAttribute($services) {
     $checked = [];
-    foreach (ServicesConverter::SERVICES_NAMES as $serviceName => $value) {
+    foreach (ServicesConverter::SERVICES_NAMES as $key => $serviceName) {
+      $checked["$serviceName"] = "";
       if (in_array($serviceName, $services, true)) {
         $checked["$serviceName"] = "checked=\"checked\"";
       }
     }
+    var_dump($checked);
     return $checked;
   }
 }

@@ -60,11 +60,9 @@ if (isset($_POST["submit"])) {
     }
 
     if (strlen($name) > 5 && is_int($people) && $people > 0 && is_float($price) && $price > 0.0 && strlen($imgLongdesc) > 20) {
-      $servicesConverter = new ServicesConverter();
-      $servicesBool = $servicesConverter->convertToBoolean($services);
-      $checkedServices = $servicesConverter->convertToHtmlAttribute($servicesBool);
+      $servicesBool = (new ServicesConverter())->convertToBoolean($services);
 
-      var_dump($servicesBool, $checkedServices);
+      var_dump($servicesBool);
       $dbAccess = new DBAccess();
       $isFailed = $dbAccess->openDBConnection();
 
@@ -98,6 +96,7 @@ if (isset($_POST["submit"])) {
         $peopleValue = $_POST["people"];
         $priceValue = $_POST["price"];
         $imgLongdescValue = $_POST['mainLongdesc'];
+        $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
       }
     } else {
       if (strlen($name) <= 5) {
@@ -116,6 +115,7 @@ if (isset($_POST["submit"])) {
       $peopleValue = $_POST["people"];
       $priceValue = $_POST["price"];
       $imgLongdescValue = $_POST['mainLongdesc'];
+      $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
     }
   } else {
     if (!isset($_POST["name"])) {
@@ -133,10 +133,11 @@ if (isset($_POST["submit"])) {
     if (!isset($_POST["mainLongdesc"])) {
       $userFeedbackContent .= "<li><strong class=\"error\">La descrizione dell'immagine principale è un campo obbligatorio</strong></li>";
     }
-    $nameValue = $_POST["name"];
-    $peopleValue = $_POST["people"];
-    $priceValue = $_POST["price"];
-    $imgLongdescValue = $_POST['mainLongdesc'];
+    $nameValue = isset($_POST["name"]) ? $_POST["name"] : "";
+    $peopleValue = isset($_POST["people"]) ? $_POST["people"] : "";
+    $priceValue = isset($_POST["price"]) ? $_POST["price"] : "";
+    $imgLongdescValue = isset($_POST["mainLongdesc"]) ? $_POST['mainLongdesc'] : "";
+    $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
   }
   $userFeedbackContent .= "</ul></div>";
 }
