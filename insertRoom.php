@@ -72,6 +72,7 @@ if (isset($_POST["submit"])) {
         header("Location: ./errors/500.php");
       }
 
+      var_dump($_FILES);
       $result = $dbAccess->addRoom($name,$people,$price,$mainImg,$imgLongdesc,$firstGallery,$secondGallery,$thirdGallery,$fourthGallery,$servicesBool);
       $dbAccess->closeDBConnection(); 
 
