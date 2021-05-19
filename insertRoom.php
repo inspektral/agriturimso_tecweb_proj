@@ -46,7 +46,7 @@ if (isset($_POST["submit"])) {
     $services = array();
     $mainImg = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
     $imgLongdesc = $_POST['mainLongdesc'];
-    $imgLongdescPath = __DIR__.DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.$name;
+    $imgLongdescPath = __DIR__.DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.strtolower($name).".txt";
     $firstGallery = isset($_FILES["firstGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]) : null;
     $secondGallery = isset($_FILES["secondGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]) : null;
     $thirdGallery = isset($_FILES["thirdGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["thirdGallery"]["name"]) : null;
