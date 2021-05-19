@@ -43,12 +43,12 @@ if (isset($_POST["submit"])) {
   print_r($_FILES);
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
   if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_FILES["mainImg"]) && isset($_POST["mainLongdesc"])) {
-    $nameValue = $name = (new InputCleaner())->cleanRoomName($_POST["name"]);
-    $peopleValue = $people = $_POST["people"];
-    $priceValue = $price = $_POST["price"];
+    $name = (new InputCleaner())->cleanRoomName($_POST["name"]);
+    $people = $_POST["people"];
+    $price = $_POST["price"];
     $services = array();
     // $mainImg = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
-    $imgLongdescValue = $imgLongdesc = $_POST['mainLongdesc'];
+    $imgLongdesc = $_POST['mainLongdesc'];
     $imgLongdescPath = __DIR__.DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.$name;
     // $firstGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]);
     // $secondGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]);
