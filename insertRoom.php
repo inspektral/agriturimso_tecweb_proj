@@ -25,7 +25,7 @@ $nameValue = "";
 $peopleValue = "";
 $priceValue = "";
 $imgLongdescValue = "";
-$checkedServices = (new ServicesConverter())->convertToHtmlAttribute([]);
+$checkedServices = [];
 if (isset($_POST["submit"])) {
   print_r($_POST);
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
