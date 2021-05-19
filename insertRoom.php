@@ -40,7 +40,6 @@ $paperChecked = "";
 $towelsChecked = "";
 if (isset($_POST["submit"])) {
   print_r($_POST);
-  print_r($_FILES);
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
   if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_FILES["mainImg"]) && isset($_POST["mainLongdesc"])) {
     $name = (new InputCleaner())->cleanRoomName($_POST["name"]);

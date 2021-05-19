@@ -23,6 +23,7 @@ class ServicesConverter {
   public function convertToBoolean($services) {
     $bools = [];
     foreach (ServicesConverter::SERVICES_NAMES as $key => $serviceName) {
+      print_r(in_array($serviceName, $services, true));
       $bools["$serviceName"] = in_array($serviceName, $services, true);
     }
     return $bools;
