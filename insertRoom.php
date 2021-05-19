@@ -43,8 +43,8 @@ if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
   if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_FILES["mainImg"]) && isset($_POST["mainLongdesc"])) {
     $name = (new InputCleaner())->cleanRoomName($_POST["name"]);
-    $people = $_POST["people"];
-    $price = $_POST["price"];
+    $people = intval($_POST["people"]);
+    $price = doubleval($_POST["price"]);
     $services = array();
     // $mainImg = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
     $imgLongdesc = $_POST['mainLongdesc'];
