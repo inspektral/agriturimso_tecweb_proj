@@ -1,6 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 error_reporting(E_ALL);
 
 class DBAccess {
@@ -48,6 +49,7 @@ class DBAccess {
     public function signupUser($name, $lastname, $email, $password) {
         $query = "INSERT INTO `Users` (`nome`, `cognome`, `password`, `email`) VALUES (?, ?, ?, ?)";
         $stmt = $this->connection->prepare($query);
+        var_dump($stmt);
         if (!$stmt) {
             return null;
         }
