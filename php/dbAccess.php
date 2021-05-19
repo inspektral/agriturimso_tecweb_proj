@@ -12,7 +12,7 @@ class DBAccess {
     private $connection;
 
     public function openDBConnection() {
-        $this->connection = @new mysqli(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DB_NAME);
+        $this->connection = new mysqli(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DB_NAME);
         return $this->connection->connect_errno;
     }
 
