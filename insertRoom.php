@@ -40,7 +40,6 @@ $checkedServices = [
   "paper" => "",
   "towels" => ""
 ];
-var_dump($checkedServices);
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
   if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_FILES["mainImg"]) && isset($_POST["mainLongdesc"])) {
@@ -65,6 +64,7 @@ if (isset($_POST["submit"])) {
       $servicesBool = $servicesConverter->convertToBoolean($services);
       $checkedServices = $servicesConverter->convertToHtmlAttribute($servicesBool);
 
+      var_dump($servicesBool, $checkedServices);
       $dbAccess = new DBAccess();
       $isFailed = $dbAccess->openDBConnection();
 
@@ -72,7 +72,6 @@ if (isset($_POST["submit"])) {
         header("Location: ./errors/500.php");
       }
 
-      var_dump($_FILES);
       $result = $dbAccess->addRoom($name,$people,$price,$mainImg,$imgLongdesc,$firstGallery,$secondGallery,$thirdGallery,$fourthGallery,$servicesBool);
       $dbAccess->closeDBConnection(); 
 
