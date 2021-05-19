@@ -25,7 +25,21 @@ $nameValue = "";
 $peopleValue = "";
 $priceValue = "";
 $imgLongdescValue = "";
-$checkedServices = [];
+$checkedServices = [
+  "tv" => false,
+  "balcony" => false,
+  "gardenView" => false,
+  "airCondition" => false,
+  "heat" => false,
+  "parquet" => false,
+  "shower" => false,
+  "shampoo" => false,
+  "wc" => false,
+  "bath" => false,
+  "bidet" => false,
+  "paper" => false,
+  "towels" => false
+];
 if (isset($_POST["submit"])) {
   print_r($_POST);
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
