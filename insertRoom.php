@@ -50,10 +50,10 @@ if (isset($_POST["submit"])) {
     $mainImg = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
     $imgLongdesc = $_POST['mainLongdesc'];
     $imgLongdescPath = __DIR__.DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.$name;
-    $firstGallery = isset($_FILES["firstGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]) : NULL;
-    $secondGallery = isset($_FILES["secondGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]) : NULL;
-    $thirdGallery = isset($_FILES["thirdGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["thirdGallery"]["name"]) : NULL;
-    $fourthGallery = isset($_FILES["fourthGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["fourthGallery"]["name"]) : NULL;
+    $firstGallery = isset($_FILES["firstGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]) : null;
+    $secondGallery = isset($_FILES["secondGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]) : null;
+    $thirdGallery = isset($_FILES["thirdGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["thirdGallery"]["name"]) : null;
+    $fourthGallery = isset($_FILES["fourthGallery"]) ? __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["fourthGallery"]["name"]) : null;
 
     if (!empty($_POST["services"])) {
       $services = $_POST["services"];
@@ -74,8 +74,7 @@ if (isset($_POST["submit"])) {
       $dbAccess->closeDBConnection(); 
 
       if (!$result) {
-        // header("Location: ./errors/500.php");
-        print_r("Errore");
+        header("Location: ./errors/500.php");
       }
 
       if ($result["isSuccessful"] && file_put_contents($imgLongdescPath, $imgLongdesc)) {
