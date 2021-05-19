@@ -26,22 +26,22 @@ $peopleValue = "";
 $priceValue = "";
 $imgLongdescValue = "";
 $checkedServices = [
-  "tv" => false,
-  "balcony" => false,
-  "gardenView" => false,
-  "airCondition" => false,
-  "heat" => false,
-  "parquet" => false,
-  "shower" => false,
-  "shampoo" => false,
-  "wc" => false,
-  "bath" => false,
-  "bidet" => false,
-  "paper" => false,
-  "towels" => false
+  "tv" => "",
+  "balcony" => "",
+  "gardenView" => "",
+  "airCondition" => "",
+  "heat" => "",
+  "parquet" => "",
+  "shower" => "",
+  "shampoo" => "",
+  "wc" => "",
+  "bath" => "",
+  "bidet" => "",
+  "paper" => "",
+  "towels" => ""
 ];
+var_dump($checkedServices);
 if (isset($_POST["submit"])) {
-  print_r($_POST);
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
   if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_FILES["mainImg"]) && isset($_POST["mainLongdesc"])) {
     $name = (new InputCleaner())->cleanRoomName($_POST["name"]);
@@ -51,10 +51,10 @@ if (isset($_POST["submit"])) {
     $mainImg = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
     $imgLongdesc = $_POST['mainLongdesc'];
     $imgLongdescPath = __DIR__.DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.$name;
-    $firstGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]);
-    $secondGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]);
-    $thirdGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["thirdGallery"]["name"]);
-    $fourthGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["fourthGallery"]["name"]);
+    $firstGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"] ?? "");
+    $secondGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"] ?? "");
+    $thirdGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["thirdGallery"]["name"] ?? "");
+    $fourthGallery = __DIR__.DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["fourthGallery"]["name"] ?? "");
 
     if (!empty($_POST["services"])) {
       $services = $_POST["services"];
@@ -83,10 +83,10 @@ if (isset($_POST["submit"])) {
       if ($result["isSuccessful"] && file_put_contents($imgLongdescPath, $imgLongdesc)) {
         $uploader = new ImageUploader();
         $mainSuccess = $uploader->upload($_FILES["mainImg"],$mainImg);
-        $firstSuccess = $uploader->upload($_FILES["firstGallery"],$firstGallery);
-        $secondSuccess = $uploader->upload($_FILES["secondgGllery"],$secondGallery);
-        $thirdSuccess = $uploader->upload($_FILES["thirdGallery"],$thirdGallery);
-        $fourthSuccess = $uploader->upload($_FILES["fourthGallery"],$fourthGallery);
+        $firstSuccess = isset($_FILES["firstGallery"]) ? $uploader->upload($_FILES["firstGallery"],$firstGallery) : true;
+        $secondSuccess = isset($_FILES["secondGallery"]) ? $uploader->upload($_FILES["secondgGllery"],$secondGallery) : true;
+        $thirdSuccess = isset($_FILES["thirdGallery"]) ? $uploader->upload($_FILES["thirdGallery"],$thirdGallery) : true;
+        $fourthSuccess = isset($_FILES["fourthGallery"]) ? $uploader->upload($_FILES["fourthGallery"],$fourthGallery) : true;
 
         if ($mainSuccess && $firstSuccess && $secondSuccess && $thirdSuccess && $fourthSuccess) {
           $userFeedbackContent .= "<li><strong class=\"success\">Camera aggiunta con successo</strong></li>";
