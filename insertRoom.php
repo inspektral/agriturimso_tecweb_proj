@@ -67,7 +67,7 @@ if (isset($_POST["submit"])) {
 
       print_r($isFailed);
       if ($isFailed) {
-        header("Location: /errors/500.php");
+        // header("Location: ./errors/500.php");
       }
 
       $result = $dbAccess->addRoom($name,$people,$price,$mainImg,$imgLongdesc,$firstGallery,$secondGallery,$thirdGallery,$fourthGallery,$servicesBool);
@@ -75,7 +75,7 @@ if (isset($_POST["submit"])) {
 
       print_r($result);
       if (!$result) {
-        header("Location: /errors/500.php");
+        // header("Location: ./errors/500.php");
       }
 
       if ($result["isSuccessful"] /*&& file_put_contents($imgLongdescPath, $imgLongdesc)*/) {
