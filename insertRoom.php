@@ -61,6 +61,7 @@ if (isset($_POST["submit"])) {
 
     if (strlen($name) > 5 && is_int($people) && $people > 0 && is_float($price) && $price > 0.0 && strlen($imgLongdesc) > 20) {
       $servicesBool = (new ServicesConverter())->convertToBoolean($services);
+      print_r($servicesBool);
 
       $dbAccess = new DBAccess();
       $isFailed = $dbAccess->openDBConnection();
