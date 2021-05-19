@@ -77,7 +77,7 @@ if (isset($_POST["submit"])) {
       $dbAccess->closeDBConnection(); 
 
       if (!$result) {
-        header("Location: ./errors/500.php");
+        // header("Location: ./errors/500.php");
       }
 
       if ($result["isSuccessful"] && file_put_contents($imgLongdescPath, $imgLongdesc)) {
