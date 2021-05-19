@@ -98,10 +98,10 @@ if (isset($_POST["submit"])) {
       if (strlen($name) <= 5) {
         $userFeedbackContent .= "<li><strong class=\"error\">Il nome della camera deve avere lunghezza maggiore di cinque</strong></li>";
       } 
-      if (!is_int($people) && $people <= 0) {
+      if (!is_int($people) || $people <= 0) {
         $userFeedbackContent .= "<li><strong class=\"error\">Il numero di persone deve essere un intero maggiore di 1</strong></li>";
       }
-      if (!is_float($price) && $price <= 0.0) {
+      if (!is_float($price) || $price <= 0.0) {
         $userFeedbackContent .= "<li><strong class=\"error\">Il prezzo della stanza deve essere un numero reale maggiore di zero</strong></li>";
       } 
       if (strlen($imgLongdesc) <= 20) {
