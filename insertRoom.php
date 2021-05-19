@@ -25,19 +25,7 @@ $nameValue = "";
 $peopleValue = "";
 $priceValue = "";
 $imgLongdescValue = "";
-$tvChecked = "";
-$balconeChecked = "";
-$gardenChecked = "";
-$airChecked = "";
-$heatChecked = "";
-$parquetChecked = "";
-$showerChecked = "";
-$shampooChecked = "";
-$wcChecked = "";
-$bathChecked = "";
-$bidetChecked = "";
-$paperChecked = "";
-$towelsChecked = "";
+$checkedServices = (new ServicesConverter())->convertToHtmlAttribute([]);
 if (isset($_POST["submit"])) {
   print_r($_POST);
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
@@ -59,26 +47,25 @@ if (isset($_POST["submit"])) {
     }
 
     if (strlen($name) > 5 && is_int($people) && $people > 0 && is_float($price) && $price > 0.0 && strlen($imgLongdesc) > 20) {
-      $servicesBool = (new ServicesConverter())->convertToBoolean($services);
-      print_r($servicesBool);
+      $servicesConverter = new ServicesConverter();
+      $servicesBool = $servicesConverter->convertToBoolean($services);
+      $checkedServices = $servicesConverter->convertToHtmlAttribute($servicesBool);
 
       $dbAccess = new DBAccess();
       $isFailed = $dbAccess->openDBConnection();
 
-      print_r($isFailed);
       if ($isFailed) {
-        // header("Location: ./errors/500.php");
+        header("Location: ./errors/500.php");
       }
 
       $result = $dbAccess->addRoom($name,$people,$price,$mainImg,$imgLongdesc,$firstGallery,$secondGallery,$thirdGallery,$fourthGallery,$servicesBool);
       $dbAccess->closeDBConnection(); 
 
-      print_r($result);
       if (!$result) {
-        // header("Location: ./errors/500.php");
+        header("Location: ./errors/500.php");
       }
 
-      if ($result["isSuccessful"] /*&& file_put_contents($imgLongdescPath, $imgLongdesc)*/) {
+      if ($result["isSuccessful"] && file_put_contents($imgLongdescPath, $imgLongdesc)) {
         // $uploader = new ImageUploader();
         // $mainSuccess = $uploader->upload($_FILES["mainImg"],$mainImg);
         // $firstSuccess = $uploader->upload($_FILES["firstGallery"],$firstGallery);
@@ -93,6 +80,10 @@ if (isset($_POST["submit"])) {
         // }
       } else {
         $userFeedbackContent .= "<li><strong class=\"error\">Errore durante l'aggiunta della camera</strong></li>";
+        $nameValue = $_POST["name"];
+        $peopleValue = $_POST["people"];
+        $priceValue = $_POST["price"];
+        $imgLongdescValue = $_POST['mainLongdesc'];
       }
     } else {
       if (strlen($name) <= 5) {
@@ -142,18 +133,18 @@ $html = str_replace("<NameValuePlaceholder />", $nameValue, $html);
 $html = str_replace("<PeopleValuePlaceholder />", $peopleValue, $html);
 $html = str_replace("<PriceValuePlaceholder />", $priceValue, $html);
 $html = str_replace("<MainLongdescValuePlaceholder />", $imgLongdescValue, $html);
-$html = str_replace("<TvCheckedPlaceholder />", $tvChecked, $html);
-$html = str_replace("<BalconeCheckedPlaceholder />", $balconeChecked, $html);
-$html = str_replace("<GardenCheckedPlaceholder />", $gardenChecked, $html);
-$html = str_replace("<AirCheckedPlaceholder />", $airChecked, $html);
-$html = str_replace("<HeatCheckedPlaceholder />", $heatChecked, $html);
-$html = str_replace("<ParquetCheckedPlaceholder />", $paperChecked, $html);
-$html = str_replace("<ShowerCheckedPlaceholder />", $shampooChecked, $html);
-$html = str_replace("<ShampooCheckedPlaceholder />", $shampooChecked, $html);
-$html = str_replace("<WcCheckedPlaceholder />", $wcChecked, $html);
-$html = str_replace("<BathCheckedPlaceholder />", $bathChecked, $html);
-$html = str_replace("<BidetCheckedPlaceholder />", $bidetChecked, $html);
-$html = str_replace("<PaperCheckedPlaceholder />", $paperChecked, $html);
-$html = str_replace("<TowelsCheckedPlaceholder />", $towelsChecked, $html);
+$html = str_replace("<TvCheckedPlaceholder />", $checkedServices["tv"], $html);
+$html = str_replace("<BalconeCheckedPlaceholder />", $checkedServices["balcony"], $html);
+$html = str_replace("<GardenCheckedPlaceholder />", $checkedServices["gardenView"], $html);
+$html = str_replace("<AirCheckedPlaceholder />", $checkedServices["airCondition"], $html);
+$html = str_replace("<HeatCheckedPlaceholder />", $checkedServices["heat"], $html);
+$html = str_replace("<ParquetCheckedPlaceholder />", $checkedServices["parquet"], $html);
+$html = str_replace("<ShowerCheckedPlaceholder />", $checkedServices["shower"], $html);
+$html = str_replace("<ShampooCheckedPlaceholder />", $checkedServices["shampoo"], $html);
+$html = str_replace("<WcCheckedPlaceholder />", $checkedServices["wc"], $html);
+$html = str_replace("<BathCheckedPlaceholder />", $checkedServices["bath"], $html);
+$html = str_replace("<BidetCheckedPlaceholder />", $checkedServices["bidet"], $html);
+$html = str_replace("<PaperCheckedPlaceholder />", $checkedServices["paper"], $html);
+$html = str_replace("<TowelsCheckedPlaceholder />", $checkedServices["towels"], $html);
 echo $html;
 ?>
