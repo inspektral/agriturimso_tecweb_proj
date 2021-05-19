@@ -5,7 +5,7 @@ class ImageUploader {
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
       return false;
     }
-    return move_uploaded_file($file,$path);
+    return move_uploaded_file($file["tmp_name"],$path);
   }
 }
 ?>

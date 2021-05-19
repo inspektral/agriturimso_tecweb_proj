@@ -66,7 +66,7 @@ if (isset($_POST["submit"])) {
         header("Location: ./errors/500.php");
       }
 
-      $result = $dbAccess->addRoom($name,$people,$price,$mainImg,$imgLongdesc,$firstGallery,$secondGallery,$thirdGallery,$fourthGallery,$servicesBool);
+      $result = $dbAccess->addRoom($name,$people,$price,$mainImg,$imgLongdescPath,$firstGallery,$secondGallery,$thirdGallery,$fourthGallery,$servicesBool);
       $dbAccess->closeDBConnection(); 
 
       if (!$result) {
