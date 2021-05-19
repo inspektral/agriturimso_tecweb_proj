@@ -26,7 +26,7 @@ class ServicesConverter {
 
   public function convertToHtmlAttribute($services) {
     $checked = [];
-    foreach (ServicesConverter::SERVICES_NAMES as $key => $serviceName) {
+    foreach (ServicesConverter::SERVICES_NAMES as $serviceName => $value) {
       if (in_array($serviceName, $services, true)) {
         $checked["$serviceName"] = "checked=\"checked\"";
       }
