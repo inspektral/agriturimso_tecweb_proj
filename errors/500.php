@@ -10,7 +10,7 @@ $content = "";
 if (isset($_SESSION['email'])) {        
   $content = $menu->getWelcomeMessage($_SESSION['email']);
 } else {
-  $content = $menu->getAuthenticationButtons();
+  $content = $menu->getAuthenticationButtons(true);
 }
 
 $html = str_replace("<UserPlaceholder />", $content, $html);

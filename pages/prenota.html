@@ -54,20 +54,23 @@
 
 		<div class="contenutoGenerale column">
 			<h2>Prenotazione Camera</h2>
-			<form class="prenot_form" action="prenota.php">
-				<fieldset>
+			<form class="prenot_form" action="prenota.php" method="post">
+				<fieldset id="prenotazioneFieldset">
 					<div>
-						<label for="pre_da">Da: (gg/mm/aaaa)</label>
-						<input id="pre_da" type="text" />
+						<label for="pre_da">Da:</label>
+						<input id="pre_da" type="date" name="prenotazioneDa"/>
 					</div>
 					<div>
-						<label for="pre_a">A: (gg/mm/aaaa)</label>
-						<input id="pre_a" type="text" />
+						<label for="pre_a">A:</label>
+						<input id="pre_a" type="date" name="prenotazioneA" />
 					</div>
-
+					<hiddenValueCamera/>
 					<input class="bottoneform" type="submit" value="Prenota" />
 				</fieldset>
 			</form>
+			
+		<resultPrenotazione/>
+			
 		</div>
 
 		<div id="rightSideBar" class="column right">

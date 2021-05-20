@@ -453,6 +453,11 @@ li span {
 	position: relative;
 	text-indent: -10em;
 }
+
+#prenotazioneFieldset div{
+	margin-bottom: 5%;
+}
+
 /*
 ==============
 SEZIONE FOOTER
@@ -489,19 +494,6 @@ textarea, fieldset {
 }
 
 .bottoneform, .bottoneform:visited, #bottoneregistrati {
-	background-color: #923a43; /* Green */
-	border: none;
-	color: white;
-	margin-top: 1.5em;
-	padding: 2% 4%;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	border-radius: 4px;
-}
-
-.bottoneform:hover {
 	background-color: #923a43;
 	border: none;
 	color: white;
@@ -510,7 +502,17 @@ textarea, fieldset {
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
+	margin: 4% auto 4% auto;
+	
+  	border: 2px solid #923a43;
 	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+.bottoneform:hover {
+	color: #923a43;
+	background-color: white;
 }
 
 .spazio {
