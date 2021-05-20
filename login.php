@@ -14,7 +14,7 @@ if (isset($_SESSION['email'])) {
   $userContent = $menu->getAuthenticationButtons(false, false, true);
 }
 
-$errorContent = "<div><ul>";
+$errorContent = "<div><ul class=\"feedbackList\">";
 if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"])) {
     $username = $_POST["email"];
     $password = $_POST["password"];

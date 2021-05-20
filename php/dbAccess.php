@@ -1,7 +1,8 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+// error_reporting(E_ALL);
 
 class DBAccess {
     /*private const HOST_DB = "127.0.0.1";
@@ -17,7 +18,7 @@ class DBAccess {
     private $connection;
 
     public function openDBConnection() {
-        $this->connection = @new mysqli(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DB_NAME);
+        $this->connection = new mysqli(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DB_NAME);
         return $this->connection->connect_errno;
     }
 
@@ -53,6 +54,7 @@ class DBAccess {
     public function signupUser($name, $lastname, $email, $password) {
         $query = "INSERT INTO `Users` (`nome`, `cognome`, `password`, `email`) VALUES (?, ?, ?, ?)";
         $stmt = $this->connection->prepare($query);
+
         if (!$stmt) {
             return null;
         }
@@ -96,6 +98,75 @@ class DBAccess {
         return array(
             "isSuccessful" => $stmt->affected_rows === 1
         );
+    }
+
+    public function addRoom($name,$people,$price,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services) {
+        $query = "INSERT INTO `Rooms` (`name`,`people`,`price`,`mainImg`,`mainImgLongdesc`,`firstGallery`,`secondGallery`,`thirdGallery`,`fourthGallery`,`tv`,`balcony`,`gardenView`,
+            `airCondition`,`heat`,`parquet`,`shower`,`shampoo`,`wc`,`bath`,`bidet`,`paper`,`towels`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            return null;
+        }
+        $stmt->bind_param("sidssssssiiiiiiiiiiiii", $name,$people,$price,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services["tv"],$services["balcony"],
+            $services["gardenView"],$services["airCondition"],$services["heat"],$services["parquet"],$services["shower"],$services["shampoo"],$services["wc"],$services["bath"],
+            $services["bidet"],$services["paper"],$services["towels"]
+        );
+        $stmt->execute();
+
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1
+        );
+    }
+
+    public function removeRoom($name) {
+        $query = "DELETE FROM `Rooms` WHERE `name` = ?;";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            return null;
+        }
+        $stmt->bind_param("s", $name);
+        $stmt->execute();
+
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1
+        );
+    }
+
+    public function setComments($email, $testo, $voto){
+        $query= "INSERT INTO `Recensioni` (`email`, `testo`,`timestamp`,`voto`) VALUES (?, ?, CURRENT_TIMESTAMP(), ?);";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            
+            return null;
+        } 
+        $stmt->bind_param("sss", $email, $testo, $voto);
+        $stmt->execute();
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1
+        );
+    }
+
+
+    public function getComments(){
+        $query = "SELECT * FROM `Recensioni` ORDER BY `timestamp`;";
+        $result = $this->connection->query($query);
+
+        if ($result->num_rows === 0) {
+            return null;
+        }
+        $commenti = array();
+        while($row = $result->fetch_assoc()) {
+            $item = array(
+                "email" => $row["email"],
+                "testo" => $row["testo"],
+                "timestamp" => $row["timestamp"],
+                "voto" => $row["voto"],
+
+            );
+            array_push($commenti, $item);
+        }
+        return $commenti;
+
     }
 
     public function getCharacters() {

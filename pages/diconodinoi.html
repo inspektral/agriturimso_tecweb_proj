@@ -3,9 +3,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<title>Login - Agriturismo Morgan</title>
+	<title>Dicono di noi - Agriturismo Morgan</title>
 
-	<meta name="title" content="Login" />
+	<meta name="title" content="Dicono di noi" />
 
 	<meta name="language" content="italian it" />
 
@@ -15,8 +15,8 @@
 		media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
 	<link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
-
 	<link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
+
 </head>
 <body>
 	<div id="header">
@@ -66,87 +66,88 @@
 
 			<div id="sezionecommenti" class="comments">
 				<h2>Scopri cosa dicono di noi!</h2>
-				<section id="casellacommento">
+				<div class="casellacommento">
 				<h3>Tito</h3>
 				<cite> Mi sono trovato molto bene in questo agriturismo, lo
 					consiglio!</cite>
 				<div class="bottonicommento">
-					<button type="button">Rispondi</button>
-					<button type="button">Segnala</button>
+
 					<button type="button">Cancella</button>
 				</div>
-				</section>
+				</div>
 
-				<section id="casellacommento">
+				<div class="casellacommento">
 				<h3>Lorenzo</h3>
 				<cite> Ottima gestione e cordialità verso i clienti</cite>
 				<div class="bottonicommento">
-					<button type="button">Rispondi</button>
-					<button type="button">Segnala</button>
+
 					<button type="button">Cancella</button>
 				</div>
-				</section>
+				</div>
 
-				<section id="casellacommento">
+				<div class="casellacommento">
 				<h3>Matteo</h3>
 				<cite> Buon cibo e camere bellissime!</cite>
 				<div class="bottonicommento">
-					<button type="button">Rispondi</button>
-					<button type="button">Segnala</button>
+
 					<button type="button">Cancella</button>
 				</div>
-				</section>
+				</div>
 
-				<section id="casellacommento">
+				<div class="casellacommento">
 				<h3>Francesco</h3>
 				<cite> Camere pulite e ristorante eccelso</cite>
 				<div class="bottonicommento">
-					<button type="button">Rispondi</button>
-					<button type="button">Segnala</button>
+
 					<button type="button">Cancella</button>
 				</div>
-				</section>
+				</div>
 
-				<section id="casellacommento">
+				<div class="casellacommento">
 				<h3>Massimo</h3>
 				<cite> Situato in una zona da visitare assolutamente!</cite>
 				<div class="bottonicommento">
-					<button type="button">Rispondi</button>
-					<button type="button">Segnala</button>
+
 					<button type="button">Cancella</button>
 				</div>
-				</section>
+				</div>
 			</div>
+
+			<CommentPlaceholder />
+
 			<div id="lasciacommento">
 				<h3>Lascia un commento!</h3>
-				<form method="post" action="nuovocommento.php">
+				<form method="post" action="diconodinoi.php">
 					<fieldset>
 						<p class="spazio">
 							<strong> Dacci un voto </strong>
 						</p>
 
-						<label class="container">1 <input type="radio"
-							checked="checked" name="radio" /> <span class="checkmark" /></label> <label
-							class="container">2 <input type="radio" name="radio" />
-							<span class="checkmark" /></label> <label class="container">3 <input
-							type="radio" name="radio" /> <span class="checkmark"></span>
-						</label> <label class="container">4 <input type="radio"
-							name="radio" /> <span class="checkmark"></span></label> <label
-							class="container">5 <input type="radio" name="radio" />
-							<span class="checkmark"></span></label>
+						<label class="container">1 <input type="radio" checked="checked" name="voto" value="1"/> <span class="checkmark"></label> 
+								
+							<label class="container">2 <input type="radio" name="voto" value="2"/> <span class="checkmark" ></label> 
+		
+							<label class="container">3 <input type="radio" name="voto" value="3" /> <span class="checkmark"></span></label> 
+		
+							<label class="container">4 <input type="radio" name="voto" value="4"/> <span class="checkmark"></span></label> 
+										
+							<label class="container">5 <input type="radio" name="voto" value="5"/> <span class="checkmark"></span></label>
+							
 					</fieldset>
 
 					<fieldset>
-						<label for="commento">Scrivi il commento qui sotto: </label>
-						<textarea id="commento" name="commento" rows="10" cols="50"
+						
+						<textarea id="testo" name="testo" rows="10" cols="50"
 							placeholder="Scrivi qui il tuo commento..."></textarea>
 					</fieldset>
 
 					<fieldset>
-						<button type="submit" name="submit" class="bottoneform">Invia</button>
-						<p class="spazio">oppure</p>
-						<a href="signup.php" id="bottoneregistrati">Registrati</a>
+						<button id="submit" type="submit" name="submit" class="bottoneform">Invia</button>
+
 					</fieldset>
+
+					<InsertCommentErrorPlaceholder />
+					
 				</form>
 			</div>
 		</div>

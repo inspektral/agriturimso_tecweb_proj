@@ -15,8 +15,10 @@ if (isset($_SESSION['email'])) {
 }
 
 $contentAdminNews = "";
+$contentAdminAddRoom = "";
 if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
   $contentAdminNews = "<div id=\"adminSection\"><button id=\"buttonNews\">Gestisci</button></div>";
+  $contentAdminAddRoom = "<a href=\"./insertRoom.php\">Aggiungi stanza</a>";
 }
 
 $newsContent = (new NewsListFactory())->createNewsList();
@@ -26,6 +28,7 @@ if (!$newsContent) {
 
 $html = str_replace("<UserPlaceholder />", $content, $html);
 $html = str_replace("<AdminNewsManagementPlaceholder />", $contentAdminNews, $html);
+$html = str_replace("<AdminAddRoomPlaceholder />", $contentAdminAddRoom, $html);
 $html = str_replace("<NewsListPlaceholder />", $newsContent, $html);
 echo $html;
 ?>
