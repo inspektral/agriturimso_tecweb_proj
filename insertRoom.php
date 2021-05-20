@@ -1,9 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-error_reporting(E_ALL);
-
 require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."UserMenu.php";
 require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."dbAccess.php";
 require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."InputCleaner.php";
@@ -90,6 +85,21 @@ if (isset($_POST["submit"])) {
           $userFeedbackContent .= "<li><strong class=\"success\">Camera aggiunta con successo</strong></li>";
         } else {
           $userFeedbackContent .= "<li><strong class=\"error\">Errore durante durante il caricamento delle immagini</strong></li>";
+          // Delete the room from database
+          $dbAccess = new DBAccess();
+          $isFailed = $dbAccess->openDBConnection();
+
+          if ($isFailed) {
+            header("Location: ./errors/500.php");
+          }
+
+          $result = $dbAccess->removeRoom($name);
+          $dbAccess->closeDBConnection(); 
+
+          if (!$result) {
+            header("Location: ./errors/500.php");
+          }
+
           $nameValue = $_POST["name"];
           $peopleValue = $_POST["people"];
           $priceValue = $_POST["price"];

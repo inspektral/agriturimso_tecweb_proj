@@ -113,6 +113,20 @@ class DBAccess {
         );
     }
 
+    public function removeRoom($name) {
+        $query = "DELETE FROM `Rooms` WHERE `name` = ?;";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            return null;
+        }
+        $stmt->bind_param("s", $name);
+        $stmt->execute();
+
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1
+        );
+    }
+
     public function setComments($email, $testo, $voto){
         $query= "INSERT INTO `Recensioni` (`email`, `testo`,`timestamp`,`voto`) VALUES (?, ?, CURRENT_TIMESTAMP(), ?);";
         $stmt = $this->connection->prepare($query);
