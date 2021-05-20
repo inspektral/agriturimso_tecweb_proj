@@ -37,6 +37,13 @@ $checkedServices = [
   "paper" => "",
   "towels" => ""
 ];
+$imagesValues = [
+  "mainImg" => "",
+  "firstImg" => "",
+  "secondImg" => "",
+  "thirdImg" => "",
+  "fourthImg" => ""
+];
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
   if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_FILES["mainImg"]) && isset($_POST["mainLongdesc"])) {
@@ -90,6 +97,11 @@ if (isset($_POST["submit"])) {
           $priceValue = $_POST["price"];
           $imgLongdescValue = $_POST['mainLongdesc'];
           $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
+          $imagesValues["mainImg"] = $_FILES["mainImg"];
+          $imagesValues["firstImg"] = isset($_FILES["firstGallery"]) ? $_FILES["firstGallery"] : "";
+          $imagesValues["secondImg"] = isset($_FILES["secondGallery"]) ? $_FILES["secondgGallery"] : "";
+          $imagesValues["thirdImg"] = isset($_FILES["thirdGallery"]) ? $_FILES["thirdGallery"] : "";
+          $imagesValues["fourthImg"] = isset($_FILES["fourthGallery"]) ? $_FILES["fourthGallery"], : "";
         }
       } else {
         $userFeedbackContent .= "<li><strong class=\"error\">Errore durante l'aggiunta della camera</strong></li>";
@@ -98,6 +110,11 @@ if (isset($_POST["submit"])) {
         $priceValue = $_POST["price"];
         $imgLongdescValue = $_POST['mainLongdesc'];
         $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
+        $imagesValues["mainImg"] = $_FILES["mainImg"];
+        $imagesValues["firstImg"] = isset($_FILES["firstGallery"]) ? $_FILES["firstGallery"] : "";
+        $imagesValues["secondImg"] = isset($_FILES["secondGallery"]) ? $_FILES["secondgGallery"] : "";
+        $imagesValues["thirdImg"] = isset($_FILES["thirdGallery"]) ? $_FILES["thirdGallery"] : "";
+        $imagesValues["fourthImg"] = isset($_FILES["fourthGallery"]) ? $_FILES["fourthGallery"], : "";
       }
     } else {
       if (strlen($name) <= 5) {
@@ -117,6 +134,11 @@ if (isset($_POST["submit"])) {
       $priceValue = $_POST["price"];
       $imgLongdescValue = $_POST['mainLongdesc'];
       $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
+      $imagesValues["mainImg"] = $_FILES["mainImg"];
+      $imagesValues["firstImg"] = isset($_FILES["firstGallery"]) ? $_FILES["firstGallery"] : "";
+      $imagesValues["secondImg"] = isset($_FILES["secondGallery"]) ? $_FILES["secondgGallery"] : "";
+      $imagesValues["thirdImg"] = isset($_FILES["thirdGallery"]) ? $_FILES["thirdGallery"] : "";
+      $imagesValues["fourthImg"] = isset($_FILES["fourthGallery"]) ? $_FILES["fourthGallery"], : "";
     }
   } else {
     if (!isset($_POST["name"])) {
@@ -139,6 +161,11 @@ if (isset($_POST["submit"])) {
     $priceValue = isset($_POST["price"]) ? $_POST["price"] : "";
     $imgLongdescValue = isset($_POST["mainLongdesc"]) ? $_POST['mainLongdesc'] : "";
     $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
+    $imagesValues["mainImg"] = $_FILES["mainImg"];
+    $imagesValues["firstImg"] = isset($_FILES["firstGallery"]) ? $_FILES["firstGallery"] : "";
+    $imagesValues["secondImg"] = isset($_FILES["secondGallery"]) ? $_FILES["secondgGallery"] : "";
+    $imagesValues["thirdImg"] = isset($_FILES["thirdGallery"]) ? $_FILES["thirdGallery"] : "";
+    $imagesValues["fourthImg"] = isset($_FILES["fourthGallery"]) ? $_FILES["fourthGallery"], : "";
   }
   $userFeedbackContent .= "</ul></div>";
 }
@@ -162,5 +189,10 @@ $html = str_replace("<BathCheckedPlaceholder />", $checkedServices["bath"], $htm
 $html = str_replace("<BidetCheckedPlaceholder />", $checkedServices["bidet"], $html);
 $html = str_replace("<PaperCheckedPlaceholder />", $checkedServices["paper"], $html);
 $html = str_replace("<TowelsCheckedPlaceholder />", $checkedServices["towels"], $html);
+$html = str_replace("<MainImgPlaceholder />", $imagesValues["mainImg"], $html);
+$html = str_replace("<FirstImgPlaceholder />", $imagesValues["firstImg"], $html);
+$html = str_replace("<SecondImdPlaceholder />", $imagesValues["secondImg"], $html);
+$html = str_replace("<ThirdImgPlaceholder />", $imagesValues["thirdImg"], $html);
+$html = str_replace("<FourthImgPlaceholder />", $imagesValues["fourthImg"], $html);
 echo $html;
 ?>
