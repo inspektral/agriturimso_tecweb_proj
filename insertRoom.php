@@ -194,10 +194,10 @@ $html = str_replace("<BathCheckedPlaceholder />", $checkedServices["bath"], $htm
 $html = str_replace("<BidetCheckedPlaceholder />", $checkedServices["bidet"], $html);
 $html = str_replace("<PaperCheckedPlaceholder />", $checkedServices["paper"], $html);
 $html = str_replace("<TowelsCheckedPlaceholder />", $checkedServices["towels"], $html);
-$html = str_replace("<MainImgPlaceholder />", $imagesValues["mainImg"], $html);
-$html = str_replace("<FirstImgPlaceholder />", $imagesValues["firstImg"], $html);
-$html = str_replace("<SecondImdPlaceholder />", $imagesValues["secondImg"], $html);
-$html = str_replace("<ThirdImgPlaceholder />", $imagesValues["thirdImg"], $html);
-$html = str_replace("<FourthImgPlaceholder />", $imagesValues["fourthImg"], $html);
+// $html = str_replace("<MainImgPlaceholder />", $imagesValues["mainImg"], $html);
+// $html = str_replace("<FirstImgPlaceholder />", $imagesValues["firstImg"], $html);
+// $html = str_replace("<SecondImdPlaceholder />", $imagesValues["secondImg"], $html);
+// $html = str_replace("<ThirdImgPlaceholder />", $imagesValues["thirdImg"], $html);
+// $html = str_replace("<FourthImgPlaceholder />", $imagesValues["fourthImg"], $html);
 echo $html;
 ?>
