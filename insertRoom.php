@@ -102,11 +102,11 @@ if (isset($_POST["submit"])) {
           $priceValue = $_POST["price"];
           $imgLongdescValue = $_POST['mainLongdesc'];
           $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
-          $imagesValues["mainImg"] = $_FILES["mainImg"];
-          $imagesValues["firstImg"] = isset($_FILES["firstGallery"]) ? $_FILES["firstGallery"] : "";
-          $imagesValues["secondImg"] = isset($_FILES["secondGallery"]) ? $_FILES["secondgGallery"] : "";
-          $imagesValues["thirdImg"] = isset($_FILES["thirdGallery"]) ? $_FILES["thirdGallery"] : "";
-          $imagesValues["fourthImg"] = isset($_FILES["fourthGallery"]) ? $_FILES["fourthGallery"], : "";
+          // $imagesValues["mainImg"] = $_FILES["mainImg"];
+          // $imagesValues["firstImg"] = isset($_FILES["firstGallery"]) ? $_FILES["firstGallery"] : "";
+          // $imagesValues["secondImg"] = isset($_FILES["secondGallery"]) ? $_FILES["secondgGallery"] : "";
+          // $imagesValues["thirdImg"] = isset($_FILES["thirdGallery"]) ? $_FILES["thirdGallery"] : "";
+          // $imagesValues["fourthImg"] = isset($_FILES["fourthGallery"]) ? $_FILES["fourthGallery"], : "";
         }
       } else {
         $userFeedbackContent .= "<li><strong class=\"error\">Errore durante l'aggiunta della camera</strong></li>";
@@ -115,11 +115,11 @@ if (isset($_POST["submit"])) {
         $priceValue = $_POST["price"];
         $imgLongdescValue = $_POST['mainLongdesc'];
         $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
-        $imagesValues["mainImg"] = $_FILES["mainImg"];
-        $imagesValues["firstImg"] = isset($_FILES["firstGallery"]) ? $_FILES["firstGallery"] : "";
-        $imagesValues["secondImg"] = isset($_FILES["secondGallery"]) ? $_FILES["secondgGallery"] : "";
-        $imagesValues["thirdImg"] = isset($_FILES["thirdGallery"]) ? $_FILES["thirdGallery"] : "";
-        $imagesValues["fourthImg"] = isset($_FILES["fourthGallery"]) ? $_FILES["fourthGallery"], : "";
+        // $imagesValues["mainImg"] = $_FILES["mainImg"];
+        // $imagesValues["firstImg"] = isset($_FILES["firstGallery"]) ? $_FILES["firstGallery"] : "";
+        // $imagesValues["secondImg"] = isset($_FILES["secondGallery"]) ? $_FILES["secondgGallery"] : "";
+        // $imagesValues["thirdImg"] = isset($_FILES["thirdGallery"]) ? $_FILES["thirdGallery"] : "";
+        // $imagesValues["fourthImg"] = isset($_FILES["fourthGallery"]) ? $_FILES["fourthGallery"], : "";
       }
     } else {
       if (strlen($name) <= 5) {
@@ -139,11 +139,11 @@ if (isset($_POST["submit"])) {
       $priceValue = $_POST["price"];
       $imgLongdescValue = $_POST['mainLongdesc'];
       $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
-      $imagesValues["mainImg"] = $_FILES["mainImg"];
-      $imagesValues["firstImg"] = isset($_FILES["firstGallery"]) ? $_FILES["firstGallery"] : "";
-      $imagesValues["secondImg"] = isset($_FILES["secondGallery"]) ? $_FILES["secondgGallery"] : "";
-      $imagesValues["thirdImg"] = isset($_FILES["thirdGallery"]) ? $_FILES["thirdGallery"] : "";
-      $imagesValues["fourthImg"] = isset($_FILES["fourthGallery"]) ? $_FILES["fourthGallery"], : "";
+      // $imagesValues["mainImg"] = $_FILES["mainImg"];
+      // $imagesValues["firstImg"] = isset($_FILES["firstGallery"]) ? $_FILES["firstGallery"] : "";
+      // $imagesValues["secondImg"] = isset($_FILES["secondGallery"]) ? $_FILES["secondgGallery"] : "";
+      // $imagesValues["thirdImg"] = isset($_FILES["thirdGallery"]) ? $_FILES["thirdGallery"] : "";
+      // $imagesValues["fourthImg"] = isset($_FILES["fourthGallery"]) ? $_FILES["fourthGallery"], : "";
     }
   } else {
     if (!isset($_POST["name"])) {
@@ -166,11 +166,11 @@ if (isset($_POST["submit"])) {
     $priceValue = isset($_POST["price"]) ? $_POST["price"] : "";
     $imgLongdescValue = isset($_POST["mainLongdesc"]) ? $_POST['mainLongdesc'] : "";
     $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
-    $imagesValues["mainImg"] = $_FILES["mainImg"];
-    $imagesValues["firstImg"] = isset($_FILES["firstGallery"]) ? $_FILES["firstGallery"] : "";
-    $imagesValues["secondImg"] = isset($_FILES["secondGallery"]) ? $_FILES["secondgGallery"] : "";
-    $imagesValues["thirdImg"] = isset($_FILES["thirdGallery"]) ? $_FILES["thirdGallery"] : "";
-    $imagesValues["fourthImg"] = isset($_FILES["fourthGallery"]) ? $_FILES["fourthGallery"], : "";
+    // $imagesValues["mainImg"] = $_FILES["mainImg"];
+    // $imagesValues["firstImg"] = isset($_FILES["firstGallery"]) ? $_FILES["firstGallery"] : "";
+    // $imagesValues["secondImg"] = isset($_FILES["secondGallery"]) ? $_FILES["secondgGallery"] : "";
+    // $imagesValues["thirdImg"] = isset($_FILES["thirdGallery"]) ? $_FILES["thirdGallery"] : "";
+    // $imagesValues["fourthImg"] = isset($_FILES["fourthGallery"]) ? $_FILES["fourthGallery"], : "";
   }
   $userFeedbackContent .= "</ul></div>";
 }
