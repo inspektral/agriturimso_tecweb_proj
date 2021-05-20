@@ -49,7 +49,7 @@ class DBAccess {
     public function signupUser($name, $lastname, $email, $password) {
         $query = "INSERT INTO `Users` (`nome`, `cognome`, `password`, `email`) VALUES (?, ?, ?, ?)";
         $stmt = $this->connection->prepare($query);
-        var_dump($stmt);
+
         if (!$stmt) {
             return null;
         }

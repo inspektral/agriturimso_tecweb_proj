@@ -32,7 +32,6 @@ class ServicesConverter {
         $checked["$serviceName"] = "checked=\"checked\"";
       }
     }
-    var_dump($checked);
     return $checked;
   }
 }
