@@ -20,11 +20,11 @@
     <body>
         <div id="header">
             <ul class="aiutiNascosti">
+                <li><a href="#contentLogin">Vai al contenuto</a></li>
                 <li><a href="#menu">Vai al menu</a></li>
-                <li><a href="#contentHomePage">Vai al contenuto</a></li>
                 <li><a href="#ultimeNews">Vai alle ultime news</a></li>
             </ul>
-            <img id="logo" src="./images/bbtlogo.png" alt="Logo dell'agriturismo a forma di casa stilizzata con una a come tetto e una m come muri" />
+            <img id="logo" src="images/bbtlogo.png" alt="Casa stilizzata con una A come tetto e una M come muri" />
             <h1>Agriturismo Morgan</h1>
             <h2>Ai piedi del Montello e dei colli Asolani</h2>
         </div>
@@ -41,18 +41,16 @@
             <UserPlaceholder />
         </div>
 
-        <div id="contentHomePage" class="contenutoGenerale">
+        <div id="contentLogin" class="contenutoGenerale" role="main">
             <LoginErrorPlaceholder />
             <form method="post" id="accedi" action="login.php">
                 <fieldset>
                     <legend xml:lang="en">Login</legend>
-                    <label for="email" class="formLabel" xml:lang="en">Email: </label>
-                    <input type="text" id="email" name="email" required/>
-                    <label for="password" class="formLabel" xml:lang="en">Password: </label>
-                    <input type="password" id="password" name="password" required/>
-                </fieldset>
-                <fieldset>
-                    <input type="submit" value="Accedi" id="submit" name="submit" />
+                    <label for="email" class="formLabel" xml:lang="en">Email:</label>
+                    <input type="text" id="email" name="email"/>
+                    <label for="password" class="formLabel" xml:lang="en">Password:</label>
+                    <input type="password" id="password" name="password"/>
+                    <button id="submit" type="submit" name="submit" class="bottoneform">Invia</button>
                 </fieldset>
             </form>
         </div>
