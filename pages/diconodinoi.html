@@ -44,71 +44,59 @@
 
 	<div id="contentAboutUs" class="row" role="main">
 		<div class="contenutoGenerale column">
-			<h2 class="center">Qui troverai le informazioni principali e le
-				recensioni dei nostri clienti</h2>
-
+			<h2 class="center">Qui troverai le informazioni principali e lerecensioni dei nostri clienti</h2>
 			<div id="imgCommenti">
-				<img src="./images/tavola.jpg" class="imgCommenti"
-					alt="tavola apparecchiata di fronte al camino all'interno dell'agriturismo" />
+				<img src="./images/tavola.jpg" class="imgCommenti" alt="tavola apparecchiata di fronte al camino all'interno dell'agriturismo" />
 			</div>
-
 			<p>I nostri recapiti:</p>
-
 			<div id="generalInfo">
 				<h3>AZIENDA AGRITURISTICA MORGAN</h3>
 				<address>Erizzo, 79 - 31044 Montebelluna (TV) - Italia</address>
-				<p><abbr title="telefono">Tel.</abbr> +39 0423 60 30 31</p>
-				<p><abbr title="cellulare">Cel.</abbr> +39 347 45 25 411</p>
+				<p><abbr title="telefono">Tel:</abbr> +39 0423 60 30 31</p>
+				<p><abbr title="cellulare">Cel:</abbr> +39 347 45 25 411</p>
 			</div>
-
 			<div id="info"></div>
 
 			<div id="sezionecommenti" class="comments">
 				<h2>Scopri cosa dicono di noi!</h2>
 				<div class="casellacommento">
-				<h3>Tito</h3>
-				<cite> Mi sono trovato molto bene in questo agriturismo, lo
-					consiglio!</cite>
-				<div class="bottonicommento">
-
-					<button type="button">Cancella</button>
-				</div>
+					<h3>Tito</h3>
+					<cite> Mi sono trovato molto bene in questo agriturismo, lo consiglio!</cite>
+					<div class="bottonicommento">
+						<button type="button">Cancella</button>
+					</div>
 				</div>
 
 				<div class="casellacommento">
-				<h3>Lorenzo</h3>
-				<cite> Ottima gestione e cordialità verso i clienti</cite>
-				<div class="bottonicommento">
-
-					<button type="button">Cancella</button>
-				</div>
-				</div>
-
-				<div class="casellacommento">
-				<h3>Matteo</h3>
-				<cite> Buon cibo e camere bellissime!</cite>
-				<div class="bottonicommento">
-
-					<button type="button">Cancella</button>
-				</div>
+					<h3>Lorenzo</h3>
+					<cite>Ottima gestione e cordialità verso i clienti</cite>
+					<div class="bottonicommento">
+						<button type="button">Cancella</button>
+					</div>
 				</div>
 
 				<div class="casellacommento">
-				<h3>Francesco</h3>
-				<cite> Camere pulite e ristorante eccelso</cite>
-				<div class="bottonicommento">
-
-					<button type="button">Cancella</button>
-				</div>
+					<h3>Matteo</h3>
+					<cite>Buon cibo e camere bellissime!</cite>
+					<div class="bottonicommento">
+						<button type="button">Cancella</button>
+					</div>
 				</div>
 
 				<div class="casellacommento">
-				<h3>Massimo</h3>
-				<cite> Situato in una zona da visitare assolutamente!</cite>
-				<div class="bottonicommento">
-
-					<button type="button">Cancella</button>
+					<h3>Francesco</h3>
+					<cite>Camere pulite e ristorante eccelso</cite>
+					<div class="bottonicommento">
+						<button type="button">Cancella</button>
+					</div>
 				</div>
+
+				<div class="casellacommento">
+					<h3>Massimo</h3>
+					<cite>Situato in una zona da visitare assolutamente!</cite>
+					<div class="bottonicommento">
+						<button type="button">Cancella</button>
+					</div>
 				</div>
 			</div>
 
@@ -116,37 +104,22 @@
 
 			<div id="lasciacommento">
 				<h3>Lascia un commento!</h3>
+				<InsertCommentErrorPlaceholder />
 				<form method="post" action="diconodinoi.php">
 					<fieldset>
-						<p class="spazio">
-							<strong> Dacci un voto </strong>
-						</p>
-
+						<h4 class="spazio">Dacci un voto</h4>
 						<label class="container">1 <input type="radio" checked="checked" name="voto" value="1"/> <span class="checkmark"></label> 
-								
-							<label class="container">2 <input type="radio" name="voto" value="2"/> <span class="checkmark" ></label> 
-		
-							<label class="container">3 <input type="radio" name="voto" value="3" /> <span class="checkmark"></span></label> 
-		
-							<label class="container">4 <input type="radio" name="voto" value="4"/> <span class="checkmark"></span></label> 
-										
-							<label class="container">5 <input type="radio" name="voto" value="5"/> <span class="checkmark"></span></label>
-							
+						<label class="container">2 <input type="radio" name="voto" value="2"/> <span class="checkmark" ></label> 
+						<label class="container">3 <input type="radio" name="voto" value="3" /> <span class="checkmark"></span></label> 	
+						<label class="container">4 <input type="radio" name="voto" value="4"/> <span class="checkmark"></span></label> 									
+						<label class="container">5 <input type="radio" name="voto" value="5"/> <span class="checkmark"></span></label>
 					</fieldset>
-
 					<fieldset>
-						
-						<textarea id="testo" name="testo" rows="10" cols="50"
-							placeholder="Scrivi qui il tuo commento..."></textarea>
+						<textarea id="testo" name="testo" rows="10" cols="50"></textarea>
 					</fieldset>
-
 					<fieldset>
 						<button id="submit" type="submit" name="submit" class="bottoneform">Invia</button>
-
 					</fieldset>
-
-					<InsertCommentErrorPlaceholder />
-					
 				</form>
 			</div>
 		</div>
@@ -164,11 +137,11 @@
 		<img src="./images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
 		<img src="./images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
 		<p>
-			Il sito è stato creato per un esercizio nell'ambito del corso di <a
-				href="https://elearning.unipd.it/math/login/index.php">Tecnologie
-				Web</a> e non rappresenta quindi il sito ufficiale dell'Agriturismo. I
-			testi sono stati gentilmente presi in prestito da <a
-				href="http://www.agriturismomorgan.it/">Agriturismo Morgan</a>.
+			Il sito è stato creato per un esercizio nell'ambito del corso di 
+			<a href="https://elearning.unipd.it/math/login/index.php">Tecnologie Web</a>
+			 e non rappresenta quindi il sito ufficiale dell'Agriturismo. I
+			testi sono stati gentilmente presi in prestito da
+			<a href="http://www.agriturismomorgan.it/">Agriturismo Morgan</a>.
 		</p>
 		<p>Tech Group - All rights reserved</p>
 	</div>
