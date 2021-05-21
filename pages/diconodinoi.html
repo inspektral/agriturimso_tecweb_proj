@@ -107,7 +107,7 @@
 				<InsertCommentErrorPlaceholder />
 				<form method="post" action="diconodinoi.php">
 					<fieldset>
-						<h4 class="spazio">Dacci un voto</h4>
+						<legend>Dacci un voto</legend>
 						<div class="container">
 							<label for="voto1">1</label>
 							<input id="voto1" type="radio" name="voto" value="1"/> 
@@ -135,8 +135,10 @@
 						</div>
 					</fieldset>
 					<fieldset>
-						<label for="testo">Inserisci il tuo commento</label>
-						<textarea id="testo" name="testo" rows="10" cols="50"></textarea>
+						<div>
+							<label for="testo">Inserisci il tuo commento</label>
+							<textarea id="testo" name="testo" rows="10" cols="50"></textarea>
+						</div>
 					</fieldset>
 					<fieldset>
 						<button id="submit" type="submit" name="submit" class="bottoneform">Invia</button>
