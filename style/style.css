@@ -328,7 +328,10 @@ SEZIONE CONTENUTO
 }
 
 #contentHomePage {
-	border-right: 1px solid #ddd;
+	text-align: center;
+}
+
+#contentAboutUs {
 	text-align: center;
 }
 
