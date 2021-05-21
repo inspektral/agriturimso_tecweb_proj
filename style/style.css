@@ -515,13 +515,13 @@ textarea, fieldset {
 	padding-bottom: 0.5em;
 }
 
-/* .container {
+.container {
 	display: inline;
 	position: relative;
 	padding-left: 35px;
 	margin-bottom: 12px;
 	cursor: pointer;
-} */
+}
 
 /* Hide the browser's default radio button */
 /* .container input {
