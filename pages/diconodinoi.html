@@ -108,11 +108,31 @@
 				<form method="post" action="diconodinoi.php">
 					<fieldset>
 						<h4 class="spazio">Dacci un voto</h4>
-						<label class="container">1 <input type="radio" checked="checked" name="voto" value="1"/> <span class="checkmark"></label> 
-						<label class="container">2 <input type="radio" name="voto" value="2"/> <span class="checkmark" ></label> 
-						<label class="container">3 <input type="radio" name="voto" value="3" /> <span class="checkmark"></span></label> 	
-						<label class="container">4 <input type="radio" name="voto" value="4"/> <span class="checkmark"></span></label> 									
-						<label class="container">5 <input type="radio" name="voto" value="5"/> <span class="checkmark"></span></label>
+						<div class="container">
+							<label for="voto1">1</label>
+							<input id="voto1" type="radio" name="voto" value="1"/> 
+							<span class="checkmark" />
+						</div>
+						<div class="container">
+							<label for="voto2">2</label>
+							<input id="voto2" type="radio" name="voto" value="2"/> 
+							<span class="checkmark" />
+						</div> 
+						<div class="container">
+							<label for="voto3">3</label>
+							<input id="voto3" type="radio" name="voto" value="3"/> 
+							<span class="checkmark" />
+						</div>
+						<div class="container">
+							<label for="voto4">4</label>
+							<input id="voto4" type="radio" name="voto" value="4"/> 
+							<span class="checkmark" />
+						</div>
+						<div class="container">
+							<label for="voto5">5</label>
+							<input id="voto5" type="radio" name="voto" value="5"/> 
+							<span class="checkmark" />
+						</div>
 					</fieldset>
 					<fieldset>
 						<textarea id="testo" name="testo" rows="10" cols="50"></textarea>
