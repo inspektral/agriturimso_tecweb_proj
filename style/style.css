@@ -515,13 +515,13 @@ textarea, fieldset {
 	padding-bottom: 0.5em;
 }
 
-.container {
+/* .container {
 	display: inline;
 	position: relative;
 	padding-left: 35px;
 	margin-bottom: 12px;
 	cursor: pointer;
-}
+} */
 
 /* Hide the browser's default radio button */
 /* .container input {
@@ -531,7 +531,7 @@ textarea, fieldset {
 } */
 
 /* Create a custom radio button */
-.checkmark {
+/* .checkmark {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -539,38 +539,38 @@ textarea, fieldset {
 	width: 25px;
 	background-color: rgb(241, 202, 202);
 	border-radius: 50%;
-}
+} */
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+/* .container:hover input ~ .checkmark {
 	background-color: #ccc;
-}
+} */
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
+/* .checkmark:after {
 	content: "";
 	position: absolute;
 	display: none;
-}
+} */
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
+/* .container input:checked ~ .checkmark:after {
 	display: block;
-}
+} */
 
 /* Style the indicator (dot/circle) */
-.container .checkmark:after {
+/* .container .checkmark:after {
 	top: 9px;
 	left: 9px;
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
 	background: white;
-}
+} */
 
-.container input:checked ~ .checkmark {
+/* .container input:checked ~ .checkmark {
 	background-color: #923a43;
-}
+} */
 
 /*
 
