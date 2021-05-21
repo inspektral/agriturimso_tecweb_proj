@@ -9,7 +9,7 @@ form {
     text-align: left;
 }
 
-label {
+.formLabel {
     font-weight: bold;
     margin-left: 10%;
 }

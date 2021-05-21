@@ -49,11 +49,11 @@
     <form method="post" action="./insertRoom.php" enctype="multipart/form-data">
       <fieldset>
         <legend>Nuova camera</legend>
-        <label for="name">Nome*: </label>
+        <label for="name" class="formLabel">Nome*: </label>
         <input type="text" id="name" name="name" value="<NameValuePlaceholder />" />
-        <label for="people">Persone*: </label>
+        <label for="people" class="formLabel">Persone*: </label>
         <input type="text" id="people" name="people" value="<PeopleValuePlaceholder />" />
-        <label for="price">Prezzo*: </label>
+        <label for="price" class="formLabel">Prezzo*: </label>
         <input type="text" id="price" name="price" value="<PriceValuePlaceholder />" />
       </fieldset>
       <fieldset>
@@ -62,45 +62,45 @@
         <div>
           <div>
             <input type="checkbox" id="tv" name="services[]" value="tv" <TvCheckedPlaceholder /> />
-            <label for="tv"><abbr title="televisione">TV</abbr> a schermo piatto</label>
+            <label for="tv" class="formLabel"><abbr title="televisione">TV</abbr> a schermo piatto</label>
           </div>
           <div>
             <input type="checkbox" id="balcony" name="services[]" value="balcony" <BalconeCheckedPlaceholder /> />
-            <label for="balcony">Balcone</label>
+            <label for="balcony" class="formLabel">Balcone</label>
           </div>
           <div>
             <input type="checkbox" id="gardenView" name="services[]" value="gardenView" <GardenCheckedPlaceholder /> />
-            <label for="gardenView">Vista giardino</label>
+            <label for="gardenView" class="formLabel">Vista giardino</label>
           </div>
           <div>
             <input type="checkbox" id="airCondition" name="services[]" value="airCondition" <AirCheckedPlaceholder /> />
-            <label for="airCondition">Aria condizionata</label>
+            <label for="airCondition" class="formLabel">Aria condizionata</label>
           </div>
           <div>
             <input type="checkbox" id="heat" name="services[]" value="heat" <HeatCheckedPlaceholder /> />
-            <label for="heat">Riscaldamento</label>
+            <label for="heat" class="formLabel">Riscaldamento</label>
           </div>
           <div>
             <input type="checkbox" id="parquet" name="services[]" value="parquet" <ParquetCheckedPlaceholder /> />
-            <label for="parquet"><span xml:lang="fr">Parquet</span> o pavimento in legno</label>
+            <label for="parquet" class="formLabel"><span xml:lang="fr">Parquet</span> o pavimento in legno</label>
           </div>
           <div>
             <input type="checkbox" id="shower" name="services[]" value="shower" <ShowerCheckedPlaceholder /> />
-            <label for="shower">Doccia</label>
+            <label for="shower" class="formLabel">Doccia</label>
           </div>
         </div>
         <div>
           <div>
             <input type="checkbox" id="shampoo" name="services[]" value="shampoo" <ShampooCheckedPlaceholder /> />
-            <label for="shampoo">Prodotti da bagno omaggio</label>
+            <label for="shampoo" class="formLabel">Prodotti da bagno omaggio</label>
           </div>
           <div>
             <input type="checkbox" id="wc" name="services[]" value="wc" <WcCheckedPlaceholder /> />
-            <label for="wc">Bagno privato</label>
+            <label for="wc" class="formLabel">Bagno privato</label>
           </div>
           <div>
             <input type="checkbox" id="bath" name="services[]" value="bath" <BathCheckedPlaceholder /> />
-            <label for="bath">Vasca da bagno</label>
+            <label for="bath" class="formLabel">Vasca da bagno</label>
           </div>
           <div>
             <input type="checkbox" id="bidet" name="services[]" value="bidet" <BidetCheckedPlaceholder /> />
@@ -108,39 +108,39 @@
           </div>
           <div>
             <input type="checkbox" id="paper" name="services[]" value="paper" <PaperCheckedPlaceholder /> />
-            <label for="paper">Carta igienica</label>
+            <label for="paper" class="formLabel">Carta igienica</label>
           </div>
           <div>
             <input type="checkbox" id="towels" name="services[]" value="towels" <TowelsCheckedPlaceholder /> />
-            <label for="towels">Asciugamani</label>
+            <label for="towels" class="formLabel">Asciugamani</label>
           </div>
         </div>
       </fieldset>
       <fieldset>
         <legend>Immagine principale</legend>
-        <label>Immagine*: </label>
+        <label class="formLabel">Immagine*: </label>
         <input type="file" name="mainImg" />
         <div>
-          <label for="imgLongdesc">Descrizione immagine*: </label>
+          <label for="imgLongdesc" class="formLabel">Descrizione immagine*: </label>
           <textarea id="imgLongdesc" name="mainLongdesc"><MainLongdescValuePlaceholder /></textarea>
         </div>        
       </fieldset>
       <fieldset>
         <legend>Immagini galleria</legend>
         <div>
-          <label>Prima immagine</label>
+          <label class="formLabel">Prima immagine</label>
           <input type="file" name="firstImg" />
         </div>
         <div>
-          <label>Seconda immagine</label>
+          <label class="formLabel">Seconda immagine</label>
           <input type="file" name="secondImg" />
         </div>
         <div>
-          <label>Terza immagine</label>
+          <label class="formLabel">Terza immagine</label>
           <input type="file" name="thirdImg" />
         </div>
         <div>
-          <label>Quarta immagine</label>
+          <label class="formLabel">Quarta immagine</label>
           <input type="file" name="fourthImg" />
         </div>
       </fieldset>
