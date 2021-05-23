@@ -28,6 +28,8 @@
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<script type="text/javascript" src="inputCheck.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -140,7 +142,7 @@
 			</div>
 			<div id="lasciacommento">
 				<h3>Lascia un commento!</h3>
-				<form method="post" action="nuovocommento.php">
+				<form method="post" action="nuovocommento.php" onsubmit="return validateComment()">
 					<fieldset>
 						<p class="spazio">
 							<strong> Dacci un voto </strong>
