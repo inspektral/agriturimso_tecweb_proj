@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Registrati - Agriturismo Morgan</title>
+
+<meta name="title" content="Registrati" />
+
+<meta name="language" content="italian it" />
+
+<link rel="stylesheet" type="text/css" href="./style/style.css"
+	media="screen" />
+
+<link rel="stylesheet" type="text/css" href="./style/small_lavoro.css"
+	media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
+
+<link rel="stylesheet" type="text/css" href="./style/printLavoro.css"
+	media="print" />
+
+<link rel="stylesheet" type="text/css" href="./style/styleAccReg.css"
+	media="screen" />
+
+</head>
+<body>
+	<div id="header" role="heading">
+		<ul class="aiutiNascosti">
+			<li><a href="#contentLogon">Vai al contenuto</a></li>
+			<li><a href="#menu">Vai al menu</a></li>
+			<li><a href="#ultimeNews">Vai alle ultime news</a></li>
+		</ul>
+		<img id="logo" src="images/bbtlogo.png" alt="Casa stilizzata con una A come tetto e una M come muri" />
+		<h1>Agriturismo Morgan</h1>
+		<h2>Ai piedi del Montello e dei colli Asolani</h2>
+	</div>
+
+	<div id="breadcrumb" role="menubar">
+		<div id="menu">
+			<ul role="menu">
+				<li xml:lang="en"><a href="index.php" role="menuitem">Home</a></li>
+				<li><a href="camere.php" role="menuitem">Camere</a></li>
+				<li><a href="territorio.php" role="menuitem">Territorio</a></li>
+				<li><a href="diconodinoi.php" role="menuitem">Dicono di noi</a></li>
+			</ul>
+		</div>
+		<UserPlaceholder />
+	</div>
+	
+	<div id="contentLogon" class="contenutoGenerale" role="main">
+		<SignupErrorPlaceholder />
+		<form method="post" id="registrati" action="signup.php">
+			<fieldset>
+				<legend>Dati personali</legend>
+				<label for="nome" class="formLabel">Nome*: </label>
+				<input type="text" id="nome" name="nome" value="<NameValuePlaceholder />" />
+				<label for="cognome" class="formLabel">Cognome*: </label>
+				<input type="text" id="cognome" name="cognome" value="<LastNameValuePlaceholder />" />
+			</fieldset>
+			<fieldset>
+				<legend>Credenziali</legend>
+				<label for="email" class="formLabel" xml:lang="en">Email*: </label>
+				<input type="text" id="email" name="email" value="<EmailValuePlaceholder />" />
+				<label for="password" class="formLabel" xml:lang="en">Password*: </label>
+				<input type="password" id="password" name="password" />
+			</fieldset>
+			<fieldset>
+				<input type="submit" value="Registrati" id="submit" name="submit" />
+			</fieldset>
+		</form>
+	</div>
+
+	<div id="footer">
+		<img src="./images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
+		<img src="./images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
+		<p>
+			Il sito è stato creato per un esercizio nell'ambito del corso di <a
+				href="https://elearning.unipd.it/math/login/index.php">Tecnologie
+				Web</a> e non rappresenta quindi il sito ufficiale dell'Agriturismo. I
+			testi sono stati gentilmente presi in prestito da <a
+				href="http://www.agriturismomorgan.it/">Agriturismo Morgan</a>.
+		</p>
+		<p>Tech Group - All rights reserved</p>
+	</div>
+</body>
+</html>

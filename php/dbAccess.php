@@ -1,6 +1,11 @@
 <?php
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+// error_reporting(E_ALL);
+
 class DBAccess {
-    private const HOST_DB = "localhost";
+    private const HOST_DB = "127.0.0.1";
     private const USERNAME = "lbrescan";
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
@@ -8,53 +13,155 @@ class DBAccess {
     private $connection;
 
     public function openDBConnection() {
-        $this->connection = mysqli_connect(static::HOST_DB, static::USERNAME, static::PASSWORD, static::DB_NAME);
-        
-        return (!$this->connection) ? false : true;
+        $this->connection = new mysqli(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DB_NAME);
+        return $this->connection->connect_errno;
     }
 
     public function closeDBConnection() {
-        mysqli_close($this->connection);
+        $this->connection->close();
     }
 
-   /*  public function loginUser($username, $password) {
-        $query = 'SELECT `email`, `nome`, `cognome` FROM users WHERE `email` = "' . $username . '" AND `password` = "' . $password . '"';
-        $result = mysli_query($connection, $query);
+    public function loginUser($email, $password) {
+        $query = "SELECT `email` FROM `Users` WHERE `email` = ? AND `password` = ?";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            return null;
+        }
+        $stmt->bind_param("ss", $email, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        if (mysql_num_rows($result) == 0) {
+        if ($result->num_rows == 0) {
             return null;
         }
 
-        $user = array(
-            "email" => "",
-            "nome" => "",
-            "cognome" => ""
-        );
-        while ($row = mysqli_fetch_assoc($result)) {
-            $user["email"] = $row["email"];
-            $user["nome"] = $row["nome"];
-            $user["cognome"] = $row["cognome"];
+        $user = array();
+        while ($row = $result->fetch_assoc()) {
+            $user = array(
+                "email" => $row["email"],
+                "nome" => $row["nome"],
+                "cognome" => $row["cognome"]
+            );
         }
         return $user;
-    } */
-    
-    
-    public function checkLogin($mail, $psw)
-    {
-        $qre = 'SELECT * FROM utenti WHERE `email` = "' . $mail . '" AND `password` = "' . $psw . '"';
-        $result = mysqli_query($this->connection, $qre);   
-        return mysqli_fetch_assoc($result);
     }
     
-    public function checkMail($mail){
-        $qre = 'SELECT * FROM utenti WHERE `email` = "' . $mail. '"';
-        $result = mysqli_query($this->connection, $qre);
-        return (mysqli_num_rows($result) == 0) ? false : true;
+    public function signupUser($name, $lastname, $email, $password) {
+        $query = "INSERT INTO `Users` (`nome`, `cognome`, `password`, `email`) VALUES (?, ?, ?, ?)";
+        $stmt = $this->connection->prepare($query);
+
+        if (!$stmt) {
+            return null;
+        }
+        $stmt->bind_param("ssss", $name, $lastname, $email, $password);
+        $stmt->execute();
+
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1,
+            "userEmail" => $email
+        );
     }
-    
-    public function insertUser($nome, $cogn, $mail, $pwd){
-        $qre = 'INSERT INTO `utenti` (`nome`, `cognome`, `password`, `email`) VALUES ' . "('".$nome."', '".$cogn."', '".$mail."', '".$pwd."')";
-        mysqli_query($this->connection, $qre);
+
+    public function getNews() {
+        $query = "SELECT * FROM `News` ORDER BY `date` DESC LIMIT 5;";
+        $result = $this->connection->query($query);
+
+        if ($result->num_rows === 0) {
+            return null;
+        }
+
+        $news = array();
+        while($row = $result->fetch_assoc()) {
+            $item = array(
+                "date" => $row["date"],
+                "description" => $row["description"]
+            );
+            array_push($news, $item);
+        }
+        return $news;
+    }
+
+    public function addNews($description) {
+        $query = "INSERT INTO `News` (`date`,`description`) VALUES (CURRENT_TIMESTAMP(), ?);";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            return null;
+        }
+        $stmt->bind_param("s", $description);
+        $stmt->execute();
+
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1
+        );
+    }
+
+    public function addRoom($name,$people,$price,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services) {
+        $query = "INSERT INTO `Rooms` (`name`,`people`,`price`,`mainImg`,`mainImgLongdesc`,`firstGallery`,`secondGallery`,`thirdGallery`,`fourthGallery`,`tv`,`balcony`,`gardenView`,
+            `airCondition`,`heat`,`parquet`,`shower`,`shampoo`,`wc`,`bath`,`bidet`,`paper`,`towels`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            return null;
+        }
+        $stmt->bind_param("sidssssssiiiiiiiiiiiii", $name,$people,$price,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services["tv"],$services["balcony"],
+            $services["gardenView"],$services["airCondition"],$services["heat"],$services["parquet"],$services["shower"],$services["shampoo"],$services["wc"],$services["bath"],
+            $services["bidet"],$services["paper"],$services["towels"]
+        );
+        $stmt->execute();
+
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1
+        );
+    }
+
+    public function removeRoom($name) {
+        $query = "DELETE FROM `Rooms` WHERE `name` = ?;";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            return null;
+        }
+        $stmt->bind_param("s", $name);
+        $stmt->execute();
+
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1
+        );
+    }
+
+    public function setComments($email, $testo, $voto){
+        $query= "INSERT INTO `Recensioni` (`email`, `testo`,`timestamp`,`voto`) VALUES (?, ?, CURRENT_TIMESTAMP(), ?);";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            
+            return null;
+        } 
+        $stmt->bind_param("sss", $email, $testo, $voto);
+        $stmt->execute();
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1
+        );
+    }
+
+
+    public function getComments(){
+        $query = "SELECT * FROM `Recensioni` ORDER BY `timestamp`;";
+        $result = $this->connection->query($query);
+
+        if ($result->num_rows === 0) {
+            return null;
+        }
+        $commenti = array();
+        while($row = $result->fetch_assoc()) {
+            $item = array(
+                "email" => $row["email"],
+                "testo" => $row["testo"],
+                "timestamp" => $row["timestamp"],
+                "voto" => $row["voto"],
+
+            );
+            array_push($commenti, $item);
+        }
+        return $commenti;
+
     }
 
     public function getCharacters() {

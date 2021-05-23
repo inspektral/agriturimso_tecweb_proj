@@ -28,12 +28,11 @@
 <body>
 	<div id="header">
 		<ul class="aiutiNascosti">
-			<li><a href="#menu">Vai al menu</a></li>
 			<li><a href="#contentHomePage">Vai al contenuto</a></li>
+			<li><a href="#menu">Vai al menu</a></li>
 			<li><a href="#ultimeNews">Vai alle ultime news</a></li>
 		</ul>
-		<img id="logo" src="images/bbtlogo.png"
-			alt="Logo dell'agriturismo a forma di casa stilizzata con una a come tetto e una m come muros" />
+		<img id="logo" src="images/bbtlogo.png" alt="Casa stilizzata con una A come tetto e una M come muri" />
 		<h1>Agriturismo Morgan</h1>
 		<h2>Ai piedi del Montello e dei colli Asolani</h2>
 	</div>
@@ -47,17 +46,15 @@
 				<li><a href="diconodinoi.php">Dicono di noi</a></li>
 			</ul>
 		</div>
-		<div id="user">		
-			<bottoniLogin/>		
-		</div>
+		<UserPlaceholder />
 	</div>
 
 	<div class="row">
-		<div id="contentHomePage" class="contenutoGenerale column">
+		<div id="contentHomePage" class="contenutoGenerale column" role="main">
 			<h2 class="center">Benvenuti nella terra del carciofo</h2>
 
 			<img src="images/21.jpg" id="imgIndex"
-				alt="foto panoramica dell'agriturismo con un campo di terra di fronte e montagne sullo sfondo" />
+				alt="Agriturismo con un campo di terra difronte e montagne sullo sfondo" />
 			<p>
 				Che sia per vacanza o per lavoro, l’<strong>Agriturismo
 					Morgan</strong> – situato in posizione strategica ai piedi del <strong>Montello</strong>
@@ -77,32 +74,23 @@
 				nel 2003 come successore della <strong>Strada del Vino
 					Bianco</strong>, inaugurata nel lontano <strong>1966, prima arteria
 					enologica italiana</strong>. L’azienda è specializzata nella produzione di
-				frutta e verdura a km 0, che potete acquistare direttamente in loco.
+				frutta e verdura a <abbr title="chilometro">km</abbr> 0, che potete acquistare direttamente in loco.
 			</p>
 		</div>
 
 		<div id="rightSideBar" class="column right">
 			<div id="ultimeNews">
 				<h2>Ultime News</h2>
-				<ul>
-					<li><strong>10/06/2019</strong> - Festa della Musica e delle
-						carote</li>
-					<li><strong>05/04/2021</strong> - Oggi festa dell' asparago! <br />Buona
-						Pasquetta a tutti!</li>
-					<li><strong>24/03/2019</strong> - Raccolta degli Asparagi</li>
-				</ul>
+				<NewsListPlaceholder />
 			</div>
-			<div id="adminSection">
-				<button id="buttonNews">Gestisci</button>
-			</div>
+			<AdminNewsManagementPlaceholder />
 		</div>
 
 	</div>
 
 	<div id="footer">
-		<img src="images/valid-xhtml10.png" alt="logo validazione w3c xhtml"
-			id="imgValidCode" /> <img src="images/vcss-blue.gif"
-			alt="validlogo validazione w3c css" id="imgValidCSS" />
+		<img src="images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
+		<img src="images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
 		<p>
 			Il sito è stato creato per un esercizio nell'ambito del corso di <a
 				href="https://elearning.unipd.it/math/login/index.php">Tecnologie

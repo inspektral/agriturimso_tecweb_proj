@@ -19,7 +19,7 @@ body {
 }
 
 a:visited {
-	color: #fff;
+	color: rgb(146, 58, 67);
 }
 
 .aiutiNascosti {
@@ -108,6 +108,7 @@ SEZIONE MENU
 	padding-top: 0;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
+	bottom: 0;
 }
 
 #breadcrumb li {
@@ -160,6 +161,7 @@ SEZIONE USER
 .reg, .reg:visited {
 	float: right;
 	color: #fff;
+	min-height: 2.25em;
 	background-color: rgb(146, 58, 67);
 	margin: auto 1% auto 1%;
 	padding-top: 0.5%;
@@ -187,12 +189,12 @@ SEZIONE USER
 	margin-right: 0.8em;
 }
 
-#user ul li{	
+#user ul li {	
 	margin-right: 0.25em;
 	margin-left: 0.25em;
 }
 
-#user ul li .userName:hover{
+#user ul li .userName:hover {
 	color: #fff;
 	background-color: rgb(146, 58, 67);
 }
@@ -223,7 +225,7 @@ SEZIONE USER
 	color: rgb(146, 58, 67);
 }
 
-.userName{
+.userName {
 	color: #fff;
 	min-height: 2.25em;
 	padding-left: 0.5em;
@@ -313,8 +315,8 @@ SEZIONE CONTENUTO
 ==============
 */
 .contenutoGenerale {
-	border-left: 1px solid #ddd;
 	border-right: 1px solid #ddd;
+	width: 75%;
 }
 
 .contenutoGenerale h1 {
@@ -326,12 +328,14 @@ SEZIONE CONTENUTO
 }
 
 #contentHomePage {
-	border-right: 1px solid #ddd;
+	text-align: center;
+}
+
+#contentAboutUs {
 	text-align: center;
 }
 
 #contentErrorPage {
-	width: 75%;
 	border-right: none;
 	border-left: none;
 	text-align: center;
@@ -347,11 +351,6 @@ SEZIONE CONTENUTO
 #contentErrorPage h3 {
 	font-size: 2em;
 	opacity: 0.7;
-}
-
-#contentTerritorio {
-	width: 75%;
-	border-right: 1px solid #ddd;
 }
 
 #imgIndex {
@@ -384,7 +383,7 @@ SEZIONE CONTENUTO
 
 .bedroom>img {
 	width: 96%;
-	margin: auto;
+	margin: 1em;
 	padding-top: 0.5em;
 }
 
@@ -398,7 +397,7 @@ SEZIONE CONTENUTO
 .services {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-evenly;
 }
 
 .services dl {
@@ -525,14 +524,14 @@ textarea, fieldset {
 }
 
 /* Hide the browser's default radio button */
-.container input {
+/* .container input {
 	position: absolute;
 	opacity: 0;
 	cursor: pointer;
-}
+} */
 
 /* Create a custom radio button */
-.checkmark {
+/* .checkmark {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -540,38 +539,38 @@ textarea, fieldset {
 	width: 25px;
 	background-color: rgb(241, 202, 202);
 	border-radius: 50%;
-}
+} */
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+/* .container:hover input ~ .checkmark {
 	background-color: #ccc;
-}
+} */
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
+/* .checkmark:after {
 	content: "";
 	position: absolute;
 	display: none;
-}
+} */
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
+/* .container input:checked ~ .checkmark:after {
 	display: block;
-}
+} */
 
 /* Style the indicator (dot/circle) */
-.container .checkmark:after {
+/* .container .checkmark:after {
 	top: 9px;
 	left: 9px;
 	width: 8px;
 	height: 8px;
 	border-radius: 50%;
 	background: white;
-}
+} */
 
-.container input:checked ~ .checkmark {
+/* .container input:checked ~ .checkmark {
 	background-color: #923a43;
-}
+} */
 
 /*
 
@@ -585,11 +584,11 @@ SEZIONE COMMENTI
 	padding-right: 0.5em
 }
 
-#casellacommento {
-	margin-top: 10%;
+.casellacommento {
+	margin-top: 1em;
 	border: 0.1px;
 	border-color: #cc4b58;
-	border-style: ridge;
+	border-style: solid;
 	background-color: #f2f2f2;
 }
 
