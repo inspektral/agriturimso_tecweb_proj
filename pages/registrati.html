@@ -24,45 +24,44 @@
 
 </head>
 <body>
-	<div id="header">
+	<div id="header" role="heading">
 		<ul class="aiutiNascosti">
+			<li><a href="#contentLogon">Vai al contenuto</a></li>
 			<li><a href="#menu">Vai al menu</a></li>
-			<li><a href="#contentHomePage">Vai al contenuto</a></li>
 			<li><a href="#ultimeNews">Vai alle ultime news</a></li>
 		</ul>
-		<img id="logo" src="./images/bbtlogo.png"
-			alt="Logo dell'agriturismo a forma di casa stilizzata con una a come tetto e una m come muros" />
+		<img id="logo" src="images/bbtlogo.png" alt="Casa stilizzata con una A come tetto e una M come muri" />
 		<h1>Agriturismo Morgan</h1>
 		<h2>Ai piedi del Montello e dei colli Asolani</h2>
 	</div>
 
-	<div id="breadcrumb">
+	<div id="breadcrumb" role="menubar">
 		<div id="menu">
-			<ul>
-				<li xml:lang="en"><a href="index.php">Home</a></li>
-				<li><a href="camere.php">Camere</a></li>
-				<li><a href="territorio.php">Territorio</a></li>
-				<li><a href="diconodinoi.php">Dicono di noi</a></li>
+			<ul role="menu">
+				<li xml:lang="en"><a href="index.php" role="menuitem">Home</a></li>
+				<li><a href="camere.php" role="menuitem">Camere</a></li>
+				<li><a href="territorio.php" role="menuitem">Territorio</a></li>
+				<li><a href="diconodinoi.php" role="menuitem">Dicono di noi</a></li>
 			</ul>
 		</div>
 		<UserPlaceholder />
 	</div>
 	
-	<div id="contentHomePage" class="contenutoGenerale">
+	<div id="contentLogon" class="contenutoGenerale" role="main">
 		<SignupErrorPlaceholder />
 		<form method="post" id="registrati" action="signup.php">
 			<fieldset>
 				<legend>Dati personali</legend>
-				<label for="nome" xml:lang="en">Nome*: </label>
+				<label for="nome" class="formLabel">Nome*: </label>
 				<input type="text" id="nome" name="nome" value="<NameValuePlaceholder />" />
-				<label for="cognome" xml:lang="en">Cognome*: </label>
+				<label for="cognome" class="formLabel">Cognome*: </label>
 				<input type="text" id="cognome" name="cognome" value="<LastNameValuePlaceholder />" />
 			</fieldset>
 			<fieldset>
 				<legend>Credenziali</legend>
-				<label for="email" xml:lang="en">Email*: </label>
+				<label for="email" class="formLabel" xml:lang="en">Email*: </label>
 				<input type="text" id="email" name="email" value="<EmailValuePlaceholder />" />
-				<label for="password" xml:lang="en">Password*: </label>
+				<label for="password" class="formLabel" xml:lang="en">Password*: </label>
 				<input type="password" id="password" name="password" />
 			</fieldset>
 			<fieldset>

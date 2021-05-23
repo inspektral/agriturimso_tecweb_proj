@@ -24,11 +24,11 @@ public function createNewComment() {
         $voto = $item["voto"];
 
         // TODO: fix
-        $commentContent .="<div class=\"casellacommento\">";
-        $commentContent .= " <h3><strong> $email </strong></h3> " ;
-        $commentContent .= "<strong>$timestamp</strong> - $voto/5</p>";
+        $commentContent .= "<div class=\"casellacommento\">";
+        $commentContent .= "<h3>$email</h3>" ;
+        $commentContent .= "<p>$timestamp - $voto/5</p>";
         $commentContent .= "<cite>$testo</cite>";
-        $commentContent .="<div class= \"bottonicommento\">";
+        $commentContent .= "<div class= \"bottonicommento\">";
         $commentContent .= "<button type=\"button\">Cancella</button>";
         $commentContent .= "</div>";
         $commentContent .= "</div>";
