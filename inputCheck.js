@@ -5,7 +5,12 @@ var dettagliForm = {
   "cognome":["Cognome",/([a-zA-Z])(\ )([a-zA-Z]){2,20}$/,"Il cognome non può essere vuoto"],
   "email":["Email",,"Indirizzo email non valido"],
   "password":["Password",,"La password deve avere almeno 8 caratteri"],
-  "commento":["Commento",/\.{10,}/,"Inserisci il tuo commento"],
+  "testo":["Testo","\.{10,}","Inserisci il tuo commento"],
+}
+
+function falsifier() {
+  console.log("falsifier")
+  return false
 }
 
 function validatePrenota() {
@@ -24,25 +29,34 @@ function validatePrenota() {
 }
 
 function validateComment() {
-  console.log("validateComment()")
-  const comm = document.getElementById("commento")
-  return validateField(comm)
-  return false
+  try {
+    const comm = document.getElementById("testo")
+    console.log(comm.value)
+    return validateField(comm)
+  }
+  catch {
+    return false
+  }
 }
 
  function validateField(input) {
+   console.log("validateField called");
   let parent = input.parentNode;
-	if(parent.childern.length == 2){
-		parent.removeChild(parent.childern[1]);
+    console.log("parent found");
+
+	if(parent.children.length == 2){
+		parent.removeChild(parent.children[1]);
 	}
 
-	let regex = dettagli_form[input.id][1];
+	let regex = dettagliForm[input.id][1];
+  console.log("regex found" + regex);
 	let text = input.value;
 
   console.log("validating field"+ input.value)
 
 	if(text.search(regex) != 0){
-		showError(input);
+		showError(input, dettagliForm[input.id][2]);
+    console.log("regex not okay");
 		return false;
 	}
 	return true;
