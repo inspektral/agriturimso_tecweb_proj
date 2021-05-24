@@ -16,6 +16,8 @@
         <link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
 
         <link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
+
+        <script type="text/javascript" src="../inputCheck.js"></script>
     </head>
     <body>
         <div id="header">
@@ -43,13 +45,13 @@
 
         <div id="contentLogin" class="contenutoGenerale" role="main">
             <LoginErrorPlaceholder />
-            <form method="post" id="accedi" action="login.php">
+            <form method="post" id="accedi" action="login.php" onsubmit="return validateAccedi()">
                 <fieldset>
                     <legend xml:lang="en">Login</legend>
                     <label for="email" class="formLabel" xml:lang="en">Email:</label>
-                    <input type="text" id="email" name="email"/>
+                    <span><input type="text" id="email" name="email"/></span>
                     <label for="password" class="formLabel" xml:lang="en">Password:</label>
-                    <input type="password" id="password" name="password"/>
+                    <span><input type="password" id="password" name="password"/></span>
                 </fieldset>
                 <fieldset>
                     <button id="submit" type="submit" name="submit" class="bottoneform">Invia</button>
