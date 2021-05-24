@@ -15,7 +15,7 @@
 <meta name="author" content="Matteo, Massimo, Tito, Lorenzo" />
 <meta name="language" content="italian it" />
 
-<link rel="stylesheet" type="text/css" href="./style/style.css"
+<link rel="stylesheet" type="text/css" href="../style/style.css"
 	media="screen" />
 
 <link rel="stylesheet" type="text/css" href="./style/small_lavoro.css"
@@ -24,7 +24,7 @@
 <link rel="stylesheet" type="text/css" href="./style/printLavoro.css"
 	media="print" />
 
-<script type="text/javascript" src="inputCheck.js"></script>
+<script type="text/javascript" src="../inputCheck.js"></script>
 
 </head>
 <body>
@@ -57,15 +57,15 @@
 		<div class="contenutoGenerale column">
 			<h2>Prenotazione Camera</h2>
 
-			<form class="prenot_form" action="prenota.php">
+			<form class="prenot_form" action="prenota.php" onsubmit="return validatePrenota()">
 				<fieldset>
 					<div>
 						<label for="da">Da: (gg/mm/aaaa)</label>
-						<input id="da" type="text" />
+						<span><input id="da" type="text" /></span>
 					</div>
 					<div>
 						<label for="a">A: (gg/mm/aaaa)</label>
-						<input id="a" type="text" />
+						<span><input id="a" type="text" /></span>
 					</div>
 
 					<input class="bottoneform" type="submit" value="Prenota" />
