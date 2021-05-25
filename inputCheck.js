@@ -6,11 +6,31 @@ var dettagliForm = {
   "email":["Email",/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,"Indirizzo email non valido"],
   "password":["Password",/^.{8,}/,"La password deve avere almeno 8 caratteri"],
   "testo":["Testo","\.{10,}","Inserisci il tuo commento"],
+  "name": ["Name","([a-zA-Z]){2,20}","inserire il nome della camera"],
+  "people": ["People", /^\d{1,2}/, "inserire il numero di posti letto"],
+  "price": ["Price", /^\d{1,4}/, "inserire il prezzo della camera"],
+  "description" : ["NewsDescription", /^.{10,}/, "inserire la descrizione della notizia"]
 }
 
-function falsifier(){
-  console.log("falsifier called")
-  return false
+function validateNews() {
+  return validateField(document.getElementById("description"))
+}
+
+function validateRoom(){
+  try {
+    const nome = document.getElementById("name")
+    const posti = document.getElementById("people")
+    const price = document.getElementById("price")
+    const descrizione = document.getElementById("imgLongDesc")
+    const validNome = validateField(nome)
+    const validPosti = validateField(posti)
+    const validPrice = validateField(price)
+    const validDescrizione = validateField(descrizione)
+    return validNome && validPosti && validPrice
+  }
+  catch {
+    return false
+  }
 }
 
 function validatePrenota() {
