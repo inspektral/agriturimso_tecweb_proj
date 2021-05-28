@@ -18,7 +18,7 @@ class RoomsListFactory {
       foreach ($rooms as $room) {
         $name = $room["name"];
         $people = $room["people"];
-        $price = $room["price"];
+        $price = number_format($room["price"], 2);
         $mainImg = $room["mainImg"];
         $mainImgLongdesc = $room["mainImgLongdesc"];
         $firstGallery = $room["firstGallery"];

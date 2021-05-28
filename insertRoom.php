@@ -75,8 +75,10 @@ if (isset($_POST["submit"])) {
       }
 
       if ($result["isSuccessful"] && file_put_contents($imgLongdescPath, $imgLongdesc)) {
+        var_dump($_FILES);
         $uploader = new ImageUploader();
         $mainSuccess = $uploader->upload($_FILES["mainImg"],$mainImg);
+        
         $firstSuccess = isset($_FILES["firstGallery"]) ? $uploader->upload($_FILES["firstGallery"],$firstGallery) : true;
         $secondSuccess = isset($_FILES["secondGallery"]) ? $uploader->upload($_FILES["secondgGllery"],$secondGallery) : true;
         $thirdSuccess = isset($_FILES["thirdGallery"]) ? $uploader->upload($_FILES["thirdGallery"],$thirdGallery) : true;
