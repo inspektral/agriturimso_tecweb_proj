@@ -33,7 +33,7 @@ class RoomsListFactory {
         $roomsContent .= "<img src=\"$mainImg\" alt=\"\" longdesc=\"$mainImgLongdesc\" />";
         $roomsContent .= "<ul>";
         $roomsContent .= "<li>Buona colazione inclusa</li>";
-        $roomsContent .= "<li>Cancellazione <strong class="free">GRATUITA</strong></li>";
+        $roomsContent .= "<li>Cancellazione <strong class=\"free\">GRATUITA</strong></li>";
         $roomsContent .= "<li><strong>NESSUN PAGAMENTO ANTICIPATO</strong><div>Paga in struttura</div></li>";
         $roomsContent .= "</ul>";
 
