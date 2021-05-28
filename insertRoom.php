@@ -35,7 +35,8 @@ $checkedServices = [
   "bath" => "",
   "bidet" => "",
   "paper" => "",
-  "towels" => ""
+  "towels" => "",
+  "wardrobe" => ""
 ];
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
@@ -177,5 +178,6 @@ $html = str_replace("<BathCheckedPlaceholder />", $checkedServices["bath"], $htm
 $html = str_replace("<BidetCheckedPlaceholder />", $checkedServices["bidet"], $html);
 $html = str_replace("<PaperCheckedPlaceholder />", $checkedServices["paper"], $html);
 $html = str_replace("<TowelsCheckedPlaceholder />", $checkedServices["towels"], $html);
+$html = str_replace("<WardrobeCheckedPlaceholder />", $checkedServices["wardrobe"], $html);
 echo $html;
 ?>

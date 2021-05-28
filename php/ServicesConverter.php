@@ -13,7 +13,8 @@ class ServicesConverter {
     "bath",
     "bidet",
     "paper",
-    "towels"
+    "towels",
+    "wardrobe"
   ];
 
   public function convertToBoolean($services) {
