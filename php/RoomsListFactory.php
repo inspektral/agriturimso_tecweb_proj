@@ -27,6 +27,7 @@ class RoomsListFactory {
         $fourthGallery = $room["fourthGallery"];
 
         $roomsContent .= "<div class=\"bedroom\">";
+        $roomsContent .= "<h2>$name</h2>";
         $roomsContent .= "<h3><span>$people persone</span> ";
         $roomsContent .= "<span><abbr title=\"euro\">€</abbr> <span class=\"price\">$price</span>";
         $roomsContent .= "</h3>";
@@ -54,7 +55,7 @@ class RoomsListFactory {
         $roomsContent .= $room["bidet"] ? "<li xml:lang=\"fr\">Bidet</li>" : "";
         $roomsContent .= $room["paper"] ? "<li>Carta igienica</li>" : "";
         $roomsContent .= $room["towels"] ? "<li>Asciuga mani</li>" : "";
-        $roomsContent .= $room["closet"] ? "<li>Armadio o guardaroba</li>" : "";
+        $roomsContent .= $room["wardrobe"] ? "<li>Armadio o guardaroba</li>" : "";
         $roomsContent .= "</ul></div></div>";
 
         $roomsContent .= "<a class=\"bottoneform\" href=\"./prenota.php\">Prenota</a>";
