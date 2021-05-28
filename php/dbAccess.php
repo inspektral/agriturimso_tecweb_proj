@@ -6,9 +6,9 @@
 
 class DBAccess {
     private const HOST_DB = "127.0.0.1";
-    private const USERNAME = "root";
-    private const PASSWORD = "";
-    private const DB_NAME = "agriturismo";
+    private const USERNAME = "lbrescan";
+    private const PASSWORD = "Eephejokohculee1";
+    private const DB_NAME = "lbrescan";
 
     private $connection;
 
@@ -93,6 +93,25 @@ class DBAccess {
         return array(
             "isSuccessful" => $stmt->affected_rows === 1
         );
+    }
+
+    public function getRooms() {
+        $query = "SELECT * FROM `Rooms`;";
+        $result = $this->connection->query($query);
+
+        if ($result->num_rows === 0) {
+            return null;
+        }
+
+        $rooms = array();
+        while($row = $result->fetch_assoc()) {
+            $room = array();
+            foreach ($row as $key => $value) {
+                $room[$key] = $value;
+            }
+            array_push($rooms, $room);
+        }
+        return $rooms;
     }
 
     public function addRoom($name,$people,$price,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services) {
