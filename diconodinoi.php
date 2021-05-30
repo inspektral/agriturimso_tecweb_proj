@@ -56,6 +56,35 @@ if(isset($_POST["submit"])) {
   $userFeedbackContent .= "</ul></div>";
 }
 
+
+if(isset($_POST["deleteComment"])&& $_SESSION["isAdmin"] ) {
+ 
+  if (isset($_POST["email"])) {        
+      $email = $_POST["email"];
+      $timestamp= $_POST["timestamp"];
+      
+      $dbAccess = new DBAccess();
+      $isFailed = $dbAccess->openDBConnection();
+
+      if($isFailed) {
+          $userFeedbackContent .= "<li><strong class=\"error\">Errore di collegamento al database. Riprova.</strong></li>";;
+      }
+
+      $result= $dbAccess->deleteComment($email, $timestamp);
+      $dbAccess->closeDBConnection();
+      
+      if ($result["isSuccessful"]) {
+        $userFeedbackContent .= "<li><strong class=\"success\">Commento rimosso con successo</strong></li>";
+    }else{				
+        $userFeedbackContent .= "<li><strong class=\"error\">Errore durante la rimozione del commento</strong></li>";
+    }
+}
+  
+}else{
+  $userFeedbackContent .= "<li><strong class=\"error\">Devi essere un amministratore per poter rimuovere i commenti</strong></li>";
+}
+
+
 $commentContent = (new mostraCommento())->createNewComment();
 if (!$commentContent) {
   header("Location: /errors/500.php");

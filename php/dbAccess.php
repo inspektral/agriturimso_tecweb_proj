@@ -9,7 +9,6 @@ class DBAccess {
     private const USERNAME = "lbrescan";
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
-
     private $connection;
 
     public function openDBConnection() {
@@ -183,28 +182,23 @@ class DBAccess {
 
     }
 
-    public function getCharacters() {
-        $query = "SELECT * FROM protagonisti ORDER BY ID ASC;";
-        $result = mysli_query($this->connection, $query);
 
-        if (mysql_num_rows($result) == 0) {
+    public function deleteComment($email, $timestamp) {
+        $query = "DELETE FROM `Recensioni` WHERE `email` = ? AND `timestamp` = ? ;";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
             return null;
         }
+        $stmt->bind_param("ss", $email, $timestamp);
+        $stmt->execute();
 
-        $characters = array();
-        while ($row = mysqli_fetch_assoc($result)) {
-            $character = array(
-                "nome" => $row["Nome"],
-                "img" => $row["NomeImmagine"],
-                "alt" => $row["AltImmagine"],
-                "desc" => $row["Descrizione"]
-            );
-
-            array_push($characters, $character);
-        }
-        return $characters;
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1
+        );
     }
-    
+
+
+
     public function closeConnection(){
         $this->connection->close();
     }
