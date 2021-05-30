@@ -78,9 +78,9 @@ if(isset($_POST["deleteComment"])&& $_SESSION["isAdmin"] ) {
     }else{				
         $userFeedbackContent .= "<li><strong class=\"error\">Errore durante la rimozione del commento</strong></li>";
     }
+  }
 }
-  
-}else{
+if(isset($_POST["deleteComment"])&& !$_SESSION["isAdmin"] ){
   $userFeedbackContent .= "<li><strong class=\"error\">Devi essere un amministratore per poter rimuovere i commenti</strong></li>";
 }
 
