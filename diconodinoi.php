@@ -58,7 +58,7 @@ if(isset($_POST["submit"])) {
 
 
 if(isset($_POST["deleteComment"])&& $_SESSION["isAdmin"] ) {
- 
+  $userFeedbackContent = "<div><ul class=\"feedbackList\">";
   if (isset($_POST["email"])) {        
       $email = $_POST["email"];
       $timestamp= $_POST["timestamp"];
@@ -79,9 +79,12 @@ if(isset($_POST["deleteComment"])&& $_SESSION["isAdmin"] ) {
         $userFeedbackContent .= "<li><strong class=\"error\">Errore durante la rimozione del commento</strong></li>";
     }
   }
+  $userFeedbackContent = "<div><ul class=\"feedbackList\">";
 }
 if(isset($_POST["deleteComment"])&& !$_SESSION["isAdmin"] ){
+  $userFeedbackContent = "<div><ul class=\"feedbackList\">";
   $userFeedbackContent .= "<li><strong class=\"error\">Devi essere un amministratore per poter rimuovere i commenti</strong></li>";
+  $userFeedbackContent .= "</ul></div>";
 }
 
 
