@@ -22,7 +22,7 @@
 <link rel="stylesheet" type="text/css" href="./style/styleAccReg.css"
 	media="screen" />
 
-<script type="text/javascript" src="./inputCheck.js"></script>
+<script type="text/javascript" src="./javascript/inputCheck.js"></script>
 
 </head>
 <body>
@@ -54,14 +54,10 @@
 		<form method="post" id="registrati" action="signup.php" onsubmit="return validateRegistrati()">
 			<fieldset>
 				<legend>Dati personali</legend>
-				<div>
-					<label for="nome" class="formLabel">Nome*: </label>
-					<span><input type="text" id="nome" name="nome" value="<NameValuePlaceholder />" /></span>
-				</div>
-				<div>
-					<label for="cognome" class="formLabel">Cognome*: </label>
-					<span><input type="text" id="cognome" name="cognome" value="<LastNameValuePlaceholder />" /></span>
-				</div>
+				<label for="nome" class="formLabel">Nome*: </label>
+				<span><input type="text" id="nome" name="nome" value="<NameValuePlaceholder />" /></span>
+				<label for="cognome" class="formLabel">Cognome*: </label>
+				<span><input type="text" id="cognome" name="cognome" value="<LastNameValuePlaceholder />" /></span>
 			</fieldset>
 			<fieldset>
 				<legend>Credenziali</legend>
