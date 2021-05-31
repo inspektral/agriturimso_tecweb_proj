@@ -32,8 +32,8 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"
 
     if ($user) {        
         $_SESSION["email"] = $user["email"];
-        $_SESSION["isAdmin"] = $user["email"] === "admin";
-        header("Location: /");
+        $_SESSION["isAdmin"] = $user["email"] === "admin@mail.com";
+        header("Location: /index.php");
     } else {
         $errorContent .= "<li><strong class=\"error\">Credenziali errate</strong></li>";
     }

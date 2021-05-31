@@ -39,7 +39,7 @@ if (isset($_POST["submit"])) {
 
     if ($result["isSuccessful"]) {        
       $_SESSION["email"] = $result["userEmail"];
-      $_SESSION["isAdmin"] = $result["userEmail"] === "admin";
+      $_SESSION["isAdmin"] = $result["userEmail"] === "admin@mail.com";
       $userFeedbackContent .= "<li><strong class=\"success\">Utente registrato corramente, verrai reindirizzato alla <span xml:lang=\"en\">home</span></strong></li>";
       header("refresh:2;url= /index.php");
     } else {
