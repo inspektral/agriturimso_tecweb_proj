@@ -305,10 +305,10 @@ SEZIONE RIGHTSIDEBAR
 }
 
 .button:visited {
-	color: #8f8f8f;
+	color: #532227;
 	background-color: #fff;
 	border-style: solid;
-	border-color: #923a43;
+	border-color: #532227;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
@@ -498,6 +498,10 @@ textarea, fieldset {
 	display: inline-block;
 	width: 100%;
 	text-align: center;
+}
+
+.bookContainer .button {
+	padding: 0.75em 1.5em;
 }
 
 .bottoneform, #bottoneregistrati {
