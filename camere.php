@@ -18,7 +18,7 @@ if (isset($_SESSION['email'])) {
 $contentAdminNews = "";
 $contentAdminAddRoom = "";
 if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
-  $contentAdminNews = "<div id=\"adminSection\"><button id=\"buttonNews\">Gestisci</button></div>";
+  $contentAdminNews = "<div id=\"adminSection\"><a class=\"buttonNews\" href=\"./insertNews.php\">Aggiungi notizia</a></div>";
   $contentAdminAddRoom = "<a href=\"./insertRoom.php\">Aggiungi stanza</a>";
 }
 
