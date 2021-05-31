@@ -9,7 +9,6 @@ class DBAccess {
     private const USERNAME = "lbrescan";
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
-
     private $connection;
 
     public function openDBConnection() {
@@ -95,16 +94,35 @@ class DBAccess {
         );
     }
 
+    public function getRooms() {
+        $query = "SELECT * FROM `Rooms`;";
+        $result = $this->connection->query($query);
+
+        if ($result->num_rows === 0) {
+            return null;
+        }
+
+        $rooms = array();
+        while($row = $result->fetch_assoc()) {
+            $room = array();
+            foreach ($row as $key => $value) {
+                $room[$key] = $value;
+            }
+            array_push($rooms, $room);
+        }
+        return $rooms;
+    }
+
     public function addRoom($name,$people,$price,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services) {
         $query = "INSERT INTO `Rooms` (`name`,`people`,`price`,`mainImg`,`mainImgLongdesc`,`firstGallery`,`secondGallery`,`thirdGallery`,`fourthGallery`,`tv`,`balcony`,`gardenView`,
-            `airCondition`,`heat`,`parquet`,`shower`,`shampoo`,`wc`,`bath`,`bidet`,`paper`,`towels`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+            `airCondition`,`heat`,`parquet`,`shower`,`shampoo`,`wc`,`bath`,`bidet`,`paper`,`towels`,`wardrobe`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
         $stmt = $this->connection->prepare($query);
         if (!$stmt) {
             return null;
         }
-        $stmt->bind_param("sidssssssiiiiiiiiiiiii", $name,$people,$price,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services["tv"],$services["balcony"],
+        $stmt->bind_param("sidssssssiiiiiiiiiiiiii", $name,$people,$price,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services["tv"],$services["balcony"],
             $services["gardenView"],$services["airCondition"],$services["heat"],$services["parquet"],$services["shower"],$services["shampoo"],$services["wc"],$services["bath"],
-            $services["bidet"],$services["paper"],$services["towels"]
+            $services["bidet"],$services["paper"],$services["towels"],$services["wardrobe"]
         );
         $stmt->execute();
 
@@ -164,28 +182,23 @@ class DBAccess {
 
     }
 
-    public function getCharacters() {
-        $query = "SELECT * FROM protagonisti ORDER BY ID ASC;";
-        $result = mysli_query($this->connection, $query);
 
-        if (mysql_num_rows($result) == 0) {
+    public function deleteComment($email, $timestamp) {
+        $query = "DELETE FROM `Recensioni` WHERE `email` = ? AND `timestamp` = ? ;";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
             return null;
         }
+        $stmt->bind_param("ss", $email, $timestamp);
+        $stmt->execute();
 
-        $characters = array();
-        while ($row = mysqli_fetch_assoc($result)) {
-            $character = array(
-                "nome" => $row["Nome"],
-                "img" => $row["NomeImmagine"],
-                "alt" => $row["AltImmagine"],
-                "desc" => $row["Descrizione"]
-            );
-
-            array_push($characters, $character);
-        }
-        return $characters;
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1
+        );
     }
-    
+
+
+
     public function closeConnection(){
         $this->connection->close();
     }

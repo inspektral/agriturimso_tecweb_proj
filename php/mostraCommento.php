@@ -28,9 +28,13 @@ public function createNewComment() {
         $commentContent .= "<h3>$email</h3>" ;
         $commentContent .= "<p>$timestamp - $voto/5</p>";
         $commentContent .= "<cite>$testo</cite>";
-        $commentContent .= "<div class= \"bottonicommento\">";
-        $commentContent .= "<button type=\"button\">Cancella</button>";
-        $commentContent .= "</div>";
+        $commentContent .= "<form class= \"bottonicommento\" method=\"post\"  action=\"./diconodinoi.php\">";
+        $commentContent .= "<input type=\"hidden\" name= \"email\" value= $email >";
+        $commentContent .= "<input type=\"hidden\" name= \"timestamp\" value= \"$timestamp\" >";
+        $commentContent .= "<fieldset>";
+        $commentContent .= "<button id=\"delete\" type=\"submit\" name=\"deleteComment\" class=\"bottonicommento\">Cancella</button>";
+        $commentContent .= "</fieldset>";
+        $commentContent .= "</form>";
         $commentContent .= "</div>";
       }
       

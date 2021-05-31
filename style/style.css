@@ -278,13 +278,11 @@ SEZIONE RIGHTSIDEBAR
 	text-align: center;
 }
 
-#buttonNews {
+.button {
 	background-color: #923a43; /* Rosso tipico */
-	border: none;
 	color: white;
 	padding: 3% 5%;
 	text-align: center;
-	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
 	font-weight: bold;
@@ -295,11 +293,26 @@ SEZIONE RIGHTSIDEBAR
 	border-radius: 8px;
 }
 
-#buttonNews:hover {
+.button:hover {
 	color: #923a43;
 	background-color: #fff;
 	border-style: solid;
 	border-color: #923a43;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.button:visited {
+	background-color: #923a43; /* Rosso tipico */
+	color: rgb(197, 197, 197);
+	padding: 3% 5%;
+	text-align: center;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: bold;
+	border-style: solid;
+	border-color: #fff;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
@@ -485,14 +498,22 @@ textarea, fieldset {
 	resize: vertical;
 }
 
-.bottoneform, .bottoneform:visited, #bottoneregistrati {
-	background-color: #923a43; /* Green */
-	border: none;
+.bookContainer { 
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
+.bookContainer .button {
+	padding: 0.75em 1.5em;
+	margin-top: 1.5em;
+}
+
+.bottoneform, #bottoneregistrati {
+	background-color: #923a43;
 	color: white;
 	margin-top: 1.5em;
-	padding: 2% 4%;
-	text-align: center;
-	text-decoration: none;
+	padding: 0.75em 1.5em;
 	display: inline-block;
 	font-size: 16px;
 	border-radius: 4px;
