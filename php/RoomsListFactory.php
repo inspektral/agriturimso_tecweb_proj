@@ -39,7 +39,7 @@ class RoomsListFactory {
         $roomsContent .= "</ul>";
 
         $roomsContent .= "<div class=\"services\">";
-        $roomsContent .= "<dl></dl>";
+        $roomsContent .= "<dl><dt></dt></dl>";
         $roomsContent .= "<div><h4>Servizi in camera:</h4>";
         $roomsContent .= "<ul>";
         $roomsContent .= $room["tv"] ? "<li>TV a schermo piatto</li>" : "";
@@ -58,7 +58,7 @@ class RoomsListFactory {
         $roomsContent .= $room["wardrobe"] ? "<li>Armadio o guardaroba</li>" : "";
         $roomsContent .= "</ul></div></div>";
 
-        $roomsContent .= "<a class=\"bottoneform\" href=\"./prenota.php\">Prenota</a>";
+        $roomsContent .= "<div class=\"bookContainer\"><a class=\"bottoneform\" href=\"./prenota.php\">Prenota</a></div>";
         $roomsContent .= "<div class=\"gallery\">";
         $roomsContent .= "<img src=\"$firstGallery\" alt=\"\" class=\"galleryElement\" />";
         $roomsContent .= "<img src=\"$secondGallery\" alt=\"\" class=\"galleryElement\" />";

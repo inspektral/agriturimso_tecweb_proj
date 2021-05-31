@@ -485,17 +485,22 @@ textarea, fieldset {
 	resize: vertical;
 }
 
-.bottoneform, .bottoneform:visited, #bottoneregistrati {
+.bottoneform, #bottoneregistrati {
 	background-color: #923a43; /* Green */
 	border: none;
 	color: white;
-	margin-top: 1.5em;
+	margin: 1.5em auto 0 auto;
+	/* margin-top: 1.5em; */
 	padding: 2% 4%;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
 	border-radius: 4px;
+}
+
+.bottoneform:visited {
+
 }
 
 .bottoneform:hover {
