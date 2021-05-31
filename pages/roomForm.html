@@ -18,6 +18,9 @@
   <link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
 
   <link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
+
+  <script type="text/javascript" src="../inputCheck.js"></script>
+
 </head>
 
 <body>
@@ -46,15 +49,15 @@
 
   <div id="content" class="contenutoGenerale">
     <InsertRoomErrorPlaceholder />
-    <form method="post" action="./insertRoom.php" enctype="multipart/form-data">
+    <form method="post" action="./insertRoom.php" enctype="multipart/form-data" onsubmit="return validateRoom()">
       <fieldset>
         <legend>Nuova camera</legend>
         <label for="name" class="formLabel">Nome*: </label>
-        <input type="text" id="name" name="name" value="<NameValuePlaceholder />" />
+        <span><input type="text" id="name" name="name" value="<NameValuePlaceholder />" /></span>
         <label for="people" class="formLabel">Persone*: </label>
-        <input type="text" id="people" name="people" value="<PeopleValuePlaceholder />" />
+        <span><input type="text" id="people" name="people" value="<PeopleValuePlaceholder />" /></span>
         <label for="price" class="formLabel">Prezzo*: </label>
-        <input type="text" id="price" name="price" value="<PriceValuePlaceholder />" />
+        <span><input type="text" id="price" name="price" value="<PriceValuePlaceholder />" /></span>
       </fieldset>
       <fieldset>
         <legend>Servizi</legend>
@@ -123,7 +126,7 @@
       <fieldset>
         <legend>Immagine principale</legend>
         <label class="formLabel">Immagine*: </label>
-        <input type="file" name="mainImg" />
+        <input id="mainImg" type="file" name="mainImg" />
         <div>
           <label for="imgLongdesc" class="formLabel">Descrizione immagine*: </label>
           <textarea id="imgLongdesc" name="mainLongdesc"  rows="10" cols="60"><MainLongdescValuePlaceholder /></textarea>
