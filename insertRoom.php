@@ -83,6 +83,7 @@ if (isset($_POST["submit"])) {
         $thirdSuccess = isset($_FILES["thirdGallery"]) ? $uploader->upload($_FILES["thirdGallery"],$thirdGallery) : true;
         $fourthSuccess = isset($_FILES["fourthGallery"]) ? $uploader->upload($_FILES["fourthGallery"],$fourthGallery) : true;
 
+        var_dump($_FILES, $mainImg, $firstGallery, $firstSuccess, $secondGallery,$secondSuccess,$thirdGallery,$thirdSuccess,$fourthGallery,$fourthSuccess);
         if ($mainSuccess && $firstSuccess && $secondSuccess && $thirdSuccess && $fourthSuccess) {
           $userFeedbackContent .= "<li><strong class=\"success\">Camera aggiunta con successo</strong></li>";
         } else {
