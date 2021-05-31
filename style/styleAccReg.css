@@ -12,6 +12,7 @@ form {
 .formLabel {
     font-weight: bold;
     margin-left: 10%;
+    display: block;
 }
 
 input[type="checkbox"] + label {
