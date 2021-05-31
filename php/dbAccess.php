@@ -28,7 +28,7 @@ class DBAccess {
     }
 
     public function loginUser($email, $password) {
-        $query = "SELECT `email` FROM `Users` WHERE `email` = ? AND `password` = ?";
+        $query = "SELECT `email`,`nome`,`cognome` FROM `Users` WHERE `email` = ? AND `password` = ?";
         $stmt = $this->connection->prepare($query);
         if (!$stmt) {
             return null;
