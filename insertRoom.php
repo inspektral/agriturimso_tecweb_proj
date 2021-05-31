@@ -75,15 +75,13 @@ if (isset($_POST["submit"])) {
       }
 
       if ($result["isSuccessful"] && file_put_contents($imgLongdescPath, $imgLongdesc)) {
-        var_dump($_FILES);
         $uploader = new ImageUploader();
         $mainSuccess = $uploader->upload($_FILES["mainImg"],$mainImg);
         
         $firstSuccess = isset($_FILES["firstGallery"]) ? $uploader->upload($_FILES["firstGallery"],$firstGallery) : true;
-        $secondSuccess = isset($_FILES["secondGallery"]) ? $uploader->upload($_FILES["secondgGllery"],$secondGallery) : true;
+        $secondSuccess = isset($_FILES["secondGallery"]) ? $uploader->upload($_FILES["secondGallery"],$secondGallery) : true;
         $thirdSuccess = isset($_FILES["thirdGallery"]) ? $uploader->upload($_FILES["thirdGallery"],$thirdGallery) : true;
         $fourthSuccess = isset($_FILES["fourthGallery"]) ? $uploader->upload($_FILES["fourthGallery"],$fourthGallery) : true;
-        var_dump($firstSuccess, $secondSuccess, $thirdSuccess, $fourthSuccess, $firstGallery, $secondGallery, $thirdGallery, $fourthGallery);
 
         if ($mainSuccess && $firstSuccess && $secondSuccess && $thirdSuccess && $fourthSuccess) {
           $userFeedbackContent .= "<li><strong class=\"success\">Camera aggiunta con successo</strong></li>";
