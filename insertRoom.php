@@ -35,7 +35,8 @@ $checkedServices = [
   "bath" => "",
   "bidet" => "",
   "paper" => "",
-  "towels" => ""
+  "towels" => "",
+  "wardrobe" => ""
 ];
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
@@ -46,7 +47,7 @@ if (isset($_POST["submit"])) {
     $services = array();
     $mainImg = ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
     $imgLongdesc = $_POST['mainLongdesc'];
-    $imgLongdescPath = ".".DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.strtolower($name).".txt";
+    $imgLongdescPath = ".".DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.str_replace(" ", "_", strtolower($name)).".txt";
     $firstGallery = isset($_FILES["firstGallery"]) ? ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]) : null;
     $secondGallery = isset($_FILES["secondGallery"]) ? ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]) : null;
     $thirdGallery = isset($_FILES["thirdGallery"]) ? ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["thirdGallery"]["name"]) : null;
@@ -76,8 +77,9 @@ if (isset($_POST["submit"])) {
       if ($result["isSuccessful"] && file_put_contents($imgLongdescPath, $imgLongdesc)) {
         $uploader = new ImageUploader();
         $mainSuccess = $uploader->upload($_FILES["mainImg"],$mainImg);
+        
         $firstSuccess = isset($_FILES["firstGallery"]) ? $uploader->upload($_FILES["firstGallery"],$firstGallery) : true;
-        $secondSuccess = isset($_FILES["secondGallery"]) ? $uploader->upload($_FILES["secondgGllery"],$secondGallery) : true;
+        $secondSuccess = isset($_FILES["secondGallery"]) ? $uploader->upload($_FILES["secondGallery"],$secondGallery) : true;
         $thirdSuccess = isset($_FILES["thirdGallery"]) ? $uploader->upload($_FILES["thirdGallery"],$thirdGallery) : true;
         $fourthSuccess = isset($_FILES["fourthGallery"]) ? $uploader->upload($_FILES["fourthGallery"],$fourthGallery) : true;
 
@@ -177,5 +179,6 @@ $html = str_replace("<BathCheckedPlaceholder />", $checkedServices["bath"], $htm
 $html = str_replace("<BidetCheckedPlaceholder />", $checkedServices["bidet"], $html);
 $html = str_replace("<PaperCheckedPlaceholder />", $checkedServices["paper"], $html);
 $html = str_replace("<TowelsCheckedPlaceholder />", $checkedServices["towels"], $html);
+$html = str_replace("<WardrobeCheckedPlaceholder />", $checkedServices["wardrobe"], $html);
 echo $html;
 ?>

@@ -18,7 +18,7 @@ if (isset($_SESSION['email'])) {
 
 $contentAdminNews = "";
 if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
-  $contentAdminNews = "<div id=\"adminSection\"><button id=\"buttonNews\">Gestisci</button></div>";
+  $contentAdminNews = "<div id=\"adminSection\"><a class=\"button\" href=\"./insertNews.php\">Aggiungi notizia</a></div>";
 }
 
 $newsContent = (new NewsListFactory())->createNewsList();
@@ -55,6 +55,38 @@ if(isset($_POST["submit"])) {
   }
   $userFeedbackContent .= "</ul></div>";
 }
+
+
+if(isset($_POST["deleteComment"])&& $_SESSION["isAdmin"] ) {
+  $userFeedbackContent = "<div><ul class=\"feedbackList\">";
+  if (isset($_POST["email"])) {        
+      $email = $_POST["email"];
+      $timestamp= $_POST["timestamp"];
+      
+      $dbAccess = new DBAccess();
+      $isFailed = $dbAccess->openDBConnection();
+
+      if($isFailed) {
+          $userFeedbackContent .= "<li><strong class=\"error\">Errore di collegamento al database. Riprova.</strong></li>";;
+      }
+
+      $result= $dbAccess->deleteComment($email, $timestamp);
+      $dbAccess->closeDBConnection();
+      
+      if ($result["isSuccessful"]) {
+        $userFeedbackContent .= "<li><strong class=\"success\">Commento rimosso con successo</strong></li>";
+    }else{				
+        $userFeedbackContent .= "<li><strong class=\"error\">Errore durante la rimozione del commento</strong></li>";
+    }
+  }
+  $userFeedbackContent = "<div><ul class=\"feedbackList\">";
+}
+if(isset($_POST["deleteComment"])&& !$_SESSION["isAdmin"] ){
+  $userFeedbackContent = "<div><ul class=\"feedbackList\">";
+  $userFeedbackContent .= "<li><strong class=\"error\">Devi essere un amministratore per poter rimuovere i commenti</strong></li>";
+  $userFeedbackContent .= "</ul></div>";
+}
+
 
 $commentContent = (new mostraCommento())->createNewComment();
 if (!$commentContent) {

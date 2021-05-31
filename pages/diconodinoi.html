@@ -16,6 +16,7 @@
 
 	<link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
 	<link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
+	<script src="./javascript/inputCheck.js"></script>
 
 </head>
 <body>
@@ -101,11 +102,12 @@
 			</div>
 
 			<CommentPlaceholder />
+			<InsertCommentErrorPlaceholder />
 
-			<div id="lasciacommento">
+			<div id="lasciacommento">		
 				<h3>Lascia un commento!</h3>
 				<InsertCommentErrorPlaceholder />
-				<form method="post" action="diconodinoi.php">
+				<form method="post" action="diconodinoi.php" onsubmit="return validateComment()">
 					<fieldset>
 						<legend>Dacci un voto</legend>
 						<div class="container">
@@ -137,7 +139,7 @@
 					<fieldset>
 						<legend>Commento</legend>
 						<label for="testo">Inserisci il tuo commento</label>
-						<textarea id="testo" name="testo" rows="10" cols="50"></textarea>
+						<span><textarea id="testo" name="testo" rows="10" cols="50"></textarea></span>
 					</fieldset>
 					<fieldset>
 						<button id="submit" type="submit" name="submit" class="bottoneform">Invia</button>

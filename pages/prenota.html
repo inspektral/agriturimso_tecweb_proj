@@ -15,7 +15,7 @@
 <meta name="author" content="Matteo, Massimo, Tito, Lorenzo" />
 <meta name="language" content="italian it" />
 
-<link rel="stylesheet" type="text/css" href="./style/style.css"
+<link rel="stylesheet" type="text/css" href="../style/style.css"
 	media="screen" />
 
 <link rel="stylesheet" type="text/css" href="./style/small_lavoro.css"
@@ -23,6 +23,8 @@
 
 <link rel="stylesheet" type="text/css" href="./style/printLavoro.css"
 	media="print" />
+
+<script type="text/javascript" src="./javascript/inputCheck.js"></script>
 
 </head>
 <body>
@@ -56,15 +58,15 @@
 			<h2>Prenotazione Camera</h2>
 			<p>Inserire le date nel seguente formato: giorno con 2 cifre, mese con 2 cifre, anno con 4 cifre.</p>
 			<p>Esempio: 31/12/2020</p>
-			<form class="prenot_form" action="prenota.php" method="post">
+			<form class="prenot_form" action="prenota.php" onsubmit="return validatePrenota()">
 				<fieldset id="prenotazioneFieldset">
 					<div>
-						<label for="pre_da">Da: <abbr title="Giorno, mese, anno">(gg/mm/aaaa)</abbr></label>
-						<input id="pre_da" type="text" name="prenotazioneDa"/>
+						<label for="da">Da: <abbr title="Giorno, mese, anno">(gg/mm/aaaa)</abbr></label>
+						<input id="ad" type="text" name="prenotazioneDa"/>
 					</div>
 					<div>
-						<label for="pre_a">A: <abbr title="Giorno, mese, anno">(gg/mm/aaaa)</abbr></label>
-						<input id="pre_a" type="text" name="prenotazioneA" />
+						<label for="a">A: <abbr title="Giorno, mese, anno">(gg/mm/aaaa)</abbr></label>
+						<input id="a" type="text" name="prenotazioneA" />
 					</div>
 					<hiddenValueCamera/>
 					<input class="bottoneform" type="submit" value="Prenota" />

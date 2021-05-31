@@ -16,7 +16,7 @@ if (isset($_SESSION['email'])) {
 
 $contentAdminNews = "";
 if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
-  $contentAdminNews = "<div id=\"adminSection\"><a id=\"buttonNews\" href=\"./insertNews.php\">Gestisci</a></div>";
+  $contentAdminNews = "<div id=\"adminSection\"><a class=\"button\" href=\"./insertNews.php\">Aggiungi notizia</a></div>";
 }
 
 $newsContent = (new NewsListFactory())->createNewsList();

@@ -18,6 +18,9 @@
   <link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
 
   <link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
+
+  <script type="text/javascript" src="./javascript/inputCheck.js"></script>
+
 </head>
 
 <body>
@@ -46,15 +49,15 @@
 
   <div id="content" class="contenutoGenerale">
     <InsertRoomErrorPlaceholder />
-    <form method="post" action="./insertRoom.php" enctype="multipart/form-data">
+    <form method="post" action="./insertRoom.php" enctype="multipart/form-data" onsubmit="return validateRoom()">
       <fieldset>
         <legend>Nuova camera</legend>
         <label for="name" class="formLabel">Nome*: </label>
-        <input type="text" id="name" name="name" value="<NameValuePlaceholder />" />
+        <span><input type="text" id="name" name="name" value="<NameValuePlaceholder />" /></span>
         <label for="people" class="formLabel">Persone*: </label>
-        <input type="text" id="people" name="people" value="<PeopleValuePlaceholder />" />
+        <span><input type="text" id="people" name="people" value="<PeopleValuePlaceholder />" /></span>
         <label for="price" class="formLabel">Prezzo*: </label>
-        <input type="text" id="price" name="price" value="<PriceValuePlaceholder />" />
+        <span><input type="text" id="price" name="price" value="<PriceValuePlaceholder />" /></span>
       </fieldset>
       <fieldset>
         <legend>Servizi</legend>
@@ -104,7 +107,7 @@
           </div>
           <div>
             <input type="checkbox" id="bidet" name="services[]" value="bidet" <BidetCheckedPlaceholder /> />
-            <label for="bidet" xml:lang="fr" class="formLabel">Bidet</label>
+            <label for="bidet" class="formLabel" xml:lang="fr">Bidet</label>
           </div>
           <div>
             <input type="checkbox" id="paper" name="services[]" value="paper" <PaperCheckedPlaceholder /> />
@@ -114,34 +117,38 @@
             <input type="checkbox" id="towels" name="services[]" value="towels" <TowelsCheckedPlaceholder /> />
             <label for="towels" class="formLabel">Asciugamani</label>
           </div>
+          <div>
+            <input type="checkbox" id="wardrobe" name="services[]" value="wardrobe" <WardrobeCheckedPlaceholder /> />
+            <label for="wardrobe" class="formLabel">Armadio</label>
+          </div>
         </div>
       </fieldset>
       <fieldset>
         <legend>Immagine principale</legend>
         <label class="formLabel">Immagine*: </label>
-        <input type="file" name="mainImg" />
+        <input id="mainImg" type="file" name="mainImg" />
         <div>
           <label for="imgLongdesc" class="formLabel">Descrizione immagine*: </label>
-          <textarea id="imgLongdesc" name="mainLongdesc"  rows="10" cols="60"><MainLongdescValuePlaceholder /></textarea>
-        </div>        
+          <textarea id="imgLongdesc" name="mainLongdesc" rows="10" cols="60"><MainLongdescValuePlaceholder /></textarea>
+        </div>
       </fieldset>
       <fieldset>
         <legend>Immagini galleria</legend>
         <div>
           <label class="formLabel">Prima immagine</label>
-          <input type="file" name="firstImg" />
+          <input type="file" name="firstGallery" />
         </div>
         <div>
           <label class="formLabel">Seconda immagine</label>
-          <input type="file" name="secondImg" />
+          <input type="file" name="secondGallery" />
         </div>
         <div>
           <label class="formLabel">Terza immagine</label>
-          <input type="file" name="thirdImg" />
+          <input type="file" name="thirdGallery" />
         </div>
         <div>
           <label class="formLabel">Quarta immagine</label>
-          <input type="file" name="fourthImg" />
+          <input type="file" name="fourthGallery" />
         </div>
       </fieldset>
       <fieldset>

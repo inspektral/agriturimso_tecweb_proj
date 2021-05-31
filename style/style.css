@@ -278,13 +278,11 @@ SEZIONE RIGHTSIDEBAR
 	text-align: center;
 }
 
-#buttonNews {
+.button {
 	background-color: #923a43; /* Rosso tipico */
-	border: none;
 	color: white;
 	padding: 3% 5%;
 	text-align: center;
-	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
 	font-weight: bold;
@@ -295,7 +293,22 @@ SEZIONE RIGHTSIDEBAR
 	border-radius: 8px;
 }
 
-#buttonNews:hover {
+.button:visited {
+	background-color: #923a43; /* Rosso tipico */
+	color: rgb(197, 197, 197);
+	padding: 3% 5%;
+	text-align: center;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: bold;
+	border-style: solid;
+	border-color: #fff;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.button:hover {
 	color: #923a43;
 	background-color: #fff;
 	border-style: solid;
@@ -488,6 +501,18 @@ textarea, fieldset {
 	border: 0.1px solid #cc4b58;
 	margin-top: 1em;
 	resize: vertical;
+}
+
+
+.bookContainer { 
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
+.bookContainer .button {
+	padding: 0.75em 1.5em;
+	margin-top: 1.5em;
 }
 
 .bottoneform, .bottoneform:visited, #bottoneregistrati {
