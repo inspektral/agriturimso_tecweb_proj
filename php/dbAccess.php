@@ -47,7 +47,7 @@ class DBAccess {
     }
     
     public function signupUser($name, $lastname, $email, $password) {
-        $query = "INSERT INTO `Users` (`nome`, `cognome`, `password`, `email`) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO `Users` (`nome`, `cognome`, `email`, `password`) VALUES (?, ?, ?, ?)";
         $stmt = $this->connection->prepare($query);
 
         if (!$stmt) {
