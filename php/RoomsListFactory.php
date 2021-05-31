@@ -29,7 +29,7 @@ class RoomsListFactory {
         $roomsContent .= "<div class=\"bedroom\">";
         $roomsContent .= "<h2>$name</h2>";
         $roomsContent .= "<h3><span>$people persone</span> ";
-        $roomsContent .= "<span><abbr title=\"euro\">€</abbr> <span class=\"price\">$price</span> a notte";
+        $roomsContent .= "<span><abbr title=\"euro\">€</abbr></span> <span class=\"price\">$price</span> a notte";
         $roomsContent .= "</h3>";
         $roomsContent .= "<img src=\"$mainImg\" alt=\"\" longdesc=\"$mainImgLongdesc\" />";
         $roomsContent .= "<ul>";
