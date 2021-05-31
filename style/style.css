@@ -304,6 +304,16 @@ SEZIONE RIGHTSIDEBAR
 	border-radius: 8px;
 }
 
+.button:visited {
+	color: #8f8f8f;
+	background-color: #fff;
+	border-style: solid;
+	border-color: #923a43;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
 #ultimeNews {
 	padding-left: 2%;
 }
@@ -498,10 +508,6 @@ textarea, fieldset {
 	display: inline-block;
 	font-size: 16px;
 	border-radius: 4px;
-}
-
-.bottoneform:visited {
-
 }
 
 .bottoneform:hover {
