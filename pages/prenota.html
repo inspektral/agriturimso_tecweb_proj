@@ -56,21 +56,25 @@
 
 		<div class="contenutoGenerale column">
 			<h2>Prenotazione Camera</h2>
-
+			<p>Inserire le date nel seguente formato: giorno con 2 cifre, mese con 2 cifre, anno con 4 cifre.</p>
+			<p>Esempio: 31/12/2020</p>
 			<form class="prenot_form" action="prenota.php" onsubmit="return validatePrenota()">
-				<fieldset>
+				<fieldset id="prenotazioneFieldset">
 					<div>
-						<label for="da">Da: (gg/mm/aaaa)</label>
-						<span><input id="da" type="text" /></span>
+						<label for="da">Da: <abbr title="Giorno, mese, anno">(gg/mm/aaaa)</abbr></label>
+						<input id="ad" type="text" name="prenotazioneDa"/>
 					</div>
 					<div>
-						<label for="a">A: (gg/mm/aaaa)</label>
-						<span><input id="a" type="text" /></span>
+						<label for="a">A: <abbr title="Giorno, mese, anno">(gg/mm/aaaa)</abbr></label>
+						<input id="a" type="text" name="prenotazioneA" />
 					</div>
-
+					<hiddenValueCamera/>
 					<input class="bottoneform" type="submit" value="Prenota" />
 				</fieldset>
 			</form>
+			
+		<resultPrenotazione/>
+			
 		</div>
 
 		<div id="rightSideBar" class="column right">

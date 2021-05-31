@@ -1,10 +1,12 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-// error_reporting(E_ALL);
-
+/*
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+error_reporting(E_ALL);
+*/
 class DBAccess {
+    
     private const HOST_DB = "127.0.0.1";
     private const USERNAME = "lbrescan";
     private const PASSWORD = "Eephejokohculee1";
@@ -21,7 +23,7 @@ class DBAccess {
     }
 
     public function loginUser($email, $password) {
-        $query = "SELECT `email` FROM `Users` WHERE `email` = ? AND `password` = ?";
+        $query = "SELECT `email`,`nome`,`cognome` FROM `Users` WHERE `email` = ? AND `password` = ?";
         $stmt = $this->connection->prepare($query);
         if (!$stmt) {
             return null;
@@ -196,8 +198,39 @@ class DBAccess {
             "isSuccessful" => $stmt->affected_rows === 1
         );
     }
-
-
+    
+    public function isFree($dateFrom, $dateTo) {
+        $query = "SELECT * FROM `prenotazioni` WHERE `giornoDa` <= ? AND `giornoA` >= ?";   
+        
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            return null;
+        }
+        $stmt->bind_param("ss", $dateFrom, $dateTo);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows == 0) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public function prenotaCamera($user, $dateFrom, $dateTo, $camera) {
+        
+        $query = "INSERT INTO `prenotazioni` (`email`, `giornoDa`, `giornoA`, `camera`) VALUES ('?', '?', '?', '?');";
+        $stmt = $this->connection->prepare($query);
+        if (!$stmt) {
+            return null;
+        }
+        //$stmt->bind_param("ssss", $description);
+        $stmt->execute();
+        
+        return array(
+            "isSuccessful" => $stmt->affected_rows === 1
+        );
+    }
 
     public function closeConnection(){
         $this->connection->close();

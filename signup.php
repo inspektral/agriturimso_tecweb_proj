@@ -11,7 +11,7 @@ $userContent = "";
 if (isset($_SESSION['email'])) {        
   $userContent = $menu->getWelcomeMessage($_SESSION['email']);
 } else {
-  $userContent = $menu->getAuthenticationButtons(true, false);
+    $userContent = $menu->getAuthenticationButtons(false, true);
 }
 
 $email = "";
