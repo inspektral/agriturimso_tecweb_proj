@@ -293,16 +293,6 @@ SEZIONE RIGHTSIDEBAR
 	border-radius: 8px;
 }
 
-.button:hover {
-	color: #923a43;
-	background-color: #fff;
-	border-style: solid;
-	border-color: #923a43;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-}
-
 .button:visited {
 	background-color: #923a43; /* Rosso tipico */
 	color: rgb(197, 197, 197);
@@ -313,6 +303,16 @@ SEZIONE RIGHTSIDEBAR
 	font-weight: bold;
 	border-style: solid;
 	border-color: #fff;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.button:hover {
+	color: #923a43;
+	background-color: #fff;
+	border-style: solid;
+	border-color: #923a43;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
