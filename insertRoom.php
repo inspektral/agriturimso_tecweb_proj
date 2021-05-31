@@ -78,10 +78,10 @@ if (isset($_POST["submit"])) {
         $uploader = new ImageUploader();
         $mainSuccess = $uploader->upload($_FILES["mainImg"],$mainImg);
         
-        $firstSuccess = isset($_FILES["firstGallery"]) ? $uploader->upload($_FILES["firstGallery"],$firstGallery) : true;
-        $secondSuccess = isset($_FILES["secondGallery"]) ? $uploader->upload($_FILES["secondGallery"],$secondGallery) : true;
-        $thirdSuccess = isset($_FILES["thirdGallery"]) ? $uploader->upload($_FILES["thirdGallery"],$thirdGallery) : true;
-        $fourthSuccess = isset($_FILES["fourthGallery"]) ? $uploader->upload($_FILES["fourthGallery"],$fourthGallery) : true;
+        $firstSuccess = $_FILES["firstGallery"] === UPLOAD_ERR_OK ? $uploader->upload($_FILES["firstGallery"],$firstGallery) : true;
+        $secondSuccess = $_FILES["secondGallery"] === UPLOAD_ERR_OK ? $uploader->upload($_FILES["secondGallery"],$secondGallery) : true;
+        $thirdSuccess = $_FILES["thirdGallery"] === UPLOAD_ERR_OK ? $uploader->upload($_FILES["thirdGallery"],$thirdGallery) : true;
+        $fourthSuccess = $_FILES["fourthGallery"] === UPLOAD_ERR_OK ? $uploader->upload($_FILES["fourthGallery"],$fourthGallery) : true;
 
         var_dump($_FILES, $mainImg, $firstGallery, $firstSuccess, $secondGallery,$secondSuccess,$thirdGallery,$thirdSuccess,$fourthGallery,$fourthSuccess);
         if ($mainSuccess && $firstSuccess && $secondSuccess && $thirdSuccess && $fourthSuccess) {
