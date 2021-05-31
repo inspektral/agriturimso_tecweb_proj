@@ -485,15 +485,17 @@ textarea, fieldset {
 	resize: vertical;
 }
 
-.bottoneform, #bottoneregistrati {
-	background-color: #923a43; /* Green */
-	border: none;
-	color: white;
-	margin: 1.5em auto 0 auto;
-	/* margin-top: 1.5em; */
-	padding: 2% 4%;
+.bookContainer { 
+	display: inline-block;
+	width: 100%;
 	text-align: center;
-	text-decoration: none;
+}
+
+.bottoneform, #bottoneregistrati {
+	background-color: #923a43;
+	color: white;
+	margin-top: 1.5em;
+	padding: 0.75em 1.5em;
 	display: inline-block;
 	font-size: 16px;
 	border-radius: 4px;
