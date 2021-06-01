@@ -31,7 +31,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"
   $dbAccess->closeDBConnection();
 
   if ($user) {
-    $_SESSION["email"] = $user["nome"];
+    $_SESSION["email"] = $user["email"];
     $_SESSION["isAdmin"] = $user["email"] === "admin@mail.com";
     header("Location: ./index.php");
   } else {
