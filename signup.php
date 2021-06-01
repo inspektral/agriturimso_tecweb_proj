@@ -31,7 +31,7 @@ if (isset($_POST["submit"])) {
     $isFailed = $dbAccess->openDBConnection();
 
     if ($isFailed) {
-      header("Location: /errors/500.php");
+      header("Location: ./errors/500.php");
     } 
     
     $result = $dbAccess->signupUser($name, $lastname, $email, $password);
@@ -41,7 +41,7 @@ if (isset($_POST["submit"])) {
       $_SESSION["email"] = $result["userEmail"];
       $_SESSION["isAdmin"] = $result["userEmail"] === "admin@mail.com";
       $userFeedbackContent .= "<li><strong class=\"success\">Utente registrato correttamente, verrai reindirizzato alla <span xml:lang=\"en\">home</span></strong> in 2 secondi</li>";
-      header("refresh:2;url= /index.php");
+      header("refresh:2;url= ./index.php");
     } else {
       $userFeedbackContent .= "<li><strong class=\"error\">Errore durante la registrazione</strong></li>";
     }
