@@ -31,7 +31,7 @@ if (isset($_POST["submit"])) {
     $isFailed = $dbAccess->openDBConnection();
 
     if ($isFailed) {
-      header("Location: /errors/500.php");
+      header("Location: ./errors/500.php");
     } 
     
     $result = $dbAccess->signupUser($name, $lastname, $email, $password);
@@ -40,9 +40,12 @@ if (isset($_POST["submit"])) {
     if ($result["isSuccessful"]) {        
       $_SESSION["email"] = $result["userEmail"];
       $_SESSION["isAdmin"] = $result["userEmail"] === "admin@mail.com";
-      $userFeedbackContent .= "<li><strong class=\"success\">Utente registrato correttamente, verrai reindirizzato alla <span xml:lang=\"en\">home</span></strong> in 2 secondi</li>";
-      header("refresh:2;url= /index.php");
+      $userFeedbackContent .= "<li><strong class=\"success\">Utente registrato correttamente, verrai reindirizzato alla <span xml:lang=\"en\">home</span> in 2 secondi</strong></li>";
+      header("refresh:2;url= ./index.php");
     } else {
+      $emailValue = $_POST["email"];
+      $nameValue = $_POST["nome"];
+      $lastnameValue = $_POST["cognome"];
       $userFeedbackContent .= "<li><strong class=\"error\">Errore durante la registrazione</strong></li>";
     }
   } else {
@@ -64,8 +67,8 @@ if (isset($_POST["submit"])) {
 
 $html = str_replace("<UserPlaceholder />", $userContent, $html);
 $html = str_replace("<SignupErrorPlaceholder />", $userFeedbackContent, $html);
-$html = str_replace("<NameValuePlaceholder />", $name, $html);
-$html = str_replace("<LastNameValuePlaceholder />", $lastname, $html);
-$html = str_replace("<EmailValuePlaceholder />", $email, $html);
+$html = str_replace("<NameValuePlaceholder />", $nameValue, $html);
+$html = str_replace("<LastNameValuePlaceholder />", $lastnameValue, $html);
+$html = str_replace("<EmailValuePlaceholder />", $emailValue, $html);
 echo $html;
 ?>
