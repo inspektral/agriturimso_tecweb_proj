@@ -12,7 +12,7 @@ class UserMenu {
     
     private $signupLinkErrorPage = "<li><a href=\"../signup.php\" class=\"reg\">Registrati</a></li>";
     private $loginLinkErrorPage = "<li><a href=\"../login.php\" class=\"reg\">Accedi</a></li>";
-    private $logoutErrorPage = "<li><a href=\"logout.php\" class='reg'>Logout</a></li>";
+    private $logoutErrorPage = "<li><a href=\"../logout.php\" class='reg'>Logout</a></li>";
 
     public function getWelcomeMessage($email, $isErrorPage = false) {
         $this->welcomeMessage = str_replace("<EmailPlaceholder />", $email, $this->welcomeMessage);
