@@ -43,6 +43,9 @@ if (isset($_POST["submit"])) {
       $userFeedbackContent .= "<li><strong class=\"success\">Utente registrato correttamente, verrai reindirizzato alla <span xml:lang=\"en\">home</span></strong> in 2 secondi</li>";
       header("refresh:2;url= ./index.php");
     } else {
+      $emailValue = $_POST["email"];
+      $nameValue = $_POST["nome"];
+      $lastnameValue = $_POST["cognome"];
       $userFeedbackContent .= "<li><strong class=\"error\">Errore durante la registrazione</strong></li>";
     }
   } else {
@@ -64,8 +67,8 @@ if (isset($_POST["submit"])) {
 
 $html = str_replace("<UserPlaceholder />", $userContent, $html);
 $html = str_replace("<SignupErrorPlaceholder />", $userFeedbackContent, $html);
-$html = str_replace("<NameValuePlaceholder />", $name, $html);
-$html = str_replace("<LastNameValuePlaceholder />", $lastname, $html);
-$html = str_replace("<EmailValuePlaceholder />", $email, $html);
+$html = str_replace("<NameValuePlaceholder />", $nameValue, $html);
+$html = str_replace("<LastNameValuePlaceholder />", $lastnameValue, $html);
+$html = str_replace("<EmailValuePlaceholder />", $emailValue, $html);
 echo $html;
 ?>
