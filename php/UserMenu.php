@@ -16,7 +16,7 @@ class UserMenu {
 
     public function getWelcomeMessage($email, $isErrorPage = false) {
         $this->welcomeMessage = str_replace("<EmailPlaceholder />", $email, $this->welcomeMessage);
-        $logout = $isErrorPage ? $this->logoutErrorPage : $logout;
+        $logout = $isErrorPage ? $this->logoutErrorPage : $this->logout;
         return $this->initialUl.$this->welcomeMessage.$logout.$this->finalUl;
     }
 
