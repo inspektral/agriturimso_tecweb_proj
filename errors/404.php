@@ -8,7 +8,7 @@ $html = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."404.html");
 $menu = new UserMenu();
 $content = "";
 if (isset($_SESSION['email'])) {        
-  $content = $menu->getWelcomeMessage($_SESSION['email']);
+  $content = $menu->getWelcomeMessage($_SESSION['email'], true);
 } else {
     $content = $menu->getAuthenticationButtons(true);
 }
