@@ -23,7 +23,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"
   $isFailed = $dbAccess->openDBConnection();
 
   if ($isFailed) {
-    header("Location: /errors/500.php");
+    header("Location: ./errors/500.php");
     exit();
   }
 
@@ -33,7 +33,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"
   if ($user) {
     $_SESSION["email"] = $user["nome"];
     $_SESSION["isAdmin"] = $user["email"] === "admin@mail.com";
-    header("Location: /index.php");
+    header("Location: ./index.php");
   } else {
     $errorContent .= "<li><strong class=\"error\">Credenziali errate</strong></li>";
   }
