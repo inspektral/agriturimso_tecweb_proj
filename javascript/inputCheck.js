@@ -1,15 +1,15 @@
-var dettagliForm = {
-  "da": ["Da","(0[1-9]|[12][0-9]|3[0-1])\/(0[0-9]|1[012])\/((20|19)[0-9][0-9])", "inserire la data nel formato gg/mm/aaaa"],
-  "a": ["A","(0[1-9]|[12][0-9]|3[0-1])\/(0[0-9]|1[012])\/((20|19)[0-9][0-9])", "inserire la data nel formato gg/mm/aaaa"],
+let dettagliForm = {
+  "da": ["Da","(0[1-9]|[12][0-9]|3[0-1])\/(0[0-9]|1[012])\/((20|19)[0-9][0-9])", "Inserire la data nel formato gg/mm/aaaa"],
+  "a": ["A","(0[1-9]|[12][0-9]|3[0-1])\/(0[0-9]|1[012])\/((20|19)[0-9][0-9])", "Inserire la data nel formato gg/mm/aaaa"],
   "nome": ["Nome","([a-zA-Z]){2,20}","Il nome non può essere vuoto"],
   "cognome":["Cognome","([a-zA-Z]){2,20}","Il cognome non può essere vuoto"],
   "email":["Email",/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,"Indirizzo email non valido"],
-  "password":["Password",/^.{8,}/,"La password deve avere almeno 8 caratteri"],
+  "password":["Password",/^.{4,}/,"La password deve avere almeno 4 caratteri"],
   "testo":["Testo","\.{10,}","Inserisci il tuo commento"],
-  "name": ["Name","([a-zA-Z]){2,20}","inserire il nome della camera"],
-  "people": ["People", /^\d{1,2}/, "inserire il numero di posti letto"],
-  "price": ["Price", /^\d{1,4}/, "inserire il prezzo della camera"],
-  "description" : ["NewsDescription", /^.{10,}/, "inserire la descrizione della notizia"]
+  "name": ["Name","([a-zA-Z]){2,20}","Inserire il nome della camera"],
+  "people": ["People", /^\d{1,2}/, "Inserire il numero di posti letto"],
+  "price": ["Price", /^\d{1,4}/, "Inserire il prezzo della camera"],
+  "description" : ["NewsDescription", /^.{10,}/, "Inserire la descrizione della notizia"]
 }
 
 function validateNews() {
@@ -81,13 +81,16 @@ function validateAccedi() {
 	return true;
  }
 
- function showError(input, errorMsg) {
-  var element = document.createElement("strong");
-	element.className = "error";
-	element.appendChild(document.createTextNode(errorMsg));
+function showError(input, errorMsg) {
+  let element = document.createElement("strong");
+  element.className = "error";
+  element.appendChild(document.createTextNode(errorMsg));
+  
+  let paragraph = document.createElement("p");
+  paragraph.appendChild(element);
 
-	var parent = input.parentNode;
-	parent.appendChild(element);
+	let parent = input.parentNode;
+	parent.appendChild(paragraph);
  }
 
 function dateParse(dateString) {

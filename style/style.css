@@ -293,16 +293,6 @@ SEZIONE RIGHTSIDEBAR
 	border-radius: 8px;
 }
 
-.button:hover {
-	color: #923a43;
-	background-color: #fff;
-	border-style: solid;
-	border-color: #923a43;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-}
-
 .button:visited {
 	background-color: #923a43; /* Rosso tipico */
 	color: rgb(197, 197, 197);
@@ -313,6 +303,16 @@ SEZIONE RIGHTSIDEBAR
 	font-weight: bold;
 	border-style: solid;
 	border-color: #fff;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.button:hover {
+	color: #923a43;
+	background-color: #fff;
+	border-style: solid;
+	border-color: #923a43;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
@@ -463,6 +463,11 @@ li span {
 	position: relative;
 	text-indent: -10em;
 }
+
+#prenotazioneFieldset div{
+	margin-bottom: 5%;
+}
+
 /*
 ==============
 SEZIONE FOOTER
@@ -498,6 +503,7 @@ textarea, fieldset {
 	resize: vertical;
 }
 
+
 .bookContainer { 
 	display: inline-block;
 	width: 100%;
@@ -509,17 +515,7 @@ textarea, fieldset {
 	margin-top: 1.5em;
 }
 
-.bottoneform, #bottoneregistrati {
-	background-color: #923a43;
-	color: white;
-	margin-top: 1.5em;
-	padding: 0.75em 1.5em;
-	display: inline-block;
-	font-size: 16px;
-	border-radius: 4px;
-}
-
-.bottoneform:hover {
+.bottoneform, .bottoneform:visited, #bottoneregistrati {
 	background-color: #923a43;
 	border: none;
 	color: white;
@@ -528,7 +524,17 @@ textarea, fieldset {
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
+	margin: 4% auto 4% auto;
+	
+  	border: 2px solid #923a43;
 	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+.bottoneform:hover {
+	color: #923a43;
+	background-color: white;
 }
 
 .spazio {

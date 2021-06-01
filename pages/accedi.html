@@ -17,7 +17,7 @@
 
         <link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
 
-        <script type="text/javascript" src="../inputCheck.js"></script>
+        <script type="text/javascript" src="./javascript/inputCheck.js"></script>
     </head>
     <body>
         <div id="header">
@@ -43,7 +43,7 @@
             <UserPlaceholder />
         </div>
 
-        <div id="contentLogin" class="contenutoGenerale" role="main">
+        <div id="contentLogin" class="contenutoGenerale"><!-- role="main"  --> 
             <LoginErrorPlaceholder />
             <form method="post" id="accedi" action="login.php" onsubmit="return validateAccedi()">
                 <fieldset>
@@ -54,7 +54,7 @@
                     <span><input type="password" id="password" name="password"/></span>
                 </fieldset>
                 <fieldset>
-                    <button id="submit" type="submit" name="submit" class="bottoneform">Invia</button>
+                    <input type="submit" value="Accedi" id="submit" name="submit" />
                 </fieldset>
             </form>
         </div>
