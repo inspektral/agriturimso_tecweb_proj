@@ -31,7 +31,7 @@ public function createNewComment() {
         $commentContent .= "<form class= \"bottonicommento\" method=\"post\"  action=\"./diconodinoi.php\">";
         $commentContent .= "<input type=\"hidden\" name= \"email\" value= $email >";
         $commentContent .= "<input type=\"hidden\" name= \"timestamp\" value= \"$timestamp\" >";
-        $commentContent .= "<fieldset>";
+        $commentContent .= "<fieldset class= \"noBorder\">";
         $commentContent .= "<button id=\"delete\" type=\"submit\" name=\"deleteComment\" class=\"bottonicommento\">Cancella</button>";
         $commentContent .= "</fieldset>";
         $commentContent .= "</form>";
