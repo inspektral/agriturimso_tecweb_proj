@@ -346,6 +346,21 @@ SEZIONE RIGHTSIDEBAR
 SEZIONE CONTENUTO
 ==============
 */
+.prenot_form{
+	margin-left: 1%;
+}
+
+.resultPrenotazioneTrue{
+	font-weight: bold;
+	text-align: center;
+}
+
+.resultPrenotazioneFalse{
+	font-weight: bold;
+	text-align: center;
+	color: #f00;
+}
+
 .contenutoGenerale {
 	border-right: 1px solid #ddd;
 	width: 75%;

@@ -91,6 +91,11 @@
 }
 
 /*    CONTENUTO    */
+
+.prenot_form{
+	margin-left: 0;
+}
+
 .contenutoGenerale {
 	margin-left: 0em;
 	padding: 0.5em;
