@@ -45,6 +45,7 @@ public function createNewComment() {
     return $commentContent;
   }
 }
+?>
 
 
 
