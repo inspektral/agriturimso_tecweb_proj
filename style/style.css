@@ -350,14 +350,16 @@ SEZIONE CONTENUTO
 	margin-left: 1%;
 }
 
-.resultPrenotazioneTrue{
+.resultPrenotazione{
 	font-weight: bold;
 	text-align: center;
+	margin-left: 2%;
 }
 
 .resultPrenotazioneFalse{
 	font-weight: bold;
 	text-align: center;
+	margin-left: 2%;
 	color: #f00;
 }
 

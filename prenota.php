@@ -17,8 +17,11 @@ if (isset($_SESSION["email"])) {
 
 if (isset($_POST["prenotazioneDa"]) && $_POST["prenotazioneDa"] != '' && isset($_POST["prenotazioneA"]) && $_POST["prenotazioneA"] != '' && isset($_POST["nomeCamera"])) {
     
-if($_POST["prenotazioneDa"] > $_POST["prenotazioneA"]){
-        
+    $dateDa = new DateTime($_POST["prenotazioneDa"]);
+    $dateA = new DateTime($_POST["prenotazioneA"]);
+
+    if($dateDa < $dateA){
+            
         $dbAccess = new DBAccess();
         $isFailed = $dbAccess->openDBConnection();
         
@@ -30,14 +33,15 @@ if($_POST["prenotazioneDa"] > $_POST["prenotazioneA"]){
         if ($dbAccess->isFree($_POST["prenotazioneDa"], $_POST["prenotazioneA"], $_POST["nomeCamera"])) {
             /*$dbAccess->prenotaCamera($_SESSION["email"],$_POST["prenotazioneDa"], $_POST["prenotazioneA"], $_POST["camera"]);
             header("Location: /pages/prenotazione_effettuata.html");*/
-            $html = str_replace("<resultPrenotazione/>", "<p class=\"resultPrenotazioneTrue\">Che fortuna, la camera &egrave; libera, chiamaci subito per prenotare (0423/123456)!</p>", $html);
+            $html = str_replace("<resultPrenotazione/>", "<p class=\"resultPrenotazione\">Che fortuna, la camera &egrave; libera, chiamaci subito per prenotare (0423/123456)!</p>", $html);
         } else {
-            $html = str_replace("<resultPrenotazione/>", "<p class=\"resultPrenotazioneFalse\">Niente, mi dispiace, camera gi&agrave; prenotata, sar&agrave; per la prossima volta... O per la prossima settimana, prova a controllare!</p>", $html);
+            $html = str_replace("<resultPrenotazione/>", "<p class=\"resultPrenotazione resultPrenotazioneFalse\">Niente, mi dispiace, camera gi&agrave; prenotata, sar&agrave; per la prossima volta... <br/>O per la prossima settimana, prova a ricontrollare, altrimenti puoi chiamarci al numero 0423/123456</p>", $html);
         }
         
         $dbAccess->closeDBConnection();
+
     }else{
-        $html = str_replace("<resultPrenotazione/>", "<strong class=\"error\">Data di prenotazione errata, data di partenza antecedente alla data di arrivo</strong>", $html);
+        $html = str_replace("<resultPrenotazione/>", "<strong class=\"resultPrenotazioneFalse\">Errore, Data di partenza antecedente alla data di arrivo</strong>", $html);
         
     }
 }
