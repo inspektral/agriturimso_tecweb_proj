@@ -17,76 +17,52 @@ function validateNews() {
 }
 
 function validateRoom(){
-  try {
-    const nome = document.getElementById("name")
-    const posti = document.getElementById("people")
-    const price = document.getElementById("price")
-    const descrizione = document.getElementById("imgLongDesc")
-    const validNome = validateField(nome)
-    const validPosti = validateField(posti)
-    const validPrice = validateField(price)
-    // const validDescrizione = validateField(descrizione)
-    return validNome && validPosti && validPrice
-  }
-  catch {
-    return false
-  }
+  const nome = document.getElementById("name")
+  const posti = document.getElementById("people")
+  const price = document.getElementById("price")
+  const descrizione = document.getElementById("imgLongDesc")
+  const validNome = validateField(nome)
+  const validPosti = validateField(posti)
+  const validPrice = validateField(price)
+  const validDescrizione = validateField(descrizione)
+  return validNome && validPosti && validPrice
 }
 
 function validatePrenota() {
-  try {
-    const da = document.getElementById("da")
-    const a = document.getElementById("a")
-    let validDa = validateField(da)
-    let validA = validateField(a)
-    if (validDa && validA) {
-      if(checkDateDaA(da, a)) {
-        return true
-      }
-      return false
+  const da = document.getElementById("da")
+  const a = document.getElementById("a")
+  let validDa = validateField(da)
+  let validA = validateField(a)
+  if (validDa && validA) {
+    if(checkDateDaA(da, a)) {
+      return true
     }
     return false
   }
-  catch {
-    return false
-  }
+  return false
 }
 
 function validateComment() {
-  try {
-    const comm = document.getElementById("testo")
-    return validateField(comm)
-  }
-  catch {
-    return false
-  }
+  const comm = document.getElementById("testo")
+  return validateField(comm)
 }
 
 function validateRegistrati() {
-  try {
-    const nome = document.getElementById("nome")
-    const cognome = document.getElementById("cognome")
-    const validNome = validateField(nome)
-    const validCognome = validateField(cognome)
-    const validCredents = validateAccedi()
-    return validNome && validCognome && validCredents
-  }
-  catch {
-    return false
-  }
+  console.log("validateRegistrati called");
+  const nome = document.getElementById("nome")
+  const cognome = document.getElementById("cognome")
+  const validNome = validateField(nome)
+  const validCognome = validateField(cognome)
+  const validCredents = validateAccedi()
+  return validNome && validCognome && validCredents
 }
 
 function validateAccedi() {
-  try {
-    const email = document.getElementById("email")
-    const password = document.getElementById("password")
-    const validEmail = validateField(email)
-    const validPassword = validateField(password)
-    return validEmail && validPassword
-  }
-  catch {
-    return false
-  }
+  const email = document.getElementById("email")
+  const password = document.getElementById("password")
+  const validEmail = email.value === "admin" || email.value === "user" || validateField(email)
+  const validPassword = password.value === "admin" || password.value === "user" || validateField(password)
+  return validEmail && validPassword
 }
 
  function validateField(input) {

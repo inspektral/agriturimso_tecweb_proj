@@ -5,11 +5,12 @@
 // error_reporting(E_ALL);
 
 class DBAccess {
-    
+
     private const HOST_DB = "127.0.0.1";
     private const USERNAME = "lbrescan";
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
+
     private $connection;
 
     public function openDBConnection() {
@@ -198,14 +199,14 @@ class DBAccess {
         );
     }
     
-    public function isFree($dateFrom, $dateTo) {
-        $query = "SELECT * FROM `prenotazioni` WHERE `giornoDa` <= ? AND `giornoA` >= ?";   
+    public function isFree($dateFrom, $dateTo, $nameRoom) {
+        $query = "SELECT * FROM `prenotazioni` WHERE `giornoDa` >= ? AND `giornoA` >= ? AND `nameCamera` = ?";   
         
         $stmt = $this->connection->prepare($query);
         if (!$stmt) {
             return null;
         }
-        $stmt->bind_param("ss", $dateFrom, $dateTo);
+        $stmt->bind_param("sss", $dateFrom, $dateTo, $nameRoom);
         $stmt->execute();
         $result = $stmt->get_result();
         
@@ -215,7 +216,7 @@ class DBAccess {
             return false;
         }
     }
-    
+    /*
     public function prenotaCamera($user, $dateFrom, $dateTo, $camera) {
         
         $query = "INSERT INTO `prenotazioni` (`email`, `giornoDa`, `giornoA`, `camera`) VALUES ('?', '?', '?', '?');";
@@ -229,7 +230,7 @@ class DBAccess {
         return array(
             "isSuccessful" => $stmt->affected_rows === 1
         );
-    }
+    }*/
 
     public function closeConnection(){
         $this->connection->close();

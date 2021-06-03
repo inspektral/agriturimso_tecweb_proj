@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -16,7 +16,7 @@
 
 	<link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
 	<link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
-	<script src="./javascript/inputCheck.js"></script>
+	<script type="text/javascript" src="./javascript/inputCheck.js"></script>
 
 </head>
 <body>
@@ -106,9 +106,9 @@
 
 			<div id="lasciacommento">		
 				<h3>Lascia un commento!</h3>
-				<InsertCommentErrorPlaceholder />
-				<form method="post" action="diconodinoi.php" onsubmit="return validateComment()">
-					<fieldset>
+				
+				<form class="commentForm" method="post" action="diconodinoi.php" onsubmit="return validateComment()">
+					<fieldset class="commentForm">
 						<legend>Dacci un voto</legend>
 						<div class="container">
 							<label for="voto1">1</label>
@@ -136,12 +136,12 @@
 							<!-- <span class="checkmark"></span> -->
 						</div>
 					</fieldset>
-					<fieldset>
+					<fieldset class="commentForm">
 						<legend>Commento</legend>
-						<label for="testo">Inserisci il tuo commento</label>
+						<label for="testo" class="labelPos" >Scrivi il tuo commento qui sotto</label>
 						<span><textarea id="testo" name="testo" rows="10" cols="50"></textarea></span>
 					</fieldset>
-					<fieldset>
+					<fieldset class="noBorder">
 						<button id="submit" type="submit" name="submit" class="bottoneform">Invia</button>
 					</fieldset>
 				</form>

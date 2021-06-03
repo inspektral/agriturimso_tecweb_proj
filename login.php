@@ -43,3 +43,4 @@ $errorContent .= "</ul></div>";
 $html = str_replace("<UserPlaceholder />", $userContent, $html);
 $html = str_replace("<LoginErrorPlaceholder />", $errorContent, $html);
 echo $html;
+?>
