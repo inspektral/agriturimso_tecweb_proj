@@ -23,7 +23,7 @@ if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
 
 $newsContent = (new NewsListFactory())->createNewsList();
 if (!$newsContent) {
-  header("Location: /errors/500.php");
+  header("Location: ./errors/500.php");
 }
 
 $userFeedbackContent = "";
@@ -39,7 +39,7 @@ if(isset($_POST["submit"])) {
       $isFailed = $dbAccess->openDBConnection();
 
       if($isFailed) {
-          $userFeedbackContent .= "<li><strong class=\"error\">Errore di collegamento al database. Riprova.</strong></li>";;
+        header("Location: ./errors/500.php");
       }
 
       $result= $dbAccess->setComments($email, $testo, $voto);
@@ -57,31 +57,30 @@ if(isset($_POST["submit"])) {
 }
 
 
-if(isset($_POST["deleteComment"])&& $_SESSION["isAdmin"] ) {
+if(isset($_POST["deleteComment"]) && isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
-  if (isset($_POST["email"])) {        
-      $email = $_POST["email"];
-      $timestamp= $_POST["timestamp"];
-      
-      $dbAccess = new DBAccess();
-      $isFailed = $dbAccess->openDBConnection();
+  if (isset($_POST["email"]) && isset($_POST["timestamp"])) {        
+    $email = $_POST["email"];
+    $timestamp= $_POST["timestamp"];
+    
+    $dbAccess = new DBAccess();
+    $isFailed = $dbAccess->openDBConnection();
 
-      if($isFailed) {
-          $userFeedbackContent .= "<li><strong class=\"error\">Errore di collegamento al database. Riprova.</strong></li>";;
-      }
+    if($isFailed) {
+      header("Location: ./errors/500.php");
+    }
 
-      $result= $dbAccess->deleteComment($email, $timestamp);
-      $dbAccess->closeDBConnection();
+    $result= $dbAccess->deleteComment($email, $timestamp);
+    $dbAccess->closeDBConnection();
       
-      if ($result["isSuccessful"]) {
-        $userFeedbackContent .= "<li><strong class=\"success\">Commento rimosso con successo</strong></li>";
+    if ($result["isSuccessful"]) {
+      $userFeedbackContent .= "<li><strong class=\"success\">Commento rimosso con successo</strong></li>";
     }else{				
-        $userFeedbackContent .= "<li><strong class=\"error\">Errore durante la rimozione del commento</strong></li>";
+      $userFeedbackContent .= "<li><strong class=\"error\">Errore durante la rimozione del commento</strong></li>";
     }
   }
-  $userFeedbackContent = "<div><ul class=\"feedbackList\">";
-}
-if(isset($_POST["deleteComment"])&& !$_SESSION["isAdmin"] ){
+  $userFeedbackContent = "</ul></div>";
+} else if(isset($_POST["deleteComment"]) && !$_SESSION["isAdmin"]){
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
   $userFeedbackContent .= "<li><strong class=\"error\">Devi essere un amministratore per poter rimuovere i commenti</strong></li>";
   $userFeedbackContent .= "</ul></div>";
@@ -90,7 +89,7 @@ if(isset($_POST["deleteComment"])&& !$_SESSION["isAdmin"] ){
 
 $commentContent = (new mostraCommento())->createNewComment();
 if (!$commentContent) {
-  header("Location: /errors/500.php");
+  header("Location: ./errors/500.php");
 }
 
 $html = str_replace("<UserPlaceholder />", $content, $html);
