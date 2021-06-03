@@ -60,54 +60,15 @@
 
 			<div id="sezionecommenti" class="comments">
 				<h2>Scopri cosa dicono di noi!</h2>
-				<div class="casellacommento">
-					<h3>Tito</h3>
-					<cite> Mi sono trovato molto bene in questo agriturismo, lo consiglio!</cite>
-					<div class="bottonicommento">
-						<button type="button">Cancella</button>
-					</div>
-				</div>
-
-				<div class="casellacommento">
-					<h3>Lorenzo</h3>
-					<cite>Ottima gestione e cordialità verso i clienti</cite>
-					<div class="bottonicommento">
-						<button type="button">Cancella</button>
-					</div>
-				</div>
-
-				<div class="casellacommento">
-					<h3>Matteo</h3>
-					<cite>Buon cibo e camere bellissime!</cite>
-					<div class="bottonicommento">
-						<button type="button">Cancella</button>
-					</div>
-				</div>
-
-				<div class="casellacommento">
-					<h3>Francesco</h3>
-					<cite>Camere pulite e ristorante eccelso</cite>
-					<div class="bottonicommento">
-						<button type="button">Cancella</button>
-					</div>
-				</div>
-
-				<div class="casellacommento">
-					<h3>Massimo</h3>
-					<cite>Situato in una zona da visitare assolutamente!</cite>
-					<div class="bottonicommento">
-						<button type="button">Cancella</button>
-					</div>
-				</div>
+				
+				<CommentPlaceholder />
 			</div>
 
-			<CommentPlaceholder />
-			<InsertCommentErrorPlaceholder />
-
+			
 			<div id="lasciacommento">		
 				<h3>Lascia un commento!</h3>
-				
 				<form class="commentForm" method="post" action="diconodinoi.php" onsubmit="return validateComment()">
+					<InsertCommentErrorPlaceholder />
 					<fieldset class="commentForm">
 						<legend>Dacci un voto</legend>
 						<div class="container">
