@@ -5,7 +5,7 @@ let dettagliForm = {
   "cognome":["Cognome","([a-zA-Z]){2,20}","Il cognome non può essere vuoto"],
   "email":["Email",/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,"Indirizzo email non valido"],
   "password":["Password",/^.{4,}/,"La password deve avere almeno 4 caratteri"],
-  "testo":["Testo","\.{10,}","Inserisci il tuo commento"],
+  "testo":["Testo","\.{10,}","Il commento è obbligatorio e deve essere di almeno 10 caratteri"],
   "name": ["Name","([a-zA-Z]){2,20}","Inserire il nome della camera"],
   "people": ["People", /^\d{1,2}/, "Inserire il numero di posti letto"],
   "price": ["Price", /^\d{1,4}/, "Inserire il prezzo della camera"],
