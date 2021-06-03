@@ -26,12 +26,12 @@ public function createNewComment() {
         $commentContent .= "<div class=\"casellacommento\">";
         $commentContent .= "<h3>$email</h3>" ;
         $commentContent .= "<p>$timestamp - $voto/5</p>";
-        $commentContent .= "<blockquote>$testo</blockquote>";
+        $commentContent .= "<blockquote><div>$testo</div></blockquote>";
         if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
-          $commentContent .= "<form class= \"bottonicommento\" method=\"post\"  action=\"./diconodinoi.php\">";
-          $commentContent .= "<input type=\"hidden\" name= \"email\" value= $email >";
-          $commentContent .= "<input type=\"hidden\" name= \"timestamp\" value= \"$timestamp\" >";
+          $commentContent .= "<form class=\"bottonicommento\" method=\"post\"  action=\"./diconodinoi.php\">";
           $commentContent .= "<fieldset class= \"noBorder\">";
+          $commentContent .= "<input type=\"hidden\" name= \"email\" value=\"$email\" />";
+          $commentContent .= "<input type=\"hidden\" name= \"timestamp\" value=\"$timestamp\" />";
           $commentContent .= "<button id=\"delete\" type=\"submit\" name=\"deleteComment\" class=\"bottonicommento\">Cancella</button>";
           $commentContent .= "</fieldset>";
           $commentContent .= "</form>";
