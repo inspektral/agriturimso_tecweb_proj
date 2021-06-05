@@ -15,7 +15,7 @@ if (isset($_SESSION["email"])) {
     $content = $menu->getAuthenticationButtons();
 }
 
-if (isset($_POST["prenotazioneDa"]) && $_POST["prenotazioneDa"] != '' && isset($_POST["prenotazioneA"]) && $_POST["prenotazioneA"] != '' && isset($_POST["nomeCamera"])) {
+if (isset($_POST["prenotazioneDa"]) && $_POST["prenotazioneDa"] != '' && isset($_POST["prenotazioneA"]) && $_POST["prenotazioneA"] != '' && isset($_GET["nomeCamera"])) {
     
     $dateDa = new DateTime($_POST["prenotazioneDa"]);
     $dateA = new DateTime($_POST["prenotazioneA"]);
@@ -30,7 +30,7 @@ if (isset($_POST["prenotazioneDa"]) && $_POST["prenotazioneDa"] != '' && isset($
             exit();
         }
         
-        if ($dbAccess->isFree($_POST["prenotazioneDa"], $_POST["prenotazioneA"], $_POST["nomeCamera"])) {
+        if ($dbAccess->isFree($_POST["prenotazioneDa"], $_POST["prenotazioneA"], $_GET["nomeCamera"])) {
             /*$dbAccess->prenotaCamera($_SESSION["email"],$_POST["prenotazioneDa"], $_POST["prenotazioneA"], $_POST["camera"]);
             header("Location: /pages/prenotazione_effettuata.html");*/
             $html = str_replace("<resultPrenotazione/>", "<p class=\"resultPrenotazione\">Che fortuna, la camera &egrave; libera, chiamaci subito per prenotare (0423/123456)!</p>", $html);
@@ -54,8 +54,8 @@ if (!$newsContent) {
 $html = str_replace("<NewsListPlaceholder />", $newsContent, $html);
 $html = str_replace("<UserPlaceholder />", $content, $html);
 $html = str_replace("<dateToday/>",date("d/m/Y"), $html);
-if(isset($_POST["nomeCamera"])){
-    $html = str_replace("<nameCamera/>", $_POST["nomeCamera"], $html);
+if(isset($_GET["nomeCamera"])){
+    $html = str_replace("<nameCamera/>", $_GET["nomeCamera"], $html);
 }
 if(isset($_POST["prenotazioneDa"])){
     $html = str_replace("<inputDaValue/>", $_POST["prenotazioneDa"], $html);

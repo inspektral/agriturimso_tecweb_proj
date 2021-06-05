@@ -106,9 +106,9 @@
 
 			<div id="lasciacommento">		
 				<h3>Lascia un commento!</h3>
-				
-				<form class="commentForm" method="post" action="diconodinoi.php" onsubmit="return validateComment()">
-					<fieldset class="commentForm">
+				<InsertCommentErrorPlaceholder />
+				<form method="post" action="diconodinoi.php" onsubmit="return validateComment()">
+					<fieldset>
 						<legend>Dacci un voto</legend>
 						<div class="container">
 							<label for="voto1">1</label>
@@ -136,12 +136,12 @@
 							<!-- <span class="checkmark"></span> -->
 						</div>
 					</fieldset>
-					<fieldset class="commentForm">
+					<fieldset>
 						<legend>Commento</legend>
-						<label for="testo" class="labelPos" >Scrivi il tuo commento qui sotto</label>
+						<label for="testo">Inserisci il tuo commento</label>
 						<span><textarea id="testo" name="testo" rows="10" cols="50"></textarea></span>
 					</fieldset>
-					<fieldset class="noBorder">
+					<fieldset>
 						<button id="submit" type="submit" name="submit" class="bottoneform">Invia</button>
 					</fieldset>
 				</form>

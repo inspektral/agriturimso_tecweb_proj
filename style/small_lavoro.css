@@ -19,6 +19,7 @@
 	border-bottom: none;
 	position: static;
 	min-height: 2em;
+	padding: 0;
 }
 
 /*    MENU    */
@@ -34,7 +35,7 @@
 
 #menu ul {
 	width: 50%;
-	margin: auto;
+	margin: auto auto 2% auto;
 }
 
 #menu li {
@@ -61,10 +62,6 @@
 
 #user ul{
 	float: right;
-}
-
-#user ul li{
-	padding: 0;
 }
 
 #user a, #user span{	
@@ -97,7 +94,7 @@
 }
 
 .contenutoGenerale {
-	margin-left: 0em;
+	margin: auto;
 	padding: 0.5em;
 	width: 95%;
 	float: none;
@@ -129,6 +126,7 @@ input{
 
 #contentHomePage {
 	width: 90%;
+	margin: auto;
 	border: 0;
 }
 

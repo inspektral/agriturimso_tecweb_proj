@@ -18,6 +18,9 @@ $email = "";
 $lastname = "";
 $name = "";
 $userFeedbackContent = "";
+$nameValue = "";
+$lastnameValue  = "";
+$emailValue = "";
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
 

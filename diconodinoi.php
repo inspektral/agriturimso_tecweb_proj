@@ -4,6 +4,7 @@ require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."UserMenu.php
 require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."NewsListFactory.php";
 require_once __DIR__.DIRECTORY_SEPARATOR."php".DIRECTORY_SEPARATOR."mostraCommento.php";
 
+
 session_start();
 
 $html = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."diconodinoi.html");
