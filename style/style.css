@@ -531,6 +531,31 @@ SEZIONE FOOTER
 SEZIONE FORM
 ==============
 */
+
+.commentForm{
+	width: auto;
+	padding: 12px;
+	border: 0.1px solid #cc4b58;
+	margin-top: 1em;
+	resize: vertical;
+	display: block;
+	margin: auto;
+	text-align: center;
+}
+
+.labelPos{
+	display: block;
+	margin: auto;
+	text-align: center;
+}
+
+.noBorder{
+	border: none;
+	margin-top: -0.5em;
+	text-align: center;
+}
+
+
 textarea, fieldset {
 	width: auto;
 	padding: 12px;

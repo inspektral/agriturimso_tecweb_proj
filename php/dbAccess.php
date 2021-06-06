@@ -5,11 +5,15 @@
 // error_reporting(E_ALL);
 
 class DBAccess {
-    
-    private const HOST_DB = "127.0.0.1";
-    private const USERNAME = "lbrescan";
-    private const PASSWORD = "Eephejokohculee1";
-    private const DB_NAME = "lbrescan";
+
+    private const HOST_DB = "localhost";
+    private const USERNAME = "root";
+    private const PASSWORD = "";
+    private const DB_NAME = "mderosa";
+
+
+
+
     private $connection;
 
     public function openDBConnection() {
