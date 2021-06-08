@@ -26,7 +26,7 @@ if (isset($_POST["prenotazioneDa"]) && $_POST["prenotazioneDa"] != '' && isset($
         $isFailed = $dbAccess->openDBConnection();
         
         if ($isFailed) {
-            header("Location: /errors/500.php");
+            header("Location: ./errors/500.php");
             exit();
         }
         
@@ -48,7 +48,7 @@ if (isset($_POST["prenotazioneDa"]) && $_POST["prenotazioneDa"] != '' && isset($
 
 $newsContent = (new NewsListFactory())->createNewsList();
 if (!$newsContent) {
-  header("Location: /errors/500.php");
+  header("Location: ./errors/500.php");
 }
 
 $html = str_replace("<NewsListPlaceholder />", $newsContent, $html);

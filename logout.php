@@ -18,6 +18,6 @@ if (session_unset()) {
     echo $html;
     header("refresh:2;url= index.php");
 }else{
-    header("Location: /errors/500.php");
+    header("Location: ./errors/500.php");
 }
 ?>
