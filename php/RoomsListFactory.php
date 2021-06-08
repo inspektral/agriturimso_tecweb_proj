@@ -58,7 +58,7 @@ class RoomsListFactory {
         $roomsContent .= $room["wardrobe"] ? "<li>Armadio o guardaroba</li>" : "";
         $roomsContent .= "</ul></div>";
         $roomsContent .= "</div>";  
-        $roomsContent .= "<div class=\"bookContainer\"><a class=\"button\" href=\"./prenota.php?nomeCamera=".$name."\">Prenota</a></div>";
+        $roomsContent .= "<div class=\"bookContainer\"><a class=\"button\" href=\"./prenota.php?nomeCamera=$name\">Prenota</a></div>";
         $roomsContent .= "<div class=\"gallery\">";
         $roomsContent .= "<img src=\"$firstGallery\" alt=\"\" class=\"galleryElement\" />";
         $roomsContent .= "<img src=\"$secondGallery\" alt=\"\" class=\"galleryElement\" />";
