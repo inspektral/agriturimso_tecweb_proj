@@ -583,6 +583,7 @@ textarea, fieldset {
 .toTopContainer .button {
 	padding: 0.75em 1.5em;
 	margin-left: 1em;
+	text-align: right;
 }
 
 .bottoneform, .bottoneform:visited, #bottoneregistrati {
