@@ -575,9 +575,14 @@ textarea, fieldset {
 	text-align: center;
 }
 
-.bookContainer .button, .toTopContainer .button {
+.bookContainer .button {
 	padding: 0.75em 1.5em;
 	margin-top: 1.5em;
+}
+
+.toTopContainer .button {
+	padding: 0.75em 1.5em;
+	margin: 1.5em 0 0 1em;
 }
 
 .bottoneform, .bottoneform:visited, #bottoneregistrati {
