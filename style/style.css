@@ -595,8 +595,7 @@ textarea, fieldset {
 	display: inline-block;
 	font-size: 16px;
 	margin: 4% auto 4% auto;
-	
-  	border: 2px solid #923a43;
+	border: 2px solid #923a43;
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
