@@ -564,6 +564,11 @@ textarea, fieldset {
 	resize: vertical;
 }
 
+.toTopContainer {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
 
 .bookContainer { 
 	display: inline-block;
