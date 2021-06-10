@@ -116,11 +116,12 @@ class DBAccess {
             $room["thirdGallery"] = $row["thirdGallery"];
             $room["fourthGallery"] = $row["fourthGallery"];
             $room["services"] = [
-                $row["tv"],$row["balcony"],$row["gardenView"],$row["airCondition"],$row["heat"],$row["parquet"],$row["shower"],$row["shampoo"],$row["wc"],$row["bath"],$row["bidet"],
-                $row["paper"],$row["towels"],$row["wardrobe"]
+                "tv"=>$row["tv"],"balcony"=>$row["balcony"],"gardenView"=>$row["gardenView"],"airCondition"=>$row["airCondition"],"heat"=>$row["heat"],"parquet"=>$row["parquet"],
+                "shower"=>$row["shower"],"shampoo"=>$row["shampoo"],"wc"=>$row["wc"],"bath"=>$row["bath"],"bidet"=>$row["bidet"],"paper"=>$row["paper"],"towels"=>$row["towels"],
+                "wardrobe"=>$row["wardrobe"]
             ];
             $room["additionalServices"] = [
-                $row["parking"],$row["wifi"],$row["privateBathRoom"]
+                "parking"=>$row["parking"],"wifi"=>$row["wifi"],"privateBathRoom"=>$row["privateBathRoom"]
             ];
 
             array_push($rooms, $room);
