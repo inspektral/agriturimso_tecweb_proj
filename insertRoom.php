@@ -21,6 +21,7 @@ $userFeedbackContent = "";
 $nameValue = "";
 $peopleValue = "";
 $priceValue = "";
+$metersValue = "";
 $imgLongdescValue = "";
 $checkedServices = [
   "tv" => "",
@@ -38,6 +39,12 @@ $checkedServices = [
   "towels" => "",
   "wardrobe" => ""
 ];
+$checkedAdditionalServices = [
+  "parking" => "",
+  "wifi" => "",
+  "privateBathRoom" => ""
+];
+
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
   if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_FILES["mainImg"]) && isset($_POST["mainLongdesc"])) {
@@ -165,6 +172,7 @@ $html = str_replace("<InsertRoomErrorPlaceholder />", $userFeedbackContent, $htm
 $html = str_replace("<NameValuePlaceholder />", $nameValue, $html);
 $html = str_replace("<PeopleValuePlaceholder />", $peopleValue, $html);
 $html = str_replace("<PriceValuePlaceholder />", $priceValue, $html);
+$html = str_replace("<MetersValuePlaceholder />", $metersValue, $html);
 $html = str_replace("<MainLongdescValuePlaceholder />", $imgLongdescValue, $html);
 $html = str_replace("<TvCheckedPlaceholder />", $checkedServices["tv"], $html);
 $html = str_replace("<BalconeCheckedPlaceholder />", $checkedServices["balcony"], $html);
@@ -180,5 +188,8 @@ $html = str_replace("<BidetCheckedPlaceholder />", $checkedServices["bidet"], $h
 $html = str_replace("<PaperCheckedPlaceholder />", $checkedServices["paper"], $html);
 $html = str_replace("<TowelsCheckedPlaceholder />", $checkedServices["towels"], $html);
 $html = str_replace("<WardrobeCheckedPlaceholder />", $checkedServices["wardrobe"], $html);
+$html = str_replace("<ParkingCheckedPlaceholder />", $checkedAdditionalServices["parking"], $html);
+$html = str_replace("<WIFICheckedPlaceholder />", $checkedAdditionalServices["wifi"], $html);
+$html = str_replace("<PrivateBathRoomCheckedPlaceholder />", $checkedAdditionalServices["privateBathRoom"], $html);
 echo $html;
 ?>

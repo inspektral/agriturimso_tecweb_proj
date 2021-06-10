@@ -62,6 +62,8 @@
         <span><input type="text" id="people" name="people" value="<PeopleValuePlaceholder />" /></span>
         <label for="price" class="formLabel">Prezzo*: </label>
         <span><input type="text" id="price" name="price" value="<PriceValuePlaceholder />" /></span>
+        <label for="meters" class="formLabel">Dimensioni stanza*: </label>
+        <span><input type="text" id="meters" name="meters" value="<MetersValuePlaceholder />" /></span>
       </fieldset>
       <fieldset>
         <legend>Servizi</legend>
@@ -125,6 +127,21 @@
             <input type="checkbox" id="wardrobe" name="services[]" value="wardrobe" <WardrobeCheckedPlaceholder /> />
             <label for="wardrobe" class="formLabel">Armadio</label>
           </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Servizi aggiuntivi</legend>
+        <div>
+          <input type="checkbox" id="parking" name="additionalServices[]" value="parking" <ParkingCheckedPlaceholder /> />
+          <label for="parking" class="formLabel">Parcheggio</label>
+        </div>
+        <div>
+          <input type="checkbox" id="wifi" name="additionalServices[]" value="wifi" <WIFICheckedPlaceholder /> />
+          <label for="wifi" class="formLabel"><abbr xml:lang="en" title="Wireless Fidelity">WI-FI</abbr> gratuito</label>
+        </div>
+        <div>
+          <input type="checkbox" id="privateBathRoom" name="additionalServices[]" value="privateBathRoom" <PrivateBathRoomCheckedPlaceholder /> />
+          <label for="privateBathRoom" class="formLabel">Bagno privato</label>
         </div>
       </fieldset>
       <fieldset>
