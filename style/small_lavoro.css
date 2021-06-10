@@ -110,7 +110,7 @@ input{
 	margin: 0;
 }
 
-.bedroom ul { 
+.bedroom>ul { 
 	width: 75%;
 	max-width: 100%;
 	margin: 0.5em auto 0 4em;
