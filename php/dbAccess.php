@@ -1,8 +1,8 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+// error_reporting(E_ALL);
 
 class DBAccess {
     private const HOST_DB = "localhost";
@@ -137,7 +137,7 @@ class DBAccess {
         if (!$stmt) {
             return null;
         }
-        $stmt->bind_param("siddssssssiiiiiiiiiiiiiiiii", $name,$people,$price,$meters,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services["tv"],$services["balcony"],
+        $stmt->bind_param("sidissssssiiiiiiiiiiiiiiiii", $name,$people,$price,$meters,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services["tv"],$services["balcony"],
             $services["gardenView"],$services["airCondition"],$services["heat"],$services["parquet"],$services["shower"],$services["shampoo"],$services["wc"],$services["bath"],
             $services["bidet"],$services["paper"],$services["towels"],$services["wardrobe"],$additionalServices["parking"],$additionalServices["wifi"],
             $additionalServices["privateBathRoom"]

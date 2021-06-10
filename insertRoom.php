@@ -54,7 +54,7 @@ if (isset($_POST["submit"])) {
     $name = (new InputCleaner())->cleanRoomName($_POST["name"]);
     $people = intval($_POST["people"]);
     $price = doubleval(str_replace(",", ".", $_POST["price"]));
-    $meters = doubleval(str_replace(",", ".", $_POST["meters"]));
+    $meters = intval($_POST["meters"]);
     $services = array();
     $additionalServices = array();
     $mainImg = ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
@@ -73,7 +73,7 @@ if (isset($_POST["submit"])) {
       $additionalServices = $_POST["additionalServices"];
     }
 
-    if (strlen($name) > 5 && is_int($people) && $people > 0 && is_float($price) && $price > 0.0 && is_float($meters) && $meters > 5.0 && strlen($imgLongdesc) > 20) {
+    if (strlen($name) > 5 && is_int($people) && $people > 0 && is_float($price) && $price > 0.0 && is_int($meters) && $meters > 5 && strlen($imgLongdesc) > 20) {
       $servicesBool = (new ServicesConverter())->convertToBoolean($services);
       $additionalServicesBool = (new ServicesConverter())->convertToBoolean($additionalServices, true);
 
@@ -147,8 +147,8 @@ if (isset($_POST["submit"])) {
       if (!is_float($price) || $price <= 0.0) {
         $userFeedbackContent .= "<li><strong class=\"error\">Il prezzo della stanza deve essere un numero reale maggiore di zero</strong></li>";
       } 
-      if (!is_float($meters) || $meters <= 0.0) {
-        $userFeedbackContent .= "<li><strong class=\"error\">La dimensione della stanza deve essere un numero reale maggiore di 5</strong></li>";
+      if (!is_int($meters) || $meters <= 5) {
+        $userFeedbackContent .= "<li><strong class=\"error\">La dimensione della stanza deve essere un numero intero maggiore di 5</strong></li>";
       } 
       if (strlen($imgLongdesc) <= 20) {
         $userFeedbackContent .= "<li><strong class=\"error\">La descrizione dell'immagine principale deve avere lunghezza maggiore di venti caratteri</strong></li>";
