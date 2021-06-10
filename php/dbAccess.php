@@ -5,15 +5,10 @@
 // error_reporting(E_ALL);
 
 class DBAccess {
-
     private const HOST_DB = "localhost";
     private const USERNAME = "lbrescan";
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
-
-
-
-
     private $connection;
 
     public function openDBConnection() {
@@ -110,24 +105,41 @@ class DBAccess {
         $rooms = array();
         while($row = $result->fetch_assoc()) {
             $room = array();
-            foreach ($row as $key => $value) {
-                $room[$key] = $value;
-            }
+            $room["name"] = $row["name"];
+            $room["people"] = $row["people"];
+            $room["price"] = $row["price"];
+            $room["meters"] = $row["meters"];
+            $room["mainImg"] = $row["mainImg"];
+            $room["mainImgLongdesc"] = $row["mainImgLongdesc"];
+            $room["firstGallery"] = $row["firstGallery"];
+            $room["secondGallery"] = $row["secondGallery"];
+            $room["thirdGallery"] = $row["thirdGallery"];
+            $room["fourthGallery"] = $row["fourthGallery"];
+            $room["services"] = [
+                $row["tv"],$row["balcony"],$row["gardenView"],$row["airCondition"],$row["heat"],$row["parquet"],$row["shower"],$row["shampoo"],$row["wc"],$row["bath"],$row["bidet"],
+                $row["paper"],$row["towels"],$row["wardrobe"]
+            ];
+            $room["additionalServices"] = [
+                $row["parking"],$row["wifi"],$row["privateBathRoom"]
+            ];
+
             array_push($rooms, $room);
         }
         return $rooms;
     }
 
-    public function addRoom($name,$people,$price,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services) {
-        $query = "INSERT INTO `Rooms` (`name`,`people`,`price`,`mainImg`,`mainImgLongdesc`,`firstGallery`,`secondGallery`,`thirdGallery`,`fourthGallery`,`tv`,`balcony`,`gardenView`,
-            `airCondition`,`heat`,`parquet`,`shower`,`shampoo`,`wc`,`bath`,`bidet`,`paper`,`towels`,`wardrobe`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+    public function addRoom($name,$people,$price,$meters,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services,$additionalServices) {
+        $query = "INSERT INTO `Rooms` (`name`,`people`,`price`,`meters`,``,`mainImgLongdesc`,`firstGallery`,`secondGallery`,`thirdGallery`,`fourthGallery`,`tv`,`balcony`,`gardenView`,
+            `airCondition`,`heat`,`parquet`,`shower`,`shampoo`,`wc`,`bath`,`bidet`,`paper`,`towels`,`wardrobe`,`parking`,`wifi`,`privateBathRoom`) 
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
         $stmt = $this->connection->prepare($query);
         if (!$stmt) {
             return null;
         }
-        $stmt->bind_param("sidssssssiiiiiiiiiiiiii", $name,$people,$price,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services["tv"],$services["balcony"],
+        $stmt->bind_param("siddssssssiiiiiiiiiiiiiiiii", $name,$people,$price,$meters,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services["tv"],$services["balcony"],
             $services["gardenView"],$services["airCondition"],$services["heat"],$services["parquet"],$services["shower"],$services["shampoo"],$services["wc"],$services["bath"],
-            $services["bidet"],$services["paper"],$services["towels"],$services["wardrobe"]
+            $services["bidet"],$services["paper"],$services["towels"],$services["wardrobe"],$additionalServices["parking"],$additionalServices["wifi"],
+            $additionalServices["privateBathRoom"]
         );
         $stmt->execute();
 
