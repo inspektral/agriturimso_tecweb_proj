@@ -452,16 +452,18 @@ SEZIONE CONTENUTO
 .services {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
+	justify-content: space-between;
 }
 
 .services dl {
 	padding-top: 0.5em;
 	max-width: 50%;
+	margin-left: 1em;
 }
 
 .services div {
 	padding-top: 0.5em;
+	margin-right: 1em;
 }
 
 .services ul {
