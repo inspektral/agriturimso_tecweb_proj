@@ -8,16 +8,16 @@ $html = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATO
 $menu = new UserMenu();
 $content = "";
 if (isset($_SESSION['email'])) {        
-  $content = $menu->getWelcomeMessage($_SESSION['email']);
+  $content = $menu->getWelcomeMessage($_SESSION['email'], false, true);
 } else {
   $content = $menu->getAuthenticationButtons();
 }
 
 if (session_unset()) {
-    $html = str_replace("<UserPlaceholder />", $content, $html);
-    echo $html;
-    header("refresh:2;url= index.php");
+  $html = str_replace("<UserPlaceholder />", $content, $html);
+  echo $html;
+  header("refresh:2;url= index.php");
 }else{
-    header("Location: ./errors/500.php");
+  header("Location: ./errors/500.php");
 }
 ?>
