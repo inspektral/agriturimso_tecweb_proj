@@ -379,7 +379,7 @@ SEZIONE CONTENUTO
 
 #addRoomContent {
 	border-right: none;
-	text-align: center;
+	margin: auto;
 }
 
 #contentHomePage {
