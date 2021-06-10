@@ -174,7 +174,7 @@ if (isset($_POST["submit"])) {
     if (!isset($_POST["meters"])) {
       $userFeedbackContent .= "<li><strong class=\"error\">La dimensione è un campo obbligatorio</strong></li>";
     } 
-    if (!isset($_FILES["mainImg"]) && $_FILES["mainImg"]["name"] !== "") {
+    if (!isset($_FILES["mainImg"]) || $_FILES["mainImg"]["name"] === "") {
       $userFeedbackContent .= "<li><strong class=\"error\">L'immagine principale è un campo obbligatorio</strong></li>";
     }
     if (!isset($_POST["mainLongdesc"])) {
