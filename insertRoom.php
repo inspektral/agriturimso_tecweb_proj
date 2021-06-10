@@ -47,11 +47,16 @@ $checkedAdditionalServices = [
 
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
-  if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_FILES["mainImg"]) && isset($_POST["mainLongdesc"])) {
+  if (
+    isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_POST["meters"]) && isset($_FILES["mainImg"]) && $_FILES["mainImg"]["name"] !== "" &&
+    isset($_POST["mainLongdesc"])
+  ) {
     $name = (new InputCleaner())->cleanRoomName($_POST["name"]);
     $people = intval($_POST["people"]);
-    $price = doubleval($_POST["price"]);
+    $price = doubleval(str_replace(",", ".", $_POST["price"]));
+    $meters = doubleval(str_replace(",", ".", $_POST["meters"]));
     $services = array();
+    $additionalServices = array();
     $mainImg = ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
     $imgLongdesc = $_POST['mainLongdesc'];
     $imgLongdescPath = ".".DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.str_replace(" ", "_", strtolower($name)).".txt";
@@ -64,8 +69,13 @@ if (isset($_POST["submit"])) {
       $services = $_POST["services"];
     }
 
-    if (strlen($name) > 5 && is_int($people) && $people > 0 && is_float($price) && $price > 0.0 && strlen($imgLongdesc) > 20) {
+    if (!empty($_POST["additionalServices"])) {
+      $additionalServices = $_POST["additionalServices"];
+    }
+
+    if (strlen($name) > 5 && is_int($people) && $people > 0 && is_float($price) && $price > 0.0 && is_float($meters) && $meters > 5.0 && strlen($imgLongdesc) > 20) {
       $servicesBool = (new ServicesConverter())->convertToBoolean($services);
+      $additionalServicesBool = (new ServicesConverter())->convertToBoolean($additionalServices, true);
 
       $dbAccess = new DBAccess();
       $isFailed = $dbAccess->openDBConnection();
@@ -74,7 +84,7 @@ if (isset($_POST["submit"])) {
         header("Location: ./errors/500.php");
       }
 
-      $result = $dbAccess->addRoom($name,$people,$price,$mainImg,$imgLongdescPath,$firstGallery,$secondGallery,$thirdGallery,$fourthGallery,$servicesBool);
+      $result = $dbAccess->addRoom($name,$people,$price,$meters,$mainImg,$imgLongdescPath,$firstGallery,$secondGallery,$thirdGallery,$fourthGallery,$servicesBool,$additionalServicesBool);
       $dbAccess->closeDBConnection(); 
 
       if (!$result) {
@@ -112,16 +122,20 @@ if (isset($_POST["submit"])) {
           $nameValue = $_POST["name"];
           $peopleValue = $_POST["people"];
           $priceValue = $_POST["price"];
+          $metersValue = $_POST["meters"];
           $imgLongdescValue = $_POST['mainLongdesc'];
           $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
+          $checkedAdditionalServices = (new ServicesConverter())->convertToHtmlAttribute($additionalServices, true);
         }
       } else {
         $userFeedbackContent .= "<li><strong class=\"error\">Errore durante l'aggiunta della camera</strong></li>";
         $nameValue = $_POST["name"];
         $peopleValue = $_POST["people"];
         $priceValue = $_POST["price"];
+        $metersValue = $_POST["meters"];
         $imgLongdescValue = $_POST['mainLongdesc'];
         $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
+        $checkedAdditionalServices = (new ServicesConverter())->convertToHtmlAttribute($additionalServices, true);
       }
     } else {
       if (strlen($name) <= 5) {
@@ -133,14 +147,19 @@ if (isset($_POST["submit"])) {
       if (!is_float($price) || $price <= 0.0) {
         $userFeedbackContent .= "<li><strong class=\"error\">Il prezzo della stanza deve essere un numero reale maggiore di zero</strong></li>";
       } 
+      if (!is_float($meters) || $meters <= 0.0) {
+        $userFeedbackContent .= "<li><strong class=\"error\">La dimensione della stanza deve essere un numero reale maggiore di 5</strong></li>";
+      } 
       if (strlen($imgLongdesc) <= 20) {
         $userFeedbackContent .= "<li><strong class=\"error\">La descrizione dell'immagine principale deve avere lunghezza maggiore di venti caratteri</strong></li>";
       }
       $nameValue = $_POST["name"];
       $peopleValue = $_POST["people"];
       $priceValue = $_POST["price"];
+      $metersValue = $_POST["meters"];
       $imgLongdescValue = $_POST['mainLongdesc'];
       $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
+      $checkedAdditionalServices = (new ServicesConverter())->convertToHtmlAttribute($additionalServices, true);
     }
   } else {
     if (!isset($_POST["name"])) {
@@ -152,7 +171,10 @@ if (isset($_POST["submit"])) {
     if (!isset($_POST["price"])) {
       $userFeedbackContent .= "<li><strong class=\"error\">Il prezzo è un campo obbligatorio</strong></li>";
     } 
-    if (!isset($_FILES["mainImg"])) {
+    if (!isset($_POST["meters"])) {
+      $userFeedbackContent .= "<li><strong class=\"error\">La dimensione è un campo obbligatorio</strong></li>";
+    } 
+    if (!isset($_FILES["mainImg"]) && $_FILES["mainImg"]["name"] !== "") {
       $userFeedbackContent .= "<li><strong class=\"error\">L'immagine principale è un campo obbligatorio</strong></li>";
     }
     if (!isset($_POST["mainLongdesc"])) {
@@ -161,8 +183,10 @@ if (isset($_POST["submit"])) {
     $nameValue = isset($_POST["name"]) ? $_POST["name"] : "";
     $peopleValue = isset($_POST["people"]) ? $_POST["people"] : "";
     $priceValue = isset($_POST["price"]) ? $_POST["price"] : "";
+    $metersValue = isset($_POST["meters"]) ? $_POST["meters"] : "";
     $imgLongdescValue = isset($_POST["mainLongdesc"]) ? $_POST['mainLongdesc'] : "";
     $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
+    $checkedAdditionalServices = (new ServicesConverter())->convertToHtmlAttribute($additionalServices, true);
   }
   $userFeedbackContent .= "</ul></div>";
 }
