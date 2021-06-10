@@ -19,6 +19,7 @@ class RoomsListFactory {
         $name = $room["name"];
         $people = $room["people"];
         $price = number_format($room["price"], 2);
+        $meters = number_format($room["meters"]);
         $mainImg = $room["mainImg"];
         $mainImgLongdesc = $room["mainImgLongdesc"];
         $firstGallery = $room["firstGallery"];
@@ -39,9 +40,14 @@ class RoomsListFactory {
         $roomsContent .= "</ul>";
 
         $roomsContent .= "<div class=\"services\">";
-        $roomsContent .= "<dl><dt></dt></dl>";
-        echo array_reduce($room["services"], function($accomulator, $item) { return $accomulator && boolval($item); }, true);
-        if (array_reduce($room["services"], function($accomulator, $item) { return $accomulator && boolval($item); }, true)) {
+        $roomsContent .= "<dl>";
+        $roomsContent .= "<dt>Dimensione stanza $meters <abbr title=\"metri quadrati\">mq.</abbr></dt>";
+        $roomsContent .= $room["additionalServices"]["parking"] ? "<dt>Parcheggio privato disponibile senza prenotazione</dt>" : "";
+        $roomsContent .= $room["additionalServices"]["wifi"] ? "<dt><abbr xml:lang=\"en\" title=\"Wireless Fidelity\">WI-FI</abbr> gratuito</dt>" : "";
+        $roomsContent .= $room["additionalServices"]["privateBathRoom"] ? "<dt>Bagno privato</dt>" : "";
+        $roomsContent .= "</dl>";
+
+        if (array_reduce($room["services"], function($accomulator, $item) { return $accomulator + $item; }, 0)) {
           $roomsContent .= "<div><h4>Servizi in camera:</h4>";
           $roomsContent .= "<ul>";
           $roomsContent .= $room["services"]["tv"] ? "<li>TV a schermo piatto</li>" : "";
