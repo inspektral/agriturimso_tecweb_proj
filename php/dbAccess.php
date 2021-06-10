@@ -130,7 +130,7 @@ class DBAccess {
     }
 
     public function addRoom($name,$people,$price,$meters,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services,$additionalServices) {
-        $query = "INSERT INTO `Rooms` (`name`,`people`,`price`,`meters`,``,`mainImgLongdesc`,`firstGallery`,`secondGallery`,`thirdGallery`,`fourthGallery`,`tv`,`balcony`,`gardenView`,
+        $query = "INSERT INTO `Rooms` (`name`,`people`,`price`,`meters`,`mainImg`,`mainImgLongdesc`,`firstGallery`,`secondGallery`,`thirdGallery`,`fourthGallery`,`tv`,`balcony`,`gardenView`,
             `airCondition`,`heat`,`parquet`,`shower`,`shampoo`,`wc`,`bath`,`bidet`,`paper`,`towels`,`wardrobe`,`parking`,`wifi`,`privateBathRoom`) 
             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
         $stmt = $this->connection->prepare($query);
