@@ -428,14 +428,6 @@ SEZIONE CONTENUTO
 	border-bottom: 1px solid #ddd;
 }
 
-.bedroom .price::after {
-	content: "*";
-}
-
-.bedroom .free::after {
-	content: "**";
-}
-
 .bedroom>img {
 	width: 96%;
 	margin: 1em;

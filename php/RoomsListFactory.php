@@ -30,12 +30,12 @@ class RoomsListFactory {
         $roomsContent .= "<div class=\"bedroom\">";
         $roomsContent .= "<h2>$name</h2>";
         $roomsContent .= "<h3><span>$people persone</span> ";
-        $roomsContent .= "<span><abbr title=\"euro\">€</abbr></span><span class=\"price\">$price</span> a notte";
+        $roomsContent .= "<span><abbr title=\"euro\">€</abbr></span>$price a notte";
         $roomsContent .= "</h3>";
         $roomsContent .= "<img src=\"$mainImg\" alt=\"\" longdesc=\"$mainImgLongdesc\" />";
         $roomsContent .= "<ul>";
         $roomsContent .= "<li>Buona colazione inclusa</li>";
-        $roomsContent .= "<li>Cancellazione <strong class=\"free\">GRATUITA</strong></li>";
+        $roomsContent .= "<li>Cancellazione <strong>GRATUITA</strong></li>";
         $roomsContent .= "<li><strong>NESSUN PAGAMENTO ANTICIPATO</strong><div>Paga in struttura</div></li>";
         $roomsContent .= "</ul>";
 
