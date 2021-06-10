@@ -40,6 +40,7 @@ class RoomsListFactory {
 
         $roomsContent .= "<div class=\"services\">";
         $roomsContent .= "<dl><dt></dt></dl>";
+        echo array_reduce($room["services"], function($accomulator, $item) { return $accomulator && boolval($item); }, true);
         if (array_reduce($room["services"], function($accomulator, $item) { return $accomulator && boolval($item); }, true)) {
           $roomsContent .= "<div><h4>Servizi in camera:</h4>";
           $roomsContent .= "<ul>";
