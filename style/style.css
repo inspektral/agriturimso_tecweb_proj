@@ -377,7 +377,7 @@ SEZIONE CONTENUTO
 	text-align: center;
 }
 
-#addRoomContent {
+.formContent {
 	border-right: none;
 	margin: auto;
 }
