@@ -21,7 +21,7 @@ class ServicesConverter {
     "parking",
     "wifi",
     "privateBathRoom"
-  ]
+  ];
 
   public function convertToBoolean($services, $isAdditional = false) {
     $bools = [];
