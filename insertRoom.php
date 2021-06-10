@@ -184,9 +184,9 @@ if (isset($_POST["submit"])) {
     $peopleValue = isset($_POST["people"]) ? $_POST["people"] : "";
     $priceValue = isset($_POST["price"]) ? $_POST["price"] : "";
     $metersValue = isset($_POST["meters"]) ? $_POST["meters"] : "";
-    $imgLongdescValue = isset($_POST["mainLongdesc"]) ? $_POST['mainLongdesc'] : "";
-    $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
-    $checkedAdditionalServices = (new ServicesConverter())->convertToHtmlAttribute($additionalServices, true);
+    $imgLongdescValue = isset($_POST["mainLongdesc"]) ? $_POST["mainLongdesc"] : "";
+    $checkedServices = (new ServicesConverter())->convertToHtmlAttribute(isset($_POST["services"]) ? $_POST["services"] : []);
+    $checkedAdditionalServices = (new ServicesConverter())->convertToHtmlAttribute(isset($_POST["additionalServices"]) ? $_POST["additionalServices"] : [], true);
   }
   $userFeedbackContent .= "</ul></div>";
 }
