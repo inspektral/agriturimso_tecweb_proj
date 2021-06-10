@@ -24,7 +24,7 @@ function validateRoom(){
   const validNome = validateField(nome)
   const validPosti = validateField(posti)
   const validPrice = validateField(price)
-  const validDescrizione = validateField(descrizione)
+  // const validDescrizione = validateField(descrizione)
   return validNome && validPosti && validPrice
 }
 
