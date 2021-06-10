@@ -107,6 +107,13 @@ input{
 
 .bedroom>img {
 	width: 100%;
+	margin: 0;
+}
+
+.bedroom ul { 
+	width: 75%;
+	max-width: 100%;
+	margin: 0.5em auto 0 4em;
 }
 
 .services dl {
@@ -115,13 +122,9 @@ input{
 }
 
 .services div {
-	padding-top: 1em;
-	padding-bottom: 0.5em;
+	padding: 1em 0 0.5em 0;
 	max-width: 100%;
-}
-
-.services ul {
-	margin-left: 1.5em;
+	margin: 0 0 0 1em;
 }
 
 #contentHomePage {
