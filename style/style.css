@@ -377,6 +377,11 @@ SEZIONE CONTENUTO
 	text-align: center;
 }
 
+#addRoomContent {
+	border-right: none;
+	text-align: center;
+}
+
 #contentHomePage {
 	text-align: center;
 }
