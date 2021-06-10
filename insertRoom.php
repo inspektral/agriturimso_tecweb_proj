@@ -148,7 +148,7 @@ if (isset($_POST["submit"])) {
         $userFeedbackContent .= "<li><strong class=\"error\">Il prezzo della stanza deve essere un numero reale maggiore di zero</strong></li>";
       } 
       if (!is_int($meters) || $meters <= 5) {
-        $userFeedbackContent .= "<li><strong class=\"error\">La dimensione della stanza deve essere un numero intero maggiore di 5</strong></li>";
+        $userFeedbackContent .= "<li><strong class=\"error\">La dimensione deve essere un numero intero maggiore di 5</strong></li>";
       } 
       if (strlen($imgLongdesc) <= 20) {
         $userFeedbackContent .= "<li><strong class=\"error\">La descrizione dell'immagine principale deve avere lunghezza maggiore di venti caratteri</strong></li>";
