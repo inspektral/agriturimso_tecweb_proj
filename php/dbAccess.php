@@ -4,16 +4,11 @@
 // mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 // error_reporting(E_ALL);
 
-class DBAccess {/*
+class DBAccess {
     private const HOST_DB = "localhost";
     private const USERNAME = "lbrescan";
     private const PASSWORD = "Eephejokohculee1";
-    private const DB_NAME = "lbrescan";*/
-
-    private const HOST_DB = "localhost";
-    private const USERNAME = "root";
-    private const PASSWORD = "";
-    private const DB_NAME = "agriturismo";
+    private const DB_NAME = "lbrescan";
     private $connection;
 
     public function openDBConnection() {
