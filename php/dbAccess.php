@@ -9,6 +9,11 @@ class DBAccess {
     private const USERNAME = "lbrescan";
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
+    /*
+    private const HOST_DB = "localhost";
+    private const USERNAME = "root";
+    private const PASSWORD = "";
+    private const DB_NAME = "agriturismo";*/
     private $connection;
 
     public function openDBConnection() {

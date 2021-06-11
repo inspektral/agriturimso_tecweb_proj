@@ -67,13 +67,14 @@ class RoomsListFactory {
           $roomsContent .= "</ul></div>";
         }
         $roomsContent .= "</div>";  
-        $roomsContent .= "<div class=\"bookContainer\"><a class=\"button\" href=\"./prenota.php?nomeCamera=$name\">Prenota</a></div>";
+        $roomsContent .= "<div class=\"bookContainer\"><a class=\"button\" href=\"./prenota.php?nomeCamera=".$name."\">Prenota</a></div>";
         $roomsContent .= "<div class=\"gallery\">";
         $roomsContent .= "<img src=\"$firstGallery\" alt=\"\" class=\"galleryElement\" />";
         $roomsContent .= "<img src=\"$secondGallery\" alt=\"\" class=\"galleryElement\" />";
         $roomsContent .= "<img src=\"$thirdGallery\" alt=\"\" class=\"galleryElement\" />";
         $roomsContent .= "<img src=\"$fourthGallery\" alt=\"\" class=\"galleryElement\" />";
         $roomsContent .= "</div>";
+        $roomsContent .= "<a class=\"button\" id=\"topButton\" href=\"#topPointCamere\">Torna su</a></div>";
       }
     } else {
       $roomsContent = "<h3>Nessuna camera trovata</h3>";
