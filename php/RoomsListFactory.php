@@ -74,7 +74,6 @@ class RoomsListFactory {
         $roomsContent .= "<img src=\"$thirdGallery\" alt=\"\" class=\"galleryElement\" />";
         $roomsContent .= "<img src=\"$fourthGallery\" alt=\"\" class=\"galleryElement\" />";
         $roomsContent .= "</div>";
-        $roomsContent .= "<div class=\"toTopContainer\"><a class=\"button\" href=\"#contentCamere\">Torna su</a></div></div>";
       }
     } else {
       $roomsContent = "<h3>Nessuna camera trovata</h3>";

@@ -91,7 +91,7 @@ SEZIONE MENU
 	/* padding-bottom: 1em; */
 	padding-left: 1em;
 	font-weight: bold;
-	border-top: 1px solid #ddd;
+	/*border-top: 1px solid #ddd;*/
 	/* border-bottom: 1px solid #ddd; */
 	min-height: 3em;
 	position: relative;
@@ -347,6 +347,43 @@ SEZIONE RIGHTSIDEBAR
 SEZIONE CONTENUTO
 ==============
 */
+
+#topButton {
+	display: none;
+	position: fixed;
+	bottom: 10px;
+	right: 15px;
+	z-index: 99;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: #923a43;
+	color: white;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 4px;
+	font-weight: bold;
+  }
+  
+  #topButton:hover {
+
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	padding: 10px;
+	background-color:white;
+	color: #923a43;
+
+	border-style: solid;
+	border-width: 5px;
+	border-color: #923a43;
+	/*
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;*/
+  }
+
+
 .prenot_form{
 	margin-left: 1%;
 }
@@ -516,6 +553,8 @@ SEZIONE FOOTER
 	padding-top: 1.3em;
 	font-style: italic;
 	border-top: 1px solid #ddd;
+    width: 75%;
+	margin-left: 5%;
 }
 
 #imgValidCSS {
@@ -564,11 +603,13 @@ textarea, fieldset {
 	resize: vertical;
 }
 
+/*
 .toTopContainer {
+	margin-top: 1%;
 	display: inline-block;
 	width: 100%;
 	text-align: right;
-}
+}*/
 
 .bookContainer { 
 	display: inline-block;
@@ -581,10 +622,11 @@ textarea, fieldset {
 	margin-top: 1.5em;
 }
 
+/*
 .toTopContainer .button {
 	padding: 0.75em 1.5em;
 	margin: 0 1em 1em 0;
-}
+}*/
 
 .bottoneform, .bottoneform:visited, #bottoneregistrati {
 	background-color: #923a43;

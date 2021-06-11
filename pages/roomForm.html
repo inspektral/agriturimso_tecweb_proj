@@ -20,10 +20,11 @@
   <link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
 
   <script type="text/javascript" src="./javascript/inputCheck.js"></script>
-
+  <script type="text/javascript" src="./javascript/topButton.js"></script>
 </head>
 
 <body>
+  <div><a class="button" onclick="topFunction()" id="topButton">Torna su</a></div>
   <div id="header">
     <ul class="aiutiNascosti">
       <li><a href="#content">Vai al contenuto</a></li>
@@ -132,15 +133,18 @@
       <fieldset>
         <legend>Servizi aggiuntivi</legend>
         <div>
-          <input type="checkbox" id="parking" name="additionalServices[]" value="parking" <ParkingCheckedPlaceholder /> />
+          <input type="checkbox" id="parking" name="additionalServices[]" value="parking" <ParkingCheckedPlaceholder />
+          />
           <label for="parking" class="formLabel">Parcheggio</label>
         </div>
         <div>
           <input type="checkbox" id="wifi" name="additionalServices[]" value="wifi" <WIFICheckedPlaceholder /> />
-          <label for="wifi" class="formLabel"><abbr xml:lang="en" title="Wireless Fidelity">WI-FI</abbr> gratuito</label>
+          <label for="wifi" class="formLabel"><abbr xml:lang="en" title="Wireless Fidelity">WI-FI</abbr>
+            gratuito</label>
         </div>
         <div>
-          <input type="checkbox" id="privateBathRoom" name="additionalServices[]" value="privateBathRoom" <PrivateBathRoomCheckedPlaceholder /> />
+          <input type="checkbox" id="privateBathRoom" name="additionalServices[]" value="privateBathRoom"
+            <PrivateBathRoomCheckedPlaceholder /> />
           <label for="privateBathRoom" class="formLabel">Bagno privato</label>
         </div>
       </fieldset>

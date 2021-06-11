@@ -89,6 +89,10 @@
 
 /*    CONTENUTO    */
 
+#toTopButton{
+	display: none;
+}
+
 .prenot_form{
 	margin-left: 0;
 }
@@ -135,4 +139,10 @@ input{
 
 #charactersStory {
 	width: 97%;
+}
+
+/* FOOTER */
+#footer{
+	width: 100%;
+	margin: auto auto 5% auto;
 }
