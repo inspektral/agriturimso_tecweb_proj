@@ -60,6 +60,12 @@ if (!$newsContent) {
   header("Location: /errors/500.php");
 }
 
+$contentAdminNews = "";
+if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
+  $contentAdminNews = "<div id=\"adminSection\"><a class=\"button\" href=\"./insertNews.php\">Aggiungi notizia</a></div>";
+}
+$html = str_replace("<AdminNewsManagementPlaceholder />", $contentAdminNews, $html);
+
 $html = str_replace("<NewsListPlaceholder />", $newsContent, $html);
 $html = str_replace("<UserPlaceholder />", $content, $html);
 $html = str_replace("<dateToday/>",date("d/m/Y"), $html);
