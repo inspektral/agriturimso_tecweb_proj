@@ -13,9 +13,8 @@ body {
 	max-width: 1080px;
 	min-height: 400px;
 	background-color: #FFF;
-	margin: auto; /*calcola in automatico i marigni di destra e sinistra*/
+	margin: auto;
 	font-family: "Segoe UI", Arial, sans-serif;
-	border: 1px solid #DDD;
 }
 
 a:visited {
@@ -109,7 +108,6 @@ SEZIONE MENU
 	font-size: 1.1em;
 	float: left;
 	padding-right: 0.8em;
-	font-size: 1.1em;
 	float: left;
 	position: absolute;
 	bottom: 0;
@@ -349,18 +347,15 @@ SEZIONE CONTENUTO
 */
 
 #topButton {
-	display: none;
 	position: fixed;
 	bottom: 10px;
 	right: 15px;
 	z-index: 99;
-	font-size: 18px;
+	font-size: 1.5em;
 	border: none;
 	outline: none;
-	background-color: #923a43;
-	color: white;
 	cursor: pointer;
-	padding: 15px;
+	padding: 2%;
 	border-radius: 4px;
 	font-weight: bold;
   }

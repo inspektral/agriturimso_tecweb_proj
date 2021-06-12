@@ -1,6 +1,8 @@
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () { scrollFunction(); };
+window.onscroll = function () { scrollFunction();};
+window.onload = function () { scrollFunction();};
+
 
 function scrollFunction() {
     var mybutton = document.getElementById("topButton");

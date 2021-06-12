@@ -1,3 +1,8 @@
+body{
+	margin: auto;    
+	max-width: 95%;
+}
+
 #header {
 	min-height: 0em;
 }
@@ -19,6 +24,7 @@
 	border-bottom: none;
 	position: static;
 	min-height: 2em;
+	font-size: 1.7em;
 	padding: 0;
 }
 
@@ -52,8 +58,8 @@
 
 #user {
 	float: none;
-	height: 2em;
-	margin-top: 0.3em;
+	min-height: 2em;
+	margin-top: 0.7em;
 	text-align: right;
 	position: static;
     padding-right: 0;
@@ -143,6 +149,6 @@ input{
 
 /* FOOTER */
 #footer{
-	width: 100%;
+	padding: 2%;
 	margin: auto auto 5% auto;
 }
