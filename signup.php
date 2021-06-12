@@ -57,10 +57,10 @@ if (isset($_POST["submit"])) {
       $userFeedbackContent .= "<li><strong class=\"error\">Errore durante la registrazione</strong></li>";
     }
   } else {
-    if (!isset($_POST["nome"]) || strlen($_POST["nome"]) < 2 && strlen($_POST["nome"]) > 20) {
+    if (!isset($_POST["nome"]) || strlen($_POST["nome"]) < 2 || strlen($_POST["nome"]) > 20) {
       $userFeedbackContent .= "<li><strong class=\"error\">Il nome deve avere lunghezza tra 2 e 20</strong></li>";
     }
-    if (!isset($_POST["cognome"]) || strlen($_POST["cognome"]) < 2 && strlen($_POST["cognome"]) > 20) {
+    if (!isset($_POST["cognome"]) || strlen($_POST["cognome"]) < 2 || strlen($_POST["cognome"]) > 20) {
       $userFeedbackContent .= "<li><strong class=\"error\">Il cognome deve avere lunghezza tra 2 e 20</strong></li>";
     }
     if (!isset($_POST["email"]) || strlen($_POST["email"]) <= 5) {
