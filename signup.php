@@ -11,7 +11,7 @@ $userContent = "";
 if (isset($_SESSION['email'])) {        
   $userContent = $menu->getWelcomeMessage($_SESSION['email']);
 } else {
-    $userContent = $menu->getAuthenticationButtons(false, true);
+  $userContent = $menu->getAuthenticationButtons(false, true);
 }
 
 $email = "";
@@ -24,6 +24,7 @@ $emailValue = "";
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
 
+  var_dump(isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"]));
   if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
