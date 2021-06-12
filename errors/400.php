@@ -3,7 +3,7 @@ require_once __DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."php".DIRECTOR
 
 session_start();
 
-$html = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."404.html");
+$html = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."400.html");
 
 $menu = new UserMenu();
 $content = "";
