@@ -32,7 +32,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"
 
   if ($user) {
     $_SESSION["email"] = $user["email"];
-    $_SESSION["isAdmin"] = $user["email"] === "admin";
+    $_SESSION["isAdmin"] = $user["email"] === "admin@mail.com";
     header("Location: ./index.php");
   } else {
     $errorContent .= "<div><ul class=\"feedbackList\">";
