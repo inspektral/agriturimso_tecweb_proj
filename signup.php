@@ -24,8 +24,12 @@ $emailValue = "";
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
 
-  var_dump(isset($_POST["nome"]) && $_POST["nome"] && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"]));
-  if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"])) {
+  if (
+    isset($_POST["nome"]) && strlen($_POST["nome"]) >= 2 && strlen($_POST["nome"]) <= 20 && 
+    isset($_POST["cognome"]) && strlen($_POST["cognome"]) >= 2 && strlen($_POST["cognome"]) <= 20 && 
+    isset($_POST["email"]) && strlen($_POST["email"]) > 5 && 
+    isset($_POST["password"]) && strlen($_POST["password"]) >= 4
+  ) {
     $email = $_POST["email"];
     $password = $_POST["password"];
     $name = $_POST["nome"];
