@@ -1,15 +1,15 @@
 let dettagliForm = {
   "da": ["Da","(0[1-9]|[12][0-9]|3[0-1])\/(0[0-9]|1[012])\/((20|19)[0-9][0-9])", "Inserire la data nel formato gg/mm/aaaa"],
   "a": ["A","(0[1-9]|[12][0-9]|3[0-1])\/(0[0-9]|1[012])\/((20|19)[0-9][0-9])", "Inserire la data nel formato gg/mm/aaaa"],
-  "nome": ["Nome","([a-zA-Z]){2,20}","Il nome non può essere vuoto"],
-  "cognome":["Cognome","([a-zA-Z]){2,20}","Il cognome non può essere vuoto"],
+  "nome": ["Nome","([a-zA-Z]){2,20}","Il nome deve avere lunghezza tra 2 e 20"],
+  "cognome":["Cognome","([a-zA-Z]){2,20}","Il cognome deve avere lunghezza tra 2 e 20"],
   "email":["Email",/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,"Indirizzo email non valido"],
   "password":["Password",/^.{4,}/,"La password deve avere almeno 4 caratteri"],
-  "testo":["Testo","\.{10,}","Il commento è obbligatorio e deve essere di almeno 10 caratteri"],
-  "name": ["Name","([a-zA-Z]){2,20}","Inserire il nome della camera"],
+  "testo":["Testo","\.{10,}","Il commento deve essere di almeno 10 caratteri"],
+  "name": ["Name","([a-zA-Z]){2,20}","Il nome della camera deve avere lunghezza tra 2 e 20"],
   "people": ["People", /^\d{1,2}/, "Inserire il numero di posti letto"],
   "price": ["Price", /^\d{1,4}/, "Inserire il prezzo della camera"],
-  "description" : ["NewsDescription", /^.{10,}/, "Inserire la descrizione della notizia"]
+  "description" : ["NewsDescription", /^.{10,}/, "La notizia deve avere lunghezza minima di 10"]
 }
 
 function validateNews() {

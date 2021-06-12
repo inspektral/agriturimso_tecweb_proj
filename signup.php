@@ -24,7 +24,7 @@ $emailValue = "";
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
 
-  var_dump(isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"]));
+  var_dump(isset($_POST["nome"]) && $_POST["nome"] && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"]));
   if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
