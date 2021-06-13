@@ -7,8 +7,9 @@ let dettagliForm = {
   "password":["Password",/^.{4,}/,"La password deve avere almeno 4 caratteri"],
   "testo":["Testo","\.{10,}","Il commento deve essere di almeno 10 caratteri"],
   "name": ["Name","([a-zA-Z]){2,20}","Il nome della camera deve avere lunghezza tra 2 e 20"],
-  "people": ["People", /^\d{1,2}/, "Inserire il numero di posti letto"],
+  "people": ["People", /^\d{1,2}/, "Il numero di posti letto deve essere un numero di 1 o 2 cifre"],
   "price": ["Price", /^\d{1,4}/, "Inserire il prezzo della camera"],
+  "meters": ["Meters", /^\d{1,3}/, "La dimensione della camera deve avere minimo 1 e massimo 3 cifre"],
   "description" : ["NewsDescription", /^.{10,}/, "La notizia deve avere lunghezza minima di 10"]
 }
 
@@ -20,12 +21,14 @@ function validateRoom(){
   const nome = document.getElementById("name")
   const posti = document.getElementById("people")
   const price = document.getElementById("price")
+  const meters = document.getElementById("meters")
   const descrizione = document.getElementById("imgLongDesc")
   const validNome = validateField(nome)
   const validPosti = validateField(posti)
   const validPrice = validateField(price)
+  const validMeters = validateField(meters)
   // const validDescrizione = validateField(descrizione)
-  return validNome && validPosti && validPrice
+  return validNome && validPosti && validPrice && validMeters
 }
 
 function validatePrenota() {
