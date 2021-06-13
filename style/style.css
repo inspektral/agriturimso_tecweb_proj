@@ -355,8 +355,8 @@ SEZIONE CONTENUTO
 	border: none;
 	outline: none;
 	cursor: pointer;
-	padding: 2%;
-	border-radius: 4px;
+	padding: 1em;
+	border-radius: 8px;
 	font-weight: bold;
 }
   
@@ -364,10 +364,10 @@ SEZIONE CONTENUTO
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	padding: 10px;
 	background-color:white;
+	padding: 0.8em;
 	color: #923a43;
-	border: #923a43 1px solid;
+	border: #923a43 4px solid;
 }
 
 
