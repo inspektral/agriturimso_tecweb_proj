@@ -351,32 +351,24 @@ SEZIONE CONTENUTO
 	bottom: 10px;
 	right: 15px;
 	z-index: 99;
-	font-size: 1.5em;
+	font-size: 1.25em;
 	border: none;
 	outline: none;
 	cursor: pointer;
 	padding: 2%;
 	border-radius: 4px;
 	font-weight: bold;
-  }
+}
   
-  #topButton:hover {
-
+#topButton:hover {
 	box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	padding: 10px;
 	background-color:white;
 	color: #923a43;
-
-	border-style: solid;
-	border-width: 5px;
-	border-color: #923a43;
-	/*
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;*/
-  }
+	border: #923a43 1px solid;
+}
 
 
 .prenot_form{
