@@ -23,13 +23,13 @@ function validateRoom(){
   const posti = document.getElementById("people")
   const price = document.getElementById("price")
   const meters = document.getElementById("meters")
-  const descrizione = document.getElementById("imgLongdesc")
+  const description = document.getElementById("imgLongdesc")
   const validNome = validateField(nome)
   const validPosti = validateField(posti)
   const validPrice = validateField(price)
   const validMeters = validateField(meters)
-  // const validDescrizione = validateField(descrizione)
-  return validNome && validPosti && validPrice && validMeters
+  const validDescription = validateField(description)
+  return validNome && validPosti && validPrice && validMeters && validDescription
 }
 
 function validatePrenota() {

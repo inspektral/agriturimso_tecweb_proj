@@ -8,7 +8,7 @@ session_start();
 $html = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."newsForm.html");
 
 if (!isset($_SESSION["isAdmin"]) && !$_SESSION["isAdmin"]) {
-  header("Location: ./errors/400.php");
+  header("Location: ./errors/403.php");
 }
 
 $menu = new UserMenu();
