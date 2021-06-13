@@ -249,7 +249,7 @@ SEZIONE USER
 	padding-right: 0.5em;
 }
 
-#user {
+#user .userName:hover{
 	color: #fff;
 	background-color: rgb(146, 58, 67);
 }
@@ -583,7 +583,7 @@ SEZIONE FORM
 textarea, fieldset {
 	width: auto;
 	padding: 12px;
-	border: 0.1px solid #cc4b58;
+	border: 1px solid #cc4b58;
 	margin-top: 1em;
 	resize: vertical;
 }
