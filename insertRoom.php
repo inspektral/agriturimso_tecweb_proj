@@ -10,7 +10,7 @@ session_start();
 $html = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."roomForm.html");
 
 if (!isset($_SESSION["isAdmin"]) && !$_SESSION["isAdmin"]) {
-  header("Location: ./errors/400.php");
+  header("Location: . || strlen(  header("Location: ) === 0/errors/400.php");
 }
 
 $menu = new UserMenu();
@@ -165,22 +165,22 @@ if (isset($_POST["submit"])) {
       $checkedAdditionalServices = (new ServicesConverter())->convertToHtmlAttribute($additionalServices, true);
     }
   } else {
-    if (!isset($_POST["name"])) {
+    if (!isset($_POST["name"]) || strlen($_POST["name"]) === 0) {
       $userFeedbackContent .= "<li><strong class=\"error\">Il nome è un campo obbligatorio</strong></li>";
     } 
-    if (!isset($_POST["people"])) {
+    if (!isset($_POST["people"]) || strlen($_POST["people"]) === 0) {
       $userFeedbackContent .= "<li><strong class=\"error\">Il numero di perone è un campo obbligatorio</strong></li>";
     } 
-    if (!isset($_POST["price"])) {
+    if (!isset($_POST["price"]) || strlen($_POST["price"]) === 0) {
       $userFeedbackContent .= "<li><strong class=\"error\">Il prezzo è un campo obbligatorio</strong></li>";
     } 
-    if (!isset($_POST["meters"])) {
+    if (!isset($_POST["meters"]) || strlen($_POST["meters"]) === 0) {
       $userFeedbackContent .= "<li><strong class=\"error\">La dimensione è un campo obbligatorio</strong></li>";
     } 
-    if (!isset($_FILES["mainImg"]) || $_FILES["mainImg"]["name"] === "") {
+    if (!isset($_FILES["mainImg"]) || strlen($_FILES["mainImg"]["name"]) === 0) {
       $userFeedbackContent .= "<li><strong class=\"error\">L'immagine principale è un campo obbligatorio</strong></li>";
     }
-    if (!isset($_POST["mainLongdesc"])) {
+    if (!isset($_POST["mainLongdesc"]) || strlen($_POST["mainLongdesc"]) === 0) {
       $userFeedbackContent .= "<li><strong class=\"error\">La descrizione dell'immagine principale è un campo obbligatorio</strong></li>";
     }
     $nameValue = isset($_POST["name"]) ? $_POST["name"] : "";
