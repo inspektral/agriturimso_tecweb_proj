@@ -249,7 +249,7 @@ SEZIONE USER
 	padding-right: 0.5em;
 }
 
-#user .userName:hover{
+#user {
 	color: #fff;
 	background-color: rgb(146, 58, 67);
 }
