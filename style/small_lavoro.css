@@ -111,10 +111,6 @@ body{
 	border-width: 0;
 }
 
-input{
-	width:80%;
-}
-
 .bedroom>img {
 	width: 100%;
 	margin: 0;
@@ -143,8 +139,18 @@ input{
 	border: 0;
 }
 
-#charactersStory {
-	width: 97%;
+fieldset {
+	border: 1px solid #cc4b58;
+	margin: 0;
+}
+
+textarea {
+	width: 90%;
+}
+
+input[type="text"], input[type="password"] {
+	width: 85%;
+	padding: 0.5em;
 }
 
 /* FOOTER */
