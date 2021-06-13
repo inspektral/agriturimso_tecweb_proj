@@ -48,8 +48,12 @@ $checkedAdditionalServices = [
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
   if (
-    isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_POST["meters"]) && isset($_FILES["mainImg"]) && $_FILES["mainImg"]["name"] !== "" &&
-    isset($_POST["mainLongdesc"])
+    isset($_POST["name"]) && strlen($_POST["name"]) > 0 && 
+    isset($_POST["people"]) && strlen($_POST["people"]) > 0 && 
+    isset($_POST["price"]) && strlen($_POST["price"]) > 0 && 
+    isset($_POST["meters"]) && strlen($_POST["meters"]) > 0 && 
+    isset($_FILES["mainImg"]) && strlen($_FILES["mainImg"]["name"]) > 0 &&
+    isset($_POST["mainLongdesc"]) && strlen($_POST["mainLongdesc"]) > 0
   ) {
     $name = (new InputCleaner())->cleanRoomName($_POST["name"]);
     $people = intval($_POST["people"]);
