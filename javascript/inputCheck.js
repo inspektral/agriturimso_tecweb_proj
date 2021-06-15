@@ -39,13 +39,8 @@ function validatePrenota() {
   const a = document.getElementById("a")
   let validDa = validateField(da)
   let validA = validateField(a)
-  if (validDa && validA) {
-    if(checkDateDaA(da, a)) {
-      return true
-    }
-    return false
-  }
-  return false
+
+  return validDa && validA && checkDateDaA(da, a)
 }
 
 function validateComment() {
