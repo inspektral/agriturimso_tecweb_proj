@@ -51,6 +51,18 @@ html {
 	margin: 0 0 1em 2em;
 }
 
+.titleImageTerritorio img {
+	width: 20%;
+}
+
+form {
+	display: none;
+}
+
+.contentAboutUs img {
+	display: none;
+}
+
 .bookContainer {
 	display: none;
 }
