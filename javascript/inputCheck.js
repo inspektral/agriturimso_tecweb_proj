@@ -103,14 +103,14 @@ function checkDateDaA(da,a) {
   const dateA = dateParse(a.value)
 
   let validDates = true
-  const errPast = "la data immessa è già passata"
+  const errPast = "La data immessa è già passata"
   const errIncompatible = "La data di inizio deve precedere quella di fine"
   if (dateDa < Date.now()) {
     showError(da, errPast)
     validDates = false
   }
   if (dateA < Date.now()) {
-  showError(A, errPast)
+  showError(a, errPast)
   validDates = false
 }
 if (validDates) {
