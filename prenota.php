@@ -37,7 +37,7 @@ if (isset($_POST["prenotazioneDa"]) && $_POST["prenotazioneDa"] != '' && isset($
         $isFailed = $dbAccess->openDBConnection();
         
         if ($isFailed) {
-            header("Location: /errors/500.php");
+            header("Location: ./errors/500.php");
             exit();
         }
         
@@ -50,14 +50,14 @@ if (isset($_POST["prenotazioneDa"]) && $_POST["prenotazioneDa"] != '' && isset($
         $dbAccess->closeDBConnection();
 
     }else{
-        $html = str_replace("<resultPrenotazione/>", "<strong class=\"resultPrenotazioneFalse\">Errore, Data di partenza antecedente alla data di arrivo</strong>", $html);
+        $html = str_replace("<resultPrenotazione/>", "<strong class=\"resultPrenotazioneFalse\">Errore, data di partenza antecedente alla data di arrivo</strong>", $html);
         
     }
 }
 
 $newsContent = (new NewsListFactory())->createNewsList();
 if (!$newsContent) {
-  header("Location: /errors/500.php");
+  header("Location: ./errors/500.php");
 }
 
 $contentAdminNews = "";
