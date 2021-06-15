@@ -20,7 +20,7 @@ html {
 	font-style: italic;
 }
 
-#breadcumb {
+#breadcrumb {
 	/* padding: 0.5em 0 0.5em 1.0em;
 	font-size: 1.0em;
 	font-weight: bold;
@@ -36,17 +36,18 @@ html {
 .contenutoGenerale {
 	width: 100%;
 	padding: 0.5em;
+	text-align: justify;
 }
 
-.contenutoGenerale h1{
+.contenutoGenerale h1 {
 	margin-bottom: 0.5em;
 }
 
-.contenutoGenerale p{
+.contenutoGenerale p {
 	margin: 1.0em 0;
 }
 
-.contenutoGenerale ul{
+.contenutoGenerale ul {
 	margin: 0 0 1em 2em;
 }
 
