@@ -15,15 +15,12 @@
 <meta name="author" content="Matteo, Massimo, Tito, Lorenzo" />
 <meta name="language" content="italian it" />
 
-<link rel="stylesheet" type="text/css" href="./style/style.css"
-	media="screen" />
+<link rel="stylesheet" type="text/css" href="./style/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
 
-<link rel="stylesheet" type="text/css" href="./style/small_lavoro.css"
-	media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
+<link rel="stylesheet" type="text/css" href="./style/small_lavoro.css" media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
-<link rel="stylesheet" type="text/css" href="./style/printLavoro.css"
-	media="print" />
-
+<link rel="stylesheet" type="text/css" href="./style/printLavoro.css"media="print" />
 
 <script type="text/javascript" src="./javascript/inputCheck.js"></script>
 
@@ -63,7 +60,7 @@
 					<p>Inserisci le date nel seguente formato: giorno con 2 cifre, mese con 2 cifre, anno con 4 cifre.</p>
 					<p>Esempio: <dateToday/></p>
 					<div>
-						<label for="da">Da: <abbr title="Giorno, mese, anno">(gg/mm/aaaa)</abbr></label>
+						<label for="da" class="formLabel">Da: <abbr title="Giorno, mese, anno">(gg/mm/aaaa)</abbr></label>
 						<span><input id="da" type="text" name="prenotazioneDa" value="<inputDaValue/>"/></span>
 					</div>
 					<div>
@@ -75,8 +72,6 @@
 					<resultPrenotazione/>
 				</fieldset>
 			</form>
-			
-			
 		</div>
 
 		<div id="rightSideBar" class="column right">
