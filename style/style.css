@@ -290,7 +290,7 @@ SEZIONE RIGHTSIDEBAR
 	padding-left: 2%;
 }
 
-.button {
+.button, #topLink:visited {
 	background-color: #923a43; /* Rosso tipico */
 	color: white;
 	padding: 3% 5%;
@@ -307,7 +307,7 @@ SEZIONE RIGHTSIDEBAR
 
 .button:visited {
 	background-color: #923a43; /* Rosso tipico */
-	color: rgb(197, 197, 197);
+	color: rgb(0, 0, 0);
 	padding: 3% 5%;
 	text-align: center;
 	display: inline-block;
