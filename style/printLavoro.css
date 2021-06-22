@@ -70,3 +70,13 @@ form {
 #footer{
 	display: none;
 }
+
+.galleryElement {
+    width: 50%;
+  height: auto;
+}
+
+#imgIndex {
+    width: 50%;
+  height: auto;
+}
