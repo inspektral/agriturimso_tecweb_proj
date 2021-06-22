@@ -96,12 +96,6 @@ SEZIONE MENU
 	position: relative;
 }
 
-#breadcrumbText {
-	float: left;
-	width: 20%;
-	padding-top: 0.5%;
-}
-
 #menu {
 	padding-left: 0.8em;
 	padding-right: 0.8em;
@@ -121,14 +115,11 @@ SEZIONE MENU
 	text-align: center;
 }
 
-#breadcrumb ul li {
+#breadcrumb li {
 	padding-top: 0;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
 	bottom: 0;
-}
-
-#breadcrumb li {
 	float: left;
 	min-height: 2.25em;
 	-webkit-border-top-left-radius: 10px;
@@ -295,6 +286,10 @@ SEZIONE RIGHTSIDEBAR
 	text-align: center;
 }
 
+#ultimeNews {
+	padding-left: 2%;
+}
+
 .button {
 	background-color: #923a43; /* Rosso tipico */
 	color: white;
@@ -339,7 +334,6 @@ SEZIONE RIGHTSIDEBAR
 	padding-left: 2%;
 	text-align: left;
 }
-
 /*
 ==============
 SEZIONE CONTENUTO
@@ -486,30 +480,6 @@ SEZIONE CONTENUTO
 	margin-left: 1.2em;
 }
 
-.gallery {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	padding-top: 1em;
-}
-
-.galleryElement {
-	width: 45%;
-	height: 40%;
-	padding-bottom: 1em;
-}
-
-.prenota_Button {
-	text-align: center;
-}
-
-.linkButton {
-	text-align: center;
-	border: #923a43;
-	border-style: solid;
-	border-radius: 5px;
-}
-
 .imgCommenti {
 	width: 70%;
 	padding: 1.0em;
@@ -634,11 +604,6 @@ textarea, fieldset {
 	background-color: white;
 }
 
-.spazio {
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-}
-
 .container {
 	display: inline;
 	position: relative;
@@ -646,8 +611,6 @@ textarea, fieldset {
 	margin-bottom: 12px;
 	cursor: pointer;
 }
-
-
 
 /*
 
