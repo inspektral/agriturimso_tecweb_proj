@@ -139,6 +139,10 @@ body{
 	border: 0;
 }
 
+pre{
+	font-size: 2.7em;
+}
+
 fieldset {
 	border: 1px solid #cc4b58;
 	margin: 0 0 2.5% 0;

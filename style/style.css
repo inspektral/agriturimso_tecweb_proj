@@ -647,8 +647,6 @@ textarea, fieldset {
 	cursor: pointer;
 }
 
-
-
 /*
 
 ==============
@@ -656,6 +654,7 @@ SEZIONE COMMENTI
 ==============
 
 */
+
 #sezionecommenti {
 	margin-top: 7%;
 	padding-right: 0.5em
@@ -697,4 +696,98 @@ button {
 
 #returnHome{
 	margin-top: 2%;
+}
+
+pre{
+	font-size: 1.5em;
+}
+
+/*
+
+==============
+SEZIONE BOTTONI ACCEDI/REGISTRATI
+==============
+
+*/
+
+input[type="text"], input[type="password"] {
+    margin: auto 10% 2% 10%;
+    width: 30%;   
+    margin-right: 60%;   
+    padding: 0.5%; 
+}
+
+form {
+    text-align: left;
+}
+
+.formLabel {
+    font-weight: bold;
+    margin-left: 10%;
+}
+
+p>.strong {
+    margin-left: 10%;
+}
+
+input[type="checkbox"] + label {
+    margin-left: 1em;
+}
+
+input[type="checkbox"] {
+    margin-left: 10%;
+}
+
+fieldset {
+    margin: 0 5% 2.5% 5%;
+}
+
+.feedbackList {
+    list-style: none;
+}
+
+.error {
+	font-size: 1.5em;
+	color:  rgb(255,0,0);
+}
+
+.success {
+	font-size: 1.5em;
+	color:  rgb(0, 189, 0);
+}
+
+#submit {
+    background-color: rgb(146, 58, 67);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 1em 2.5em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    width: auto;
+}
+
+#submit:hover {
+    background-color: rgb(102, 41, 47);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 1em 2.5em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    width: auto;
+}
+
+#submit:active {
+    background-color: rgb(231, 93, 106);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 1em 2.5em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    width: auto;
 }
