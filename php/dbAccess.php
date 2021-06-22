@@ -5,16 +5,16 @@
 // error_reporting(E_ALL);
 
 class DBAccess {
-
     private const HOST_DB = "localhost";
-    private const USERNAME = "root";
-    private const PASSWORD = "";
-    private const DB_NAME = "mderosa";
-
-
-
-
-    private $connection;
+    private const USERNAME = "lbrescan";
+    private const PASSWORD = "Eephejokohculee1";
+    private const DB_NAME = "lbrescan";
+    
+    // private const HOST_DB = "localhost";
+    // private const USERNAME = "root";
+    // private const PASSWORD = "";
+    // private const DB_NAME = "agriturismo";
+    // private $connection;
 
     public function openDBConnection() {
         $this->connection = new mysqli(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DB_NAME);
@@ -110,24 +110,42 @@ class DBAccess {
         $rooms = array();
         while($row = $result->fetch_assoc()) {
             $room = array();
-            foreach ($row as $key => $value) {
-                $room[$key] = $value;
-            }
+            $room["name"] = $row["name"];
+            $room["people"] = $row["people"];
+            $room["price"] = $row["price"];
+            $room["meters"] = $row["meters"];
+            $room["mainImg"] = $row["mainImg"];
+            $room["mainImgLongdesc"] = $row["mainImgLongdesc"];
+            $room["firstGallery"] = $row["firstGallery"];
+            $room["secondGallery"] = $row["secondGallery"];
+            $room["thirdGallery"] = $row["thirdGallery"];
+            $room["fourthGallery"] = $row["fourthGallery"];
+            $room["services"] = [
+                "tv"=>$row["tv"],"balcony"=>$row["balcony"],"gardenView"=>$row["gardenView"],"airCondition"=>$row["airCondition"],"heat"=>$row["heat"],"parquet"=>$row["parquet"],
+                "shower"=>$row["shower"],"shampoo"=>$row["shampoo"],"wc"=>$row["wc"],"bath"=>$row["bath"],"bidet"=>$row["bidet"],"paper"=>$row["paper"],"towels"=>$row["towels"],
+                "wardrobe"=>$row["wardrobe"]
+            ];
+            $room["additionalServices"] = [
+                "parking"=>$row["parking"],"wifi"=>$row["wifi"],"privateBathRoom"=>$row["privateBathRoom"]
+            ];
+
             array_push($rooms, $room);
         }
         return $rooms;
     }
 
-    public function addRoom($name,$people,$price,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services) {
-        $query = "INSERT INTO `Rooms` (`name`,`people`,`price`,`mainImg`,`mainImgLongdesc`,`firstGallery`,`secondGallery`,`thirdGallery`,`fourthGallery`,`tv`,`balcony`,`gardenView`,
-            `airCondition`,`heat`,`parquet`,`shower`,`shampoo`,`wc`,`bath`,`bidet`,`paper`,`towels`,`wardrobe`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+    public function addRoom($name,$people,$price,$meters,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services,$additionalServices) {
+        $query = "INSERT INTO `Rooms` (`name`,`people`,`price`,`meters`,`mainImg`,`mainImgLongdesc`,`firstGallery`,`secondGallery`,`thirdGallery`,`fourthGallery`,`tv`,`balcony`,`gardenView`,
+            `airCondition`,`heat`,`parquet`,`shower`,`shampoo`,`wc`,`bath`,`bidet`,`paper`,`towels`,`wardrobe`,`parking`,`wifi`,`privateBathRoom`) 
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
         $stmt = $this->connection->prepare($query);
         if (!$stmt) {
             return null;
         }
-        $stmt->bind_param("sidssssssiiiiiiiiiiiiii", $name,$people,$price,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services["tv"],$services["balcony"],
+        $stmt->bind_param("sidissssssiiiiiiiiiiiiiiiii", $name,$people,$price,$meters,$mainImg,$mainImgLongdesc,$first,$second,$third,$fourth,$services["tv"],$services["balcony"],
             $services["gardenView"],$services["airCondition"],$services["heat"],$services["parquet"],$services["shower"],$services["shampoo"],$services["wc"],$services["bath"],
-            $services["bidet"],$services["paper"],$services["towels"],$services["wardrobe"]
+            $services["bidet"],$services["paper"],$services["towels"],$services["wardrobe"],$additionalServices["parking"],$additionalServices["wifi"],
+            $additionalServices["privateBathRoom"]
         );
         $stmt->execute();
 

@@ -13,9 +13,8 @@ body {
 	max-width: 1080px;
 	min-height: 400px;
 	background-color: #FFF;
-	margin: auto; /*calcola in automatico i marigni di destra e sinistra*/
+	margin: auto;
 	font-family: "Segoe UI", Arial, sans-serif;
-	border: 1px solid #DDD;
 }
 
 a:visited {
@@ -91,7 +90,7 @@ SEZIONE MENU
 	/* padding-bottom: 1em; */
 	padding-left: 1em;
 	font-weight: bold;
-	border-top: 1px solid #ddd;
+	/*border-top: 1px solid #ddd;*/
 	/* border-bottom: 1px solid #ddd; */
 	min-height: 3em;
 	position: relative;
@@ -103,7 +102,6 @@ SEZIONE MENU
 	font-size: 1.1em;
 	float: left;
 	padding-right: 0.8em;
-	font-size: 1.1em;
 	float: left;
 	position: absolute;
 	bottom: 0;
@@ -332,11 +330,41 @@ SEZIONE RIGHTSIDEBAR
 	border-radius: 8px;
 }
 
+#ultimeNews {
+	padding-left: 2%;
+	text-align: left;
+}
 /*
 ==============
 SEZIONE CONTENUTO
 ==============
 */
+
+#topButton {
+	position: fixed;
+	bottom: 10px;
+	right: 15px;
+	z-index: 99;
+	font-size: 1.25em;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 1em;
+	border-radius: 8px;
+	font-weight: bold;
+}
+  
+#topButton:hover {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	background-color:white;
+	padding: 0.8em;
+	color: #923a43;
+	border: #923a43 4px solid;
+}
+
+
 .prenot_form{
 	margin-left: 1%;
 }
@@ -365,6 +393,11 @@ SEZIONE CONTENUTO
 
 .titleImageTerritorio {
 	text-align: center;
+}
+
+.formContent {
+	border-right: none;
+	margin: auto;
 }
 
 #contentHomePage {
@@ -413,14 +446,6 @@ SEZIONE CONTENUTO
 	border-bottom: 1px solid #ddd;
 }
 
-.bedroom .price::after {
-	content: "*";
-}
-
-.bedroom .free::after {
-	content: "**";
-}
-
 .bedroom>img {
 	width: 96%;
 	margin: 1em;
@@ -437,16 +462,18 @@ SEZIONE CONTENUTO
 .services {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
+	justify-content: space-between;
 }
 
 .services dl {
 	padding-top: 0.5em;
 	max-width: 50%;
+	margin-left: 1em;
 }
 
 .services div {
 	padding-top: 0.5em;
+	margin-right: 1em;
 }
 
 .services ul {
@@ -468,7 +495,7 @@ li span {
 }
 
 #prenotazioneFieldset div{
-	margin-bottom: 5%;
+	margin-top: 1em;
 }
 
 /*
@@ -526,11 +553,18 @@ SEZIONE FORM
 textarea, fieldset {
 	width: auto;
 	padding: 12px;
-	border: 0.1px solid #cc4b58;
+	border: 1px solid #cc4b58;
 	margin-top: 1em;
 	resize: vertical;
 }
 
+/*
+.toTopContainer {
+	margin-top: 1%;
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+}*/
 
 .bookContainer { 
 	display: inline-block;
@@ -543,7 +577,13 @@ textarea, fieldset {
 	margin-top: 1.5em;
 }
 
-.bottoneform, .bottoneform:visited {
+/*
+.toTopContainer .button {
+	padding: 0.75em 1.5em;
+	margin: 0 1em 1em 0;
+}*/
+
+.bottoneform, .bottoneform:visited, #bottoneregistrati {
 	background-color: #923a43;
 	border: none;
 	color: white;
@@ -553,8 +593,7 @@ textarea, fieldset {
 	display: inline-block;
 	font-size: 16px;
 	margin: 4% auto 4% auto;
-	
-  	border: 2px solid #923a43;
+	border: 2px solid #923a43;
 	border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -617,4 +656,8 @@ button {
 .bottonicommento {
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
+}
+
+#returnHome{
+	margin-top: 2%;
 }

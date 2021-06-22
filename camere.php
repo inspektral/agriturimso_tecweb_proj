@@ -24,12 +24,12 @@ if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
 
 $roomsContent = (new RoomsListFactory())->createRoomsList();
 if (!$roomsContent) {
-  header("Location: /errors/500.php");
+  header("Location: ./errors/500.php");
 }
 
 $newsContent = (new NewsListFactory())->createNewsList();
 if (!$newsContent) {
-  header("Location: /errors/500.php");
+  header("Location: ./errors/500.php");
 }
 
 

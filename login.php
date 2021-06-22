@@ -14,7 +14,7 @@ if (isset($_SESSION['email'])) {
   $userContent = $menu->getAuthenticationButtons(false, false, true);
 }
 
-$errorContent = "<div><ul class=\"feedbackList\">";
+$errorContent = "";
 if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"])) {
   $username = $_POST["email"];
   $password = $_POST["password"];
@@ -35,10 +35,11 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"
     $_SESSION["isAdmin"] = $user["email"] === "admin@mail.com";
     header("Location: ./index.php");
   } else {
+    $errorContent .= "<div><ul class=\"feedbackList\">";
     $errorContent .= "<li><strong class=\"error\">Credenziali errate</strong></li>";
+    $errorContent .= "</ul></div>";
   }
 }
-$errorContent .= "</ul></div>";
 
 $html = str_replace("<UserPlaceholder />", $userContent, $html);
 $html = str_replace("<LoginErrorPlaceholder />", $errorContent, $html);

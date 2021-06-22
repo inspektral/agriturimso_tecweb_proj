@@ -11,23 +11,23 @@
   <meta name="language" content="italian it" />
 
   <link rel="stylesheet" type="text/css" href="./style/style.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
 
   <link rel="stylesheet" type="text/css" href="./style/small_lavoro.css"
     media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
   <link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
 
-  <link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
 
   <script type="text/javascript" src="./javascript/inputCheck.js"></script>
-
+  <script type="text/javascript" src="./javascript/topButton.js"></script>
 </head>
 
 <body>
   <div id="header">
     <ul class="aiutiNascosti">
-      <li><a href="#menu">Vai al menu</a></li>
       <li><a href="#content">Vai al contenuto</a></li>
+      <li><a href="#menu">Vai al menu</a></li>
     </ul>
     <img id="logo" src="./images/bbtlogo.png"
       alt="Logo dell'agriturismo a forma di casa stilizzata con una a come tetto e una m come muri" />
@@ -48,10 +48,10 @@
   </div>
 
   <div id="specialBreadcrumb">
-    <p id="specialBreadcrumbText">Ti trovi in: Aggiungi nuova stanza</span></p>
+    <p id="specialBreadcrumbText">Ti trovi in: Camere > Aggiungi nuova stanza</p>
   </div>
 
-  <div id="content" class="contenutoGenerale">
+  <div id="content" class="contenutoGenerale formContent">
     <InsertRoomErrorPlaceholder />
     <form method="post" action="./insertRoom.php" enctype="multipart/form-data" onsubmit="return validateRoom()">
       <fieldset>
@@ -62,6 +62,8 @@
         <span><input type="text" id="people" name="people" value="<PeopleValuePlaceholder />" /></span>
         <label for="price" class="formLabel">Prezzo*: </label>
         <span><input type="text" id="price" name="price" value="<PriceValuePlaceholder />" /></span>
+        <label for="meters" class="formLabel">Dimensioni stanza*: </label>
+        <span><input type="text" id="meters" name="meters" value="<MetersValuePlaceholder />" /></span>
       </fieldset>
       <fieldset>
         <legend>Servizi</legend>
@@ -128,12 +130,30 @@
         </div>
       </fieldset>
       <fieldset>
+        <legend>Servizi aggiuntivi</legend>
+        <div>
+          <input type="checkbox" id="parking" name="additionalServices[]" value="parking" <ParkingCheckedPlaceholder />
+          />
+          <label for="parking" class="formLabel">Parcheggio</label>
+        </div>
+        <div>
+          <input type="checkbox" id="wifi" name="additionalServices[]" value="wifi" <WIFICheckedPlaceholder /> />
+          <label for="wifi" class="formLabel"><abbr xml:lang="en" title="Wireless Fidelity">WI-FI</abbr>
+            gratuito</label>
+        </div>
+        <div>
+          <input type="checkbox" id="privateBathRoom" name="additionalServices[]" value="privateBathRoom"
+            <PrivateBathRoomCheckedPlaceholder /> />
+          <label for="privateBathRoom" class="formLabel">Bagno privato</label>
+        </div>
+      </fieldset>
+      <fieldset>
         <legend>Immagine principale</legend>
         <label class="formLabel">Immagine*: </label>
         <input id="mainImg" type="file" name="mainImg" />
         <div>
           <label for="imgLongdesc" class="formLabel">Descrizione immagine*: </label>
-          <textarea id="imgLongdesc" name="mainLongdesc" rows="10" cols="60"><MainLongdescValuePlaceholder /></textarea>
+          <span><textarea id="imgLongdesc" name="mainLongdesc" rows="10" cols="60"><MainLongdescValuePlaceholder /></textarea></span>
         </div>
       </fieldset>
       <fieldset>
@@ -160,6 +180,7 @@
       </fieldset>
     </form>
   </div>
+  <div><a class="button" href="#header" id="topButton">Torna su</a></div>
 
   <div id="footer">
     <img src="./images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />

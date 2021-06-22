@@ -10,8 +10,7 @@ session_start();
 $html = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."roomForm.html");
 
 if (!isset($_SESSION["isAdmin"]) && !$_SESSION["isAdmin"]) {
-  // TODO: Error 400
-  // header("Location: /errors/400.php");
+  header("Location: ./errors/403.php");
 }
 
 $menu = new UserMenu();
@@ -21,6 +20,7 @@ $userFeedbackContent = "";
 $nameValue = "";
 $peopleValue = "";
 $priceValue = "";
+$metersValue = "";
 $imgLongdescValue = "";
 $checkedServices = [
   "tv" => "",
@@ -38,13 +38,28 @@ $checkedServices = [
   "towels" => "",
   "wardrobe" => ""
 ];
+$checkedAdditionalServices = [
+  "parking" => "",
+  "wifi" => "",
+  "privateBathRoom" => ""
+];
+
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
-  if (isset($_POST["name"]) && isset($_POST["people"]) && isset($_POST["price"]) && isset($_FILES["mainImg"]) && isset($_POST["mainLongdesc"])) {
+  if (
+    isset($_POST["name"]) && strlen($_POST["name"]) > 0 && 
+    isset($_POST["people"]) && strlen($_POST["people"]) > 0 && 
+    isset($_POST["price"]) && strlen($_POST["price"]) > 0 && 
+    isset($_POST["meters"]) && strlen($_POST["meters"]) > 0 && 
+    isset($_FILES["mainImg"]) && strlen($_FILES["mainImg"]["name"]) > 0 &&
+    isset($_POST["mainLongdesc"]) && strlen($_POST["mainLongdesc"]) > 0
+  ) {
     $name = (new InputCleaner())->cleanRoomName($_POST["name"]);
     $people = intval($_POST["people"]);
-    $price = doubleval($_POST["price"]);
+    $price = doubleval(str_replace(",", ".", $_POST["price"]));
+    $meters = intval($_POST["meters"]);
     $services = array();
+    $additionalServices = array();
     $mainImg = ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
     $imgLongdesc = $_POST['mainLongdesc'];
     $imgLongdescPath = ".".DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.str_replace(" ", "_", strtolower($name)).".txt";
@@ -57,8 +72,13 @@ if (isset($_POST["submit"])) {
       $services = $_POST["services"];
     }
 
-    if (strlen($name) > 5 && is_int($people) && $people > 0 && is_float($price) && $price > 0.0 && strlen($imgLongdesc) > 20) {
+    if (!empty($_POST["additionalServices"])) {
+      $additionalServices = $_POST["additionalServices"];
+    }
+
+    if (strlen($name) > 5 && is_int($people) && $people > 0 && is_float($price) && $price > 0.0 && is_int($meters) && $meters > 5 && strlen($imgLongdesc) > 20) {
       $servicesBool = (new ServicesConverter())->convertToBoolean($services);
+      $additionalServicesBool = (new ServicesConverter())->convertToBoolean($additionalServices, true);
 
       $dbAccess = new DBAccess();
       $isFailed = $dbAccess->openDBConnection();
@@ -67,7 +87,7 @@ if (isset($_POST["submit"])) {
         header("Location: ./errors/500.php");
       }
 
-      $result = $dbAccess->addRoom($name,$people,$price,$mainImg,$imgLongdescPath,$firstGallery,$secondGallery,$thirdGallery,$fourthGallery,$servicesBool);
+      $result = $dbAccess->addRoom($name,$people,$price,$meters,$mainImg,$imgLongdescPath,$firstGallery,$secondGallery,$thirdGallery,$fourthGallery,$servicesBool,$additionalServicesBool);
       $dbAccess->closeDBConnection(); 
 
       if (!$result) {
@@ -105,16 +125,20 @@ if (isset($_POST["submit"])) {
           $nameValue = $_POST["name"];
           $peopleValue = $_POST["people"];
           $priceValue = $_POST["price"];
+          $metersValue = $_POST["meters"];
           $imgLongdescValue = $_POST['mainLongdesc'];
           $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
+          $checkedAdditionalServices = (new ServicesConverter())->convertToHtmlAttribute($additionalServices, true);
         }
       } else {
         $userFeedbackContent .= "<li><strong class=\"error\">Errore durante l'aggiunta della camera</strong></li>";
         $nameValue = $_POST["name"];
         $peopleValue = $_POST["people"];
         $priceValue = $_POST["price"];
+        $metersValue = $_POST["meters"];
         $imgLongdescValue = $_POST['mainLongdesc'];
         $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
+        $checkedAdditionalServices = (new ServicesConverter())->convertToHtmlAttribute($additionalServices, true);
       }
     } else {
       if (strlen($name) <= 5) {
@@ -126,36 +150,46 @@ if (isset($_POST["submit"])) {
       if (!is_float($price) || $price <= 0.0) {
         $userFeedbackContent .= "<li><strong class=\"error\">Il prezzo della stanza deve essere un numero reale maggiore di zero</strong></li>";
       } 
+      if (!is_int($meters) || $meters <= 5) {
+        $userFeedbackContent .= "<li><strong class=\"error\">La dimensione deve essere un numero intero maggiore di 5</strong></li>";
+      } 
       if (strlen($imgLongdesc) <= 20) {
         $userFeedbackContent .= "<li><strong class=\"error\">La descrizione dell'immagine principale deve avere lunghezza maggiore di venti caratteri</strong></li>";
       }
       $nameValue = $_POST["name"];
       $peopleValue = $_POST["people"];
       $priceValue = $_POST["price"];
+      $metersValue = $_POST["meters"];
       $imgLongdescValue = $_POST['mainLongdesc'];
       $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
+      $checkedAdditionalServices = (new ServicesConverter())->convertToHtmlAttribute($additionalServices, true);
     }
   } else {
-    if (!isset($_POST["name"])) {
+    if (!isset($_POST["name"]) || strlen($_POST["name"]) === 0) {
       $userFeedbackContent .= "<li><strong class=\"error\">Il nome è un campo obbligatorio</strong></li>";
     } 
-    if (!isset($_POST["people"])) {
+    if (!isset($_POST["people"]) || strlen($_POST["people"]) === 0) {
       $userFeedbackContent .= "<li><strong class=\"error\">Il numero di perone è un campo obbligatorio</strong></li>";
     } 
-    if (!isset($_POST["price"])) {
+    if (!isset($_POST["price"]) || strlen($_POST["price"]) === 0) {
       $userFeedbackContent .= "<li><strong class=\"error\">Il prezzo è un campo obbligatorio</strong></li>";
     } 
-    if (!isset($_FILES["mainImg"])) {
+    if (!isset($_POST["meters"]) || strlen($_POST["meters"]) === 0) {
+      $userFeedbackContent .= "<li><strong class=\"error\">La dimensione è un campo obbligatorio</strong></li>";
+    } 
+    if (!isset($_FILES["mainImg"]) || strlen($_FILES["mainImg"]["name"]) === 0) {
       $userFeedbackContent .= "<li><strong class=\"error\">L'immagine principale è un campo obbligatorio</strong></li>";
     }
-    if (!isset($_POST["mainLongdesc"])) {
+    if (!isset($_POST["mainLongdesc"]) || strlen($_POST["mainLongdesc"]) === 0) {
       $userFeedbackContent .= "<li><strong class=\"error\">La descrizione dell'immagine principale è un campo obbligatorio</strong></li>";
     }
     $nameValue = isset($_POST["name"]) ? $_POST["name"] : "";
     $peopleValue = isset($_POST["people"]) ? $_POST["people"] : "";
     $priceValue = isset($_POST["price"]) ? $_POST["price"] : "";
-    $imgLongdescValue = isset($_POST["mainLongdesc"]) ? $_POST['mainLongdesc'] : "";
-    $checkedServices = (new ServicesConverter())->convertToHtmlAttribute($services);
+    $metersValue = isset($_POST["meters"]) ? $_POST["meters"] : "";
+    $imgLongdescValue = isset($_POST["mainLongdesc"]) ? $_POST["mainLongdesc"] : "";
+    $checkedServices = (new ServicesConverter())->convertToHtmlAttribute(isset($_POST["services"]) ? $_POST["services"] : []);
+    $checkedAdditionalServices = (new ServicesConverter())->convertToHtmlAttribute(isset($_POST["additionalServices"]) ? $_POST["additionalServices"] : [], true);
   }
   $userFeedbackContent .= "</ul></div>";
 }
@@ -165,6 +199,7 @@ $html = str_replace("<InsertRoomErrorPlaceholder />", $userFeedbackContent, $htm
 $html = str_replace("<NameValuePlaceholder />", $nameValue, $html);
 $html = str_replace("<PeopleValuePlaceholder />", $peopleValue, $html);
 $html = str_replace("<PriceValuePlaceholder />", $priceValue, $html);
+$html = str_replace("<MetersValuePlaceholder />", $metersValue, $html);
 $html = str_replace("<MainLongdescValuePlaceholder />", $imgLongdescValue, $html);
 $html = str_replace("<TvCheckedPlaceholder />", $checkedServices["tv"], $html);
 $html = str_replace("<BalconeCheckedPlaceholder />", $checkedServices["balcony"], $html);
@@ -180,5 +215,8 @@ $html = str_replace("<BidetCheckedPlaceholder />", $checkedServices["bidet"], $h
 $html = str_replace("<PaperCheckedPlaceholder />", $checkedServices["paper"], $html);
 $html = str_replace("<TowelsCheckedPlaceholder />", $checkedServices["towels"], $html);
 $html = str_replace("<WardrobeCheckedPlaceholder />", $checkedServices["wardrobe"], $html);
+$html = str_replace("<ParkingCheckedPlaceholder />", $checkedAdditionalServices["parking"], $html);
+$html = str_replace("<WIFICheckedPlaceholder />", $checkedAdditionalServices["wifi"], $html);
+$html = str_replace("<PrivateBathRoomCheckedPlaceholder />", $checkedAdditionalServices["privateBathRoom"], $html);
 echo $html;
 ?>

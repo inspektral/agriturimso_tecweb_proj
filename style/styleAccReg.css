@@ -26,9 +26,8 @@ input[type="checkbox"] {
     margin-left: 10%;
 }
 
-fieldset {    
-    margin-left: 5%;
-    margin-right: 5%;
+fieldset {
+    margin: 0 5% 2.5% 5%;
 }
 
 .feedbackList {

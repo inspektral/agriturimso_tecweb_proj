@@ -11,7 +11,7 @@ $userContent = "";
 if (isset($_SESSION['email'])) {        
   $userContent = $menu->getWelcomeMessage($_SESSION['email']);
 } else {
-    $userContent = $menu->getAuthenticationButtons(false, true);
+  $userContent = $menu->getAuthenticationButtons(false, true);
 }
 
 $email = "";
@@ -24,7 +24,12 @@ $emailValue = "";
 if (isset($_POST["submit"])) {
   $userFeedbackContent = "<div><ul class=\"feedbackList\">";
 
-  if (isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["email"]) && isset($_POST["password"])) {
+  if (
+    isset($_POST["nome"]) && strlen($_POST["nome"]) >= 2 && strlen($_POST["nome"]) <= 20 && 
+    isset($_POST["cognome"]) && strlen($_POST["cognome"]) >= 2 && strlen($_POST["cognome"]) <= 20 && 
+    isset($_POST["email"]) && strlen($_POST["email"]) > 5 && 
+    isset($_POST["password"]) && strlen($_POST["password"]) >= 4
+  ) {
     $email = $_POST["email"];
     $password = $_POST["password"];
     $name = $_POST["nome"];
@@ -52,17 +57,17 @@ if (isset($_POST["submit"])) {
       $userFeedbackContent .= "<li><strong class=\"error\">Errore durante la registrazione</strong></li>";
     }
   } else {
-    if (!isset($_POST["nome"])) {
-      $userFeedbackContent .= "<li><strong class=\"error\">Il nome è un campo obbligatorio</strong></li>";
+    if (!isset($_POST["nome"]) || strlen($_POST["nome"]) < 2 || strlen($_POST["nome"]) > 20) {
+      $userFeedbackContent .= "<li><strong class=\"error\">Il nome deve avere lunghezza tra 2 e 20</strong></li>";
     }
-    if (!isset($_POST["cognome"])) {
-      $userFeedbackContent .= "<li><strong class=\"error\">Il cognome è un campo obbligatorio</strong></li>";
+    if (!isset($_POST["cognome"]) || strlen($_POST["cognome"]) < 2 || strlen($_POST["cognome"]) > 20) {
+      $userFeedbackContent .= "<li><strong class=\"error\">Il cognome deve avere lunghezza tra 2 e 20</strong></li>";
     }
-    if (!isset($_POST["email"])) {
-      $userFeedbackContent .= "<li><strong class=\"error\">L'email è un campo obbligatorio</strong></li>";
+    if (!isset($_POST["email"]) || strlen($_POST["email"]) <= 5) {
+      $userFeedbackContent .= "<li><strong class=\"error\">L'email non è valida</strong></li>";
     }
-    if (!isset($_POST["password"])) {
-      $userFeedbackContent .= "<li><strong class=\"error\">La password è un campo obbligatorio</strong></li>";
+    if (!isset($_POST["password"]) || strlen($_POST["email"]) < 4) {
+      $userFeedbackContent .= "<li><strong class=\"error\">La password deve avere almeno 4 caratteri</strong></li>";
     }
   }
   $userFeedbackContent .= "</ul></div>";
