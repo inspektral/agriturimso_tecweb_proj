@@ -49,7 +49,6 @@ function validateComment() {
 }
 
 function validateRegistrati() {
-  console.log("validateRegistrati called");
   const nome = document.getElementById("nome")
   const cognome = document.getElementById("cognome")
   const validNome = validateField(nome)
