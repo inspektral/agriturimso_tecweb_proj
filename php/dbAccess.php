@@ -1,9 +1,4 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-// error_reporting(E_ALL);
-
 class DBAccess {
     private const HOST_DB = "localhost";
     private const USERNAME = "lbrescan";
@@ -233,21 +228,6 @@ class DBAccess {
             return false;
         }
     }
-    /*
-    public function prenotaCamera($user, $dateFrom, $dateTo, $camera) {
-        
-        $query = "INSERT INTO `prenotazioni` (`email`, `giornoDa`, `giornoA`, `camera`) VALUES ('?', '?', '?', '?');";
-        $stmt = $this->connection->prepare($query);
-        if (!$stmt) {
-            return null;
-        }
-        //$stmt->bind_param("ssss", $description);
-        $stmt->execute();
-        
-        return array(
-            "isSuccessful" => $stmt->affected_rows === 1
-        );
-    }*/
 
     public function closeConnection(){
         $this->connection->close();

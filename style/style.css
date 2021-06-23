@@ -302,7 +302,6 @@ SEZIONE RIGHTSIDEBAR
 
 .button, #topButton:visited {
     background-color: #923a43;
-    /* Rosso tipico */
     color: white;
     padding: 3% 5%;
     text-align: center;
@@ -318,7 +317,6 @@ SEZIONE RIGHTSIDEBAR
 
 .button:visited {
     background-color: #923a43;
-    /* Rosso tipico */
     color: rgb(0, 0, 0);
     padding: 3% 5%;
     text-align: center;
@@ -598,15 +596,6 @@ fieldset {
     resize: vertical;
 }
 
-
-/*
-.toTopContainer {
-	margin-top: 1%;
-	display: inline-block;
-	width: 100%;
-	text-align: right;
-}*/
-
 .bookContainer {
     display: inline-block;
     width: 100%;
@@ -617,13 +606,6 @@ fieldset {
     padding: 0.75em 1.5em;
     margin-top: 1.5em;
 }
-
-
-/*
-.toTopContainer .button {
-	padding: 0.75em 1.5em;
-	margin: 0 1em 1em 0;
-}*/
 
 .bottoneform,
 .bottoneform:visited,
@@ -661,15 +643,11 @@ fieldset {
     cursor: pointer;
 }
 
-
 /*
-
 ==============
 SEZIONE COMMENTI
 ==============
-
 */
-
 #sezionecommenti {
     margin-top: 7%;
     padding-right: 0.5em
@@ -719,15 +697,11 @@ pre {
     font-size: 1.5em;
 }
 
-
 /*
-
 ==============
 SEZIONE BOTTONI ACCEDI/REGISTRATI
 ==============
-
 */
-
 input[type="text"],
 input[type="password"] {
     margin: auto 10% 2% 10%;
