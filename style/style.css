@@ -784,3 +784,7 @@ fieldset {
     font-size: 14px;
     width: auto;
 }
+
+#required {
+    margin-bottom: 0.5em;
+}
