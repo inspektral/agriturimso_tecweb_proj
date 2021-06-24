@@ -97,29 +97,70 @@ function dateParse(dateString) {
   return new Date(dateString.substring(6,10)+"-"+dateString.substring(3,5)+"-"+dateString.substring(0,2))
 }
 
-function checkDateDaA(da,a) {
-  const dateDa = dateParse(da.value)
-  const dateA = dateParse(a.value)
+function dateExist(dateString) {
+  const year = dateString.substring(6,10)
+  const month = dateString.substring(3,5)
+  const day = dateString.substring(0,2)
+  let exist = true
+  shortMonths = ["04","06","09","11"] 
 
-  let validDates = true
-  const errPast = "La data immessa è già passata"
-  const errIncompatible = "La data di inizio deve precedere quella di fine"
-  if (dateDa < Date.now()) {
-    showError(da, errPast)
+  console.log("checking" + dateString);
+  if(month == 2 && day > 28) {
+    if (!(year%4 == 0 && day == 29)) {
+      exist = false
+    }
+    else if (day > 29) {
+      exist == false
+    }
+  }
+  if (exist && shortMonths.indexOf(month)>=0 && day == 31) {
+    exist = false
+  }
+  return exist
+}
+
+
+function checkDateDaA(da,a) {
+  try {
+    const errInvalid = "La data immessa non esiste"
+    const errPast = "la data immessa è già passata"
+    const errIncompatible = "La data di inizio deve precedere quella di fine"
+    let validDates = true
+    
+    if (!dateExist(da.value)) {
+      showError(da, errInvalid)
+      return false
+    } 
+    if (!dateExist(a.value)) {
+      showError(a, errInvalid)
+      return false
+    }
+
+    const dateDa = dateParse(da.value)
+
+    const dateA = dateParse(a.value)  
+  
+    if (dateDa < Date.now()) {
+      showError(da, errPast)
+      validDates = false
+    }
+    if (dateA < Date.now()) {
+    showError(A, errPast)
     validDates = false
   }
-  if (dateA < Date.now()) {
-  showError(a, errPast)
-  validDates = false
-}
-if (validDates) {
-  if(dateA<dateDa) {
-    showError(da, errIncompatible)
-    showError(a,errIncompatible)
+  if (validDates) {
+    if(dateA<dateDa) {
+      showError(da, errIncompatible)
+      showError(a,errIncompatible)
+      return false
+    }
+    return true
+  }
+  return false
+  }
+  catch {
+    console.log("datecheck failed");
     return false
   }
-  return true
-}
-return false
 }
 
