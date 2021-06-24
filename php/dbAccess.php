@@ -8,6 +8,7 @@ class DBAccess {
     private const USERNAME = "lbrescan";
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
+    
 
     private $connection;
 
@@ -216,17 +217,27 @@ class DBAccess {
     }
     
     public function isFree($dateFrom, $dateTo, $nameRoom) {
-        $query = "SELECT * FROM `prenotazioni` WHERE `giornoDa` >= ? AND `giornoA` >= ? AND `nameCamera` = ?";   
+
+        $t1=  $dateFrom."";
+        $t2=  $dateTo."";
+
+        echo "sono qui " . $t1 . " - ".$t2 . "<br/>"; 
+
+        $tmp1 = DateTime::createFromFormat('d/m/Y', $t1)->format('Y-m-d');
+        $tmp2 = DateTime::createFromFormat('d/m/Y', $t2)->format('Y-m-d');
+
+        echo $tmp1 . " - ".$tmp2 . "<br/>";
+        $query = "SELECT * FROM `prenotazioni` WHERE `giornoA` >= ? AND `giornoDa` <= ? AND `nameCamera` = ?";   
         
         $stmt = $this->connection->prepare($query);
         if (!$stmt) {
             return null;
         }
-        $stmt->bind_param("sss", $dateFrom, $dateTo, $nameRoom);
+        $stmt->bind_param("sss", $tmp1, $tmp2, $nameRoom);
         $stmt->execute();
         $result = $stmt->get_result();
         
-        if ($result->num_rows == 0) {
+        if ($result->num_rows <= 0) {
             return true;
         }else{
             return false;
