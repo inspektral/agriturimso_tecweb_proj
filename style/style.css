@@ -679,7 +679,6 @@ fieldset {
 .error {
     font-size: 1.5em;
     color: rgb(179, 0, 0);
-    border: 1px solid rgb(179, 0, 0);
 }
 
 .success {
