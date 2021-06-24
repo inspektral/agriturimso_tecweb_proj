@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
   if (isset($_POST["description"])) {
     $description = (new InputCleaner())->cleanNews($_POST["description"]);
 
-    if (strlen($description) > 10) {
+    if (strlen($description) > 10 && strlen($description) <= 150) {
       $dbAccess = new DBAccess();
       $isFailed = $dbAccess->openDBConnection();
 
@@ -46,7 +46,7 @@ if (isset($_POST["submit"])) {
       if (strlen($description) == 0) {
         $userFeedbackContent .= "<li><strong class=\"error\">La descrizione deve essere presente</strong></li>";
       } else {
-        $userFeedbackContent .= "<li><strong class=\"error\">La descrizione deve avere lunghezza maggiore di dieci caratteri</strong></li>";
+        $userFeedbackContent .= "<li><strong class=\"error\">La descrizione deve avere lunghezza maggiore di 10 caratteri e minore di 150</strong></li>";
       }
     }
   } else {

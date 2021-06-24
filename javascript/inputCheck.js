@@ -11,7 +11,7 @@ let dettagliForm = {
   "price": ["Price", /^\d{1,4}/, "Inserire il prezzo della camera"],
   "meters": ["Meters", /^\d{1,3}/, "La dimensione della camera deve avere minimo 1 e massimo 3 cifre"],
   "imgLongdesc": ["ImgLongdesc", "([a-zA-Z]){20,}", "La descrizione dell'immagine deve essere lunga almeno 21 caratteri"],
-  "description" : ["NewsDescription", /^.{10,}/, "La notizia deve avere lunghezza minima di 10"]
+  "description" : ["NewsDescription", /^.{10,150}/, "La notizia deve avere lunghezza tra 10 e 150"]
 }
 
 function validateNews() {
