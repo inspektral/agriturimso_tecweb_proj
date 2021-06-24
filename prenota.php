@@ -71,7 +71,7 @@ $html = str_replace("<AdminNewsManagementPlaceholder />", $contentAdminNews, $ht
 $html = str_replace("<NewsListPlaceholder />", $newsContent, $html);
 $html = str_replace("<UserPlaceholder />", $content, $html);
 $html = str_replace("<dateToday/>",date("d/m/Y"), $html);
-// $html = str_replace("<resultPrenotazione/>", "", $html);
+$html = str_replace("<resultPrenotazione/>", "", $html);
 if(isset($_GET["nomeCamera"])){
     $html = str_replace("<nameCamera/>", $_GET["nomeCamera"], $html);
 }else  if(isset($_POST["nomeCamera"])){
