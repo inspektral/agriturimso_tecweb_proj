@@ -1,15 +1,17 @@
 let dettagliForm = {
   "da": ["Da","(0[1-9]|[12][0-9]|3[0-1])\/(0[0-9]|1[012])\/((20|19)[0-9][0-9])", "Inserire la data nel formato gg/mm/aaaa"],
   "a": ["A","(0[1-9]|[12][0-9]|3[0-1])\/(0[0-9]|1[012])\/((20|19)[0-9][0-9])", "Inserire la data nel formato gg/mm/aaaa"],
-  "nome": ["Nome","([a-zA-Z]){2,20}","Il nome non può essere vuoto"],
-  "cognome":["Cognome","([a-zA-Z]){2,20}","Il cognome non può essere vuoto"],
+  "nome": ["Nome","([a-zA-Z]){2,20}","Il nome deve avere lunghezza tra 2 e 20"],
+  "cognome":["Cognome","([a-zA-Z]){2,20}","Il cognome deve avere lunghezza tra 2 e 20"],
   "email":["Email",/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,"Indirizzo email non valido"],
   "password":["Password",/^.{4,}/,"La password deve avere almeno 4 caratteri"],
-  "testo":["Testo","\.{10,}","Il commento è obbligatorio e deve essere di almeno 10 caratteri"],
-  "name": ["Name","([a-zA-Z]){2,20}","Inserire il nome della camera"],
-  "people": ["People", /^\d{1,2}/, "Inserire il numero di posti letto"],
+  "testo":["Testo","\.{10,}","Il commento deve essere di almeno 10 caratteri"],
+  "name": ["Name","([a-zA-Z]){2,20}","Il nome della camera deve avere lunghezza tra 2 e 20"],
+  "people": ["People", /^\d{1,2}/, "Il numero di posti letto deve essere un numero di 1 o 2 cifre"],
   "price": ["Price", /^\d{1,4}/, "Inserire il prezzo della camera"],
-  "description" : ["NewsDescription", /^.{10,}/, "Inserire la descrizione della notizia"]
+  "meters": ["Meters", /^\d{1,3}/, "La dimensione della camera deve avere minimo 1 e massimo 3 cifre"],
+  "imgLongdesc": ["ImgLongdesc", "([a-zA-Z]){20,}", "La descrizione dell'immagine deve essere lunga almeno 21 caratteri"],
+  "description" : ["NewsDescription", /^.{10,150}/, "La notizia deve avere lunghezza tra 10 e 150"]
 }
 
 function validateNews() {
@@ -20,12 +22,16 @@ function validateRoom(){
   const nome = document.getElementById("name")
   const posti = document.getElementById("people")
   const price = document.getElementById("price")
-  const descrizione = document.getElementById("imgLongDesc")
+  const meters = document.getElementById("meters")
+  const description = document.getElementById("imgLongdesc")
+
   const validNome = validateField(nome)
   const validPosti = validateField(posti)
   const validPrice = validateField(price)
-  const validDescrizione = validateField(descrizione)
-  return validNome && validPosti && validPrice
+  const validMeters = validateField(meters)
+  const validDescription = validateField(description)
+
+  return validNome && validPosti && validPrice && validMeters && validDescription
 }
 
 function validatePrenota() {
@@ -33,13 +39,8 @@ function validatePrenota() {
   const a = document.getElementById("a")
   let validDa = validateField(da)
   let validA = validateField(a)
-  if (validDa && validA) {
-    if(checkDateDaA(da, a)) {
-      return true
-    }
-    return false
-  }
-  return false
+
+  return validDa && validA && checkDateDaA(da, a)
 }
 
 function validateComment() {
@@ -48,7 +49,6 @@ function validateComment() {
 }
 
 function validateRegistrati() {
-  console.log("validateRegistrati called");
   const nome = document.getElementById("nome")
   const cognome = document.getElementById("cognome")
   const validNome = validateField(nome)

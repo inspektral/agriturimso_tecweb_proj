@@ -12,20 +12,21 @@
 
   <link rel="stylesheet" type="text/css" href="./style/style.css" media="screen" />
 
+
   <link rel="stylesheet" type="text/css" href="./style/small_lavoro.css"
     media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
   <link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
 
-  <link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
   <script type="text/javascript" src="./javascript/inputCheck.js"></script>
+  <script type="text/javascript" src="./javascript/topButton.js"></script>
 </head>
 
 <body>
   <div id="header">
     <ul class="aiutiNascosti">
-      <li><a href="#menu">Vai al menu</a></li>
       <li><a href="#content">Vai al contenuto</a></li>
+      <li><a href="#menu">Vai al menu</a></li>
     </ul>
     <img id="logo" src="./images/bbtlogo.png"
       alt="Logo dell'agriturismo a forma di casa stilizzata con una a come tetto e una m come muri" />
@@ -46,22 +47,24 @@
   </div>
 
   <div id="specialBreadcrumb">
-    <p id="specialBreadcrumbText">Ti trovi in: Aggiungi una nuova notizia</span></p>
+    <p id="specialBreadcrumbText">Ti trovi in: Aggiungi una nuova notizia</p>
   </div>
-  
-  <div id="content" class="contenutoGenerale">
+
+  <div id="content" class="contenutoGenerale formContent">
     <InsertNewsErrorPlaceholder />
-    <form method="post" action="./insertNews.php" onsubmit="return validateNews()" >
+    <form method="post" action="./insertNews.php" onsubmit="return validateNews()">
       <fieldset>
         <legend>Nuova notizia</legend>
         <label for="description" class="formLabel">Descrizione*: </label>
         <span><input type="text" id="description" name="description" value="<DescriptionValuePlaceholder />" /></span>
       </fieldset>
       <fieldset>
+        <p id="required"><em>I campi contrassegnati da * sono obbligatori</em></p>
         <input type="submit" value="Invia" id="submit" name="submit" />
       </fieldset>
     </form>
   </div>
+  <div><a class="button" href="#header" onclick="topFunction()" id="topButton">Torna su</a></div>
 
   <div id="footer">
     <img src="./images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />

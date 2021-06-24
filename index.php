@@ -21,7 +21,7 @@ if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
 
 $newsContent = (new NewsListFactory())->createNewsList();
 if (!$newsContent) {
-  header("Location: /errors/500.php");
+  header("Location: ./errors/500.php");
 }
 
 $html = str_replace("<UserPlaceholder />", $content, $html);

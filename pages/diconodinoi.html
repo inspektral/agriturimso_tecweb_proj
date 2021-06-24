@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
@@ -11,14 +12,15 @@
 
 	<link rel="stylesheet" type="text/css" href="./style/style.css" media="screen" />
 
+
 	<link rel="stylesheet" type="text/css" href="./style/small_lavoro.css"
 		media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
 	<link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
-	<link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
 	<script type="text/javascript" src="./javascript/inputCheck.js"></script>
-
+	<script type="text/javascript" src="./javascript/topButton.js"></script>
 </head>
+
 <body>
 	<div id="header">
 		<ul class="aiutiNascosti">
@@ -29,7 +31,7 @@
 		<img id="logo" src="./images/bbtlogo.png" alt="Logo dell'agriturismo" />
 		<h1>Agriturismo Morgan</h1>
 		<h2>Ai piedi del Montello e dei colli Asolani</h2>
-	</div>	
+	</div>
 
 	<div id="breadcrumb">
 		<div id="menu">
@@ -47,14 +49,15 @@
 		<div class="contenutoGenerale column">
 			<h2 class="center">Qui troverai le informazioni principali e le recensioni dei nostri clienti</h2>
 			<div id="imgCommenti">
-				<img src="./images/tavola.jpg" class="imgCommenti" alt="tavola apparecchiata di fronte al camino all'interno dell'agriturismo" />
+				<img src="./images/tavola.jpg" class="imgCommenti"
+					alt="tavola apparecchiata di fronte al camino all'interno dell'agriturismo" />
 			</div>
 			<p>I nostri recapiti:</p>
 			<div id="generalInfo">
 				<h3>AZIENDA AGRITURISTICA MORGAN</h3>
 				<address>Erizzo, 79 - 31044 Montebelluna (TV) - Italia</address>
-				<p><abbr title="telefono">Tel:</abbr> +39 0423 60 30 31</p>
-				<p><abbr title="cellulare">Cel:</abbr> +39 347 45 25 411</p>
+				<pre><abbr title="telefono">Tel:</abbr> +39 0423 603031</pre>
+				<pre><abbr title="cellulare">Cel:</abbr> +39 347 4525411</pre>
 			</div>
 			<div id="info"></div>
 
@@ -64,46 +67,42 @@
 				<CommentPlaceholder />
 			</div>
 
-			
-			<div id="lasciacommento">		
+
+			<div id="lasciacommento">
 				<h3>Lascia un commento!</h3>
 				<form class="commentForm" method="post" action="diconodinoi.php" onsubmit="return validateComment()">
 					<InsertCommentErrorPlaceholder />
 					<fieldset class="commentForm">
-						<legend>Dacci un voto</legend>
+						<legend>Dacci un voto*</legend>
 						<div class="container">
 							<label for="voto1">1</label>
-							<input id="voto1" type="radio" name="voto" value="1"/> 
-							<!-- <span class="checkmark"></span> -->
+							<input id="voto1" type="radio" name="voto" value="1" checked="checked"/>
 						</div>
 						<div class="container">
 							<label for="voto2">2</label>
-							<input id="voto2" type="radio" name="voto" value="2"/> 
-							<!-- <span class="checkmark"></span> -->
-						</div> 
+							<input id="voto2" type="radio" name="voto" value="2" />
+						</div>
 						<div class="container">
 							<label for="voto3">3</label>
-							<input id="voto3" type="radio" name="voto" value="3"/> 
-							<!-- <span class="checkmark"></span> -->
+							<input id="voto3" type="radio" name="voto" value="3" />
 						</div>
 						<div class="container">
 							<label for="voto4">4</label>
-							<input id="voto4" type="radio" name="voto" value="4"/> 
-							<!-- <span class="checkmark"></span> -->
+							<input id="voto4" type="radio" name="voto" value="4" />
 						</div>
 						<div class="container">
 							<label for="voto5">5</label>
-							<input id="voto5" type="radio" name="voto" value="5"/> 
-							<!-- <span class="checkmark"></span> -->
+							<input id="voto5" type="radio" name="voto" value="5" />
 						</div>
 					</fieldset>
 					<fieldset class="commentForm">
 						<legend>Commento</legend>
-						<label for="testo" class="labelPos">Inserisci il tuo commento</label>
+						<label for="testo" class="labelPos">Inserisci il tuo commento*</label>
 						<span><textarea id="testo" name="testo" rows="10" cols="50"></textarea></span>
 					</fieldset>
 					<fieldset class="noBorder">
-						<button id="submit" type="submit" name="submit" class="bottoneform">Invia</button>
+						<p id="required"><em>I campi contrassegnati da * sono obbligatori</em></p>
+						<input id="submit" type="submit" name="submit" value="Invia" class="bottoneform" />
 					</fieldset>
 				</form>
 			</div>
@@ -117,18 +116,20 @@
 			<AdminNewsManagementPlaceholder />
 		</div>
 	</div>
+	<div><a class="button" href="#header" id="topButton">Torna su</a></div>
 
 	<div id="footer">
 		<img src="./images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
 		<img src="./images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
 		<p>
-			Il sito è stato creato per un esercizio nell'ambito del corso di 
+			Il sito è stato creato per un esercizio nell'ambito del corso di
 			<a href="https://elearning.unipd.it/math/login/index.php">Tecnologie Web</a>
-			 e non rappresenta quindi il sito ufficiale dell'Agriturismo. I
+			e non rappresenta quindi il sito ufficiale dell'Agriturismo. I
 			testi sono stati gentilmente presi in prestito da
 			<a href="http://www.agriturismomorgan.it/">Agriturismo Morgan</a>.
 		</p>
 		<p>Tech Group - All rights reserved</p>
 	</div>
 </body>
+
 </html>

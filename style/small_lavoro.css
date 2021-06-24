@@ -1,3 +1,8 @@
+body{
+	margin: auto;    
+	max-width: 95%;
+}
+
 #header {
 	min-height: 0em;
 }
@@ -19,6 +24,7 @@
 	border-bottom: none;
 	position: static;
 	min-height: 2em;
+	font-size: 1.15em;
 	padding: 0;
 }
 
@@ -52,8 +58,8 @@
 
 #user {
 	float: none;
-	height: 2em;
-	margin-top: 0.3em;
+	min-height: 2em;
+	margin-top: 0.7em;
 	text-align: right;
 	position: static;
     padding-right: 0;
@@ -89,6 +95,10 @@
 
 /*    CONTENUTO    */
 
+#toTopButton{
+	display: none;
+}
+
 .prenot_form{
 	margin-left: 0;
 }
@@ -101,12 +111,15 @@
 	border-width: 0;
 }
 
-input{
-	width:80%;
-}
-
 .bedroom>img {
 	width: 100%;
+	margin: 0;
+}
+
+.bedroom>ul { 
+	width: 75%;
+	max-width: 100%;
+	margin: 0.5em auto 0 4em;
 }
 
 .services dl {
@@ -115,13 +128,9 @@ input{
 }
 
 .services div {
-	padding-top: 1em;
-	padding-bottom: 0.5em;
+	padding: 1em 0 0.5em 0;
 	max-width: 100%;
-}
-
-.services ul {
-	margin-left: 1.5em;
+	margin: 0 0 0 1em;
 }
 
 #contentHomePage {
@@ -130,6 +139,30 @@ input{
 	border: 0;
 }
 
-#charactersStory {
-	width: 97%;
+pre{
+	font-size: 2.7em;
+}
+
+fieldset {
+	border: 1px solid #cc4b58;
+	margin: 0 0 2.5% 0;
+}
+
+legend {
+	font-size: 1em;
+}
+
+textarea {
+	width: 95%;
+}
+
+input[type="text"], input[type="password"] {
+	width: 85%;
+	font-size: 1.25em;
+}
+
+/* FOOTER */
+#footer{
+	padding: 2%;
+	margin: auto auto 5% auto;
 }

@@ -1,72 +1,74 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <title>Login - Agriturismo Morgan</title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <meta name="title" content="Login" />
+    <title>Login - Agriturismo Morgan</title>
 
-        <meta name="language" content="italian it" />
+    <meta name="title" content="Login" />
 
-        <link rel="stylesheet" type="text/css" href="./style/style.css" media="screen" />
+    <meta name="language" content="italian it" />
 
-        <link rel="stylesheet" type="text/css" href="./style/small_lavoro.css" media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
+    <link rel="stylesheet" type="text/css" href="./style/style.css" media="screen" />
 
-        <link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="./style/small_lavoro.css" media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
-        <link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
 
-        <script type="text/javascript" src="./javascript/inputCheck.js"></script>
-    </head>
-    <body>
-        <div id="header">
-            <ul class="aiutiNascosti">
-                <li><a href="#contentLogin">Vai al contenuto</a></li>
-                <li><a href="#menu">Vai al menu</a></li>
-                <li><a href="#ultimeNews">Vai alle ultime news</a></li>
+
+    <script type="text/javascript" src="./javascript/inputCheck.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <ul class="aiutiNascosti">
+            <li><a href="#contentLogin">Vai al contenuto</a></li>
+            <li><a href="#menu">Vai al menu</a></li>
+            <li><a href="#ultimeNews">Vai alle ultime news</a></li>
+        </ul>
+        <img id="logo" src="images/bbtlogo.png" alt="Casa stilizzata con una A come tetto e una M come muri" />
+        <h1>Agriturismo Morgan</h1>
+        <h2>Ai piedi del Montello e dei colli Asolani</h2>
+    </div>
+
+    <div id="breadcrumb">
+        <div id="menu">
+            <ul>
+                <li xml:lang="en"><a href="index.php">Home</a></li>
+                <li><a href="camere.php">Camere</a></li>
+                <li><a href="territorio.php">Territorio</a></li>
+                <li><a href="diconodinoi.php">Dicono di noi</a></li>
             </ul>
-            <img id="logo" src="images/bbtlogo.png" alt="Casa stilizzata con una A come tetto e una M come muri" />
-            <h1>Agriturismo Morgan</h1>
-            <h2>Ai piedi del Montello e dei colli Asolani</h2>
         </div>
+        <UserPlaceholder />
+    </div>
 
-        <div id="breadcrumb">
-            <div id="menu">
-                <ul>
-                    <li xml:lang="en"><a href="index.php">Home</a></li>
-                    <li><a href="camere.php">Camere</a></li>
-                    <li><a href="territorio.php">Territorio</a></li>
-                    <li><a href="diconodinoi.php">Dicono di noi</a></li>
-                </ul>
-            </div>
-            <UserPlaceholder />
-        </div>
+    <div id="contentLogin" class="contenutoGenerale formContent">
+        <LoginErrorPlaceholder />
+        <form method="post" id="accedi" action="login.php" onsubmit="return validateAccedi()">
+            <fieldset>
+                <legend xml:lang="en">Login</legend>
+                <label for="email" class="formLabel" xml:lang="en">Email:</label>
+                <span><input type="text" id="email" name="email" /></span>
+                <label for="password" class="formLabel" xml:lang="en">Password:</label>
+                <span><input type="password" id="password" name="password" /></span>
+            </fieldset>
+            <fieldset>
+                <input type="submit" value="Accedi" id="submit" name="submit" />
+            </fieldset>
+        </form>
+    </div>
 
-        <div id="contentLogin" class="contenutoGenerale"><!-- role="main"  --> 
-            <LoginErrorPlaceholder />
-            <form method="post" id="accedi" action="login.php" onsubmit="return validateAccedi()">
-                <fieldset>
-                    <legend xml:lang="en">Login</legend>
-                    <label for="email" class="formLabel" xml:lang="en">Email:</label>
-                    <span><input type="text" id="email" name="email"/></span>
-                    <label for="password" class="formLabel" xml:lang="en">Password:</label>
-                    <span><input type="password" id="password" name="password"/></span>
-                </fieldset>
-                <fieldset>
-                    <input type="submit" value="Accedi" id="submit" name="submit" />
-                </fieldset>
-            </form>
-        </div>
+    <div id="footer">
+        <img src="./images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
+        <img src="./images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
+        <p>
+            Il sito è stato creato per un esercizio nell'ambito del corso di <a href="https://elearning.unipd.it/math/login/index.php">Tecnologie Web</a> e non rappresenta quindi il sito ufficiale dell'Agriturismo. I testi sono stati gentilmente presi
+            in prestito da <a href="http://www.agriturismomorgan.it/">Agriturismo Morgan</a>.
+        </p>
+        <p>Tech Group - All rights reserved</p>
+    </div>
+</body>
 
-        <div id="footer">
-            <img src="./images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
-            <img src="./images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
-            <p>
-                Il sito è stato creato per un esercizio nell'ambito del corso di <a href="https://elearning.unipd.it/math/login/index.php">Tecnologie Web</a> e non rappresenta quindi il sito ufficiale dell'Agriturismo. I testi sono stati
-                gentilmente presi in prestito da <a href="http://www.agriturismomorgan.it/">Agriturismo Morgan</a>.
-            </p>
-            <p>Tech Group - All rights reserved</p>
-        </div>
-    </body>
 </html>

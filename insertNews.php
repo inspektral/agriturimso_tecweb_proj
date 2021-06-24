@@ -8,8 +8,7 @@ session_start();
 $html = file_get_contents(__DIR__.DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."newsForm.html");
 
 if (!isset($_SESSION["isAdmin"]) && !$_SESSION["isAdmin"]) {
-  // TODO: Error 400
-  // header("Location: /errors/400.php");
+  header("Location: ./errors/403.php");
 }
 
 $menu = new UserMenu();
@@ -22,19 +21,19 @@ if (isset($_POST["submit"])) {
   if (isset($_POST["description"])) {
     $description = (new InputCleaner())->cleanNews($_POST["description"]);
 
-    if (strlen($description) > 10) {
+    if (strlen($description) > 10 && strlen($description) <= 150) {
       $dbAccess = new DBAccess();
       $isFailed = $dbAccess->openDBConnection();
 
       if ($isFailed) {
-        header("Location: /errors/500.php");
+        header("Location: ./errors/500.php");
       } 
       
       $result = $dbAccess->addNews($description);
       $dbAccess->closeDBConnection(); 
 
       if (!$result) {
-        header("Location: /errors/500.php");
+        header("Location: ./errors/500.php");
       } 
 
       if ($result["isSuccessful"]) {
@@ -47,7 +46,7 @@ if (isset($_POST["submit"])) {
       if (strlen($description) == 0) {
         $userFeedbackContent .= "<li><strong class=\"error\">La descrizione deve essere presente</strong></li>";
       } else {
-        $userFeedbackContent .= "<li><strong class=\"error\">La descrizione deve avere lunghezza maggiore di dieci caratteri</strong></li>";
+        $userFeedbackContent .= "<li><strong class=\"error\">La descrizione deve avere lunghezza maggiore di 10 caratteri e minore di 150</strong></li>";
       }
     }
   } else {

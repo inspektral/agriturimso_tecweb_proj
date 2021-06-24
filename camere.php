@@ -19,17 +19,17 @@ $contentAdminNews = "";
 $contentAdminAddRoom = "";
 if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"]) {
   $contentAdminNews = "<div id=\"adminSection\"><a class=\"button\" href=\"./insertNews.php\">Aggiungi notizia</a></div>";
-  $contentAdminAddRoom = "<a href=\"./insertRoom.php\">Aggiungi stanza</a>";
+  $contentAdminAddRoom = "<a class=\"button\" href=\"./insertRoom.php\">Aggiungi stanza</a>";
 }
 
 $roomsContent = (new RoomsListFactory())->createRoomsList();
 if (!$roomsContent) {
-  header("Location: /errors/500.php");
+  header("Location: ./errors/500.php");
 }
 
 $newsContent = (new NewsListFactory())->createNewsList();
 if (!$newsContent) {
-  header("Location: /errors/500.php");
+  header("Location: ./errors/500.php");
 }
 
 

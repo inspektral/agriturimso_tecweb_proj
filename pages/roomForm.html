@@ -2,176 +2,192 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-  <title>Aggiungi camera - Agriturismo Morgan</title>
+    <title>Aggiungi camera - Agriturismo Morgan</title>
 
-  <meta name="title" content="Aggiungi camera" />
+    <meta name="title" content="Aggiungi camera" />
 
-  <meta name="language" content="italian it" />
+    <meta name="language" content="italian it" />
 
-  <link rel="stylesheet" type="text/css" href="./style/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./style/style.css" media="screen" />
 
-  <link rel="stylesheet" type="text/css" href="./style/small_lavoro.css"
-    media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
-  <link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
+    <link rel="stylesheet" type="text/css" href="./style/small_lavoro.css" media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
-  <link rel="stylesheet" type="text/css" href="./style/styleAccReg.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
 
-  <script type="text/javascript" src="./javascript/inputCheck.js"></script>
 
+    <script type="text/javascript" src="./javascript/inputCheck.js"></script>
+    <script type="text/javascript" src="./javascript/topButton.js"></script>
 </head>
 
 <body>
-  <div id="header">
-    <ul class="aiutiNascosti">
-      <li><a href="#menu">Vai al menu</a></li>
-      <li><a href="#content">Vai al contenuto</a></li>
-    </ul>
-    <img id="logo" src="./images/bbtlogo.png"
-      alt="Logo dell'agriturismo a forma di casa stilizzata con una a come tetto e una m come muri" />
-    <h1>Agriturismo Morgan</h1>
-    <h2>Ai piedi del Montello e dei colli Asolani</h2>
-  </div>
-
-  <div id="breadcrumb">
-    <div id="menu">
-      <ul>
-        <li xml:lang="en"><a href="index.php">Home</a></li>
-        <li><a href="camere.php">Camere</a></li>
-        <li><a href="territorio.php">Territorio</a></li>
-        <li><a href="diconodinoi.php">Dicono di noi</a></li>
-      </ul>
+    <div id="header">
+        <ul class="aiutiNascosti">
+            <li><a href="#content">Vai al contenuto</a></li>
+            <li><a href="#menu">Vai al menu</a></li>
+        </ul>
+        <img id="logo" src="./images/bbtlogo.png" alt="Logo dell'agriturismo a forma di casa stilizzata con una a come tetto e una m come muri" />
+        <h1>Agriturismo Morgan</h1>
+        <h2>Ai piedi del Montello e dei colli Asolani</h2>
     </div>
-    <UserPlaceholder />
-  </div>
 
-  <div id="specialBreadcrumb">
-    <p id="specialBreadcrumbText">Ti trovi in: Aggiungi nuova stanza</span></p>
-  </div>
+    <div id="breadcrumb">
+        <div id="menu">
+            <ul>
+                <li xml:lang="en"><a href="index.php">Home</a></li>
+                <li><a href="camere.php">Camere</a></li>
+                <li><a href="territorio.php">Territorio</a></li>
+                <li><a href="diconodinoi.php">Dicono di noi</a></li>
+            </ul>
+        </div>
+        <UserPlaceholder />
+    </div>
 
-  <div id="content" class="contenutoGenerale">
-    <InsertRoomErrorPlaceholder />
-    <form method="post" action="./insertRoom.php" enctype="multipart/form-data" onsubmit="return validateRoom()">
-      <fieldset>
-        <legend>Nuova camera</legend>
-        <label for="name" class="formLabel">Nome*: </label>
-        <span><input type="text" id="name" name="name" value="<NameValuePlaceholder />" /></span>
-        <label for="people" class="formLabel">Persone*: </label>
-        <span><input type="text" id="people" name="people" value="<PeopleValuePlaceholder />" /></span>
-        <label for="price" class="formLabel">Prezzo*: </label>
-        <span><input type="text" id="price" name="price" value="<PriceValuePlaceholder />" /></span>
-      </fieldset>
-      <fieldset>
-        <legend>Servizi</legend>
-        <!-- TODO: Remove div -->
-        <div>
-          <div>
-            <input type="checkbox" id="tv" name="services[]" value="tv" <TvCheckedPlaceholder /> />
-            <label for="tv" class="formLabel"><abbr title="televisione">TV</abbr> a schermo piatto</label>
-          </div>
-          <div>
-            <input type="checkbox" id="balcony" name="services[]" value="balcony" <BalconeCheckedPlaceholder /> />
-            <label for="balcony" class="formLabel">Balcone</label>
-          </div>
-          <div>
-            <input type="checkbox" id="gardenView" name="services[]" value="gardenView" <GardenCheckedPlaceholder /> />
-            <label for="gardenView" class="formLabel">Vista giardino</label>
-          </div>
-          <div>
-            <input type="checkbox" id="airCondition" name="services[]" value="airCondition" <AirCheckedPlaceholder /> />
-            <label for="airCondition" class="formLabel">Aria condizionata</label>
-          </div>
-          <div>
-            <input type="checkbox" id="heat" name="services[]" value="heat" <HeatCheckedPlaceholder /> />
-            <label for="heat" class="formLabel">Riscaldamento</label>
-          </div>
-          <div>
-            <input type="checkbox" id="parquet" name="services[]" value="parquet" <ParquetCheckedPlaceholder /> />
-            <label for="parquet" class="formLabel"><span xml:lang="fr">Parquet</span> o pavimento in legno</label>
-          </div>
-          <div>
-            <input type="checkbox" id="shower" name="services[]" value="shower" <ShowerCheckedPlaceholder /> />
-            <label for="shower" class="formLabel">Doccia</label>
-          </div>
-        </div>
-        <div>
-          <div>
-            <input type="checkbox" id="shampoo" name="services[]" value="shampoo" <ShampooCheckedPlaceholder /> />
-            <label for="shampoo" class="formLabel">Prodotti da bagno omaggio</label>
-          </div>
-          <div>
-            <input type="checkbox" id="wc" name="services[]" value="wc" <WcCheckedPlaceholder /> />
-            <label for="wc" class="formLabel">Bagno privato</label>
-          </div>
-          <div>
-            <input type="checkbox" id="bath" name="services[]" value="bath" <BathCheckedPlaceholder /> />
-            <label for="bath" class="formLabel">Vasca da bagno</label>
-          </div>
-          <div>
-            <input type="checkbox" id="bidet" name="services[]" value="bidet" <BidetCheckedPlaceholder /> />
-            <label for="bidet" class="formLabel" xml:lang="fr">Bidet</label>
-          </div>
-          <div>
-            <input type="checkbox" id="paper" name="services[]" value="paper" <PaperCheckedPlaceholder /> />
-            <label for="paper" class="formLabel">Carta igienica</label>
-          </div>
-          <div>
-            <input type="checkbox" id="towels" name="services[]" value="towels" <TowelsCheckedPlaceholder /> />
-            <label for="towels" class="formLabel">Asciugamani</label>
-          </div>
-          <div>
-            <input type="checkbox" id="wardrobe" name="services[]" value="wardrobe" <WardrobeCheckedPlaceholder /> />
-            <label for="wardrobe" class="formLabel">Armadio</label>
-          </div>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Immagine principale</legend>
-        <label class="formLabel">Immagine*: </label>
-        <input id="mainImg" type="file" name="mainImg" />
-        <div>
-          <label for="imgLongdesc" class="formLabel">Descrizione immagine*: </label>
-          <textarea id="imgLongdesc" name="mainLongdesc" rows="10" cols="60"><MainLongdescValuePlaceholder /></textarea>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Immagini galleria</legend>
-        <div>
-          <label class="formLabel">Prima immagine</label>
-          <input type="file" name="firstGallery" />
-        </div>
-        <div>
-          <label class="formLabel">Seconda immagine</label>
-          <input type="file" name="secondGallery" />
-        </div>
-        <div>
-          <label class="formLabel">Terza immagine</label>
-          <input type="file" name="thirdGallery" />
-        </div>
-        <div>
-          <label class="formLabel">Quarta immagine</label>
-          <input type="file" name="fourthGallery" />
-        </div>
-      </fieldset>
-      <fieldset>
-        <input type="submit" value="Invia" id="submit" name="submit" />
-      </fieldset>
-    </form>
-  </div>
+    <div id="specialBreadcrumb">
+        <p id="specialBreadcrumbText">Ti trovi in: Camere > Aggiungi nuova stanza</p>
+    </div>
 
-  <div id="footer">
-    <img src="./images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
-    <img src="./images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
-    <p>
-      Il sito è stato creato per un esercizio nell'ambito del corso di <a
-        href="https://elearning.unipd.it/math/login/index.php">Tecnologie Web</a> e non rappresenta quindi il sito
-      ufficiale dell'Agriturismo. I testi sono stati
-      gentilmente presi in prestito da <a href="http://www.agriturismomorgan.it/">Agriturismo Morgan</a>.
-    </p>
-    <p>Tech Group - All rights reserved</p>
-  </div>
+    <div id="content" class="contenutoGenerale formContent">
+        <InsertRoomErrorPlaceholder />
+        <form method="post" action="./insertRoom.php" enctype="multipart/form-data" onsubmit="return validateRoom()">
+            <fieldset>
+                <legend>Nuova camera</legend>
+                <label for="name" class="formLabel">Nome*: </label>
+                <span><input type="text" id="name" name="name" value="<NameValuePlaceholder />" /></span>
+                <label for="people" class="formLabel">Persone*: </label>
+                <span><input type="text" id="people" name="people" value="<PeopleValuePlaceholder />" /></span>
+                <label for="price" class="formLabel">Prezzo*: </label>
+                <span><input type="text" id="price" name="price" value="<PriceValuePlaceholder />" /></span>
+                <label for="meters" class="formLabel">Dimensioni stanza*: </label>
+                <span><input type="text" id="meters" name="meters" value="<MetersValuePlaceholder />" /></span>
+            </fieldset>
+            <fieldset>
+                <legend>Servizi</legend>
+                <div>
+                    <div>
+                        <input type="checkbox" id="tv" name="services[]" value="tv" <TvCheckedPlaceholder /> />
+                        <label for="tv" class="formLabel"><abbr title="televisione">TV</abbr> a schermo piatto</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="balcony" name="services[]" value="balcony" <BalconeCheckedPlaceholder /> />
+                        <label for="balcony" class="formLabel">Balcone</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="gardenView" name="services[]" value="gardenView" <GardenCheckedPlaceholder /> />
+                        <label for="gardenView" class="formLabel">Vista giardino</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="airCondition" name="services[]" value="airCondition" <AirCheckedPlaceholder /> />
+                        <label for="airCondition" class="formLabel">Aria condizionata</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="heat" name="services[]" value="heat" <HeatCheckedPlaceholder /> />
+                        <label for="heat" class="formLabel">Riscaldamento</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="parquet" name="services[]" value="parquet" <ParquetCheckedPlaceholder /> />
+                        <label for="parquet" class="formLabel"><span xml:lang="fr">Parquet</span> o pavimento in legno</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="shower" name="services[]" value="shower" <ShowerCheckedPlaceholder /> />
+                        <label for="shower" class="formLabel">Doccia</label>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <input type="checkbox" id="shampoo" name="services[]" value="shampoo" <ShampooCheckedPlaceholder /> />
+                        <label for="shampoo" class="formLabel">Prodotti da bagno omaggio</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="wc" name="services[]" value="wc" <WcCheckedPlaceholder /> />
+                        <label for="wc" class="formLabel">Bagno privato</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="bath" name="services[]" value="bath" <BathCheckedPlaceholder /> />
+                        <label for="bath" class="formLabel">Vasca da bagno</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="bidet" name="services[]" value="bidet" <BidetCheckedPlaceholder /> />
+                        <label for="bidet" class="formLabel" xml:lang="fr">Bidet</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="paper" name="services[]" value="paper" <PaperCheckedPlaceholder /> />
+                        <label for="paper" class="formLabel">Carta igienica</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="towels" name="services[]" value="towels" <TowelsCheckedPlaceholder /> />
+                        <label for="towels" class="formLabel">Asciugamani</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="wardrobe" name="services[]" value="wardrobe" <WardrobeCheckedPlaceholder /> />
+                        <label for="wardrobe" class="formLabel">Armadio</label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Servizi aggiuntivi</legend>
+                <div>
+                    <input type="checkbox" id="parking" name="additionalServices[]" value="parking" <ParkingCheckedPlaceholder /> />
+                    <label for="parking" class="formLabel">Parcheggio</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="wifi" name="additionalServices[]" value="wifi" <WIFICheckedPlaceholder /> />
+                    <label for="wifi" class="formLabel"><abbr xml:lang="en" title="Wireless Fidelity">WI-FI</abbr>
+            gratuito</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="privateBathRoom" name="additionalServices[]" value="privateBathRoom" <PrivateBathRoomCheckedPlaceholder /> />
+                    <label for="privateBathRoom" class="formLabel">Bagno privato</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Immagine principale</legend>
+                <label class="formLabel">Immagine*: </label>
+                <input id="mainImg" type="file" name="mainImg" />
+                <div>
+                    <label for="imgLongdesc" class="formLabel">Descrizione immagine*: </label>
+                    <span><textarea id="imgLongdesc" name="mainLongdesc" rows="10"
+              cols="60"><MainLongdescValuePlaceholder /></textarea></span>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Immagini galleria</legend>
+                <div>
+                    <label class="formLabel">Prima immagine</label>
+                    <input type="file" name="firstGallery" />
+                </div>
+                <div>
+                    <label class="formLabel">Seconda immagine</label>
+                    <input type="file" name="secondGallery" />
+                </div>
+                <div>
+                    <label class="formLabel">Terza immagine</label>
+                    <input type="file" name="thirdGallery" />
+                </div>
+                <div>
+                    <label class="formLabel">Quarta immagine</label>
+                    <input type="file" name="fourthGallery" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <p id="required"><em>I campi contrassegnati da * sono obbligatori</em></p>
+                <input type="submit" value="Invia" id="submit" name="submit" />
+            </fieldset>
+        </form>
+    </div>
+    <div><a class="button" href="#header" id="topButton">Torna su</a></div>
+
+    <div id="footer">
+        <img src="./images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
+        <img src="./images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
+        <p>
+            Il sito è stato creato per un esercizio nell'ambito del corso di <a href="https://elearning.unipd.it/math/login/index.php">Tecnologie Web</a> e non rappresenta quindi il sito ufficiale dell'Agriturismo. I testi sono stati gentilmente presi
+            in prestito da <a href="http://www.agriturismomorgan.it/">Agriturismo Morgan</a>.
+        </p>
+        <p>Tech Group - All rights reserved</p>
+    </div>
 </body>
 
 </html>

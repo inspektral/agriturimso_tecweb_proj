@@ -2,103 +2,100 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Prenota - Agriturismo Morgan</title>
+    <title>Prenota - Agriturismo Morgan</title>
 
-<meta name="title" content="Prenota" />
-<meta name="description"
-	content="Agriturismo situato nei pressi di Montebelluna (TV), che offre camere e colazione" />
-<meta name="keywords"
-	content="Agriturismo, Bed and Breakfast, Camere da letto, Montebelluna" />
+    <meta name="title" content="Prenota" />
+    <meta name="description" content="Agriturismo situato nei pressi di Montebelluna (TV), che offre camere e colazione" />
+    <meta name="keywords" content="Agriturismo, Bed and Breakfast, Camere da letto, Montebelluna" />
 
-<meta name="author" content="Matteo, Massimo, Tito, Lorenzo" />
-<meta name="language" content="italian it" />
+    <meta name="author" content="Matteo, Massimo, Tito, Lorenzo" />
+    <meta name="language" content="italian it" />
 
-<link rel="stylesheet" type="text/css" href="../style/style.css"
-	media="screen" />
+    <link rel="stylesheet" type="text/css" href="./style/style.css" media="screen" />
 
-<link rel="stylesheet" type="text/css" href="../style/small_lavoro.css"
-	media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
-<link rel="stylesheet" type="text/css" href="../style/printLavoro.css"
-	media="print" />
+    <link rel="stylesheet" type="text/css" href="./style/small_lavoro.css" media="handheld, screen and (max-width: 640px), only screen and (max-device-width: 640px)" />
 
-<script type="text/javascript" src="../javascript/inputCheck.js"></script>
-	<script type="text/javascript" src="./javascript/inputCheck.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style/printLavoro.css" media="print" />
+
+    <script type="text/javascript" src="./javascript/inputCheck.js"></script>
 
 </head>
+
 <body>
-	<div id="header">
-		<ul class="aiutiNascosti">
-			<li><a href="#menu">Vai al menu</a></li>
-			<li><a href="#contentTerritorio">Vai al contenuto</a></li>
-			<li><a href="#ultimeNews">Vai alle ultime news</a></li>
-		</ul>
-		<img id="logo" src="images/bbtlogo.png" alt="Logo dell'agriturismo" />
-		<h1>Agriturismo Morgan Morgan</h1>
-		<h2>Ai piedi del Montello e dei colli Asolani</h2>
-	</div>
+    <div id="header">
+        <ul class="aiutiNascosti">
+            <li><a href="#menu">Vai al menu</a></li>
+            <li><a href="#contentTerritorio">Vai al contenuto</a></li>
+            <li><a href="#ultimeNews">Vai alle ultime news</a></li>
+        </ul>
+        <img id="logo" src="images/bbtlogo.png" alt="Logo dell'agriturismo" />
+        <h1>Agriturismo Morgan Morgan</h1>
+        <h2>Ai piedi del Montello e dei colli Asolani</h2>
+    </div>
 
 
-	<div id="breadcrumb">
-		<div id="menu">
-			<ul>
-				<li><a xml:lang="en" href="index.php">Home</a></li>
-				<li><a href="camere.php">Camere</a></li>
-				<li><a href="territorio.php">Territorio</a></li>
-				<li><a href="diconodinoi.php">Dicono di noi</a></li>
-			</ul>
-		</div>
-		<UserPlaceholder />
-	</div>
+    <div id="breadcrumb">
+        <div id="menu">
+            <ul>
+                <li><a xml:lang="en" href="index.php">Home</a></li>
+                <li><a href="camere.php">Camere</a></li>
+                <li><a href="territorio.php">Territorio</a></li>
+                <li><a href="diconodinoi.php">Dicono di noi</a></li>
+            </ul>
+        </div>
+        <UserPlaceholder />
+    </div>
 
-	<div class="row">
+    <div class="row">
 
-		<div class="contenutoGenerale column">
-			
-			<form class="prenot_form" action="prenota.php" method="post" onsubmit="return validatePrenota()">
-				<h2>Disponibilit&agrave; Camera <nameCamera/></h2>
-				<fieldset id="prenotazioneFieldset">
-					<p>Inserisci le date nel seguente formato: giorno con 2 cifre, mese con 2 cifre, anno con 4 cifre.</p>
-					<p>Esempio: <dateToday/></p>
-					<div>
-						<label for="da">Da: <abbr title="Giorno, mese, anno">(gg/mm/aaaa)</abbr></label>
-						<span><input id="da" type="text" name="prenotazioneDa" value="<inputDaValue/>"/></span>
-					</div>
-					<div>
-						<label for="a">A: <abbr title="Giorno, mese, anno">(gg/mm/aaaa)</abbr></label>
-						<span><input id="a" type="text" name="prenotazioneA" value="<inputAValue/>"/></span>
-					</div>
-					<input type="hidden" name="nomeCamera" value="<nameCamera/>" />
-					<input class="bottoneform" type="submit" value="Verifica" />
-					<resultPrenotazione/>
-				</fieldset>
-			</form>
-			
-			
-		</div>
+        <div class="contenutoGenerale column">
 
-		<div id="rightSideBar" class="column right">
-			<div id="ultimeNews">
-				<h2>Ultime News</h2>
-				<NewsListPlaceholder />
-			</div>
-			<AdminNewsManagementPlaceholder />
-		</div>
-	</div>
+            <form class="prenot_form" action="prenota.php" method="post" onsubmit="return validatePrenota()">
+                <h2>Disponibilit&agrave; Camera "<nameCamera/>"</h2>
+                <fieldset id="prenotazioneFieldset">
+                    <p>Inserisci le date nel seguente formato: giorno con 2 cifre, mese con 2 cifre, anno con 4 cifre.
+                    </p>
+                    <p>Esempio:
+                        <dateToday />
+                    </p>
+                    <div>
+                        <label for="da" class="formLabel">Da: <abbr title="Giorno/Mese/Anno">(gg/mm/aaaa)</abbr></label>
+                        <span><input id="da" type="text" name="prenotazioneDa" value="<inputDaValue/>" /></span>
+                    </div>
+                    <div>
+                        <label for="a" class="formLabel">A: <abbr title="Giorno/Mese/Anno">(gg/mm/aaaa)</abbr></label>
+                        <span><input id="a" type="text" name="prenotazioneA" value="<inputAValue/>" /></span>
+                    </div>
+                    <input type="hidden" name="nomeCamera" value="<nameCamera/>" />
+                    <p id="required"><em>I campi contrassegnati da * sono obbligatori</em></p>
+                    <input class="bottoneform" type="submit" value="Verifica" />
+                    <resultPrenotazione/>
+                </fieldset>
+            </form>
+        </div>
 
-	<div id="footer">
-		<img src="images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
-		<img src="images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
-		<p>
-			Il sito è stato creato per un esercizio nell'ambito del corso di <a
-				href="https://elearning.unipd.it/math/login/index.php">Tecnologie
-				Web</a> e non rappresenta quindi il sito ufficiale dell'Agriturismo. I
-			testi sono stati gentilmente presi in prestito da <a
-				href="http://www.agriturismomorgan.it/">Agriturismo Morgan</a>.
-		</p>
-		<p>Tech Group - All rights reserved</p>
-	</div>
+        <div id="rightSideBar" class="column right">
+            <div id="ultimeNews">
+                <h2>Ultime News</h2>
+                <NewsListPlaceholder />
+            </div>
+            <AdminNewsManagementPlaceholder />
+        </div>
+    </div>
+
+    <div id="footer">
+        <img src="images/valid-xhtml10.png" alt="Sito verificato secondo standard XHTML 1.0" id="imgValidCode" />
+        <img src="images/vcss-blue.gif" alt="Sito verificato secondo standard CSS" id="imgValidCSS" />
+        <p>
+            Il sito è stato creato per un esercizio nell'ambito del corso di <a href="https://elearning.unipd.it/math/login/index.php">Tecnologie
+				Web</a> e non rappresenta quindi il sito ufficiale dell'Agriturismo. I testi sono stati gentilmente presi in prestito da <a href="http://www.agriturismomorgan.it/">Agriturismo
+				Morgan</a>.
+        </p>
+        <p>Tech Group - All rights reserved</p>
+    </div>
 </body>
+
 </html>
