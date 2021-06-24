@@ -1,6 +1,6 @@
 <?php
 class InputCleaner {
-  private const ALLOWED_NEWS_TAGS = "<em><strong><span>";
+  private const ALLOWED_NEWS_TAGS = "<em><strong><span><abbr>";
   private const ALLOWED_ROOM_TAGS = "<span>";
 
   public function cleanNews($input) {
