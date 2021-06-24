@@ -27,13 +27,6 @@ a:visited {
     overflow: hidden;
 }
 
-
-/*
-==============
-SEZIONE HEADER
-==============
-*/
-
 #header {
     padding: 1em;
     text-align: center;
@@ -59,13 +52,6 @@ SEZIONE HEADER
     font-style: italic;
     font-weight: normal;
 }
-
-
-/*
-==============
-SEZIONE MENU
-==============
-*/
 
 #specialBreadcrumb {
     background-color: rgb(146, 58, 67);
@@ -167,13 +153,6 @@ SEZIONE MENU
     color: rgb(146, 58, 67);
 }
 
-
-/*
-==============
-SEZIONE USER
-==============
-*/
-
 .reg,
 .reg:visited {
     float: right;
@@ -254,13 +233,6 @@ SEZIONE USER
     background-color: rgb(146, 58, 67);
 }
 
-
-/*
-==============
-DIV IN 3 COLONNE
-==============
-*/
-
 .row {
     box-sizing: border-box;
 }
@@ -282,13 +254,6 @@ DIV IN 3 COLONNE
 .right {
     width: 25%;
 }
-
-
-/*
-==============
-SEZIONE RIGHTSIDEBAR
-==============
-*/
 
 #rightSideBar {
     font-size: 0.7em;
@@ -316,8 +281,8 @@ SEZIONE RIGHTSIDEBAR
 }
 
 .button:visited {
-    background-color: #923a43;
-    color: rgb(0, 0, 0);
+    background-color: #702E33;
+    color: #E6E6E6;
     padding: 3% 5%;
     text-align: center;
     display: inline-block;
@@ -333,8 +298,7 @@ SEZIONE RIGHTSIDEBAR
 .button:hover {
     color: #923a43;
     background-color: #fff;
-    border-style: solid;
-    border-color: #923a43;
+    border: 1px solid #923a43;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
@@ -344,13 +308,6 @@ SEZIONE RIGHTSIDEBAR
     padding-left: 2%;
     text-align: left;
 }
-
-
-/*
-==============
-SEZIONE CONTENUTO
-==============
-*/
 
 #topButton {
     position: fixed;
@@ -390,7 +347,7 @@ SEZIONE CONTENUTO
     font-weight: bold;
     text-align: center;
     margin-left: 2%;
-    color: #f00;
+    color: rgb(179, 0, 0);
 }
 
 .contenutoGenerale {
@@ -510,8 +467,7 @@ SEZIONE CONTENUTO
 
 .linkButton {
     text-align: center;
-    border: #923a43;
-    border-style: solid;
+    border: 1px solid #923a43;
     border-radius: 5px;
 }
 
@@ -533,13 +489,6 @@ li span {
     margin-top: 1em;
 }
 
-
-/*
-==============
-SEZIONE FOOTER
-==============
-*/
-
 #footer {
     text-align: center;
     font-size: 0.7em;
@@ -556,13 +505,6 @@ SEZIONE FOOTER
 #imgValidCode {
     float: left;
 }
-
-
-/*
-==============
-SEZIONE FORM
-==============
-*/
 
 .commentForm {
     width: auto;
@@ -697,11 +639,6 @@ pre {
     font-size: 1.5em;
 }
 
-/*
-==============
-SEZIONE BOTTONI ACCEDI/REGISTRATI
-==============
-*/
 input[type="text"],
 input[type="password"] {
     margin: auto 10% 2% 10%;
@@ -741,12 +678,13 @@ fieldset {
 
 .error {
     font-size: 1.5em;
-    color: rgb(255, 0, 0);
+    color: rgb(179, 0, 0);
+    border: 1px solid rgb(179, 0, 0);
 }
 
 .success {
     font-size: 1.5em;
-    color: rgb(0, 189, 0);
+    color: rgb(0, 97, 0);
 }
 
 #submit {
@@ -774,7 +712,7 @@ fieldset {
 }
 
 #submit:active {
-    background-color: rgb(231, 93, 106);
+    background-color: rgb(170, 29, 45);
     border: none;
     border-radius: 5px;
     color: white;
