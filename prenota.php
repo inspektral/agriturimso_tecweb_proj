@@ -27,11 +27,11 @@ if (isset($_POST["prenotazioneDa"]) && $_POST["prenotazioneDa"] != '' && isset($
     }else if( isset($_POST["nomeCamera"])){
         $nomeCamera = $_POST["nomeCamera"];
     }
-
     $dateDa = DateTime::createFromFormat('d/m/Y',$_POST["prenotazioneDa"]);
     $dateA = DateTime::createFromFormat('d/m/Y',$_POST["prenotazioneA"]);
 
     if($dateDa < $dateA){
+    
             
         $dbAccess = new DBAccess();
         $isFailed = $dbAccess->openDBConnection();
@@ -72,6 +72,8 @@ $html = str_replace("<dateToday/>",date("d/m/Y"), $html);
 $html = str_replace("<resultPrenotazione/>", "", $html);
 if(isset($_GET["nomeCamera"])){
     $html = str_replace("<nameCamera/>", $_GET["nomeCamera"], $html);
+}else  if(isset($_POST["nomeCamera"])){
+    $html = str_replace("<nameCamera/>", $_POST["nomeCamera"], $html);
 }
 if(isset($_POST["prenotazioneDa"])){
     $html = str_replace("<inputDaValue/>", $_POST["prenotazioneDa"], $html);
