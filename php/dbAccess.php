@@ -4,10 +4,13 @@ ini_set('display_startup_errors', 1);
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 error_reporting(E_ALL);
 class DBAccess {
+
+    
     private const HOST_DB = "localhost";
     private const USERNAME = "lbrescan";
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
+
     
 
     private $connection;
@@ -218,15 +221,12 @@ class DBAccess {
     
     public function isFree($dateFrom, $dateTo, $nameRoom) {
 
-        $t1=  $dateFrom."";
-        $t2=  $dateTo."";
-
-        echo "sono qui " . $t1 . " - ".$t2 . "<br/>"; 
+        $t1=  $dateFrom;
+        $t2=  $dateTo;
 
         $tmp1 = DateTime::createFromFormat('d/m/Y', $t1)->format('Y-m-d');
         $tmp2 = DateTime::createFromFormat('d/m/Y', $t2)->format('Y-m-d');
 
-        echo $tmp1 . " - ".$tmp2 . "<br/>";
         $query = "SELECT * FROM `prenotazioni` WHERE `giornoA` >= ? AND `giornoDa` <= ? AND `nameCamera` = ?";   
         
         $stmt = $this->connection->prepare($query);
