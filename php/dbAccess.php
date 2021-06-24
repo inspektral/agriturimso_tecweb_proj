@@ -7,6 +7,7 @@ class DBAccess {
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
 
+
     
 
     private $connection;
@@ -142,20 +143,6 @@ class DBAccess {
             $services["bidet"],$services["paper"],$services["towels"],$services["wardrobe"],$additionalServices["parking"],$additionalServices["wifi"],
             $additionalServices["privateBathRoom"]
         );
-        $stmt->execute();
-
-        return array(
-            "isSuccessful" => $stmt->affected_rows === 1
-        );
-    }
-
-    public function removeRoom($name) {
-        $query = "DELETE FROM `Rooms` WHERE `name` = ?;";
-        $stmt = $this->connection->prepare($query);
-        if (!$stmt) {
-            return null;
-        }
-        $stmt->bind_param("s", $name);
         $stmt->execute();
 
         return array(
