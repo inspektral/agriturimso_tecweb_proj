@@ -23,8 +23,8 @@ if (isset($_POST["prenotazioneDa"]) && $_POST["prenotazioneDa"] != '' && isset($
     }else if( isset($_POST["nomeCamera"])){
         $nomeCamera = $_POST["nomeCamera"];
     }
-
-    var_dump($dateA, $dateDa);
+    $dateDa = DateTime::createFromFormat('d/m/Y',$_POST["prenotazioneDa"]);
+    $dateA = DateTime::createFromFormat('d/m/Y',$_POST["prenotazioneA"]);
 
     if($dateDa < $dateA){
     
