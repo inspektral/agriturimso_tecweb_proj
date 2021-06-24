@@ -1,5 +1,5 @@
 html {
-	font: normal normal normal 12px/normal "Times New Roman", Times, serif;
+	font: normal normal normal 16px/normal "Times New Roman", Times, serif;
 }
 
 .aiutiNascosti {
@@ -21,11 +21,6 @@ html {
 }
 
 #breadcrumb {
-	/* padding: 0.5em 0 0.5em 1.0em;
-	font-size: 1.0em;
-	font-weight: bold;
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd; */
 	display: none;
 }
 
@@ -69,4 +64,14 @@ form {
 
 #footer{
 	display: none;
+}
+
+.galleryElement {
+    width: 50%;
+  height: auto;
+}
+
+#imgIndex {
+    width: 50%;
+  height: auto;
 }

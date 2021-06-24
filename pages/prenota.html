@@ -56,9 +56,7 @@
 		<div class="contenutoGenerale column">
 
 			<form class="prenot_form" action="prenota.php" method="post" onsubmit="return validatePrenota()">
-				<h2>Disponibilit&agrave; Camera "
-					<nameCamera />"
-				</h2>
+				<h2>Disponibilit&agrave; Camera "<nameCamera/>"</h2>
 				<fieldset id="prenotazioneFieldset">
 					<p>Inserisci le date nel seguente formato: giorno con 2 cifre, mese con 2 cifre, anno con 4 cifre.
 					</p>
@@ -75,6 +73,7 @@
 						<span><input id="a" type="text" name="prenotazioneA" value="<inputAValue/>" /></span>
 					</div>
 					<input type="hidden" name="nomeCamera" value="<nameCamera/>" />
+					<p id="required"><em>I campi contrassegnati da * sono obbligatori</em></p>
 					<input class="bottoneform" type="submit" value="Verifica" />
 					<resultPrenotazione />
 				</fieldset>

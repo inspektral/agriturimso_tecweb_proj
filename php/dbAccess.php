@@ -1,20 +1,15 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-// error_reporting(E_ALL);
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+error_reporting(E_ALL);
 class DBAccess {
     private const HOST_DB = "localhost";
     private const USERNAME = "lbrescan";
     private const PASSWORD = "Eephejokohculee1";
     private const DB_NAME = "lbrescan";
-    
-    // private const HOST_DB = "localhost";
-    // private const USERNAME = "root";
-    // private const PASSWORD = "";
-    // private const DB_NAME = "agriturismo";
-    // private $connection;
+
+    private $connection;
 
     public function openDBConnection() {
         $this->connection = new mysqli(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DB_NAME);
@@ -237,21 +232,6 @@ class DBAccess {
             return false;
         }
     }
-    /*
-    public function prenotaCamera($user, $dateFrom, $dateTo, $camera) {
-        
-        $query = "INSERT INTO `prenotazioni` (`email`, `giornoDa`, `giornoA`, `camera`) VALUES ('?', '?', '?', '?');";
-        $stmt = $this->connection->prepare($query);
-        if (!$stmt) {
-            return null;
-        }
-        //$stmt->bind_param("ssss", $description);
-        $stmt->execute();
-        
-        return array(
-            "isSuccessful" => $stmt->affected_rows === 1
-        );
-    }*/
 
     public function closeConnection(){
         $this->connection->close();
