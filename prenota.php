@@ -38,7 +38,7 @@ if (isset($_POST["prenotazioneDa"]) && $_POST["prenotazioneDa"] != '' && isset($
         }
         
         if ($dbAccess->isFree($_POST["prenotazioneDa"], $_POST["prenotazioneA"], $nomeCamera)) {
-            $html = str_replace("<resultPrenotazione/>", "<p class=\"resultPrenotazione\">Che fortuna, la camera &egrave; libera, chiamaci subito per prenotare (0423/123456)!</p>", $html);
+            $html = str_replace("<resultPrenotazione/>", "<p class=\"resultPrenotazione success\">Che fortuna, la camera &egrave; libera, chiamaci subito per prenotare (0423/123456)!</p>", $html);
         } else {
             $html = str_replace("<resultPrenotazione/>", "<p class=\"resultPrenotazione resultPrenotazioneFalse\">Mi dispiace, camera gi&agrave; prenotata, sar&agrave; per la prossima volta... <br/>O per la prossima settimana, prova a ricontrollare, altrimenti puoi chiamarci al numero 0423/123456</p>", $html);
         }
