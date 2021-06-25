@@ -54,6 +54,7 @@ if (isset($_POST["submit"])) {
     isset($_FILES["mainImg"]) && strlen($_FILES["mainImg"]["name"]) > 0 &&
     isset($_POST["mainLongdesc"]) && strlen($_POST["mainLongdesc"]) > 0
   ) {
+    var_dump($_FILES, UPLOAD_ERR_OK);
     $name = (new InputCleaner())->cleanRoomName($_POST["name"]);
     $people = intval($_POST["people"]);
     $price = doubleval(str_replace(",", ".", $_POST["price"]));
