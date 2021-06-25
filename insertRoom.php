@@ -54,7 +54,7 @@ if (isset($_POST["submit"])) {
     isset($_FILES["mainImg"]) && strlen($_FILES["mainImg"]["name"]) > 0 &&
     isset($_POST["mainLongdesc"]) && strlen($_POST["mainLongdesc"]) > 0
   ) {
-    var_dump($_FILES, UPLOAD_ERR_OK);
+    var_dump($_FILES, UPLOAD_ERR_NO_FILE);
     $name = (new InputCleaner())->cleanRoomName($_POST["name"]);
     $people = intval($_POST["people"]);
     $price = doubleval(str_replace(",", ".", $_POST["price"]));
@@ -64,10 +64,10 @@ if (isset($_POST["submit"])) {
     $mainImg = ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["mainImg"]["name"]);
     $imgLongdesc = $_POST['mainLongdesc'];
     $imgLongdescPath = ".".DIRECTORY_SEPARATOR."rooms-longdescs".DIRECTORY_SEPARATOR.str_replace(" ", "_", strtolower($name)).".txt";
-    $firstGallery = $_FILES["firstGallery"]["error"] === UPLOAD_ERR_OK ? ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]) : null;
-    $secondGallery = $_FILES["secondGallery"]["error"] === UPLOAD_ERR_OK ? ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]) : null;
-    $thirdGallery = $_FILES["thirdGallery"]["error"] === UPLOAD_ERR_OK ? ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["thirdGallery"]["name"]) : null;
-    $fourthGallery = $_FILES["fourthGallery"]["error"] === UPLOAD_ERR_OK ? ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["fourthGallery"]["name"]) : null;
+    $firstGallery = $_FILES["firstGallery"]["error"] === UPLOAD_ERR_NO_FILE ? null : ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["firstGallery"]["name"]);
+    $secondGallery = $_FILES["secondGallery"]["error"] === UPLOAD_ERR_NO_FILE ? null : ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["secondGallery"]["name"]);
+    $thirdGallery = $_FILES["thirdGallery"]["error"] === UPLOAD_ERR_NO_FILE ? null : ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["thirdGallery"]["name"]);
+    $fourthGallery = $_FILES["fourthGallery"]["error"] === UPLOAD_ERR_NO_FILE ? null : ".".DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR.basename($_FILES["fourthGallery"]["name"]);
 
     if (!empty($_POST["services"])) {
       $services = $_POST["services"];
@@ -99,10 +99,10 @@ if (isset($_POST["submit"])) {
         $uploader = new ImageUploader();
         $mainSuccess = $uploader->upload($_FILES["mainImg"],$mainImg);
         
-        $firstSuccess = $_FILES["firstGallery"]["error"] === UPLOAD_ERR_OK ? $uploader->upload($_FILES["firstGallery"],$firstGallery) : true;
-        $secondSuccess = $_FILES["secondGallery"]["error"] === UPLOAD_ERR_OK ? $uploader->upload($_FILES["secondGallery"],$secondGallery) : true;
-        $thirdSuccess = $_FILES["thirdGallery"]["error"] === UPLOAD_ERR_OK ? $uploader->upload($_FILES["thirdGallery"],$thirdGallery) : true;
-        $fourthSuccess = $_FILES["fourthGallery"]["error"] === UPLOAD_ERR_OK ? $uploader->upload($_FILES["fourthGallery"],$fourthGallery) : true;
+        $firstSuccess = $_FILES["firstGallery"]["error"] === UPLOAD_ERR_NO_FILE ? true : $uploader->upload($_FILES["firstGallery"],$firstGallery);
+        $secondSuccess = $_FILES["secondGallery"]["error"] === UPLOAD_ERR_NO_FILE ? true : $uploader->upload($_FILES["secondGallery"],$secondGallery);
+        $thirdSuccess = $_FILES["thirdGallery"]["error"] === UPLOAD_ERR_NO_FILE ? true : $uploader->upload($_FILES["thirdGallery"],$thirdGallery);
+        $fourthSuccess = $_FILES["fourthGallery"]["error"] === UPLOAD_ERR_NO_FILE ? true : $uploader->upload($_FILES["fourthGallery"],$fourthGallery);
 
         if ($mainSuccess && $firstSuccess && $secondSuccess && $thirdSuccess && $fourthSuccess) {
           $userFeedbackContent .= "<li><strong class=\"success\">Camera aggiunta con successo</strong></li>";
