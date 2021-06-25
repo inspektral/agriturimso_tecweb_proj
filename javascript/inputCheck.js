@@ -10,7 +10,7 @@ let dettagliForm = {
   "people": ["People", /^\d{1,2}/, "Il numero di posti letto deve essere un numero di 1 o 2 cifre"],
   "price": ["Price", /^\d{1,4}/, "Inserire il prezzo della camera"],
   "meters": ["Meters", /^\d{1,3}/, "La dimensione della camera deve avere minimo 1 e massimo 3 cifre"],
-  "imgLongdesc": ["ImgLongdesc", "([a-zA-Z]){20,}", "La descrizione dell'immagine deve essere lunga almeno 21 caratteri"],
+  "imgLongdesc": ["ImgLongdesc", "\.{20,}", "La descrizione dell'immagine deve essere lunga almeno 21 caratteri"],
   "description" : ["NewsDescription", /^.{10,150}/, "La notizia deve avere lunghezza tra 10 e 150"]
 }
 
