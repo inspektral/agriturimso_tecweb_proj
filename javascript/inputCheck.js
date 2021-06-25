@@ -60,8 +60,8 @@ function validateRegistrati() {
 function validateAccedi() {
   const email = document.getElementById("email")
   const password = document.getElementById("password")
-  const validEmail = email.value === "admin" || email.value === "user" || validateField(email)
-  const validPassword = password.value === "admin" || password.value === "user" || validateField(password)
+  const validEmail = validateField(email)
+  const validPassword = validateField(password)
   return validEmail && validPassword
 }
 
